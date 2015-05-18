@@ -1,0 +1,315 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://qplwrapper/skin/build.css" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://qplwrapper/locale/wizard.dtd">
+<!-- qpl_menu_wizard_default_phrases.xul
+	K. Dooley --> 
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	id="qpl_wizard"
+	orient="vertical"
+	title="&qpl_wizard.title;"
+	style="width: 40em;"
+	screenX="24" screenY="24" 
+	buttons="accept,cancel"
+	defaultButton="accept"
+	buttonlabelaccept="&qpl_insert.label;"
+	buttonaccesskeyaccept="&qpl_insert.accesskey;"
+	buttonlabelcancel="&qpl_cancel.label;"
+	buttonaccesskeycancel="&qpl_cancel.accesskey;"
+	ondialogaccept="InsertText();"
+	ondialogcancel="return true;"  >
+
+
+<script type="application/x-javascript" >
+<![CDATA[
+function InsertText()
+{
+	var Item = document.getElementById('qpl_wizard_default_phrases_select').selectedItem;
+
+	if (Item != null)
+	{
+		var Phrase = "." + Item.value + " = \"" +
+			document.getElementById('qpl_wizard_default_phrases_changeto').value + "\"\n";
+
+
+		// Get Komodo koViewService  //prompts.alert(window, QPLWrapper, viewSvc + " " + viewSvc.currentView);
+		var viewSvc = Components.classes["@activestate.com/koViewService;1"]
+		    .getService(Components.interfaces.koIViewService);
+		    
+		// Get editor window (scintilla) object view = ko.views.manager.currentView object
+		var view = viewSvc.currentView.QueryInterface(Components.interfaces.koIScintillaView);
+
+		// Get koDoc object for manipulation of documents in memory  //prompts.alert(window, QPLWrapper, ko.displayPath);
+		// ko.file object corresponding to files on disk
+		var ko = view.koDoc;	
+
+		// Get scimoz option for manipulation of code buffers
+		var scimoz = view.scimoz;
+
+		// Make sure the current editor tab has focus and then replace current selection with 'Phrase'
+		view.setFocus();
+		scimoz.beginUndoAction();
+		view.selection = Phrase;
+		scimoz.endUndoAction();
+		
+//		ko.commands.doCommand('cmd_browserPreview')
+	}
+	return true;
+}
+]]>
+</script>
+
+
+<vbox id="qpl_dialog" flex="1" >
+	<dialogheader title="&qpl_wizard_default_phrases.title;" description="&qpl_wizard_default_phrases.notes;"/>
+	<separator/>
+
+	<label control="qpl_wizard_default_phrases_select" value="&qpl_wizard_default_phrases.select;"/>	
+	<menulist id="qpl_wizard_default_phrases_select">
+		<menupopup>
+			<menuitem value="1"		label="U.S. Government Accountability Office" />
+			<menuitem value="2"		label="This is a work of the U.S. government and is not subject to copyright "/>
+			<menuitem value="3"		label="protection in the United States. The published product may be "/>
+			<menuitem value="4"		label="reproduced and distributed in its entirety without further permission "/>
+			<menuitem value="5"		label="from GAO. However, because this work may contain copyrighted images or "/>
+			<menuitem value="6"		label="other material, permission from the copyright holder may be necessary "/>
+			<menuitem value="7"		label="if you wish to reproduce this material separately."/>
+			<menuitem value="8"		label="Out of memory."/>
+			<menuitem value="9"		label="U.S. GAO"/>
+			<menuitem value="12"		label="QUESTION"/>
+			<menuitem value="13"		label="Not known"/>
+			<menuitem value="14"		label="Not set"/>
+			<menuitem value="15"		label="None"/>
+			<menuitem value="16"		label="Menu"/>
+			<menuitem value="17"		label="Use calendar to set date"/>
+			<menuitem value="18"		label="At page"/>
+			<menuitem value="19"		label="Go to page"/>
+			<menuitem value="20"		label="Set to current time"/>
+			<menuitem value="22"		label="[none]"/>
+			<menuitem value="23"		label="Cannot open"/>
+			<menuitem value="25"		label="Cannot save"/>
+			<menuitem value="26"		label="Summary"/>
+			<menuitem value="27"		label="View and print a summary of your responses."/>
+			<menuitem value="28"		label="Help"/>
+			<menuitem value="29"		label="Please contact the project administrator for assistance."/>
+			<menuitem value="30"		label="Progress"/>
+			<menuitem value="31"		label="Display list of headings."/>
+			<menuitem value="32"		label="Navigate"/>
+			<menuitem value="33"		label="First page"/>
+			<menuitem value="34"		label="Previous page"/>
+			<menuitem value="35"		label="Next page"/>
+			<menuitem value="36"		label="Last page"/>
+			<menuitem value="37"		label="Logic error at question"/>
+			<menuitem value="38"		label="Cannot read"/>
+			<menuitem value="39"		label="is not a QPL Version 6.0 file."/>
+			<menuitem value="43"		label="(View responses)"/>
+			<menuitem value="44"		label="(View question)"/>
+			<menuitem value="47"		label="RECORD"/>
+			<menuitem value="48"		label="was not used"/>
+			<menuitem value="49"		label="Last question number is"/>
+			<menuitem value="50"		label="is not a numeric question"/>
+			<menuitem value="51"		label="Missing right parenthesis."/>
+			<menuitem value="52"		label="Missing argument."/>
+			<menuitem value="54"		label="Question or function name is too long."/>
+			<menuitem value="55"		label="Number has too many digits."/>
+			<menuitem value="56"		label="ERROR"/>
+			<menuitem value="58"		label="does not meet record specifications."/>
+			<menuitem value="59"		label="an E-supplement to"/>
+			<menuitem value="60"		label="http://gao.gov/products"/>
+			<menuitem value="61"		label="Read the Full Report"/>
+			<menuitem value="62"		label="Background"/>
+			<menuitem value="63"		label="Contents"/>
+			<menuitem value="64"		label="Page Name"/>
+			<menuitem value="65"		label="View the questionnaire form"/>
+			<menuitem value="66"		label="Questionnaire"/>
+			<menuitem value="67"		label="View the summary results"/>
+			<menuitem value="68"		label="Results"/>
+			<menuitem value="69"		label="Go to questionnaire page"/>
+			<menuitem value="70"		label="Go to results page"/>
+			<menuitem value="71"		label="View"/>
+			<menuitem value="72"		label="Contact"/>
+			<menuitem value="73"		label="Copyright"/>
+			<menuitem value="74"		label="Return to main page"/>
+			<menuitem value="75"		label="results.htm"/>
+			<menuitem value="76"		label="[Results for this question were intentionally not reported.]"/>
+			<menuitem value="77"		label="Go to sub-questionnaire page"/>
+			<menuitem value="102"		label="P  (Alt-P = &lt; Previous page button - see 202)"/>
+			<menuitem value="103"		label="N  (Alt-N = &gt; Next page button - see 203)"/>
+			<menuitem value="104"		label="T  (Alt-T = Print button - see 204)"/>
+			<menuitem value="109"		label="E  (Alt-E = Exit button - see 209)"/>
+			<menuitem value="110"		label="S  (Alt-S = Submit button - see 210)"/>
+			<menuitem value="111"		label="C  (Alt-C = Cancel button - see 211)"/>
+			<menuitem value="113"		label="C  (Alt-C = Close button - see 213)"/>
+			<menuitem value="117"		label="B  (Alt-B = Begin questionnaire button - see 217)"/>
+			<menuitem value="123"		label="Page"/>
+			<menuitem value="161"		label="Not checked"/>
+			<menuitem value="162"		label="Checked"/>
+			<menuitem value="163"		label="(Percent)"/>
+			<menuitem value="170"		label="GO HERE"/>
+			<menuitem value="171"		label="GO TO:"/>
+			<menuitem value="172"		label="GO TO QUESTION"/>
+			<menuitem value="173"		label="SKIP TO QUESTION"/>
+			<menuitem value="174"		label="SKIP HERE"/>
+			<menuitem value="175"		label="SKIP TO:"/>
+			<menuitem value="177"		label="DATE"/>
+			<menuitem value="178"		label="TIME"/>
+			<menuitem value="179"		label="PASSWORD"/>
+			<menuitem value="180"		label="MISSING"/>
+			<menuitem value="181"		label="GO"/>
+			<menuitem value="182"		label="TO"/>
+			<menuitem value="183"		label="IF"/>
+			<menuitem value="184"		label="SKIP"/>
+			<menuitem value="185"		label="COMPUTE"/>
+			<menuitem value="186"		label="LOWEST VALUE"/>
+			<menuitem value="187"		label="HIGHEST VALUE"/>
+			<menuitem value="189"		label=" Year          Month"/>
+			<menuitem value="190"		label="SHOW"/>
+			<menuitem value="191"		label="RELOAD"/>
+			<menuitem value="192"		label="SAVE"/>
+			<menuitem value="193"		label="CONTROL"/>
+			<menuitem value="194"		label="(CHECK ALL THAT APPLY)"/>
+			<menuitem value="195"		label="(CHECK ONLY ONE ANSWER)"/>
+			<menuitem value="196"		label="   Year    Month   Day"/>
+			<menuitem value="197"		label=" Year          Month   Day"/>
+			<menuitem value="198"		label="ESCAPE"/>
+			<menuitem value="199"		label="(ENTER TIME USING HH:MM:SS FORMAT)"/>
+			<menuitem value="200"		label="(ENTER DATE USING YY-MM-DD FORMAT)"/>
+			<menuitem value="201"		label="(ENTER DATE USING YYYY-MM-DD FORMAT)"/>
+			<menuitem value="202"		label="&lt; Previous page"/>
+			<menuitem value="203"		label="Next page &gt;"/>
+			<menuitem value="204"		label="Print"/>
+			<menuitem value="205"		label="The asterisk (*) indicates questions on the skip path."/>
+			<menuitem value="206"		label="COUNT"/>
+			<menuitem value="207"		label="NEW"/>
+			<menuitem value="208"		label="OPTION"/>
+			<menuitem value="209"		label="Exit"/>
+			<menuitem value="210"		label="Submit"/>
+			<menuitem value="211"		label="Cancel"/>
+			<menuitem value="212"		label="Record"/>
+			<menuitem value="213"		label="Close"/>
+			<menuitem value="214"		label="(SELECT ONLY ONE ANSWER)"/>
+			<menuitem value="215"		label="(Use the HELLO command to enter your questionnaire project home page information.)"/>
+			<menuitem value="216"		label="Click on the button below to begin."/>
+			<menuitem value="217"		label="Begin questionnaire"/>
+			<menuitem value="218"		label="User name:"/>
+			<menuitem value="219"		label="Password:"/>
+			<menuitem value="220"		label="Change password:"/>
+			<menuitem value="221"		label="Log in"/>
+			<menuitem value="222"		label="Please enter your user name and password."/>
+			<menuitem value="224"		label="(SELECT A FILE TO UPLOAD)"/>
+			<menuitem value="225"		label="Please wait, file upload in progress."/>
+			<menuitem value="226"		label="Important! JavaScript must be enabled on your browser in order to use this web questionnaire."/>
+			<menuitem value="227"		label="(ENTER DATE USING YYYY-MM FORMAT)"/>
+			<menuitem value="228"		label="(SELECT QUESTIONNAIRE)"/>
+			<menuitem value="229"		label="(ENTERED"/>
+			<menuitem value="230"		label="OF"/>
+			<menuitem value="231"		label="CHARACTERS ALLOWED)"/>
+			<menuitem value="232"		label="(Use the PRODUCT command to enter the background information for your product.)"/>
+			<menuitem value="233"		label="DISPLAY"/>
+			<menuitem value="256"		label="Warning! You will be automatically logged off in 10 minutes!"/>
+			<menuitem value="257"		label="You may move to another page to save your responses and refresh your log in."/>
+			<menuitem value="258"		label="Current session expires at:"/>
+			<menuitem value="259"		label="is too big."/>
+			<menuitem value="260"		label="is not a valid number."/>
+			<menuitem value="261"		label="Please enter a valid number or leave the answer blank."/>
+			<menuitem value="262"		label="Question"/>
+			<menuitem value="263"		label="is not a valid integer."/>
+			<menuitem value="264"		label="Please enter a valid integer or leave the answer blank."/>
+			<menuitem value="265"		label="According to your reponse(s) to this question, you should next go to question:"/>
+			<menuitem value="266"		label="Please click on the link at answer"/>
+			<menuitem value="267"		label="is not a valid time."/>
+			<menuitem value="268"		label="Please enter the time in 'hh:mm:ss' format or leave the answer blank."/>
+			<menuitem value="269"		label="is not a valid date."/>
+			<menuitem value="270"		label="Please enter date in 'yyyy-mm-dd' format or leave the answer blank."/>
+			<menuitem value="271"		label="Please enter date in 'yyyy-mm' format or leave the answer blank."/>
+			<menuitem value="272"		label="Too long!"/>
+			<menuitem value="273"		label="Maximum number of characters allowed:"/>
+			<menuitem value="274"		label="You have not selected an answer yet."/>
+			<menuitem value="275"		label="You did not select the answer for this link."/>
+			<menuitem value="276"		label="Value out of range!"/>
+			<menuitem value="277"		label="Duplicate value!"/>
+			<menuitem value="278"		label="Please correct ranking error."/>
+			<menuitem value="384"		label="Please enter your user name and password."/>
+			<menuitem value="385"		label="You must enter your password to log in."/>
+			<menuitem value="386"		label="[Query returned no rows.]"/>
+			<menuitem value="387"		label="You have cancelled your responses to this questionnaire. Any previous responses have not been changed."/>
+			<menuitem value="388"		label="Please select a case to edit."/>
+			<menuitem value="389"		label="Thank you. Your responses have been stored."/>
+			<menuitem value="390"		label="Please update your account information and then click on the &quot;Submit&quot; button. Or, click on the &quot;Cancel&quot; button to leave the information unchanged."/>
+			<menuitem value="391"		label="You did not enter a correct password for this account."/>
+			<menuitem value="392"		label="An email message will be sent shortly with your account information."/>
+			<menuitem value="393"		label="Please try again."/>
+			<menuitem value="394"		label="Another user is registering this user name. Please try a different user name."/>
+			<menuitem value="395"		label="Your user account name must be at least"/>
+			<menuitem value="396"		label="characters long."/>
+			<menuitem value="397"		label="Your user account name may only contain letters and numbers. No other characters may be used."/>
+			<menuitem value="398"		label="This project has expired. You may not create a new account."/>
+			<menuitem value="399"		label="You have not established an account yet. Please complete the information below and then click on the &quot;Submit&quot; button to create a new account.&lt;br&gt;&lt;br&gt;Or, if you have entered the wrong user name, please click on the &quot;Cancel&quot; button to back up to the log in page."/>
+			<menuitem value="400"		label="You did not enter a valid user name for this system."/>
+			<menuitem value="401"		label="This account has been closed:"/>
+			<menuitem value="402"		label="You must log in before accessing your questionnaire.  Please start the questionnaire from the URL that was emailed to you."/>
+			<menuitem value="403"		label="This project expired on"/>
+			<menuitem value="404"		label="Your account expired on"/>
+			<menuitem value="405"		label="Your has been closed due to an excessive number of failed login attempts."/>
+			<menuitem value="406"		label="You must log in before you may access this system. Please launch questionnaire from the project home page."/>
+			<menuitem value="407"		label="A new account was not created."/>
+			<menuitem value="408"		label="Your account information was not changed."/>
+			<menuitem value="409"		label="You must enter your full name."/>
+			<menuitem value="410"		label="Your password must be at least"/>
+			<menuitem value="411"		label="characters long."/>
+			<menuitem value="412"		label="You must type the same password in both fields."/>
+			<menuitem value="413"		label="An email address is required."/>
+			<menuitem value="414"		label="You must enter a valid email address."/>
+			<menuitem value="415"		label="Thank you"/>
+			<menuitem value="416"		label="your account has been"/>
+			<menuitem value="417"		label="created"/>
+			<menuitem value="418"		label="updated"/>
+			<menuitem value="419"		label="An email message with your account information will be sent shortly. If you do not receive this email message, please use the &quot;Update your account&quot; option below to check the email address you entered."/>
+			<menuitem value="420"		label="We were unable to send an email message to the address you entered. You may check your email address by entering your new password and checking the &quot;Update your account&quot; box below."/>
+			<menuitem value="421"		label="Please enter your new password to log in to your questionnaire."/>
+			<menuitem value="422"		label="The case you selected is currently being edited by another user."/>
+			<menuitem value="423"		label="Please select one of the available cases or a new case."/>
+			<menuitem value="424"		label="If you do not already have an account on this system, please enter an account user name that you would like to use and then click on the &quot;Log in&quot;	button."/>
+			<menuitem value="425"		label="An email message will be sent to you after you have created your account to confirm this information."/>
+			<menuitem value="426"		label="User name"/>
+			<menuitem value="427"		label="Password"/>
+			<menuitem value="428"		label="Update your account"/>
+			<menuitem value="429"		label="Full name"/>
+			<menuitem value="430"		label="New password"/>
+			<menuitem value="431"		label="Repeat new password"/>
+			<menuitem value="432"		label="Email address"/>
+			<menuitem value="433"		label="Day time telephone number"/>
+			<menuitem value="434"		label="Case"/>
+			<menuitem value="435"		label="Created by"/>
+			<menuitem value="436"		label="Last edited by"/>
+			<menuitem value="437"		label="Status"/>
+			<menuitem value="438"		label="Last updated"/>
+			<menuitem value="439"		label="Add new case"/>
+			<menuitem value="440"		label="Currently checked out by another user"/>
+			<menuitem value="441"		label="[None]"/>
+			<menuitem value="442"		label="Click here to open a new questionnaire."/>
+			<menuitem value="443"		label="[New]"/>
+			<menuitem value="444"		label="Click here to open this questionnaire."/>
+			<menuitem value="445"		label="Click here to open this completed questionnaire."/>
+			<menuitem value="446"		label="Click here to open this unfinished questionnaire."/>
+			<menuitem value="447"		label="Currently checked out by"/>
+			<menuitem value="448"		label="&lt;!-- Extra at top of case selection page --&gt;"/>
+			<menuitem value="449"		label="&lt;!-- Extra at bottom of case selection page --&gt;"/>
+			<menuitem value="450"		label="Remote access is not allowed."/>
+			<menuitem value="451"		label="Your account has been closed."/>
+			<menuitem value="452"		label="System configuration error."/>
+			<menuitem value="453"		label="Could not identify your address."/>
+			<menuitem value="454"		label="Your SecurID log in was not allowed."/>
+			<menuitem value="455"		label="Please wait for the next token to appear and then try again. If this problem persists, you should contact the Help Desk and ask to have your SecurID token cleared."/>
+			<menuitem value="456"		label="Novell password (LDAP)"/>
+			<menuitem value="457"		label="SecurID passcode (RSA)"/>
+		</menupopup>
+	</menulist>
+	<separator/>
+
+	<label control="qpl_wizard_default_phrases_changeto" value="&qpl_wizard_default_phrases.changeto;"/>
+	<textbox id="qpl_wizard_default_phrases_changeto"  value="" style="font-family: monospace;" />
+
+</vbox>
+</dialog>
+

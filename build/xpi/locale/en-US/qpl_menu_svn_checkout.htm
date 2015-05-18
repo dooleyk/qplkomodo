@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- qpl_menu_svn_checkout.htm -->
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8;" />
+	<link rel="stylesheet" type="text/css" href="qpl_help.css" />
+	<title>Get QPL Project Files From Version Control</title>
+</head>
+
+<body>
+	<p class="Printbar"><img alt="Print" src="../../skin/qpl_button_printer.png" onclick="window.print();" /></p>
+
+	<h1>Get QPL Project Files From Version Control</h2>
+
+	<p>This dialog lets you copy a new or existing QPL project from your
+	version control repository to the local working directory on your computer
+	where you may edit your questionnaire program, compile it to create your
+	web site files, and then view your changes.</p>
+	
+	<p>Your working directory should have been set in your QPL Preferences when
+	you first installed this Komodo Add-on. The current location is shown at
+	the bottom of this dialog.</p>
+	
+	<p>Project names listed in bold type exist in the repository, but have not
+	yet been copied (i.e., checked-out) to your local working folder. These are
+	projects that usually have been created by another questionnaire developer.
+	If you delete your local working folder, your project will still exist in the
+	repository and will be listed here in bold. You may re-create your local project
+	by using this dialog to copy it back to your local working directory.</p>
+	
+	<p>Project names listed in normal type also exist in your working directory.
+	Selecting one of these projects will update your local files with any changes
+	from the repository (including any changes that have been made to any files, plus
+	copying any new files that may have been added to the repository. (Note: Files may
+	also be removed from your working directory if they have been removed from the
+	respository.)</p>
+	
+	<p>After your local files have been updated, the QPL
+	source program file (.pg6) will be opened in a Komodo editing window,
+	and the copy in the version control respository will be locked so that other users
+	can not make changes to it while you are working on it. (Note: If it is a multi-language
+	QPL project, all of the source program file translations will be opened in
+	separate Komodo editing tabs.)</p>
+	
+	<p><b>Important!</b> You should always "Send" your project files back to the version
+	control repository when you finished your editing session by using the QPL "Send
+	project files to version control" command. This will save all your your changes
+	in the repository as a new version of your project and unlock your source QPL program
+	file so that it may be edited by someone else. When you are ready for your project
+	to be deployed to a web server, your project files will be taken from the respository
+	so these files must be up-to-date!</p>
+
+	<h2>Select Project</h2>
+	
+	<p>Highlight a project and then click the "Get" button to copy the project repository
+	files to your local working directory.</p>
+
+	
+	<h3>Project</h3>
+	<p>This is the short name of the project in the respository and the name of your
+	local working directory.</p>
+	
+	<h3>Committer</h3>
+	<p>This is the network user name of the last person to send updated files to this
+	repository.</p>
+	
+	<h3>When</h3>
+	<p>This is the date and time when the project was lasted updated.</p>
+	
+	<h3>Revision</h3>
+	<p>This is the version control system's internal revision number for the last
+	collection of changes. The revision numbering is used across all of the QPL projects
+	in the repository and so does not indicate the number of changes that have been
+	made to your project. The revision number can be used in special circumstances
+	to uniquely identify a previous version of your project and, if necessary, roll-back
+	any changes that were made.</p>
+	
+		
+	<p align="center"><img alt="QPL6 Logo" src="../../skin/qplwrapper.png" /></p>
+
+</body>
+</html>

@@ -1,0 +1,816 @@
+<!ENTITY qpl_wizard.title "QPL Wizard">
+
+<!ENTITY qpl_insert.label "Insert">
+<!ENTITY qpl_insert.accesskey "I">
+
+<!ENTITY qpl_cancel.label "Cancel">
+<!ENTITY qpl_cancel.accesskey "C">
+
+<!ENTITY qpl_help.label "Help">
+<!ENTITY qpl_help.accesskey "H">
+
+<!ENTITY qpl_browse.label "Browse">
+<!ENTITY qpl_browse.accesskey "B">
+
+<!ENTITY qpl_wizard_comment.title "Insert Block Comments">
+<!ENTITY qpl_wizard_comment.notes "Enter your comment text.">
+<!ENTITY qpl_wizard_comment.label "Enter your comment text here.">
+
+<!ENTITY qpl_wizard_default_phrases.title "Change Default Phrase">
+<!ENTITY qpl_wizard_default_phrases.notes "Select a default phrase to replace.">
+<!ENTITY qpl_wizard_default_phrases.select "Select a default phrase to change.">
+<!ENTITY qpl_wizard_default_phrases.changeto "Enter your new phrase here.">
+
+
+<!ENTITY qpl_wizard_mult.title "Multiple Choice Question">
+<!ENTITY qpl_wizard_mult.notes "Select options to program a multiple choice question.">
+
+<!ENTITY qpl_wizard_check.title "Check-All-That-Apply Question">
+<!ENTITY qpl_wizard_check.notes "Select options to program a check-all-that-apply question.">
+
+<!ENTITY qpl_menu_wizard_list.title "Drop-Down List Question">
+<!ENTITY qpl_menu_wizard_list.notes "Select options to program a drop-down list question.">
+
+<!ENTITY qpl_menu_wizard_string.title "Short Answer Question">
+<!ENTITY qpl_menu_wizard_string.notes "Select options to program a short answer question.">
+
+<!ENTITY qpl_menu_wizard_openend.title "Open-Ended Question">
+<!ENTITY qpl_menu_wizard_openend.notes "Select options to program a long answer question.">
+
+<!ENTITY qpl_menu_wizard_number.title "Number Question">
+<!ENTITY qpl_menu_wizard_number.notes "Select options to program a numeric question.">
+
+<!ENTITY qpl_menu_wizard_date.title "Date Question">
+<!ENTITY qpl_menu_wizard_date.notes "Select options to program a date question.">
+
+<!ENTITY qpl_menu_wizard_time.title "Time Question">
+<!ENTITY qpl_menu_wizard_time.notes "Select options to program a time question.">
+
+<!ENTITY qpl_menu_wizard_questionnaire.title "Questionnaire Question">
+<!ENTITY qpl_menu_wizard_questionnaire.notes "Select options to program a questionnaire question.">
+
+<!ENTITY qpl_menu_wizard_upload.title "File Upload Question">
+<!ENTITY qpl_menu_wizard_upload.notes "Select options to program a file upload question.">
+
+<!ENTITY qpl_menu_wizard_void.title "Void Question">
+<!ENTITY qpl_menu_wizard_void.notes "Select options to program an information-only question.">
+
+<!ENTITY qpl_menu_wizard_layout.title "Layout">
+<!ENTITY qpl_menu_wizard_layout.notes "Select options to modify when and how your questions are displayed.">
+
+<!ENTITY qpl_menu_wizard_popup.title "Popup">
+<!ENTITY qpl_menu_wizard_popup.notes "Select options to create a text popup text box.">
+
+<!ENTITY qpl_menu_wizard_query.title "Query">
+<!ENTITY qpl_menu_wizard_query.notes "Select options to create a SQL query block.">
+
+<!ENTITY qpl_menu_wizard_product.title "Product">
+<!ENTITY qpl_menu_wizard_product.notes "Select options to create a GAO product block.">
+
+<!ENTITY qpl_menu_wizard_user.title "User">
+<!ENTITY qpl_menu_wizard_user.notes "Select options to create a user account block.">
+
+<!ENTITY qpl_menu_wizard_global.title "Global Settings">
+<!ENTITY qpl_menu_wizard_global.notes "Select options to set global options.">
+
+<!ENTITY qpl_menu_wizard_samples.title "Sample code">
+<!ENTITY qpl_menu_wizard_samples.notes "Select code sample to insert into your program.">
+
+<!ENTITY qpl_menu_wizard_width.title "Width Calculator">
+<!ENTITY qpl_menu_wizard_width.notes "Compute question WIDTH settings.">
+
+<!ENTITY qpl_wizard_name.label "Name:">
+<!ENTITY qpl_wizard_name.accesskey "N">
+
+<!ENTITY qpl_wizard_stat.label "Variable label:">
+<!ENTITY qpl_wizard_stat.accesskey "V">
+
+<!ENTITY qpl_wizard_format.label "Format:">
+<!ENTITY qpl_wizard_inherit.label "Inherit">
+
+<!ENTITY qpl_wizard_numberanswers.label "Number answers:">
+<!ENTITY qpl_wizard_numberanswers.accesskey "u">
+<!ENTITY qpl_wizard_numberanswers_1.label "1, 2, 3...">
+<!ENTITY qpl_wizard_numberanswers_a.label "a, b, c...">
+<!ENTITY qpl_wizard_numberanswers_A.label "A, B, C...">
+<!ENTITY qpl_wizard_numberanswers_off.label "Off">
+
+<!ENTITY qpl_wizard_aligntext.label "Align text:">
+<!ENTITY qpl_wizard_aligntext.accesskey "N">
+<!ENTITY qpl_wizard_aligntext_left.label "Left">
+<!ENTITY qpl_wizard_aligntext_center.label "Center">
+<!ENTITY qpl_wizard_aligntext_right.label "Right">
+
+<!ENTITY qpl_wizard_alignquestion.label "Align question:">
+<!ENTITY qpl_wizard_alignquestion.accesskey "E">
+<!ENTITY qpl_wizard_alignquestion_top.label "Top">
+<!ENTITY qpl_wizard_alignquestion_middle.label "Middle">
+<!ENTITY qpl_wizard_alignquestion_bottom.label "Bottom">
+<!ENTITY qpl_wizard_alignquestion_baseline.label "Baseline">
+
+<!ENTITY qpl_wizard_bold.label "Bold text:">
+<!ENTITY qpl_wizard_bold.accesskey "B">
+<!ENTITY qpl_wizard_bold_on.label "On">
+<!ENTITY qpl_wizard_bold_off.label "Off">
+
+<!ENTITY qpl_wizard_input.label "Input:">
+<!ENTITY qpl_wizard_input.accesskey "I">
+<!ENTITY qpl_wizard_input_ldate.label "yyyy-mm-dd">
+<!ENTITY qpl_wizard_input_xdate.label "yyyy-mm-dd (auto)">
+<!ENTITY qpl_wizard_input_sdate.label "yyyy-mm">
+
+<!ENTITY qpl_wizard_textwidth.label "Text width:">
+<!ENTITY qpl_wizard_textwidth.accesskey "W">
+
+<!ENTITY qpl_wizard_questiontext.label "Question text:">
+<!ENTITY qpl_wizard_questiontext.accesskey "Q">
+
+<!ENTITY qpl_wizard_answeroption.label "Answer option:">
+<!ENTITY qpl_wizard_answeroption.accesskey "A">
+
+<!ENTITY qpl_wizard_displaycols.label "Display cols:">
+<!ENTITY qpl_wizard_displaycols.accesskey "C">
+
+<!ENTITY qpl_wizard_displayrows.label "Display rows:">
+<!ENTITY qpl_wizard_displayrows.accesskey "R">
+
+
+<!ENTITY qpl_wizard_instruction.label "Instruction:">
+<!ENTITY qpl_wizard_instruction.accesskey "I">
+
+<!ENTITY qpl_wizard_instruction_on.label "On">
+<!ENTITY qpl_wizard_instruction_on.accesskey "O">
+<!ENTITY qpl_wizard_instruction_off.label "Off">
+<!ENTITY qpl_wizard_instruction_off.accesskey "F">
+<!ENTITY qpl_wizard_instruction_name.label "Custom:">
+<!ENTITY qpl_wizard_instruction_name.accesskey "C">
+<!ENTITY qpl_wizard_instruction_name_mult.placeholder "(CHECK ONLY ONE ANSWER)">
+<!ENTITY qpl_wizard_instruction_name_check.placeholder "(CHECK ALL THAT APPLY)">
+<!ENTITY qpl_wizard_instruction_name_list.placeholder "(SELECT ONLY ONE ANSWER)">
+<!ENTITY qpl_wizard_instruction_name_date.placeholder "(ENTER DATE USING YYYY-MM-DD FORMAT)">
+<!ENTITY qpl_wizard_instruction_name_time.placeholder "(ENTER TIME USING HH:MM:SS FORMAT)">
+<!ENTITY qpl_wizard_instruction_name_questionnaire.placeholder "(SELECT QUESTIONNAIRE)">
+<!ENTITY qpl_wizard_instruction_name_upload.placeholder "(SELECT A FILE TO UPLOAD)">
+
+<!ENTITY qpl_wizard_displaymax.label "Max characters:">
+<!ENTITY qpl_wizard_displaymax.accesskey "M">
+
+<!ENTITY qpl_wizard_default.label "Default answer:">
+<!ENTITY qpl_wizard_default.accesskey "D">
+
+<!ENTITY qpl_wizard_format.label "Format:">
+<!ENTITY qpl_wizard_format.accesskey "F">
+
+<!ENTITY qpl_wizard_next.label "Next question name:">
+<!ENTITY qpl_wizard_next.accesskey "N">
+
+<!ENTITY qpl_wizard_displaytarget.label "Display name:">
+<!ENTITY qpl_wizard_displaytarget.accesskey "D">
+
+<!ENTITY qpl_wizard_required.label "Required:">
+<!ENTITY qpl_wizard_required.accesskey "R">
+<!ENTITY qpl_wizard_required_yes.label "An answer is required">
+<!ENTITY qpl_wizard_required_yes.accesskey "Y">
+
+<!ENTITY qpl_wizard_answertab.label "Answer">
+<!ENTITY qpl_wizard_answertab1.label "Answer 1">
+<!ENTITY qpl_wizard_answertab2.label "Answer 2">
+<!ENTITY qpl_wizard_answertab3.label "Answer 3">
+<!ENTITY qpl_wizard_answertab4.label "Answer 4">
+<!ENTITY qpl_wizard_answertab5.label "Answer 5">
+<!ENTITY qpl_wizard_answertab6.label "Answer 6">
+<!ENTITY qpl_wizard_answertab7.label "Answer 7">
+<!ENTITY qpl_wizard_answertab8.label "Answer 8">
+<!ENTITY qpl_wizard_answertab9.label "Answer 9">
+
+<!ENTITY qpl_wizard_grouplabel.label "Group label:">
+<!ENTITY qpl_wizard_grouplabel.accesskey "G">
+
+<!ENTITY qpl_wizard_answerlabel.label "Answer text:">
+<!ENTITY qpl_wizard_answerlabel.accesskey "A">
+
+<!ENTITY qpl_wizard_goto.label "Go to name:">
+<!ENTITY qpl_wizard_goto.accesskey "T">
+
+<!ENTITY qpl_wizard_shading.label "Separate:">
+<!ENTITY qpl_wizard_shading.accesskey "S">
+<!ENTITY qpl_wizard_shading_yes.label "Add line above/shade column:">
+<!ENTITY qpl_wizard_shading_yes.accesskey "S">
+
+<!ENTITY qpl_wizard_displaytrigger.label "Display name:">
+<!ENTITY qpl_wizard_displaytrigger.accesskey "D">
+
+<!ENTITY qpl_wizard_answer_as_value.label "Use answer label as value">
+<!ENTITY qpl_wizard_answer_as_value.accesskey "V">
+
+<!ENTITY qpl_wizard_url.label "URL:">
+<!ENTITY qpl_wizard_url.accesskey "U">
+
+<!ENTITY qpl_wizard_db.label "Database:">
+<!ENTITY qpl_wizard_db.accesskey "D">
+
+<!ENTITY qpl_wizard_status_clause.label "Status clause:">
+<!ENTITY qpl_wizard_status_clause.accesskey "S">
+
+<!ENTITY qpl_wizard_overwrite.label "File overwrite:">
+<!ENTITY qpl_wizard_overwrite.accesskey "O">
+<!ENTITY qpl_wizard_overwrite_on.label "On">
+<!ENTITY qpl_wizard_overwrite_off.label "Off">
+
+<!ENTITY qpl_wizard_options.label "Options:">
+<!ENTITY qpl_wizard_options.accesskey "P">
+
+<!ENTITY qpl_wizard_max_file_size.label "Max. file size (Kb):">
+<!ENTITY qpl_wizard_max_file_size.accesskey "P">
+
+<!ENTITY qpl_wizard_layout_normal.label "Normal">
+<!ENTITY qpl_wizard_layout_normal.accesskey "N">
+
+<!ENTITY qpl_wizard_layout_matrix.label "Matrix">
+<!ENTITY qpl_wizard_layout_matrix.accesskey "M">
+
+<!ENTITY qpl_wizard_layout_columns.label "Columns">
+<!ENTITY qpl_wizard_layout_columns.accesskey "C">
+
+<!ENTITY qpl_wizard_layout_display.label "Display">
+<!ENTITY qpl_wizard_layout_display.accesskey "D">
+
+<!ENTITY qpl_wizard_layout_hide.label "Hide">
+<!ENTITY qpl_wizard_layout_hide.accesskey "">
+
+<!ENTITY qpl_wizard_layout_normal_menu.label "Menu label:">
+<!ENTITY qpl_wizard_layout_normal_menu.accesskey "L">
+
+<!ENTITY qpl_wizard_layout_normal_subtitle.label "Subtitle:">
+<!ENTITY qpl_wizard_layout_normal_subtitle.accesskey "S">
+
+<!ENTITY qpl_wizard_layout_normal_page_break1.label "Page break:">
+<!ENTITY qpl_wizard_layout_normal_page_break1.accesskey "P">
+
+<!ENTITY qpl_wizard_layout_normal_page_break2.label "Start new page">
+<!ENTITY qpl_wizard_layout_normal_page_break2.accesskey "T">
+
+<!ENTITY qpl_wizard_layout_hide.label "Hide block:">
+<!ENTITY qpl_wizard_layout_hide.accesskey "H">
+
+<!ENTITY qpl_wizard_layout_hide_on.label "On">
+<!ENTITY qpl_wizard_layout_hide_off.label "Off">
+<!ENTITY qpl_wizard_layout_hide_na.label "[none]">
+
+<!ENTITY qpl_wizard_layout_matrix_on.label "On">
+<!ENTITY qpl_wizard_layout_matrix_off.label "Off">
+<!ENTITY qpl_wizard_layout_matrix_break.label "Break">
+<!ENTITY qpl_wizard_layout_matrix_na.label "[none]">
+
+<!ENTITY qpl_wizard_layout_col_shading.label "Column shading:">
+<!ENTITY qpl_wizard_layout_col_shading.accesskey "C">
+
+<!ENTITY qpl_wizard_layout_col_shading_on.label "On">
+<!ENTITY qpl_wizard_layout_col_shading_off.label "Off">
+<!ENTITY qpl_wizard_layout_col_shading_na.label "Inherit">
+
+<!ENTITY qpl_wizard_layout_row_shading.label "Row shading:">
+<!ENTITY qpl_wizard_layout_row_shading.accesskey "R">
+
+<!ENTITY qpl_wizard_layout_row_shading_on.label "On">
+<!ENTITY qpl_wizard_layout_row_shading_off.label "Off">
+<!ENTITY qpl_wizard_layout_row_shading_na.label "Inherit">
+
+<!ENTITY qpl_wizard_layout_width.label "Width:">
+<!ENTITY qpl_wizard_layout_width.accesskey "W">
+
+<!ENTITY qpl_wizard_layout_col_num_shading_cols.label "# of columns:">
+<!ENTITY qpl_wizard_layout_col_num_shading_cols.accesskey "N">
+
+<!ENTITY qpl_wizard_layout_columns_on.label "On">
+<!ENTITY qpl_wizard_layout_columns_off.label "Off">
+<!ENTITY qpl_wizard_layout_columns_break.label "Break">
+<!ENTITY qpl_wizard_layout_columns_na.label "[none]">
+
+<!ENTITY qpl_wizard_layout_columns_num_cols.label "# of columns:">
+<!ENTITY qpl_wizard_layout_columns_num_cols.accesskey "N">
+
+<!ENTITY qpl_wizard_layout_columns_headings.label "Headings:">
+<!ENTITY qpl_wizard_layout_columns_headings.accesskey "H">
+
+<!ENTITY qpl_wizard_layout_columns_headings_on.label "On">
+<!ENTITY qpl_wizard_layout_columns_headings_off.label "Off">
+<!ENTITY qpl_wizard_layout_columns_headings_na.label "Inherit">
+
+<!ENTITY qpl_wizard_layout_column_shading.label "Row shading:">
+<!ENTITY qpl_wizard_layout_column_shading.accesskey "R">
+
+<!ENTITY qpl_wizard_layout_column_shading_on.label "On">
+<!ENTITY qpl_wizard_layout_column_shading_off.label "Off">
+<!ENTITY qpl_wizard_layout_column_shading_na.label "Inherit">
+
+<!ENTITY qpl_wizard_layout_column_align.label "Align question:">
+<!ENTITY qpl_wizard_layout_column_align.accesskey "A">
+
+<!ENTITY qpl_wizard_layout_column_align_top.label "Top">
+<!ENTITY qpl_wizard_layout_column_align_middle.label "Middle">
+<!ENTITY qpl_wizard_layout_column_align_bottom.label "Bottom">
+<!ENTITY qpl_wizard_layout_column_align_baseline.label "Baseline">
+<!ENTITY qpl_wizard_layout_column_align_na.label "Inherit">
+
+<!ENTITY qpl_wizard_question_numbering.label "Number questions">
+<!ENTITY qpl_wizard_question_numbering.accesskey "Q">
+<!ENTITY qpl_wizard_question_numbering_on.label "On">
+<!ENTITY qpl_wizard_question_numbering_off.label "Off">
+<!ENTITY qpl_wizard_question_numbering_increment.label "Increment">
+<!ENTITY qpl_wizard_question_numbering_in.label "Start subsection">
+<!ENTITY qpl_wizard_question_numbering_out.label "End subsection">
+<!ENTITY qpl_wizard_question_numbering_majoron.label "Show major #">
+<!ENTITY qpl_wizard_question_numbering_majoroff.label "Hide major #">
+<!ENTITY qpl_wizard_question_numbering_inherit.label "Inherit">
+
+<!ENTITY qpl_wizard_question_numbering_start_num.label "Starting #:">
+<!ENTITY qpl_wizard_question_numbering_start_num.accesskey "T">
+
+<!ENTITY qpl_wizard_indent.label "Indent question:">
+<!ENTITY qpl_wizard_indent.accesskey "I">
+<!ENTITY qpl_wizard_indent_on.label "On">
+<!ENTITY qpl_wizard_indent_off.label "Off">
+<!ENTITY qpl_wizard_indent_inherit.label "Inherit">
+
+<!ENTITY qpl_wizard_indent_width.label "Indent width:">
+<!ENTITY qpl_wizard_indent_width.accesskey "W">
+
+<!ENTITY qpl_wizard_layout_display_on.label "On">
+<!ENTITY qpl_wizard_layout_display_off.label "Off">
+<!ENTITY qpl_wizard_layout_display_na.label "[none]">
+
+<!ENTITY qpl_wizard_layout_display_name.label "Name:">
+<!ENTITY qpl_wizard_layout_display_name.accesskey "N">
+
+<!ENTITY qpl_wizard_layout_display_css.label "CSS Style:">
+<!ENTITY qpl_wizard_layout_display_css.accesskey "S">
+
+<!ENTITY qpl_menu_wizard_popup_name.label "Name:">
+<!ENTITY qpl_menu_wizard_popup_name.accesskey "N">
+
+<!ENTITY qpl_menu_wizard_popup_title.label "Title:">
+<!ENTITY qpl_menu_wizard_popup_title.accesskey "T">
+
+<!ENTITY qpl_menu_wizard_popup_width.label "Width:">
+<!ENTITY qpl_menu_wizard_popup_width.accesskey "h">
+
+<!ENTITY qpl_menu_wizard_popup_height.label "Height:">
+<!ENTITY qpl_menu_wizard_popup_height.accesskey "H">
+
+<!ENTITY qpl_menu_wizard_popup_text.label "Contents:">
+<!ENTITY qpl_menu_wizard_popup_text.accesskey "C">
+
+<!ENTITY qpl_menu_wizard_popup_print.label "Use print button">
+<!ENTITY qpl_menu_wizard_popup_print.accesskey "P">
+
+<!ENTITY qpl_menu_wizard_popup_close.label "Use close button">
+<!ENTITY qpl_menu_wizard_popup_close.accesskey "L">
+
+<!ENTITY qpl_menu_wizard_popup_hover.label "Hover text over link">
+<!ENTITY qpl_menu_wizard_popup_hover.accesskey "V">
+
+<!ENTITY qpl_menu_wizard_query_name.label "Name:">
+<!ENTITY qpl_menu_wizard_query_name.accesskey "n">
+
+<!ENTITY qpl_menu_wizard_query_html_entities.label "Convert special HTML characters to entities">
+<!ENTITY qpl_menu_wizard_query_html_entities.accesskey "H">
+
+<!ENTITY qpl_menu_wizard_query_start.label "Start of query:">
+<!ENTITY qpl_menu_wizard_query_start.accesskey "S">
+<!ENTITY qpl_menu_wizard_query_start.placeholder "<PRE">
+
+<!ENTITY qpl_menu_wizard_query_start_line.label "Start of line:">
+<!ENTITY qpl_menu_wizard_query_start_line.accesskey "S">
+<!ENTITY qpl_menu_wizard_query_start_line.placeholder "<B>">
+
+<!ENTITY qpl_menu_wizard_query_end_line.label "End of line:">
+<!ENTITY qpl_menu_wizard_query_end_line.accesskey "I">
+<!ENTITY qpl_menu_wizard_query_end_line.placeholder "</B>">
+
+<!ENTITY qpl_menu_wizard_query_end.label "End of query:">
+<!ENTITY qpl_menu_wizard_query_end.accesskey "E">
+<!ENTITY qpl_menu_wizard_query_end.placeholder "</PRE>">
+
+<!ENTITY qpl_menu_wizard_query_empty.label "Empty query:">
+<!ENTITY qpl_menu_wizard_query_empty.accesskey "M">
+<!ENTITY qpl_menu_wizard_query_empty.placeholder "[none]">
+
+<!ENTITY qpl_menu_wizard_query_set.label "SET:">
+<!ENTITY qpl_menu_wizard_query_set.accesskey "T">
+<!ENTITY qpl_menu_wizard_query_set.placeholder "@count1 := 0">
+
+<!ENTITY qpl_menu_wizard_query_sql.label "Query:">
+<!ENTITY qpl_menu_wizard_query_sql.accesskey "Q">
+<!ENTITY qpl_menu_wizard_query_sql.placeholder "SELECT [something AS 'GROUP',] something AS 'LABEL', something AS 'VALUE' FROM mytable WHERE criteria ORDER BY criteria">
+
+<!ENTITY qpl_menu_wizard_query_html_formats.label "HTML Formats">
+<!ENTITY qpl_menu_wizard_query_html_formats.accesskey "H">
+
+<!ENTITY qpl_menu_wizard_product_primary.label "Primary Product">
+<!ENTITY qpl_menu_wizard_product_primary.accesskey "P">
+
+<!ENTITY qpl_menu_wizard_product_title.label "Title:">
+<!ENTITY qpl_menu_wizard_product_title.accesskey "T">
+
+<!ENTITY qpl_menu_wizard_product_number.label "GAO Number">
+<!ENTITY qpl_menu_wizard_product_number.accesskey "G">
+<!ENTITY qpl_menu_wizard_product_number.placeholder "GAO-00-000">
+
+<!ENTITY qpl_menu_wizard_product_date.label "Issue date:">
+<!ENTITY qpl_menu_wizard_product_date.accesskey "I">
+<!ENTITY qpl_menu_wizard_product_date.placeholder "April 2015">
+
+<!ENTITY qpl_menu_wizard_product_type.label "Product Type">
+<!ENTITY qpl_menu_wizard_product_type.accesskey "Y">
+<!ENTITY qpl_menu_wizard_product_type_es.label "E-Supplement">
+<!ENTITY qpl_menu_wizard_product_type_ta.label "Technical Appendix">
+
+<!ENTITY qpl_menu_wizard_product_es.label "E-Supplement">
+<!ENTITY qpl_menu_wizard_product_es.accesskey "E">
+
+<!ENTITY qpl_menu_wizard_product_es_title.label "Title:">
+<!ENTITY qpl_menu_wizard_product_es_title.accesskey "T">
+
+<!ENTITY qpl_menu_wizard_product_es_number.label "GAO Number:">
+<!ENTITY qpl_menu_wizard_product_es_number.accesskey "G">
+<!ENTITY qpl_menu_wizard_product_es_number.placeholder "GAO-00-000SP">
+
+<!ENTITY qpl_menu_wizard_product_es_jobcode.label "Job Code:">
+<!ENTITY qpl_menu_wizard_product_es_jobcode.accesskey "J">
+<!ENTITY qpl_menu_wizard_product_es_jobcode.placeholder "000000">
+
+
+<!ENTITY qpl_menu_wizard_product_es_contact.label "Contact name:">
+<!ENTITY qpl_menu_wizard_product_es_contact.accesskey "C">
+<!ENTITY qpl_menu_wizard_product_es_contact.placeholder "Jack Armstrong">
+
+<!ENTITY qpl_menu_wizard_product_es_phone.label "Phone:">
+<!ENTITY qpl_menu_wizard_product_es_phone.accesskey "P">
+<!ENTITY qpl_menu_wizard_product_es_phone.placeholder "(202) 512-0000">
+
+<!ENTITY qpl_menu_wizard_product_es_email.label "Email:">
+<!ENTITY qpl_menu_wizard_product_es_email.accesskey "E">
+<!ENTITY qpl_menu_wizard_product_es_email.placeholder "armstrongj@gao.gov">
+
+<!ENTITY qpl_menu_wizard_product_es_background.label "Background:">
+<!ENTITY qpl_menu_wizard_product_es_background.accesskey "B">
+
+<!ENTITY qpl_menu_wizard_product_ta.label "Technical Appendix">
+<!ENTITY qpl_menu_wizard_product_ta.accesskey "A">
+
+<!ENTITY qpl_menu_wizard_product_ta_title.label "Title:">
+<!ENTITY qpl_menu_wizard_product_ta_title.accesskey "T">
+
+<!ENTITY qpl_menu_wizard_product_ta_jobcode.label "Job code:">
+<!ENTITY qpl_menu_wizard_product_ta_jobcode.accesskey "J">
+
+<!ENTITY qpl_menu_wizard_product_ta_background.label "Background:">
+<!ENTITY qpl_menu_wizard_product_ta_background.accesskey "B">
+
+<!ENTITY qpl_menu_wizard_product_stat.label "Statistical Options">
+<!ENTITY qpl_menu_wizard_product_stat.accesskey "O">
+
+<!ENTITY qpl_menu_wizard_product_stat_system.label "System:">
+<!ENTITY qpl_menu_wizard_product_stat_system.accesskey "S">
+<!ENTITY qpl_menu_wizard_product_stat_system_sas.label "SAS">
+<!ENTITY qpl_menu_wizard_product_stat_system_sudaan.label "Sudaan">
+
+<!ENTITY qpl_menu_wizard_product_stat_sudaan_est.label "Sudaan Estimate:">
+<!ENTITY qpl_menu_wizard_product_stat_sudaan_est.accesskey "E">
+<!ENTITY qpl_menu_wizard_product_stat_sudaan_est_pct.label "Percent">
+<!ENTITY qpl_menu_wizard_product_stat_sudaan_est_other.label "Other">
+
+<!ENTITY qpl_menu_wizard_product_stat_by.label "BY variable:">
+<!ENTITY qpl_menu_wizard_product_stat_by.accesskey "B">
+
+<!ENTITY qpl_menu_wizard_product_stat_class.label "CLASS variable:">
+<!ENTITY qpl_menu_wizard_product_stat_class.accesskey "C">
+
+<!ENTITY qpl_menu_wizard_product_stat_weight.label "WEIGHT variable:">
+<!ENTITY qpl_menu_wizard_product_stat_weight.accesskey "W">
+
+<!ENTITY qpl_menu_wizard_product_stat_display_pct.label "Display percentages">
+<!ENTITY qpl_menu_wizard_product_stat_display_pct.accesskey "P">
+
+<!ENTITY qpl_menu_wizard_user_uname.label "User name:">
+<!ENTITY qpl_menu_wizard_user_uname.accesskey "U">
+
+<!ENTITY qpl_menu_wizard_user_pwsd.label "Password:">
+<!ENTITY qpl_menu_wizard_user_pwsd.accesskey "P">
+
+<!ENTITY qpl_menu_wizard_user_group.label "Group:">
+<!ENTITY qpl_menu_wizard_user_group.accesskey "G">
+
+<!ENTITY qpl_menu_wizard_user_name.label "Name:">
+<!ENTITY qpl_menu_wizard_user_name.accesskey "N">
+
+<!ENTITY qpl_menu_wizard_user_email.label "Email:">
+<!ENTITY qpl_menu_wizard_user_email.accesskey "E">
+
+<!ENTITY qpl_menu_wizard_user_expire.label "Expire:">
+<!ENTITY qpl_menu_wizard_user_expire.accesskey "X">
+
+<!ENTITY qpl_menu_wizard_user_phone.label "Phone:">
+<!ENTITY qpl_menu_wizard_user_phone.accesskey "O">
+
+<!ENTITY qpl_menu_wizard_user_comments.label "Comments:">
+<!ENTITY qpl_menu_wizard_user_comments.accesskey "C">
+
+<!ENTITY qpl_menu_wizard_user_status.label "Status:">
+<!ENTITY qpl_menu_wizard_user_status.accesskey "S">
+<!ENTITY qpl_menu_wizard_user_status_closed.label "Closed">
+<!ENTITY qpl_menu_wizard_user_status_normal.label "Normal">
+<!ENTITY qpl_menu_wizard_user_status_manager.label "Manager">
+<!ENTITY qpl_menu_wizard_user_status_admin.label "Administrator">
+
+<!ENTITY qpl_menu_wizard_global_project.label "Project">
+<!ENTITY qpl_menu_wizard_global_project.accesskey "P">
+
+<!ENTITY qpl_menu_wizard_global_access.label "Access">
+<!ENTITY qpl_menu_wizard_global_access.accesskey "A">
+
+<!ENTITY qpl_menu_wizard_global_mail.label "Mail">
+<!ENTITY qpl_menu_wizard_global_mail.accesskey "M">
+
+<!ENTITY qpl_menu_wizard_global_color.label "Color">
+<!ENTITY qpl_menu_wizard_global_color.accesskey "C">
+
+<!ENTITY qpl_menu_wizard_global_font.label "Font">
+<!ENTITY qpl_menu_wizard_global_font.accesskey "F">
+
+<!ENTITY qpl_menu_wizard_global_style.label "Style">
+<!ENTITY qpl_menu_wizard_global_style.accesskey "S">
+
+<!ENTITY qpl_menu_wizard_global_script.label "Script">
+<!ENTITY qpl_menu_wizard_global_script.accesskey "T">
+
+<!ENTITY qpl_menu_wizard_global_access_account.label "Account:">
+<!ENTITY qpl_menu_wizard_global_access_account.accesskey "C">
+<!ENTITY qpl_menu_wizard_global_access_account_exist.label "Must exist">
+<!ENTITY qpl_menu_wizard_global_access_account_create.label "May be created by respondent">
+<!ENTITY qpl_menu_wizard_global_access_account_anonymous.label "Not required (anonymous)">
+
+<!ENTITY qpl_menu_wizard_global_access_authentication.label "Authentication:">
+<!ENTITY qpl_menu_wizard_global_access_authentication.accesskey "U">
+<!ENTITY qpl_menu_wizard_global_access_authentication_normal.label "Normal (local password)">
+<!ENTITY qpl_menu_wizard_global_access_authentication_ldap.label "LDAP">
+<!ENTITY qpl_menu_wizard_global_access_authentication_rsa.label "RSA">
+
+<!ENTITY qpl_menu_wizard_global_access_expire.label "Expire:">
+<!ENTITY qpl_menu_wizard_global_access_expire.accesskey "E">
+
+<!ENTITY qpl_menu_wizard_global_access_archive.label "Archive:">
+<!ENTITY qpl_menu_wizard_global_access_archive.accesskey "A">
+
+<!ENTITY qpl_menu_wizard_global_access_cases.label "Edit:">
+<!ENTITY qpl_menu_wizard_global_access_cases.accesskey "D">
+<!ENTITY qpl_menu_wizard_global_access_cases_one.label "Only one case">
+<!ENTITY qpl_menu_wizard_global_access_cases_many.label "Existing cases">
+<!ENTITY qpl_menu_wizard_global_access_cases_create.label "New or existing cases">
+
+<!ENTITY qpl_menu_wizard_global_access_select.label "Case selection options">
+<!ENTITY qpl_menu_wizard_global_access_select_by.label "Select by:">
+<!ENTITY qpl_menu_wizard_global_access_select_by.accesskey "B">
+<!ENTITY qpl_menu_wizard_global_access_select_by.placeholder "Q1">
+
+<!ENTITY qpl_menu_wizard_global_access_select_label.label "Label:">
+<!ENTITY qpl_menu_wizard_global_access_select_label.accesskey "L">
+<!ENTITY qpl_menu_wizard_global_access_select_label.placeholder "description">
+
+<!ENTITY qpl_menu_wizard_global_access_select_alt.label "SQL alternative:">
+<!ENTITY qpl_menu_wizard_global_access_select_alt.accesskey "L">
+<!ENTITY qpl_menu_wizard_global_access_select_alt.placeholder "CONCAT(...)">
+
+<!ENTITY qpl_menu_wizard_global_access_select_format.label "Selection page:">
+<!ENTITY qpl_menu_wizard_global_access_select_format.accesskey "P">
+<!ENTITY qpl_menu_wizard_global_access_select_format_long.label "Detailed">
+<!ENTITY qpl_menu_wizard_global_access_select_format_short.label "Abbreviated">
+
+<!ENTITY qpl_menu_wizard_global_access_select_required.label "Always show selection page">
+<!ENTITY qpl_menu_wizard_global_access_select_required.accesskey "S">
+
+<!ENTITY qpl_menu_wizard_global_access_select_instruction.label "Instruction:">
+<!ENTITY qpl_menu_wizard_global_access_select_instruction.accesskey "I">
+<!ENTITY qpl_menu_wizard_global_access_select_instruction.placeholder "Please select a case to edit.">
+
+
+<!ENTITY qpl_menu_wizard_global_access_login.label "Log in:">
+<!ENTITY qpl_menu_wizard_global_access_login_url.label "Allow URL log in">
+<!ENTITY qpl_menu_wizard_global_access_login_url.accesskey "L">
+
+<!ENTITY qpl_menu_wizard_global_access_login_pswd.label "Require password change on first log in">
+<!ENTITY qpl_menu_wizard_global_access_login_pswd.accesskey "P">
+
+<!ENTITY qpl_menu_wizard_global_access_login_email.label "Require valid email to update account information">
+<!ENTITY qpl_menu_wizard_global_access_login_email.accesskey "E">
+
+<!ENTITY qpl_menu_wizard_global_access_login_jump.label "Allow access to this questionnaire from another questionnaire">
+<!ENTITY qpl_menu_wizard_global_access_login_jump.accesskey "Q">
+
+<!ENTITY qpl_menu_wizard_global_mail_name.label "Name:">
+<!ENTITY qpl_menu_wizard_global_mail_name.accesskey "N">
+<!ENTITY qpl_menu_wizard_global_mail_name.placeholder "Jack Armstrong">
+
+<!ENTITY qpl_menu_wizard_global_mail_from.label "From:">
+<!ENTITY qpl_menu_wizard_global_mail_from.accesskey "F" >
+<!ENTITY qpl_menu_wizard_global_mail_from.placeholder "jack@armstrong.gov">
+
+<!ENTITY qpl_menu_wizard_global_mail_replyto.label "Reply to:">
+<!ENTITY qpl_menu_wizard_global_mail_replyto.accesskey "R">
+<!ENTITY qpl_menu_wizard_global_mail_replyto.placeholder "jack@armstrong.gov">
+
+<!ENTITY qpl_menu_wizard_global_mail_returnpath.label "Return path:">
+<!ENTITY qpl_menu_wizard_global_mail_returnpath.accesskey "P" > 
+<!ENTITY qpl_menu_wizard_global_mail_returnpath.placeholder "jack@armstrong.gov">
+
+<!ENTITY qpl_menu_wizard_global_color_scheme.label "Color Scheme" >
+<!ENTITY qpl_menu_wizard_global_color_scheme.accesskey "S" >
+
+<!ENTITY qpl_menu_wizard_global_color_scheme_color.label "Main color:" >
+<!ENTITY qpl_menu_wizard_global_color_scheme_color.accesskey "M" >
+
+<!ENTITY qpl_menu_wizard_global_color_scheme_offset.label "Color family:" >
+<!ENTITY qpl_menu_wizard_global_color_scheme_offset.accesskey "F" >
+
+<!ENTITY qpl_menu_wizard_global_color_background.label "Set Individual Items" >
+<!ENTITY qpl_menu_wizard_global_color_background.accesskey "I" >
+
+<!ENTITY qpl_menu_wizard_global_color_background_body.label "Main background color.">
+<!ENTITY qpl_menu_wizard_global_color_background_body.accesskey "B" >
+
+<!ENTITY qpl_menu_wizard_global_color_background_BODY.label "Main background color." >
+<!ENTITY qpl_menu_wizard_global_color_background_FORM.label "Questionnaire form background." >
+<!ENTITY qpl_menu_wizard_global_color_background_ROWHEADER.label "Color used in MATRIX or COLUMNS heading row." >
+<!ENTITY qpl_menu_wizard_global_color_background_ROW.label "Color used in MATRIX or COLUMNS rows row shading is off." >
+<!ENTITY qpl_menu_wizard_global_color_background_ROW1.label "First color used in MATRIX or COLUMNS rows row shading is on." >
+<!ENTITY qpl_menu_wizard_global_color_background_ROW2.label "Second color used in MATRIX or COLUMNS rows row shading is on." >
+<!ENTITY qpl_menu_wizard_global_color_background_ROWDK.label "MATRIX color used in the right-most or Don't Know columns." >
+<!ENTITY qpl_menu_wizard_global_color_background_MENUROW.label "Color used to highlight headings by pages on the menu." >
+<!ENTITY qpl_menu_wizard_global_color_background_MENUROWON.label "Color used to highlight the current page on the menu." >
+<!ENTITY qpl_menu_wizard_global_color_background_HR.label "Color of the horizontal rule used to mark page breaks in the local HTML version of your form." >
+<!ENTITY qpl_menu_wizard_global_color_background_BUG.label "Color of the text used to display the QPL credit at the bottom of the questionnaire form." >
+<!ENTITY qpl_menu_wizard_global_color_background_NAVBB.label "Menu navigation button outline color." >
+<!ENTITY qpl_menu_wizard_global_color_background_HOVER.label "Color of questionnare hypertext link when mouse cursor hovers over it." >
+<!ENTITY qpl_menu_wizard_global_color_background_HOVERMAIN.label "Color of other hypertext" >
+<!ENTITY qpl_menu_wizard_global_color_background_HOVERMENU.label "Color of hypertext link used in the menu when mouse cursor hovers over it." >
+<!ENTITY qpl_menu_wizard_global_color_background_HOVERMENUNAVBB.label "Color of menu navigation button when mouse cursor hovers over it." >
+<!ENTITY qpl_menu_wizard_global_color_background_POPUP.label "Background color of popup box." >
+<!ENTITY qpl_menu_wizard_global_color_background_POPUPBANNER.label "Color of banner used at the top of a popup box." >
+
+<!ENTITY qpl_menu_wizard_global_color_background_BODY.accesskey "B" >
+<!ENTITY qpl_menu_wizard_global_color_background_FORM.accesskey "F" >
+<!ENTITY qpl_menu_wizard_global_color_background_ROWHEADER.accesskey "H" >
+<!ENTITY qpl_menu_wizard_global_color_background_ROW.accesskey "R" >
+<!ENTITY qpl_menu_wizard_global_color_background_ROW1.accesskey "M" >
+<!ENTITY qpl_menu_wizard_global_color_background_ROW2.accesskey "A" >
+<!ENTITY qpl_menu_wizard_global_color_background_ROWDK.accesskey "D" >
+<!ENTITY qpl_menu_wizard_global_color_background_MENUROW.accesskey "M" >
+<!ENTITY qpl_menu_wizard_global_color_background_MENUROWON.accesskey "M" >
+<!ENTITY qpl_menu_wizard_global_color_background_HR.accesskey "H" >
+<!ENTITY qpl_menu_wizard_global_color_background_BUG.accesskey "B" >
+<!ENTITY qpl_menu_wizard_global_color_background_NAVBB.accesskey "N" >
+<!ENTITY qpl_menu_wizard_global_color_background_HOVER.accesskey "H" >
+<!ENTITY qpl_menu_wizard_global_color_background_HOVERMAIN.accesskey "H" >
+<!ENTITY qpl_menu_wizard_global_color_background_HOVERMENU.accesskey "H" >
+<!ENTITY qpl_menu_wizard_global_color_background_HOVERMENUNAVBB.accesskey "H" >
+<!ENTITY qpl_menu_wizard_global_color_background_POPUP.accesskey "P" >
+<!ENTITY qpl_menu_wizard_global_color_background_POPUPBANNER.accesskey "B" >
+
+<!ENTITY qpl_menu_wizard_global_project_title.label "Title:">
+<!ENTITY qpl_menu_wizard_global_project_title.accesskey "T">
+<!ENTITY qpl_menu_wizard_global_project_title.placeholder "My Project Title">
+
+<!ENTITY qpl_menu_wizard_global_project_subtitle.label "Subtitle:">
+<!ENTITY qpl_menu_wizard_global_project_subtitle.accesskey "S">
+<!ENTITY qpl_menu_wizard_global_project_subtitle.placeholder "My Project Subtitle">
+
+<!ENTITY qpl_menu_wizard_global_project_author.label "Author:">
+<!ENTITY qpl_menu_wizard_global_project_author.accesskey "A">
+<!ENTITY qpl_menu_wizard_global_project_author.placeholder "Jack Armstrong">
+
+<!ENTITY qpl_menu_wizard_global_project_logo.label "Logo:">
+<!ENTITY qpl_menu_wizard_global_project_logo.accesskey "L">
+
+<!ENTITY qpl_menu_wizard_global_project_logo_name.label "File:">
+<!ENTITY qpl_menu_wizard_global_project_logo_name.accesskey "F">
+
+<!ENTITY qpl_menu_wizard_global_project_logo_description.label "Logo description">
+<!ENTITY qpl_menu_wizard_global_project_logo_description.accesskey "D">
+<!ENTITY qpl_menu_wizard_global_project_logo_description.placeholder "GAO Logo">
+
+
+
+<!ENTITY qpl_menu_wizard_global_project_page_width.label "Page width (px):">
+<!ENTITY qpl_menu_wizard_global_project_page_width.accesskey "P">
+
+<!ENTITY qpl_menu_wizard_global_project_page_gutter.label "Gutter (px):">
+<!ENTITY qpl_menu_wizard_global_project_page_gutter.accesskey "G">
+
+<!ENTITY qpl_menu_wizard_global_project_page_question_width.label "Question width (px):">
+<!ENTITY qpl_menu_wizard_global_project_page_question_width.accesskey "Q">
+
+<!ENTITY qpl_menu_wizard_global_project_card.label "Data card (chars):">
+<!ENTITY qpl_menu_wizard_global_project_card.accesskey "C">
+
+<!ENTITY qpl_menu_wizard_global_project_menu.label "Menu:">
+<!ENTITY qpl_menu_wizard_global_project_menu.accesskey "M">
+
+<!ENTITY qpl_menu_wizard_global_project_summary.label "Summary:">
+<!ENTITY qpl_menu_wizard_global_project_summary.accesskey "S">
+
+<!ENTITY qpl_menu_wizard_global_project_progress.label "Progress bar:">
+<!ENTITY qpl_menu_wizard_global_project_progress.accesskey "B">
+
+<!ENTITY qpl_menu_wizard_global_project_navigation.label "Navigation:">
+<!ENTITY qpl_menu_wizard_global_project_navigation.accesskey "N">
+
+<!ENTITY qpl_menu_wizard_global_project_printbutton.label "Print button:">
+<!ENTITY qpl_menu_wizard_global_project_printbutton.accesskey "P">
+
+<!ENTITY qpl_menu_wizard_on.label "On">
+<!ENTITY qpl_menu_wizard_off.label "Off">
+
+<!ENTITY qpl_menu_wizard_global_project_help.label "Help contact:">
+<!ENTITY qpl_menu_wizard_global_project_help.accesskey "H">
+<!ENTITY qpl_menu_wizard_global_project_help.placeholder "Please contact Jack Armstrong at jack@armstrong.gov for assistance.">
+
+<!ENTITY qpl_menu_wizard_global_project_hello.label "Home page:">
+<!ENTITY qpl_menu_wizard_global_project_hello.accesskey "H" >
+<!ENTITY qpl_menu_wizard_global_project_hello.placeholder "Welcome to my questionnaire.  Please answer all the questions.  Click the button below to begin.">
+
+<!ENTITY qpl_menu_wizard_global_project_hello_button.label "Button label">
+<!ENTITY qpl_menu_wizard_global_project_hello_button.accesskey "B">
+<!ENTITY qpl_menu_wizard_global_project_hello_button.placeholder "Begin">
+
+<!ENTITY qpl_menu_wizard_global_project_displayfade.label "DISPLAY fade:">
+<!ENTITY qpl_menu_wizard_global_project_displayfade.accesskey "F">
+
+<!ENTITY qpl_menu_wizard_global_project_displayfade_vfast.label "Very fast">
+<!ENTITY qpl_menu_wizard_global_project_displayfade_fast.label "Fast">
+<!ENTITY qpl_menu_wizard_global_project_displayfade_medium.label "Medium">
+<!ENTITY qpl_menu_wizard_global_project_displayfade_slow.label "Slow">
+<!ENTITY qpl_menu_wizard_global_project_displayfade_vslow.label "Very slow">
+
+<!ENTITY qpl_menu_wizard_global_font_header.label "Headings">
+<!ENTITY qpl_menu_wizard_global_font_header.accesskey "H">
+
+<!ENTITY qpl_menu_wizard_global_font_family.label "Font:">
+<!ENTITY qpl_menu_wizard_global_font_family.accesskey "F">
+
+<!ENTITY qpl_menu_wizard_global_font_serif.label "Serif">
+<!ENTITY qpl_menu_wizard_global_font_sansserif.label "San serif">
+<!ENTITY qpl_menu_wizard_global_font_monospace.label "Monospace">
+
+<!ENTITY qpl_menu_wizard_global_font_size.label "Size:">
+<!ENTITY qpl_menu_wizard_global_font_size.accesskey "S">
+
+<!ENTITY qpl_menu_wizard_global_font_header_h1.label "Title:">
+<!ENTITY qpl_menu_wizard_global_font_header_h2.label "Subtitle:">
+<!ENTITY qpl_menu_wizard_global_font_header_h3.label "Heading:">
+
+<!ENTITY qpl_menu_wizard_global_font_body.label "Text">
+<!ENTITY qpl_menu_wizard_global_font_body.accesskey "T">
+
+<!ENTITY qpl_menu_wizard_global_font_body_p.label "Text:      ">
+
+<!ENTITY qpl_menu_wizard_global_style_content.label "CSS styles">
+<!ENTITY qpl_menu_wizard_global_style_content.accesskey "C">
+<!ENTITY qpl_menu_wizard_global_style_content.placeholder "DIV.Shout { border: thin solid orange; padding: 1em; background-color: lightyellow; }">
+
+<!ENTITY qpl_menu_wizard_global_script_embeded.label "Location:">
+<!ENTITY qpl_menu_wizard_global_script_embeded.accesskey "L">
+<!ENTITY qpl_menu_wizard_global_script_embeded_yes.label "Embed inside questionnaire">
+<!ENTITY qpl_menu_wizard_global_script_embeded_no.label "Include as file">
+
+<!ENTITY qpl_menu_wizard_global_script_file.label "File:">
+<!ENTITY qpl_menu_wizard_global_script_file.accesskey "F">
+<!ENTITY qpl_menu_wizard_global_script_file.placeholder "myfile.js">
+
+<!ENTITY qpl_menu_wizard_global_script_location.label "Insert:">
+<!ENTITY qpl_menu_wizard_global_script_location.accesskey "I">
+<!ENTITY qpl_menu_wizard_global_script_location_top.label "At top">
+<!ENTITY qpl_menu_wizard_global_script_location_bottom.label "At bottom">
+
+<!ENTITY qpl_menu_wizard_global_script_content.label "Script:">
+<!ENTITY qpl_menu_wizard_global_script_content.accesskey "S">
+<!ENTITY qpl_menu_wizard_global_script_content.placeholder "var MyVar = 0;">
+
+<!ENTITY qpl_wizard_sample_list_sample.label "Sample">
+<!ENTITY qpl_wizard_sample_list_sample.accesskey "S">
+
+<!ENTITY qpl_wizard_sample_list_ouput.label "Send sample to Command Output window">
+<!ENTITY qpl_wizard_sample_list_ouput.accesskey "C">
+
+<!ENTITY qpl_menu_wizard_width_max.label "Max:">
+<!ENTITY qpl_menu_wizard_width_max.accesskey "M">
+
+<!ENTITY qpl_menu_wizard_width_matrixwidth.label "Matrix width:">
+<!ENTITY qpl_menu_wizard_width_matrixwidth.accesskey "M">
+
+<!ENTITY qpl_menu_wizard_width_indent.label "Indent:">
+<!ENTITY qpl_menu_wizard_width_indent.accesskey "I">
+
+
+
+

@@ -1,0 +1,30 @@
+*! >>>>
+QUESTION - Finished with survey and how to print answers.txt
+
+This sample shows how to use a MULT question to ask a respondent to
+indicate that they have completed a survey. An additional instruction
+tells the respondent how to get a copy of all the answers they entered.
+*! <<<<
+
+
+.NEWPAGE
+.SUBTITLE= "Submit Your Final Responses to GAO"
+
+.QUESTION = FINISH, TYPE=MULT
++Are you ready to submit your final completed survey to GAO?+
+
+`(This is equivalent to mailing a completed paper survey to us.  It 
+tells us that your answers are official and final.)`
+
+.ANSWER=2   * Default to the second answer below.
+Yes, my survey is complete - `To submit your final responses, please click on "Exit" below"`
+No, my survey is not yet complete - `To save your responses for later, please click on "Exit" below"`
+.NEXT
+
+.QNUMBERING = OFF
+
+.QUESTION = PRINT_IT, TYPE=VOID
+~+You may view and print your completed survey by clicking on the Summary link in 
+the menu to the left.+~
+.ANSWER
+.NEXT

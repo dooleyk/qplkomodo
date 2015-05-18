@@ -1,0 +1,97 @@
+*! >>>>
+SELECTCASE - Color-code case status and randomize case order.txt
+
+In this project, the audit team members are editing multiple 
+forms that were pre-loaded with data. The SELECTCASEALT is
+used customize the display of the case selection list page,
+including using custome CSS styles to color-code the cases
+according to the status currently set in the FINISH question.
+The order of the cases has also be randomized by hiding the
+value of RNDM in a comment at the beginning of the SELECTASEALT
+string. This random integer, and the company name, were the 
+preloaded into hidden questions and so will not change.
+*! <<<<
+
+
+
+
+.SELECTCASELABEL = "Company"
+.SELECTCASEALT = "CONCAT('<!--', RNDM, '--><DIV CLASS=sc', FINISH, '>', q_id, '. ', COMPANY, '</DIV>')"
+.CASES = MANY	
+.448 =     "<table><tr class='lgnd'><td class='sc1'>Not started</td><td class='sc2'>Initial review started but incomplete</td><td class='sc3'>Initial review complete/ready for second review</td><td class='sc4'>Second reviewer identified issues to be corrected</td><td class='sc5'>Initial reviewer has addressed issues</td><td class='sc6'>Second review complete</td><td class='sc7'>Filing determined to be out of scope</td></table><BR>"
+.449 = "<BR><table><tr class='lgnd'><td class='sc1'>Not started</td><td class='sc2'>Initial review started but incomplete</td><td class='sc3'>Initial review complete/ready for second review</td><td class='sc4'>Second reviewer identified issues to be corrected</td><td class='sc5'>Initial reviewer has addressed issues</td><td class='sc6'>Second review complete</td><td class='sc7'>Filing determined to be out of scope</td></table>"
+
+
+**********************************************************************
+**
+.STYLE = ON
+TR.lgnd TD {
+ 	width: 16.6%;
+	text-align: center;
+	font-size: smaller;
+}
+
+
+ .sc1 {
+	background-color: #FF4500; /* orange-red */
+}
+ .sc2 {
+	background-color: #FFA500; /* orange */
+}
+ .sc3 {
+	background-color: #FFFF00; /* yellow */
+}
+ .sc4 {
+	background-color: #BFFFD3; /* green */
+}
+ .sc5 {
+	background-color: #BFEBFF; /* blue */
+}
+ .sc6 {
+	background-color: #F4BFFF; /* purple */
+}
+ .sc7 {
+	background-color: ##B9B9B9; /* gray */
+}
+ 
+.STYLE = OFF
+**
+**********************************************************************
+
+
+**********************************************************************
+**
+.HIDE = ON
+
+.QUESTION = COMPANY, TYPE = STRING
+Company name
+.ANSWER = 70
+.NEXT
+
+
+.QUESTION = RNDM, TYPE = STRING
+Random number (rounded to an integer and padded with leading zeros for sorting as a string - kbd)
+.ANSWER = 7
+.NEXT
+
+.HIDE = OFF
+**
+**********************************************************************
+
+
+
+**********************************************************************
+**
+.QUESTION=FINISH, TYPE = MULT
+What is the status of this file review?
+
+NOTE: Only select the final option if your response to question 6 was "none of the above."
+.ANSWER=1
+Not started
+Initial review started but incomplete
+Initial review complete/ready for second review
+Second reviewer identified issues to be corrected
+Initial reviewer has addressed issues
+Second review complete
+!Filing determined to be out of scope 
+.NEXT

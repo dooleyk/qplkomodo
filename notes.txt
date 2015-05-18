@@ -1,0 +1,55 @@
+notes.txt
+---------
+K. Dooley
+2014-01-11
+
+old notes...
+
+koext
+-----
+
+Add koext python script to the environment path...
+
+export PATH=/home/dooleyk/Komodo-Edit-7/lib/sdk/bin:$PATH
+
+  koext -- a tool for building Komodo extensions
+
+  Usage:
+      koext SUBCOMMAND [ARGS...]
+      koext help SUBCOMMAND       # help on a specific command
+
+  Options:
+      --version      show program's version number and exit
+      -h, --help     show this help message and exit
+      -v, --verbose  more verbose output
+      -q, --quiet    quieter output
+
+  This tool provides some commands for working with and building
+  Komodo extensions.
+
+  Commands:
+      build             build a Komodo extension
+      devinstall        install link for development with current Komodo
+      help (?)          give detailed help on a specific sub-command
+      startcodeintel    generate stub files for codeintel support for a new...
+      startext          create a Komodo extension source directory
+      startlang         generate stub files for a new UDL-based language
+
+  Additional help topics (run `koext help TOPIC'):
+      chrome            some tips for writing extension chrome
+      codeintel         TODO
+      gettingstarted    how building a Komodo extension is done
+      hooks             overview of Komodo's extension hooks
+      udl               TODO
+
+
+Build .xpi
+----------
+
+[dooleyk@localhost qplkomodo]$ pwd
+/var/www/html/qplkomodo
+
+[dooleyk@localhost qplkomodo]$ koext build --dev --unjarred
+
+
+

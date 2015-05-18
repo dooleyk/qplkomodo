@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://qplwrapper/skin/build.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://qplwrapper/locale/wizard.dtd">
+<!-- qpl_menu_wizard_query.xul
+	K. Dooley -->
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	id="qpl_wizard"
+	orient="vertical"
+	title="&qpl_wizard.title;"
+	style="width: 40em;"
+	screenX="24" screenY="24" 
+	buttons="accept,cancel,help"
+	defaultButton="accept"
+	buttonlabelaccept="&qpl_insert.label;"
+	buttonaccesskeyaccept="&qpl_insert.accesskey;"
+	buttonlabelcancel="&qpl_cancel.label;"
+	buttonaccesskeycancel="&qpl_cancel.accesskey;"
+	ondialogaccept="InsertText();"
+	ondialogcancel="return true;"
+	buttonaccesskeyhelp="&qpl_help.accesskey;"
+	buttonlabelhelp="&qpl_help.label;"
+	onload="GetQuestionText(window.arguments[0], 'qpl_menu_wizard_query_sql');"
+	ondialoghelp="window.openDialog('chrome://qplwrapper/content/qpl_help.xul','qpl_help',
+                  'chrome','qpl_menu_wizard_query.htm');" >
+    
+<vbox id="qpl_dialog" flex="1" >
+	<dialogheader title="&qpl_menu_wizard_query.title;" description="&qpl_menu_wizard_query.notes;"/>
+	<separator/>
+
+	<grid align="left">
+	<columns>
+		<column />
+		<column />
+	</columns>
+	<rows>
+		<row>
+		<label control="qpl_menu_wizard_query_name" value="&qpl_menu_wizard_query_name.label;"/>
+		<hbox>
+			<textbox id="qpl_menu_wizard_query_name" value="" maxlength="16" accesskey="&qpl_menu_wizard_query_name.accesskey;" spellcheck="false"/>
+
+			<spacer flex="1" />
+			<checkbox id="qpl_menu_wizard_query_html_entities" label="&qpl_menu_wizard_query_html_entities.label;" checked="true" accesskey="&qpl_menu_wizard_query_html_entities.accesskey;" />
+		</hbox>
+		</row>
+
+		<row>
+			<label control="qpl_menu_wizard_query_set" value="&qpl_menu_wizard_query_set.label;"/>
+			<textbox id="qpl_menu_wizard_query_set" value="" accesskey="&qpl_menu_wizard_query_set.accesskey;" placeholder="&qpl_menu_wizard_query_set.placeholder;" spellcheck="false"/>
+		</row>
+		
+		<row>
+			<label control="qpl_menu_wizard_query_sql" value="&qpl_menu_wizard_query_sql.label;"/>
+			<textbox id="qpl_menu_wizard_query_sql" multiline="true" rows="6" cols="60" value="" style="font-family: monospace;" placeholder="&qpl_menu_wizard_query_sql.placeholder;" spellcheck="true" />
+		</row>
+	</rows>
+	</grid>
+		
+		
+	<groupbox>
+		<caption label="&qpl_menu_wizard_query_html_formats.label;" />
+		<grid align="left">
+			<columns>
+				<column />
+				<column />
+			</columns>
+			<rows>
+				
+				<row>
+					<label control="qpl_menu_wizard_query_start" value="&qpl_menu_wizard_query_start.label;" />
+					<textbox id="qpl_menu_wizard_query_start" value="" accesskey="&qpl_menu_wizard_query_start.accesskey;" spellcheck="false" />
+				</row>
+				
+				<row>
+				<label control="qpl_menu_wizard_query_start_line" value="&qpl_menu_wizard_query_start_line.label;"/>
+				<hbox>
+					<textbox id="qpl_menu_wizard_query_start_line" value="" accesskey="&qpl_menu_wizard_query_start_line.accesskey;"   spellcheck="false"/>
+					
+					<spacer flex="1" />
+					<label control="qpl_menu_wizard_query_end_line" value="&qpl_menu_wizard_query_end_line.label;"/>
+					<textbox id="qpl_menu_wizard_query_end_line" value="" accesskey="&qpl_menu_wizard_query_end_line.accesskey;"   spellcheck="false"/>
+				</hbox>
+				</row>
+				
+				<row>
+					<label control="qpl_menu_wizard_query_end" value="&qpl_menu_wizard_query_end.label;"/>
+					<textbox id="qpl_menu_wizard_query_end" value="" accesskey="&qpl_menu_wizard_query_end.accesskey;" spellcheck="false"/>
+				</row>
+				
+				<row>
+					<label control="qpl_menu_wizard_query_empty" value="&qpl_menu_wizard_query_empty.label;"/>
+					<textbox id="qpl_menu_wizard_query_empty" value="" accesskey="&qpl_menu_wizard_query_empty.accesskey;"  placeholder="&qpl_menu_wizard_query_empty.placeholder;" spellcheck="false"/>
+				</row>
+		
+			</rows>
+		</grid>
+	</groupbox>	
+	
+</vbox>
+
+<script type="application/x-javascript" src="chrome://qplwrapper/content/qplwrapper-helper.js"/>
+
+<script type="application/x-javascript" >
+<![CDATA[
+var ko = window.arguments[0];
+
+// Note: Not able to use < or > in an entity or locally in a placeholder!
+document.getElementById('qpl_menu_wizard_query_start').placeholder = "<PRE>";
+document.getElementById('qpl_menu_wizard_query_start_line').placeholder = "<B>";
+document.getElementById('qpl_menu_wizard_query_end_line').placeholder = "</B>";
+document.getElementById('qpl_menu_wizard_query_end').placeholder = "</PRE>";
+
+
+function InsertText()
+{
+	var qpl_menu_wizard_query_name= document.getElementById('qpl_menu_wizard_query_name').value.toUpperCase().replace(/\s/g, "");
+	var qpl_menu_wizard_query_start= document.getElementById('qpl_menu_wizard_query_start').value.trim();
+	var qpl_menu_wizard_query_start_line= document.getElementById('qpl_menu_wizard_query_start_line').value.trim();
+	var qpl_menu_wizard_query_end_line= document.getElementById('qpl_menu_wizard_query_end_line').value.trim();
+	var qpl_menu_wizard_query_end= document.getElementById('qpl_menu_wizard_query_end').value.trim();
+	var qpl_menu_wizard_query_empty= document.getElementById('qpl_menu_wizard_query_empty').value.trim();
+	var qpl_menu_wizard_query_set= document.getElementById('qpl_menu_wizard_query_set').value.trim();
+	var qpl_menu_wizard_query_sql= document.getElementById('qpl_menu_wizard_query_sql').value.trim();
+	qpl_menu_wizard_query_sql = WordWrap(qpl_menu_wizard_query_sql);
+	
+	var qpl_menu_wizard_query_html_entities= document.getElementById('qpl_menu_wizard_query_html_entities').checked;
+	
+	var BlockStart = "\n**********************************************************************\n** \n";
+	var BlockEnd   = "** \n**********************************************************************\n\n";
+	var Phrase = "";
+
+	// Build insert text
+	
+	Phrase += BlockStart + ".QUERY = ";
+	if (qpl_menu_wizard_query_name.length) {
+		Phrase += qpl_menu_wizard_query_name + "     ** Insert link in question text as: {" + qpl_menu_wizard_query_name + "}\n";
+	} else {
+		Phrase += "ON     ** Insert link in question text as: {QUERY#}\n"
+	}
+	
+	if (qpl_menu_wizard_query_start.length)      { Phrase += ".FORMAT = SOQ = \""  + qpl_menu_wizard_query_start + "\"\n"; }
+	if (qpl_menu_wizard_query_start_line.length) { Phrase += ".FORMAT = SOL = \""  + qpl_menu_wizard_query_start_line + "\"\n"; }
+	if (qpl_menu_wizard_query_end_line.length)   { Phrase += ".FORMAT = EOL = \""  + qpl_menu_wizard_query_end_line + "\"\n"; }
+	if (qpl_menu_wizard_query_end.length)        { Phrase += ".FORMAT = EOQ = \""  + qpl_menu_wizard_query_end + "\"\n"; }
+	if (qpl_menu_wizard_query_empty.length)      { Phrase += ".FORMAT = NONE = \"" + qpl_menu_wizard_query_empty + "\"\n"; }
+	
+	Phrase += ".HTMLSPECIALCHARS = " + (qpl_menu_wizard_query_html_entities ? 'ON' : 'OFF') + '\n';
+
+	if (qpl_menu_wizard_query_set.length)      { Phrase += ".SET =\"" + qpl_menu_wizard_query_set + "\"\n"; }
+
+	if (qpl_menu_wizard_query_sql.length) {
+		Phrase += qpl_menu_wizard_query_sql + "\n";
+	} else {
+		Phrase += "Enter SQL query here.\n";
+	}
+
+	Phrase += ".QUERY = OFF\n" + BlockEnd;
+	
+	ko.views.manager.currentView.setFocus();
+	ko.views.manager.currentView.scimoz.beginUndoAction();
+        ko.views.manager.currentView.selection = Phrase;
+	ko.views.manager.currentView.scimoz.endUndoAction();
+	
+	return true;
+}
+]]>
+</script>
+
+</dialog>
+

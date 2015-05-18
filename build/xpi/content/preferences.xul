@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://qplwrapper/skin/build.css" type="text/css"?>
+<!DOCTYPE prefwindow SYSTEM "chrome://qplwrapper/locale/preferences.dtd">
+
+
+<prefwindow xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+    id="qplwrapperPreferences" 
+    title="&prefwindow.title;" >
+
+    <prefpane id="pane1" label="&pane1.title;">
+
+	    <preferences>
+		    <preference id="qpl_os_pref" name="extensions.qplwrapper.qpl_os_pref" type="string"/> <!-- note that this is only an ASCII string - use unichar for unicode strings -->
+		    <preference id="qpl_last_project" name="extensions.qplwrapper.qpl_last_project" type="string"/>
+		    <preference id="qpl_subversion_repository_pref" name="extensions.qplwrapper.qpl_subversion_repository" type="string"/>
+		    <preference id="qpl_subversion_repository_pref2" name="extensions.qplwrapper.qpl_subversion_repository2" type="string"/>
+		    <preference id="qpl_working_directory_pref" name="extensions.qplwrapper.qpl_working_directory" type="string"/>
+		    <preference id="qpl_jobtracker_url_pref" name="extensions.qplwrapper.qpl_jobtracker_url" type="string"/>
+	    </preferences>
+
+	    <vbox class="qpl_box_border" >
+		    <label control="qpl_os" accesskey="&qpl_os.accesskey;" value="&qpl_os.label;"/>
+		    <radiogroup id="qpl_os" preference="qpl_os_pref">
+			    <hbox>
+				<radio id="qpl_os_win32" value="win32" label="&qpl_os_win32.label;" accesskey="&qpl_os_win32.accesskey;" />
+				<radio id="qpl_os_mac" value="mac" label="&qpl_os_mac.label;" accesskey="&qpl_os_mac.accesskey;" />
+				<radio id="qpl_os_linux32" value="linux32" label="&qpl_os_linux32.label;" accesskey="&qpl_os_linux32.accesskey;" />
+				<radio id="qpl_os_linux64" value="linux64" label="&qpl_os_linux64.label;" accesskey="&qpl_os_linux64.accesskey;" />
+			    </hbox>
+		    </radiogroup>
+	    
+		    <button label="&qpl_os.test;" oncommand="CheckQPLConnection();" style="width: 25em; margin-top: .5em;" />
+	    </vbox>
+	    
+	
+	    <vbox class="qpl_box_border" >
+		<label value="&qpl_subversion_repository_note.label;"/>
+		<hbox>
+		    <vbox flex="1">
+			    <vbox style="margin: 0 0 .5em 0">
+				<label control="qpl_subversion_repository" value="&qpl_subversion_repository.label;"/>
+				<textbox id="qpl_subversion_repository" value=""  preference="qpl_subversion_repository_pref" accesskey="&qpl_subversion_repository.accesskey;"/>
+			    </vbox>
+			    <button label="&qpl_subversion_repository.test;" oncommand="CheckSVNConnection(document.getElementById('qpl_subversion_repository').value);" />
+		    </vbox>
+    
+		    <vbox flex="1">
+			    <vbox style="margin: 0 0 .5em 0">
+				<label control="qpl_subversion_repository2" value="&qpl_subversion_repository2.label;"/>
+				<textbox id="qpl_subversion_repository2" value=""  preference="qpl_subversion_repository_pref2" accesskey="&qpl_subversion_repository2.accesskey;"/>
+			    </vbox>
+			    <button label="&qpl_subversion_repository2.test;" oncommand="CheckSVNConnection(document.getElementById('qpl_subversion_repository2').value);" />
+		    </vbox>
+		</hbox>
+	    </vbox>
+	    
+	    
+	    <vbox class="qpl_box_border" >
+		    <label control="qpl_working_directory" value="&qpl_working_directory.label;"/>
+		    <hbox>
+			    <textbox id="qpl_working_directory" value="" preference="qpl_working_directory_pref"  accesskey="&qpl_working_directory.accesskey;"  size="40" /><button id="qpl_browse" label="&qpl_browse.label;" accesskey="&qpl_browse.accesskey;" oncommand="pickFolder('qpl_working_directory'); setWorkdingDirPref();"  />
+		    </hbox>
+	    </vbox>
+	    
+	    <vbox class="qpl_box_border" >
+		    <vbox style="margin: 0 0 .5em 0">
+			    <label control="qpl_jobtracker_url" value="&qpl_jobtracker_url.label;"/>
+			    <textbox id="qpl_jobtracker_url" value="" preference="qpl_jobtracker_url_pref"  accesskey="&qpl_jobtracker_url.accesskey;"  />
+		    </vbox>
+		    <button label="&qpl_jobtracker_url.test;" oncommand="CheckJobTrackerConnection();" style="width: 25em;"/>
+	    </vbox>
+	    
+	    <vbox align="center">
+		    <button label="&qpl_help.label;" oncommand="window.openDialog('chrome://qplwrapper/content/qpl_help.xul','qpl_help', 'chrome','preferences.htm');" style="width: 8em; min-width: 8em; "/>
+	    </vbox>
+    </prefpane>
+
+
+<stringbundleset id="stringbundleset">
+	<stringbundle id="qplwrapper-strings" src="chrome://qplwrapper/locale/qplwrapper.properties"/>
+</stringbundleset>
+
+<script type="application/x-javascript" src="chrome://qplwrapper/content/qplwrapper.js"/>
+<script type="application/x-javascript" src="chrome://qplwrapper/content/qplwrapper-helper.js"/> 
+<script type="application/x-javascript" >
+<![CDATA[
+
+function setWorkdingDirPref() {
+    var prefManager = Components.classes["@mozilla.org/preferences-service;1"]
+	.getService(Components.interfaces.nsIPrefBranch);
+
+    prefManager.setCharPref('extensions.qplwrapper.qpl_working_directory', document.getElementById('qpl_working_directory').value);
+}
+
+]]>
+</script>
+
+
+</prefwindow>

@@ -1,0 +1,5 @@
+content	qplwrapper	content/  
+locale	qplwrapper	en-US	locale/en-US/
+skin	qplwrapper	classic/1.0	skin/
+overlay chrome://komodo/content/komodo.xul chrome://qplwrapper/content/overlay.xul
+style	chrome://global/content/customizeToolbar.xul	chrome://qplwrapper/skin/overlay.css

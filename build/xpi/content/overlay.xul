@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://qplwrapper/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://qplwrapper/locale/overlay.dtd">
+<overlay id="qplwrapper-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+<stringbundleset id="stringbundleset">
+	<stringbundle id="qplwrapper-strings" src="chrome://qplwrapper/locale/qplwrapper.properties"/>
+</stringbundleset>
+
+
+<commandset>
+	<commandset id="cmd_isapg6" commandupdater="true" events="*" oncommandupdate="IsAPg6();"/>
+	<command id="cmd_qpl_menu_new" label="&qpl_menu_new.label;" accesskey="&qpl_menu_new.accesskey;"  oncommand="qplBuildDialog(ko, 'qpl_menu_new');" image="chrome://qplwrapper/skin/newqpl.svg"/>
+
+	<command id="cmd_qpl_menu_svn" label="&qpl_menu_svn.label;" accesskey="&qpl_menu_svn.accesskey;" />
+	<command id="cmd_qpl_menu_svn_checkout" label="&qpl_menu_svn_checkout.label;" accesskey="&qpl_menu_svn_checkout.accesskey;"  oncommand="qplBuildDialog(ko, 'qpl_menu_svn_checkout', 1);" image="chrome://qplwrapper/skin/download3.svg"/>
+	<command id="cmd_qpl_menu_svn_checkout2" label="&qpl_menu_svn_checkout2.label;" accesskey="&qpl_menu_svn_checkout2.accesskey;"  oncommand="qplBuildDialog(ko, 'qpl_menu_svn_checkout', 2);" image="chrome://qplwrapper/skin/download3_2.svg" disabled="true" />
+	<command id="cmd_qpl_menu_svn_commit" label="&qpl_menu_svn_commit.label;" accesskey="&qpl_menu_svn_commit.accesskey;"  oncommand="qplBuildDialog(ko, 'qpl_menu_svn_commit');" image="chrome://qplwrapper/skin/upload3.svg"/>
+	<command id="cmd_qpl_menu_svn_info" label="&qpl_menu_svn_info.label;" accesskey="&qpl_menu_svn_info.accesskey;"  oncommand="svnProjectInfo(ko);"  image="chrome://qplwrapper/skin/information.svg" />
+	<command id="cmd_qpl_menu_svn_export" label="&qpl_menu_svn_export.label;" accesskey="&qpl_menu_svn_export.accesskey;"  oncommand="svnExportProject(ko);"  />
+	<command id="cmd_qpl_menu_svn_steal_lock" label="&qpl_menu_svn_steal_lock.label;" accesskey="&qpl_menu_svn_steal_lock.accesskey;"  oncommand="svnStealProjectLock(ko);"  />
+	
+	<command id="cmd_qpl_menu_build" label="&qpl_menu_build.label;" accesskey="&qpl_menu_build.accesskey;"  image="chrome://qplwrapper/skin/hammer.svg" />
+	<command id="cmd_qpl_menu_build_html" label="&qpl_menu_build_html.label;" accesskey="&qpl_menu_build_html.accesskey;" oncommand="qplBuildDialog(ko, 'qpl_menu_build_html');" />
+	<command id="cmd_qpl_menu_build_php" label="&qpl_menu_build_php.label;" accesskey="&qpl_menu_build_php.accesskey;" oncommand="qplBuildDialog(ko, 'qpl_menu_build_php');"/>
+	<command id="cmd_qpl_menu_build_stat" label="&qpl_menu_build_stat.label;" accesskey="&qpl_menu_build_stat.accesskey;" oncommand="qplBuildDialog(ko, 'qpl_menu_build_stat');"/>
+	<command id="cmd_qpl_menu_build_qlist" label="&qpl_menu_build_qlist.label;" accesskey="&qpl_menu_build_qlist.accesskey;" oncommand="qplBuildDialog(ko, 'qpl_menu_build_qlist');"/>
+	<command id="cmd_qpl_menu_build_esup" label="&qpl_menu_build_esup.label;" accesskey="&qpl_menu_build_esup.accesskey;" oncommand="qplBuildDialog(ko, 'qpl_menu_build_esup');"/>
+	<command id="cmd_qpl_menu_build_custom" label="&qpl_menu_build_custom.label;" accesskey="&qpl_menu_build_custom.accesskey;" oncommand="qplBuildDialog(ko, 'qpl_menu_build_custom');"/>
+
+	<command id="cmd_qpl_menu_wizard" label="&qpl_menu_wizard.label;" accesskey="&qpl_menu_wizard.accesskey;"  image="chrome://qplwrapper/skin/magic-wand.svg" />
+	<command id="cmd_qpl_menu_wizard_questions" label="&qpl_menu_wizard_questions.label;" accesskey="&qpl_menu_wizard_questions.accesskey;" />
+	<command id="cmd_qpl_menu_wizard_mult" label="&qpl_menu_wizard_mult.label;" accesskey="&qpl_menu_wizard_mult.accesskey;" oncommand="qplBuildDialog(ko, 'qpl_menu_wizard_mult');"/>
+	<command id="cmd_qpl_menu_wizard_check" label="&qpl_menu_wizard_check.label;" accesskey="&qpl_menu_wizard_check.accesskey;" oncommand="qplBuildDialog(ko, 'qpl_menu_wizard_check');"/>	
+	<command id="cmd_qpl_menu_wizard_list" label="&qpl_menu_wizard_list.label;" accesskey="&qpl_menu_wizard_list.accesskey;" oncommand="qplBuildDialog(ko, 'qpl_menu_wizard_list');"/>	
+	<command id="cmd_qpl_menu_wizard_string" label="&qpl_menu_wizard_string.label;" accesskey="&qpl_menu_wizard_string.accesskey;" oncommand="qplBuildDialog(ko, 'qpl_menu_wizard_string');"/>
+	<command id="cmd_qpl_menu_wizard_openend" label="&qpl_menu_wizard_openend.label;" accesskey="&qpl_menu_wizard_openend.accesskey;" oncommand="qplBuildDialog(ko, 'qpl_menu_wizard_openend');"/>	
+	<command id="cmd_qpl_menu_wizard_number" label="&qpl_menu_wizard_number.label;" accesskey="&qpl_menu_wizard_number.accesskey;" oncommand="qplBuildDialog(ko, 'qpl_menu_wizard_number');"/>
+	<command id="cmd_qpl_menu_wizard_date" label="&qpl_menu_wizard_date.label;" accesskey="&qpl_menu_wizard_date.accesskey;" oncommand="qplBuildDialog(ko, 'qpl_menu_wizard_date');"/>
+	<command id="cmd_qpl_menu_wizard_time" label="&qpl_menu_wizard_time.label;" accesskey="&qpl_menu_wizard_time.accesskey;" oncommand="qplBuildDialog(ko, 'qpl_menu_wizard_time');"/>
+	<command id="cmd_qpl_menu_wizard_questionnaire" label="&qpl_menu_wizard_questionnaire.label;" accesskey="&qpl_menu_wizard_questionnaire.accesskey;" oncommand="qplBuildDialog(ko, 'qpl_menu_wizard_questionnaire');"/>
+	<command id="cmd_qpl_menu_wizard_upload" label="&qpl_menu_wizard_upload.label;" accesskey="&qpl_menu_wizard_upload.accesskey;" oncommand="qplBuildDialog(ko, 'qpl_menu_wizard_upload');"/>
+	<command id="cmd_qpl_menu_wizard_void" label="&qpl_menu_wizard_void.label;" accesskey="&qpl_menu_wizard_void.accesskey;" oncommand="qplBuildDialog(ko, 'qpl_menu_wizard_void');"/>
+	<command id="cmd_qpl_menu_wizard_layout" label="&qpl_menu_wizard_layout.label;" accesskey="&qpl_menu_wizard_layout.accesskey;" oncommand="qplBuildDialog(ko, 'qpl_menu_wizard_layout');"/>
+	<command id="cmd_qpl_menu_wizard_popup" label="&qpl_menu_wizard_popup.label;" accesskey="&qpl_menu_wizard_popup.accesskey;" oncommand="qplBuildDialog(ko, 'qpl_menu_wizard_popup');"/>
+	<command id="cmd_qpl_menu_wizard_query" label="&qpl_menu_wizard_query.label;" accesskey="&qpl_menu_wizard_query.accesskey;" oncommand="qplBuildDialog(ko, 'qpl_menu_wizard_query');"/>
+	<command id="cmd_qpl_menu_wizard_product" label="&qpl_menu_wizard_product.label;" accesskey="&qpl_menu_wizard_product.accesskey;" oncommand="qplBuildDialog(ko, 'qpl_menu_wizard_product');"/>
+	<command id="cmd_qpl_menu_wizard_user" label="&qpl_menu_wizard_user.label;" accesskey="&qpl_menu_wizard_user.accesskey;" oncommand="qplBuildDialog(ko, 'qpl_menu_wizard_user');"/>
+	<command id="cmd_qpl_menu_wizard_default_phrases" label="&qpl_menu_wizard_default_phrases.label;" accesskey="&qpl_menu_wizard_default_phrases.accesskey;" oncommand="qplBuild('qpl_menu_wizard_default_phrases');"/>
+	<command id="cmd_qpl_menu_wizard_global" label="&qpl_menu_wizard_global.label;" accesskey="&qpl_menu_wizard_global.accesskey;" oncommand="qplBuildDialog(ko, 'qpl_menu_wizard_global');"/>
+	<command id="cmd_qpl_menu_wizard_samples" label="&qpl_menu_wizard_samples.label;" accesskey="&qpl_menu_wizard_samples.accesskey;" oncommand="qplBuildDialog(ko, 'qpl_menu_wizard_samples');"/>
+	<command id="cmd_qpl_menu_wizard_width" label="&qpl_menu_wizard_width.label;" accesskey="&qpl_menu_wizard_width.accesskey;" oncommand="qplBuildDialog(ko, 'qpl_menu_wizard_width');"/>
+	
+	<command id="cmd_qpl_menu_char" label="&qpl_menu_char.label;" accesskey="&qpl_menu_char.accesskey;" image="chrome://qplwrapper/skin/a.svg" />
+	<command id="cmd_qpl_menu_char_bold" label="&qpl_menu_char_bold.label;" accesskey="&qpl_menu_char_bold.accesskey;" oncommand="qplCharFormat(ko, '+');"  />
+	<command id="cmd_qpl_menu_char_italic" label="&qpl_menu_char_italic.label;" accesskey="&qpl_menu_char_italic.accesskey;" oncommand="qplCharFormat(ko, '~');"  />
+	<command id="cmd_qpl_menu_char_underline" label="&qpl_menu_char_underline.label;" accesskey="&qpl_menu_char_underline.accesskey;" oncommand="qplCharFormat(ko, '_');"  />
+	<command id="cmd_qpl_menu_char_break" label="&qpl_menu_char_break.label;" accesskey="&qpl_menu_char_break.accesskey;" oncommand="qplCharInsert(ko, '|');"  />
+	<command id="cmd_qpl_menu_char_bullet" label="&qpl_menu_char_bullet.label;" accesskey="&qpl_menu_char_bullet.accesskey;" oncommand="qplCharInsert(ko, '=');"  />
+	<command id="cmd_qpl_menu_char_nbsp" label="&qpl_menu_char_nbsp.label;" accesskey="&qpl_menu_char_nbsp.accesskey;" oncommand="qplCharInsert(ko, 'nbsp');"  />
+	<command id="cmd_qpl_menu_char_sect" label="&qpl_menu_char_sect.label;" accesskey="&qpl_menu_char_sect.accesskey;" oncommand="qplCharInsert(ko, 'sect');"  />
+	<command id="cmd_qpl_menu_char_arr_r" label="&qpl_menu_char_arr_r.label;" accesskey="&qpl_menu_char_arr_r.accesskey;" oncommand="qplCharInsert(ko, 'arr_r');"  />
+	<command id="cmd_qpl_menu_char_arr_l" label="&qpl_menu_char_arr_l.label;" accesskey="&qpl_menu_char_arr_l.accesskey;" oncommand="qplCharInsert(ko, 'arr_l');"  />
+	<command id="cmd_qpl_menu_char_arr_u" label="&qpl_menu_char_arr_u.label;" accesskey="&qpl_menu_char_arr_u.accesskey;" oncommand="qplCharInsert(ko, 'arr_u');"  />
+	<command id="cmd_qpl_menu_char_arr_d" label="&qpl_menu_char_arr_d.label;" accesskey="&qpl_menu_char_arr_d.accesskey;" oncommand="qplCharInsert(ko, 'arr_d');"  />
+	<command id="cmd_qpl_menu_char_escape" label="&qpl_menu_char_escape.label;" accesskey="&qpl_menu_char_escape.accesskey;" oncommand="qplEscapeChars(ko);"  />
+	<command id="cmd_qpl_menu_char_color" label="&qpl_menu_char_color.label;" accesskey="&qpl_menu_char_color.accesskey;" oncommand="qplGetColorCode(ko);"  />
+	<command id="cmd_qpl_menu_char_wordwrap" label="&qpl_menu_char_wordwrap.label;" accesskey="&qpl_menu_char_wordwrap.accesskey;" oncommand="qplWordWrapSelection(ko);"  />
+	<command id="cmd_qpl_menu_char_comment" label="&qpl_menu_char_comment.label;" accesskey="&qpl_menu_char_comment.accesskey;" oncommand="qplBlockCommentSelection(ko);"  />
+	<command id="cmd_qpl_menu_char_word_cleanup" label="&qpl_menu_char_word_cleanup.label;" accesskey="&qpl_menu_char_word_cleanup.accesskey;" oncommand="qplWordCleanup(ko);"  />
+	<command id="cmd_qpl_menu_char_ref" label="&qpl_menu_char_ref.label;" accesskey="&qpl_menu_char_ref.accesskey;" oncommand="qplBuildHelpDialog(ko, 'http://www.w3schools.com/charsets/ref_html_entities_4.asp');"/>
+
+	<command id="cmd_qpl_menu_keyword_info" label="&qpl_menu_keyword_info.label;" accesskey="&qpl_menu_keyword_info.accesskey;"  oncommand="getKeywordInfo(ko);"  image="chrome://qplwrapper/skin/information.svg" />
+	<command id="cmd_qpl_menu_refresh" label="&qpl_menu_refresh.label;" accesskey="&qpl_menu_refresh.accesskey;" oncommand="qplRefreshProject(ko);" />
+	<command id="cmd_qpl_menu_help" label="&qpl_menu_help.label;" accesskey="&qpl_menu_help.accesskey;" oncommand="qplBuildHelpDialog(ko, 'qpl_menu_help.htm');"/>
+	<command id="cmd_qpl_menu_qpl6ref" label="&qpl_menu_qpl6ref.label;" accesskey="&qpl_menu_qpl6ref.accesskey;" oncommand="qplBuildHelpDialog(ko, 'http://qpl.gao.gov/qpl6ref/index.php');"/>
+	<command id="cmd_qpl_menu_about" label="&qpl_menu_about.label;" accesskey="&qpl_menu_about.accesskey;" oncommand="qplBuildHelpDialog(ko, 'qpl_menu_about.htm');"/>
+</commandset>
+
+<menupopup id="popup_tools">
+
+	<menu id="qpl_menu" label="&qpl_menu.label;" accesskey="&qpl_menu.accesskey;" insertafter="menu_tools_separator"> 
+	    <menupopup>
+
+		<menuitem id="qpl_menu_new" command="cmd_qpl_menu_new" class="menuitem-iconic" />
+		<menuitem id="qpl_menu_refresh" command="cmd_qpl_menu_refresh" />
+		
+		<menu id="qpl_menu_svn" command="cmd_qpl_menu_svn" >
+			<menupopup>
+				<menuitem id="qpl_menu_svn_checkout" command="cmd_qpl_menu_svn_checkout" class="menuitem-iconic" />
+				<menuitem id="qpl_menu_svn_checkout2" command="cmd_qpl_menu_svn_checkout2" class="menuitem-iconic" />
+				<menuitem id="qpl_menu_svn_commit" command="cmd_qpl_menu_svn_commit" class="menuitem-iconic" />
+				<menuitem id="qpl_menu_svn_info" command="cmd_qpl_menu_svn_info" class="menuitem-iconic" />
+				<menuitem id="qpl_menu_svn_export" command="cmd_qpl_menu_svn_export" class="menuitem-iconic" />
+				<menuitem id="qpl_menu_svn_steal_lock" command="cmd_qpl_menu_svn_steal_lock" class="menuitem-iconic" />
+			</menupopup>
+		</menu>
+		
+		<menu id="qpl_menu_build_options" command="cmd_qpl_menu_build" >
+		    <menupopup>
+			<menuitem id="qpl_menu_build_html" command="cmd_qpl_menu_build_html" observes="bdcst_qpl_menu_build_html" />
+			<menuitem id="qpl_menu_build_php" command="cmd_qpl_menu_build_php" observes="bdcst_qpl_menu_build_php" />
+			<menuitem id="qpl_menu_build_stat" command="cmd_qpl_menu_build_stat" observes="bdcst_qpl_menu_build_stat" />
+			<menuitem id="qpl_menu_build_qlist" command="cmd_qpl_menu_build_qlist" observes="bdcst_qpl_menu_build_qlist" />
+			<menuitem id="qpl_menu_build_esup" command="cmd_qpl_menu_build_esup" observes="bdcst_qpl_menu_build_esup" />
+			<menuitem id="qpl_menu_build_custom" command="cmd_qpl_menu_build_custom" observes="bdcst_qpl_menu_build_custom" />
+		    </menupopup>
+		</menu>
+
+		<menu id="qpl_menu_wizard" command="cmd_qpl_menu_wizard" >
+		    <menupopup>
+			<menu id="qpl_menu_wizard_questions" command="cmd_qpl_menu_wizard_questions" >
+			    <menupopup>
+				<menuitem id="qpl_menu_wizard_mult" command="cmd_qpl_menu_wizard_mult"  observes="bdcst_qpl_menu_wizard_mult" />
+				<menuitem id="qpl_menu_wizard_check" command="cmd_qpl_menu_wizard_check" observes="bdcst_qpl_menu_wizard_check" />
+				<menuitem id="qpl_menu_wizard_list" command="cmd_qpl_menu_wizard_list" observes="bdcst_qpl_menu_wizard_list" />
+				<menuitem id="qpl_menu_wizard_string" command="cmd_qpl_menu_wizard_string" observes="bdcst_qpl_menu_wizard_string" />
+				<menuitem id="qpl_menu_wizard_openend" command="cmd_qpl_menu_wizard_openend" observes="bdcst_qpl_menu_wizard_openend" />
+				<menuitem id="qpl_menu_wizard_number" command="cmd_qpl_menu_wizard_number" observes="bdcst_qpl_menu_wizard_number" />
+				<menuitem id="qpl_menu_wizard_date" command="cmd_qpl_menu_wizard_date" observes="bdcst_qpl_menu_wizard_date" />
+				<menuitem id="qpl_menu_wizard_time" command="cmd_qpl_menu_wizard_time" observes="bdcst_qpl_menu_wizard_time" />
+				<menuitem id="qpl_menu_wizard_questionnaire" command="cmd_qpl_menu_wizard_questionnaire" observes="bdcst_qpl_menu_wizard_questionnaire" />
+				<menuitem id="qpl_menu_wizard_upload" command="cmd_qpl_menu_wizard_upload" observes="bdcst_qpl_menu_wizard_upload" />
+				<menuitem id="qpl_menu_wizard_void" command="cmd_qpl_menu_wizard_void" observes="bdcst_qpl_menu_wizard_void" />
+			    </menupopup>
+			</menu>
+			<menuitem id="qpl_menu_wizard_layout" command="cmd_qpl_menu_wizard_layout" observes="bdcst_qpl_menu_wizard_layout" />
+			<menuitem id="qpl_menu_wizard_width" command="cmd_qpl_menu_wizard_width" observes="bdcst_qpl_menu_wizard_width" />
+			<menuitem id="qpl_menu_wizard_popup" command="cmd_qpl_menu_wizard_popup" observes="bdcst_qpl_menu_wizard_popup" />
+			<menuitem id="qpl_menu_wizard_query" command="cmd_qpl_menu_wizard_query" observes="bdcst_qpl_menu_wizard_query" />
+			<menuitem id="qpl_menu_wizard_product" command="cmd_qpl_menu_wizard_product" observes="bdcst_qpl_menu_wizard_product" />
+			<menuitem id="qpl_menu_wizard_user" command="cmd_qpl_menu_wizard_user" observes="bdcst_qpl_menu_wizard_user" />
+			<menuitem id="qpl_menu_wizard_default_phrases" command="cmd_qpl_menu_wizard_default_phrases" observes="bdcst_qpl_menu_wizard_default_phrases" />
+			<menuitem id="qpl_menu_wizard_global" command="cmd_qpl_menu_wizard_global" observes="bdcst_qpl_menu_wizard_global" />
+			<menuitem id="qpl_menu_wizard_samples" command="cmd_qpl_menu_wizard_samples" observes="bdcst_qpl_menu_wizard_samples" />
+		    </menupopup>
+		</menu>
+
+	    
+		<menu id="qpl_menu_char" command="cmd_qpl_menu_char" >
+		    <menupopup>
+			<menuitem id="qpl_menu_char_bold" command="cmd_qpl_menu_char_bold" observes="bdcst_qpl_menu_char_bold" />
+			<menuitem id="qpl_menu_char_italic" command="cmd_qpl_menu_char_italic" observes="bdcst_qpl_menu_char_italic" />
+			<menuitem id="qpl_menu_char_underline" command="cmd_qpl_menu_char_underline" observes="bdcst_qpl_menu_char_underline" />
+			<menuseparator/>
+			<menuitem id="qpl_menu_char_break" command="cmd_qpl_menu_char_break" observes="bdcst_qpl_menu_char_break" />
+			<menuitem id="qpl_menu_char_bullet" command="cmd_qpl_menu_char_bullet" observes="bdcst_qpl_menu_char_bullet" />
+			<menuitem id="qpl_menu_char_nbsp" command="cmd_qpl_menu_char_nbsp" observes="bdcst_qpl_menu_char_nbsp" />
+			<menuitem id="qpl_menu_char_sect" command="cmd_qpl_menu_char_sect" observes="bdcst_qpl_menu_char_sect" />
+			<menuseparator/>
+			<menuitem id="qpl_menu_char_arr_r" command="cmd_qpl_menu_char_arr_r" observes="bdcst_qpl_menu_char_arr_r" />
+			<menuitem id="qpl_menu_char_arr_l" command="cmd_qpl_menu_char_arr_l" observes="bdcst_qpl_menu_char_arr_l" />
+			<menuitem id="qpl_menu_char_arr_u" command="cmd_qpl_menu_char_arr_u" observes="bdcst_qpl_menu_char_arr_u" />
+			<menuitem id="qpl_menu_char_arr_d" command="cmd_qpl_menu_char_arr_d" observes="bdcst_qpl_menu_char_arr_d" />
+			<menuseparator/>
+			<menuitem id="qpl_menu_char_escape" command="cmd_qpl_menu_char_escape" observes="bdcst_qpl_menu_char_escape" />
+			<menuitem id="qpl_menu_char_color" command="cmd_qpl_menu_char_color" observes="bdcst_qpl_menu_char_color" />
+			<menuitem id="qpl_menu_char_wordwrap" command="cmd_qpl_menu_char_wordwrap" observes="bdcst_qpl_menu_char_wordwrap" />
+			<menuitem id="qpl_menu_char_comment" command="cmd_qpl_menu_char_comment" observes="bdcst_qpl_menu_char_comment" />
+			<menuitem id="qpl_menu_char_word_cleanup" command="cmd_qpl_menu_char_word_cleanup" observes="bdcst_qpl_menu_char_word_cleanup" />
+			<menuitem id="qpl_menu_char_ref" command="cmd_qpl_menu_char_ref" observes="bdcst_qpl_menu_char_ref" />
+		    </menupopup>
+		</menu>
+	    
+	    <menuitem id="qpl_menu_keyword_info" command="cmd_qpl_menu_keyword_info"  observes="bdcst_qpl_menu_keyword_info"/>
+	    <menuitem id="qpl_menu_qpl6ref" command="cmd_qpl_menu_qpl6ref" />
+	    <menuitem id="qpl_menu_help" command="cmd_qpl_menu_help" />
+	    <menuitem id="qpl_menu_about" command="cmd_qpl_menu_about" />
+
+	</menupopup>
+    </menu>
+
+</menupopup>
+
+<toolboxrow id="main-toolboxrow">
+	<toolbar id="qplToolbar"
+		customizable="true"
+		mode="icons"
+		context="toolbar-context-menu" 
+		defaultset="qpl_button_new,qpl_button_svn_checkout"
+		insertafter="standardToolbar"
+		class="chromeclass-toolbar"
+		toolboxid="toolbox_main"
+		align="center"
+		persist="kohidden collapsed buttonstyle mode"
+		buttonstyle="pictures"
+		grippyhidden="true"
+		tooltiptext="QPL Toolbar"
+		kohidden=""
+		can-drag="true" >
+		<toolbaritem>
+			<toolbarbutton id="qpl_button_new"
+				class="toolbarbutton chromeclass-toolbar-additional" 
+				tooltiptext="&qpl_menu_new.label;"
+				command="cmd_qpl_menu_new" />
+
+			<toolbarbutton id="qpl_button_svn_checkout"
+				class="toolbarbutton chromeclass-toolbar-additional" 
+				tooltiptext="&qpl_menu_svn_checkout.label;"
+				command="cmd_qpl_menu_svn_checkout" />
+
+			<toolbarbutton id="qpl_button_svn_checkout2"
+				class="toolbarbutton chromeclass-toolbar-additional" 
+				tooltiptext="&qpl_menu_svn_checkout2.label;"
+				command="cmd_qpl_menu_svn_checkout2" />
+				
+			<toolbarbutton id="qpl_button_svn_commit"
+				class="toolbarbutton chromeclass-toolbar-additional" 
+				tooltiptext="&qpl_menu_svn_commit.label;"
+				command="cmd_qpl_menu_svn_commit" />
+	
+			<toolbarbutton type="menu-button"
+				class="toolbarbutton chromeclass-toolbar-additional" 
+				tooltiptext="&qpl_menu_build.label;"
+				command="cmd_qpl_menu_build" >
+				<menupopup>
+				    <menuitem id="qpl_button_build_html" command="cmd_qpl_menu_build_html" />
+				    <menuitem id="qpl_button_build_php" command="cmd_qpl_menu_build_php" />
+				    <menuitem id="qpl_button_build_stat" command="cmd_qpl_menu_build_stat" />
+				    <menuitem id="qpl_button_build_qlist" command="cmd_qpl_menu_build_qlist" />
+				    <menuitem id="qpl_button_build_esup" command="cmd_qpl_menu_build_esup" />
+				    <menuitem id="qpl_button_build_custom" command="cmd_qpl_menu_build_custom" />
+				</menupopup>
+			</toolbarbutton>
+
+			<toolbarbutton type="menu-button"
+				class="toolbarbutton chromeclass-toolbar-additional" 
+				tooltiptext="&qpl_menu_wizard.label;"
+				command="cmd_qpl_menu_wizard" >
+				<menupopup>
+					<menu id="qpl_button_wizard_questions" command="cmd_qpl_menu_wizard_questions" >
+					<menupopup>
+						<menuitem id="qpl_button_wizard_mult" command="cmd_qpl_menu_wizard_mult" />
+						<menuitem id="qpl_button_wizard_check" command="cmd_qpl_menu_wizard_check" />
+						<menuitem id="qpl_button_wizard_list" command="cmd_qpl_menu_wizard_list" />
+						<menuitem id="qpl_button_wizard_string" command="cmd_qpl_menu_wizard_string" />
+						<menuitem id="qpl_button_wizard_openend" command="cmd_qpl_menu_wizard_openend" />
+						<menuitem id="qpl_button_wizard_number" command="cmd_qpl_menu_wizard_number" />
+						<menuitem id="qpl_button_wizard_date" command="cmd_qpl_menu_wizard_date" />
+						<menuitem id="qpl_button_wizard_time" command="cmd_qpl_menu_wizard_time" />
+						<menuitem id="qpl_button_wizard_questionnaire" command="cmd_qpl_menu_wizard_questionnaire" />
+						<menuitem id="qpl_button_wizard_upload" command="cmd_qpl_menu_wizard_upload" />
+						<menuitem id="qpl_button_wizard_void" command="cmd_qpl_menu_wizard_void" />
+					</menupopup>
+					</menu>
+					
+					<menuitem id="qpl_button_wizard_layout" command="cmd_qpl_menu_wizard_layout" />
+					<menuitem id="qpl_button_wizard_width" command="cmd_qpl_menu_wizard_width" />
+					<menuitem id="qpl_button_wizard_popup" command="cmd_qpl_menu_wizard_popup" />
+					<menuitem id="qpl_button_wizard_query" command="cmd_qpl_menu_wizard_query" />
+					<menuitem id="qpl_button_wizard_product" command="cmd_qpl_menu_wizard_product" />
+					<menuitem id="qpl_button_wizard_user" command="cmd_qpl_menu_wizard_user" />
+					<menuitem id="qpl_button_wizard_default_phrases" command="cmd_qpl_menu_wizard_default_phrases" />
+					<menuitem id="qpl_button_wizard_global" command="cmd_qpl_menu_wizard_global" />
+					<menuitem id="qpl_button_wizard_samples" command="cmd_qpl_menu_wizard_samples" />
+				</menupopup>
+			</toolbarbutton>
+
+
+			<toolbarbutton type="menu-button"
+				class="toolbarbutton chromeclass-toolbar-additional" 
+				tooltiptext="&qpl_menu_char.label;"
+				command="cmd_qpl_menu_char" >
+				<menupopup>
+				    <menuitem id="qpl_button_char_bold" command="cmd_qpl_menu_char_bold" />
+				    <menuitem id="qpl_button_char_italic" command="cmd_qpl_menu_char_italic" />
+				    <menuitem id="qpl_button_char_underline" command="cmd_qpl_menu_char_underline" />
+				    <menuseparator/>
+		    		    <menuitem id="qpl_button_char_break" command="cmd_qpl_menu_char_break" />
+				    <menuitem id="qpl_button_char_bullet" command="cmd_qpl_menu_char_bullet" />
+				    <menuitem id="qpl_button_char_nbsp" command="cmd_qpl_menu_char_nbsp" />
+		    		    <menuitem id="qpl_button_char_sect" command="cmd_qpl_menu_char_sect" />
+				    <menuseparator/>
+		    		    <menuitem id="qpl_button_char_arr_r" command="cmd_qpl_menu_char_arr_r" />
+				    <menuitem id="qpl_button_char_arr_l" command="cmd_qpl_menu_char_arr_l" />
+				    <menuitem id="qpl_button_char_arr_u" command="cmd_qpl_menu_char_arr_u" />
+				    <menuitem id="qpl_button_char_arr_d" command="cmd_qpl_menu_char_arr_d" />
+				    <menuseparator/>
+				    <menuitem id="qpl_button_char_escape" command="cmd_qpl_menu_char_escape" />
+				    <menuitem id="qpl_button_char_color" command="cmd_qpl_menu_char_color" />
+				    <menuitem id="qpl_button_char_wordwrap" command="cmd_qpl_menu_char_wordwrap" />
+				    <menuitem id="qpl_menu_char_comment" command="cmd_qpl_menu_char_comment" />
+				    <menuitem id="qpl_menu_char_word_cleanup" command="cmd_qpl_menu_char_word_cleanup" />
+				    <menuitem id="qpl_button_char_ref" command="cmd_qpl_menu_char_ref" />
+				</menupopup>
+			</toolbarbutton>
+
+	
+			<toolbarbutton id="qpl_button_keyword_info"
+				class="toolbarbutton chromeclass-toolbar-additional" 
+				tooltiptext="&qpl_menu_keyword_info.label;"
+				command="cmd_qpl_menu_keyword_info" />
+	
+
+	
+		    <!-- More buttons here. -->
+	    </toolbaritem>
+	</toolbar>
+</toolboxrow>
+
+<!-- For key bindings... -->
+
+<broadcasterset id="broadcasterset_global">
+
+     <broadcaster id="bdcst_qpl_menu_build_html" key="key_qpl_menu_build_html" desc="&qpl_menu_build_html.desc;" command="cmd_qpl_menu_build_html" />      
+     <broadcaster id="bdcst_qpl_menu_build_php" key="key_qpl_menu_build_php" desc="&qpl_menu_build_php.desc;" command="cmd_qpl_menu_build_php" />      
+     <broadcaster id="bdcst_qpl_menu_build_stat" key="key_qpl_menu_build_stat" desc="&qpl_menu_build_stat.desc;" command="cmd_qpl_menu_build_stat" />      
+     <broadcaster id="bdcst_qpl_menu_build_qlist" key="key_qpl_menu_build_qlist" desc="&qpl_menu_build_qlist.desc;" command="cmd_qpl_menu_build_qlist" />      
+     <broadcaster id="bdcst_qpl_menu_build_esup" key="key_qpl_menu_build_esup" desc="&qpl_menu_build_esup.desc;" command="cmd_qpl_menu_build_esup" />      
+     <broadcaster id="bdcst_qpl_menu_build_custom" key="key_qpl_menu_build_custom" desc="&qpl_menu_build_custom.desc;" command="cmd_qpl_menu_build_custom" />      
+     
+     <broadcaster id="bdcst_qpl_menu_wizard_mult" key="key_qpl_menu_wizard_mult" desc="&qpl_menu_wizard_mult.desc;" command="cmd_qpl_menu_wizard_mult" />      
+     <broadcaster id="bdcst_qpl_menu_wizard_check" key="key_qpl_menu_wizard_check" desc="&qpl_menu_wizard_check.desc;" command="cmd_qpl_menu_wizard_check" />
+     <broadcaster id="bdcst_qpl_menu_wizard_list" key="key_qpl_menu_wizard_list" desc="&qpl_menu_wizard_list.desc;" command="cmd_qpl_menu_wizard_list" />
+     <broadcaster id="bdcst_qpl_menu_wizard_string" key="key_qpl_menu_wizard_string" desc="&qpl_menu_wizard_string.desc;" command="cmd_qpl_menu_wizard_string" />
+     <broadcaster id="bdcst_qpl_menu_wizard_openend" key="key_qpl_menu_wizard_openend" desc="&qpl_menu_wizard_openend.desc;" command="cmd_qpl_menu_wizard_openend" />
+     <broadcaster id="bdcst_qpl_menu_wizard_number" key="key_qpl_menu_wizard_number" desc="&qpl_menu_wizard_number.desc;" command="cmd_qpl_menu_wizard_number" />
+     <broadcaster id="bdcst_qpl_menu_wizard_date" key="key_qpl_menu_wizard_date" desc="&qpl_menu_wizard_date.desc;" command="cmd_qpl_menu_wizard_date" />
+     <broadcaster id="bdcst_qpl_menu_wizard_time" key="key_qpl_menu_wizard_time" desc="&qpl_menu_wizard_time.desc;" command="cmd_qpl_menu_wizard_time" />
+     <broadcaster id="bdcst_qpl_menu_wizard_questionnaire" key="key_qpl_menu_wizard_questionnaire" desc="&qpl_menu_wizard_questionnaire.desc;" command="cmd_qpl_menu_wizard_questionnaire" />
+     <broadcaster id="bdcst_qpl_menu_wizard_upload" key="key_qpl_menu_wizard_upload" desc="&qpl_menu_wizard_upload.desc;" command="cmd_qpl_menu_wizard_upload" />
+     <broadcaster id="bdcst_qpl_menu_wizard_void" key="key_qpl_menu_wizard_void" desc="&qpl_menu_wizard_void.desc;" command="cmd_qpl_menu_wizard_void" />
+     
+     <broadcaster id="bdcst_qpl_menu_wizard_layout" key="key_qpl_menu_wizard_layout" desc="&qpl_menu_wizard_layout.desc;" command="cmd_qpl_menu_wizard_layout" />
+     <broadcaster id="bdcst_qpl_menu_wizard_width" key="key_qpl_menu_wizard_width" desc="&qpl_menu_wizard_width.desc;" command="cmd_qpl_menu_wizard_width" />
+     <broadcaster id="bdcst_qpl_menu_wizard_popup" key="key_qpl_menu_wizard_popup" desc="&qpl_menu_wizard_popup.desc;" command="cmd_qpl_menu_wizard_popup" />
+     <broadcaster id="bdcst_qpl_menu_wizard_query" key="key_qpl_menu_wizard_query" desc="&qpl_menu_wizard_query.desc;" command="cmd_qpl_menu_wizard_query" />
+     <broadcaster id="bdcst_qpl_menu_wizard_product" key="key_qpl_menu_wizard_product" desc="&qpl_menu_wizard_product.desc;" command="cmd_qpl_menu_wizard_product" />
+     <broadcaster id="bdcst_qpl_menu_wizard_user" key="key_qpl_menu_wizard_user" desc="&qpl_menu_wizard_user.desc;" command="cmd_qpl_menu_wizard_user" />
+     <broadcaster id="bdcst_qpl_menu_wizard_default_phrases" key="key_qpl_menu_wizard_default_phrases" desc="&qpl_menu_wizard_default_phrases.desc;" command="cmd_qpl_menu_wizard_default_phrases" />
+     <broadcaster id="bdcst_qpl_menu_wizard_global" key="key_qpl_menu_wizard_global" desc="&qpl_menu_wizard_global.desc;" command="cmd_qpl_menu_wizard_global" />
+     <broadcaster id="bdcst_qpl_menu_wizard_samples" key="key_qpl_menu_wizard_samples" desc="&qpl_menu_wizard_samples.desc;" command="cmd_qpl_menu_wizard_samples" />
+     
+     <broadcaster id="bdcst_qpl_menu_char_bold" key="key_qpl_menu_char_bold" desc="&qpl_menu_char_bold.desc;" command="cmd_qpl_menu_char_bold" />     
+     <broadcaster id="bdcst_qpl_menu_char_italic" key="key_qpl_menu_char_italic" desc="&qpl_menu_char_italic.desc;" command="cmd_qpl_menu_char_italic" />     
+     <broadcaster id="bdcst_qpl_menu_char_underline" key="key_qpl_menu_char_underline" desc="&qpl_menu_char_underline.desc;" command="cmd_qpl_menu_char_underline" />     
+
+     <broadcaster id="bdcst_qpl_menu_char_break" key="key_qpl_menu_char_break" desc="&qpl_menu_char_break.desc;" command="cmd_qpl_menu_char_break" />     
+     <broadcaster id="bdcst_qpl_menu_char_bullet" key="key_qpl_menu_char_bullet" desc="&qpl_menu_char_bullet.desc;" command="cmd_qpl_menu_char_bullet" />     
+     <broadcaster id="bdcst_qpl_menu_char_nbsp" key="key_qpl_menu_char_nbsp" desc="&qpl_menu_char_nbsp.desc;" command="cmd_qpl_menu_char_nbsp" />     
+     <broadcaster id="bdcst_qpl_menu_char_sect" key="key_qpl_menu_char_sect" desc="&qpl_menu_char_sect.desc;" command="cmd_qpl_menu_char_sect" />     
+
+     <broadcaster id="bdcst_qpl_menu_char_arr_r" key="key_qpl_menu_char_arr_r" desc="&qpl_menu_char_arr_r.desc;" command="cmd_qpl_menu_char_arr_r" />     
+     <broadcaster id="bdcst_qpl_menu_char_arr_l" key="key_qpl_menu_char_arr_l" desc="&qpl_menu_char_arr_l.desc;" command="cmd_qpl_menu_char_arr_l" />     
+     <broadcaster id="bdcst_qpl_menu_char_arr_u" key="key_qpl_menu_char_arr_u" desc="&qpl_menu_char_arr_u.desc;" command="cmd_qpl_menu_char_arr_u" />     
+     <broadcaster id="bdcst_qpl_menu_char_arr_d" key="key_qpl_menu_char_arr_d" desc="&qpl_menu_char_arr_d.desc;" command="cmd_qpl_menu_char_arr_d" />     
+
+     <broadcaster id="bdcst_qpl_menu_char_escape" key="key_qpl_menu_char_escape" desc="&qpl_menu_char_escape.desc;" command="cmd_qpl_menu_char_escape" />     
+     <broadcaster id="bdcst_qpl_menu_char_color" key="key_qpl_menu_char_color" desc="&qpl_menu_char_color.desc;" command="cmd_qpl_menu_char_color" />     
+     <broadcaster id="bdcst_qpl_menu_char_wordwrap" key="key_qpl_menu_char_wordwrap" desc="&qpl_menu_char_wordwrap.desc;" command="cmd_qpl_menu_char_wordwrap" />     
+     <broadcaster id="bdcst_qpl_menu_char_comment" key="key_qpl_menu_char_comment" desc="&qpl_menu_char_comment.desc;" command="cmd_qpl_menu_char_comment" />
+     <broadcaster id="bdcst_qpl_menu_char_word_cleanup" key="key_qpl_menu_char_word_cleanup" desc="&qpl_menu_char_word_cleanup.desc;" command="cmd_qpl_menu_char_word_cleanup" />
+     <broadcaster id="bdcst_qpl_menu_char_ref" key="key_qpl_menu_char_ref" desc="&qpl_menu_char_ref.desc;" command="cmd_qpl_menu_char_ref" />     
+     
+     <broadcaster id="bdcst_qpl_menu_keyword_info" key="key_qpl_menu_keyword_info" desc="&qpl_menu_keyword_info.desc;" command="cmd_qpl_menu_keyword_info" />
+     
+</broadcasterset>
+
+
+
+<script type="application/x-javascript" src="chrome://qplwrapper/content/overlay.js"/> 
+<script type="application/x-javascript" src="chrome://qplwrapper/content/qplwrapper-helper.js"/> 
+
+<script type="application/x-javascript">
+<![CDATA[
+
+var Repo = 0;
+
+function IsAPg6() {
+
+	if (ko.views.manager.currentView !== null ) {
+		var prefManager = Components.classes["@mozilla.org/preferences-service;1"]
+			.getService(Components.interfaces.nsIPrefBranch);
+		var SvnPath = prefManager.getCharPref("extensions.qplwrapper.qpl_subversion_repository");
+		var SvnPath2 = prefManager.getCharPref("extensions.qplwrapper.qpl_subversion_repository2");
+		var WorkingPath = prefManager.getCharPref("extensions.qplwrapper.qpl_working_directory");
+
+		if (ko.views.manager.currentView.koDoc.file !== null) {
+		
+			var ReadWrite = (ko.views.manager.currentView.koDoc.file.isReadOnly ? false : true);
+			var Pg6 = /\.pg6/.test(ko.views.manager.currentView.koDoc.displayPath);
+	
+			if(Pg6 && ReadWrite) {
+				document.getElementById("cmd_qpl_menu_build").removeAttribute("disabled");
+				document.getElementById("cmd_qpl_menu_refresh").removeAttribute("disabled");
+			} else {
+				document.getElementById("cmd_qpl_menu_build").setAttribute("disabled", "true");
+				document.getElementById("cmd_qpl_menu_refresh").setAttribute("disabled", "true");
+			};
+	
+			if(Pg6) {
+				document.getElementById("cmd_qpl_menu_svn_info").removeAttribute("disabled");
+				if (ReadWrite) {
+					if (ko.views.manager.currentView.scimoz.readOnly) {
+						ko.views.manager.currentView.scimoz.readOnly = false;
+					}
+				} else {
+						ko.views.manager.currentView.scimoz.readOnly = true;
+						if (SvnPath.length) {
+							document.getElementById("cmd_qpl_menu_svn_steal_lock").removeAttribute("disabled");
+						}
+				}
+
+			} else {
+				document.getElementById("cmd_qpl_menu_svn_info").setAttribute("disabled", "true");
+				document.getElementById("cmd_qpl_menu_svn_steal_lock").setAttribute("disabled", "true");
+			};
+			
+			if(Pg6 && ReadWrite && SvnPath.length) {
+				document.getElementById("cmd_qpl_menu_svn_commit").removeAttribute("disabled");
+				document.getElementById("cmd_qpl_menu_svn_export").removeAttribute("disabled");
+			} else {
+				document.getElementById("cmd_qpl_menu_svn_commit").setAttribute("disabled", "true");
+				document.getElementById("cmd_qpl_menu_svn_export").setAttribute("disabled", "true");
+			};
+			
+			if(SvnPath.length && WorkingPath.length) {
+				document.getElementById("cmd_qpl_menu_svn_checkout").removeAttribute("disabled");
+	
+				if(SvnPath2.length) {
+					document.getElementById("cmd_qpl_menu_svn_checkout2").removeAttribute("disabled");
+				} else {
+					document.getElementById("cmd_qpl_menu_svn_checkout2").setAttribute("disabled", "true");
+				}
+	
+			} else {
+				
+				document.getElementById("cmd_qpl_menu_svn_checkout").setAttribute("disabled", "true");
+				document.getElementById("cmd_qpl_menu_svn_checkout2").setAttribute("disabled", "true");
+			}
+		}
+	}
+}
+]]>
+
+</script>
+</overlay>
+
+
+
+

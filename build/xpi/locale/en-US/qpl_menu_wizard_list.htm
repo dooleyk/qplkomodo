@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- qpl_menu_wizard_list.htm -->
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8;" />
+	<link rel="stylesheet" type="text/css" href="qpl_help.css" />
+	<title>Drop-Down List Question</title>
+</head>
+
+<body>
+	<p class="Printbar"><img alt="Print" src="../../skin/qpl_button_printer.png" onclick="window.print();" /></p>
+
+	<h1>Drop-Down List Question</h1>
+
+	<p>This dialog box may be used to create the QPL code for
+	one drop-down list question. This code will be inserted into your
+	program at the current cursor position.</p>
+	
+	<p>They are two types of drop-down list questions: NLIST stores the selected
+	response as a number (just like the MULT question). SLIST stores the answer label
+	itself.</p>
+	
+	<table cellspacing="2" cellpadding="2" border="0">
+		<tr>
+			<th width="10%" valign="top" align="left">Name</th>
+
+			<td width="90%" valign="top">The name of a question must start with a letter, contain only letters and numbers, and be from one to sixteen characters long.<br />
+			<br />
+			If a name is not specified, then a name will be created automatically. (Name will be Q# if visible, U# if visible but not numbered, or H#if not visible.)</td>
+		</tr>
+
+		<tr>
+			<th width="10%" valign="top" align="left">Stat label</th>
+
+			<td valign="top" align="left">If a label is entered here, then this will be used as a variable label for this question when the SAS or SPSS program is generated instead of the question text.</td>
+		</tr>
+
+		<tr>
+			<th width="10%" valign="top" align="left">Number answers</th>
+
+			<td valign="top" align="left">Define how answer labels should be numbered.<br />
+			<br />
+			1, 2, 3... - Use numbers.<br />
+			a, b, c... - Use lower-case letters<br />
+			A, B, C... - Use upper-case letters<br />
+			Off - Do not display numbers or letters<br />
+			Inherit - Inherit setting from the previous question</td>
+		</tr>
+
+		<tr>
+			<th width="10%" valign="top" align="left">Align text</th>
+
+			<td valign="top" align="left">Define how the question text should be aligned.<br />
+			<br />
+			Left - Left justify question text<br />
+			Center - Center question text<br />
+			Right - Right justify question text<br />
+			Inherit - Inherit setting from the previous question</td>
+		</tr>
+
+		<tr>
+			<th width="10%" valign="top" align="left">Align question</th>
+
+			<td valign="top" align="left">Define how the question should be aligned vertically when used inside a COLUMNS layout. This setting has no effect on questions in normal or MATRIX layout.<br />
+			<br />
+			Top - Top-align question<br />
+			Middle - Center-align question<br />
+			Bottom - Bottom-align question<br />
+			Baseline - The baseline is the "imaginary line" which most letters "sit" on, in a line of text. The baseline value sets the row so that all the table data share the same baseline. Often this has the same effect as the bottom value. However, if the fonts are in different sizes, baseline looks better.<br />
+			Inherit - Inherit setting from the previous question</td>
+		</tr>
+
+		<tr>
+			<th width="10%" valign="top" align="left">Bold text</th>
+
+			<td valign="top" align="left">Set question text to be displayed using a bold font.<br />
+			<br />
+			On - Use bold font.<br />
+			Off - Do not use bold font<br />
+			Inherit - Inherit setting from the previous question</td>
+		</tr>
+
+		<tr>
+			<th width="10%" valign="top" align="left">Bold text</th>
+
+			<td valign="top" align="left">Set question text to be displayed using a bold font.<br />
+			<br />
+			On - Use bold font.<br />
+			Off - Do not use bold font<br />
+			Inherit - Inherit setting from the previous question</td>
+		</tr>
+
+		<tr>
+			<th width="10%" valign="top" align="left">Width</th>
+
+			<td valign="top" align="left">Set the width of the question text area as the number of pixels. Leave field blank to inherit this setting from the previous question. Enter "D" to reset the width to the current system default. This value will vary according to whether the question is in a normal, matrix, or columns layout.<br />
+			<br /></td>
+		</tr>
+
+		<tr>
+			<th width="10%" valign="top" align="left">Question</th>
+
+			<td valign="top" align="left">Enter the text of your question here. Each line must be less than 500 characters long. You do not need to be careful where you break your lines; the text will be re-wrapped when it is displayed in the web questionnaire form. You can create a paragraph break by entering a blank line. (See the "Text Line Formatting" section below, and the QPL Help page, "QPL Language Syntax," for additional ways to format your question.)</td>
+		</tr>
+
+		<tr>
+			<th width="10%" valign="top" align="left">Answer option</th>
+
+			<td valign="top" align="left">By default, the last answer in your list of answers will be checked when the web questionnaire installed on a web server. You may use this option, however, to change the default to another answer. To do this,enter the number of the other answer here. The first answer, for example would be "1."<br />
+			<br />
+			You may instead use this option to copy the list of answers from another multiple choice question that you have already written in your questionnaire program, including the default answer specification. To do this, enter the name of the other multiple choice question here. (If you enter the name of another question here, you should not enter any answers below.) If you wish to copy the answer list from the previous question (which must also be a MULT question) then you may omit entering the name of the previous question here.</td>
+		</tr>
+
+		<tr>
+			<th width="10%" valign="top" align="left">Next</th>
+
+			<td valign="top" align="left">Entering the name of a question here will insert a hypertext link to that question at the bottom of this question. The respondent may click on this link to jump to the question, whether or not it happens to be on the same page. No link is created if this left blank.</td>
+		</tr>
+
+		<tr>
+			<th width="10%" valign="top" align="left">Answer tabs 1, 2, 3...</th>
+
+			<td valign="top" align="left">Up to nine answers may be entered using the nine answer tabs. More than nine answers, however, may be used in a multiple-choice question. If you need to enter more answers, edit the question in HomeSite after you have used the Tag Editor to build the question code.</td>
+		</tr>
+
+		<tr>
+			<th width="10%" valign="top" align="left">Group label</th>
+
+			<td valign="top" align="left">A label may be entered here to label a group of answers. If used in a normal layout, this label will be displayed using a bold font immediately above the answer. If used in a MATRIX layout, this label will be displayed as a spanning heading above the columns it applys to (i.e., all of the following answer columns until another group label is used or the last answer is reached).</td>
+		</tr>
+
+		<tr>
+			<th width="10%" valign="top" align="left">Answer label #</th>
+
+			<td valign="top" align="left">Enter the text of your answer here. Each answer should be put in this field under a separate tab. An answer must be less than 500 characters long. You must have at least one answer unless you have used the "Answer option" above to copy an answer list from another multiple choice question.<br />
+			<br /></td>
+		</tr>
+
+		<tr>
+			<th width="10%" valign="top" align="left">Add separator above/shade column</th>
+
+			<td valign="top" align="left">Check this option to put a horizontal rule above the answer when it is desplayed in a normal layout, or shade the column for this answer if used in a MATRIX layout.</td>
+		</tr>
+
+		<tr>
+			<th width="10%" valign="top" align="left">Required</th>
+
+			<td valign="top" align="left">Check this option to make the answer to this question required. The radio buttons will be displayed on the form with a light pink background if the respondent has not checked an answer. Once the respondent has selected an answer and moved to another question, the light pink background will change to the normal colored background. (Important note: This behavior is currently not supported by the Google Chrome browser or the Apple Safari browser (on any Apple device), nor by the Firefox browser when it is installed on an Apple Macintosh computer. Here, the link pink background will not be removed until the page is fully refreshed either by moving to the next page and then back, or by logging out and logging back in again. Similarly, the summary questionnaire form will not display the updated shading until the current page is fully refreshed.)</td>
+		</tr>
+
+		<tr>
+			<th width="10%" valign="top" align="left">Instruction Line</th>
+
+			<td valign="top" align="left">The INSTRUCTION command may be used to override the default MULT instruction line (195).<br />
+			ON - Use default instruction line.<br />
+			OFF - Do not use an instruction line.<br />
+			"new instruction" - Use this new phrase as an instruction line.</td>
+		</tr>
+
+		<tr>
+			<th width="10%" valign="top" align="left">Output attributes on a single line</th>
+
+			<td valign="top" align="left">This does not do anything.</td>
+		</tr>
+	</table>
+
+	
+	<p>See also <a href="qpl_menu_wizard_text_formatting.htm">Text Line Formatting.</a></p>
+
+		
+	<p align="center"><img alt="QPL6 Logo" src="../../skin/qplwrapper.png" /></p>
+
+</body>
+</html>

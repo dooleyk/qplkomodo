@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- qpl_menu_build_esup.htm -->
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8;" />
+	<link rel="stylesheet" type="text/css" href="qpl_help.css" />
+	<title>Build GAO Product Files</title>
+</head>
+
+<body>
+	<p class="Printbar"><img alt="Print" src="../../skin/qpl_button_printer.png" onclick="window.print();" /></p>
+
+	<h1>Build GAO Product Files</h1>
+
+	<p>This dialog lets you build a collection of files that are used at GAO
+	to make web-only summaries of a QPL-based survey. GAO posts these summaries,
+	called "e-supplements," in addition to the main audit or evaluation report which
+	used the results of the survey.</p>
+
+	<p>Your QPL questionnaire program file (.pg6) must include a PRODUCT block
+	that contains various pieces of information that are needed to create the
+	e-supplement, including the product title and number, release date, and short
+	description of the survey. (See the "GAO Product Block" syntax wizard for
+	help programming your PRODUCT block.) </p>
+
+	<p>The final product is created in two stages. First select the option to
+	build a special SAS program and then use that to process the fixed-format data
+	file (.dat) that you exported from your project web site. This will create
+	an output file called "results.htm." This is an HTML file that contains
+	a series of tables that summarize each closed-respose (i.e., non-text response)
+	in the questionnaire with hypertext links back to the original web questionnaire
+	form. This lets an interested reader see how the question was seen by a respondent.</p>
+
+	<p>Second, select the option to build the e-supplement web page files including
+	a main page which has your background statement and links to the copy of your
+	web questionnaire (which has links to the results.htm file). These files,
+	with the results.htm file, will intalled on GAO's public web site with the main
+	report when it is officially released. These files will be put in your project's
+	"product" subdirectory. You should copy your results.htm file to this directory.</p>
+	
+	<p>Once all the files are in place, you can use your browser to open the
+	the index.htm file in the analysis folder and excercise the e-supplement product.</p>
+	
+	<h2>Include Links From Questions to Summary Tables</h2>
+	<p>Use this option to create hypertext links from each question in the web
+	form to the related summary table in the results.htm file. The results.htm
+	file will be created using SAS and will include links from each summary table
+	back to question. You would un-check this option if you are not including the
+	survey results </p>
+	
+	<h2>Include GAO Reviewer Signature Block</h2>
+	<p>This option will include the GAO workpaper documentation block at the top
+	of SAS program that is generated that will be used to create the results.htm
+	file.</p>
+
+	
+	<p align="center"><img alt="QPL6 Logo" src="../../skin/qplwrapper.png" /></p>
+
+</body>
+</html>

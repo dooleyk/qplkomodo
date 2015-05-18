@@ -1,0 +1,98 @@
+*****************************************************************************
+** PROGRAM:                                                DATE: 
+**  AUTHOR:                                                 JOB: 
+**
+**   TITLE: 
+** 
+** PURPOSE: 
+** 
+** 
+** 
+** 
+*****************************************************************************
+
+**********************************************************************
+** Global Project Settings
+.TITLE = "Title Goes Here"
+.SUBTITLE = "Subitle Goes Here"
+.AUTHOR = "Your Name Goes Here"
+.LOGO = "qpl_logo.png"
+.PAGEWIDTH = 770
+.PAGEGUTTER = 35
+.WIDTH = 490
+.CARD = 200
+.MENU = ON
+.SUMMARY = ON
+.PROGRESS = ON
+.NAVIGATION = ON
+.PRINTBUTTON = ON
+.DISPLAYFADE = MEDIUM
+** 
+**********************************************************************
+
+**********************************************************************
+** Access Controls
+.ACCOUNT = EXIST
+.AUTHENTICATION = NORMAL
+.LOGINURL = OFF
+.LOGINPASSWORD = OFF
+.LOGINEMAIL = ON
+.LOGINJUMP = OFF
+*.EXPIREDATE = "2015-01-15"
+*.ARCHIVEDATE = "2015-01-15"
+.CASES = ONE
+** 
+**********************************************************************
+
+**********************************************************************
+** Color Settings
+.COLORSCHEME = #9999cc = 2
+** 
+**********************************************************************
+
+**********************************************************************
+** Font Settings
+.HFONT = SANSSERIF = MEDIUM
+.FONT = SERIF = MEDIUM
+** 
+**********************************************************************
+
+**********************************************************************
+** Contact Information
+.HELP = ON
+Enter contact information here.
+.HELP = OFF
+** 
+**********************************************************************
+
+**********************************************************************
+** Home Page
+.HELLO = "Begin"
+Enter home page information here.
+.HELLO = OFF
+** 
+**********************************************************************
+
+**********************************************************************
+** Questions
+
+.QUESTION = Q1, TYPE = MULT
+What is your favorite color?
+.ANSWER
+Red
+Orange
+Yellow
+Green
+Blue
+Indigo
+Violet
+Don't know
+.NEXT
+
+.QUESTION = FINISH, TYPE = MULT
+Have you finished this questionnaire?
+.ANSWER        * The last answer, 'No,' will be checked by default.
+Yes
+No
+.NEXT
+

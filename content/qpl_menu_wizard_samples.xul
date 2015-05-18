@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://qplwrapper/skin/build.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://qplwrapper/locale/wizard.dtd">
+<!-- qpl_menu_wizard_samples.xul
+	K. Dooley -->
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	id="qpl_wizard"
+	orient="vertical"
+	title="&qpl_wizard.title;"
+	style="width: 40em;"
+	screenX="24" screenY="24" 
+	buttons="accept,cancel,help"
+	defaultButton="accept"
+	buttonlabelaccept="&qpl_insert.label;"
+	buttonaccesskeyaccept="&qpl_insert.accesskey;"
+	buttonlabelcancel="&qpl_cancel.label;"
+	buttonaccesskeycancel="&qpl_cancel.accesskey;"
+	ondialogaccept="InsertText();"
+	ondialogcancel="return true;"
+	buttonaccesskeyhelp="&qpl_help.accesskey;"
+	buttonlabelhelp="&qpl_help.label;"
+	onload="GetSampleList('qpl_wizard_sample_list' );"
+	ondialoghelp="window.openDialog('chrome://qplwrapper/content/qpl_help.xul','qpl_help',
+                  'chrome','qpl_menu_wizard_samples.htm');" >
+
+<stringbundleset id="stringbundleset">
+	<stringbundle id="qplwrapper-strings" src="chrome://qplwrapper/locale/qplwrapper.properties"/>
+</stringbundleset>
+
+<vbox id="qpl_dialog" flex="1" >
+	<dialogheader title="&qpl_menu_wizard_samples.title;" description="&qpl_menu_wizard_samples.notes;"/>
+	<separator/>
+
+	<label id="qpl_wizard_sample_label" control="qpl_wizard_sample_list" />
+	<listbox id="qpl_wizard_sample_list" rows="10" width="400">
+	  <listhead>
+	    <listheader label="&qpl_wizard_sample_list_sample.label;" width="100"/>
+	  </listhead>
+	  <listcols>
+	    <listcol flex="1"/>
+	  </listcols>
+	</listbox>
+	
+	<separator/>
+	
+	<checkbox id="qpl_wizard_sample_list_ouput" checked="false" label="&qpl_wizard_sample_list_ouput.label;" accesskey="&qpl_wizard_sample_list_ouput.accesskey;" />
+	
+	
+</vbox>
+
+<script type="application/x-javascript" src="chrome://qplwrapper/content/qplwrapper.js"/>
+<script type="application/x-javascript" src="chrome://qplwrapper/content/qplwrapper-helper.js"/> 
+
+<script type="application/x-javascript">
+<![CDATA[
+var ko = window.arguments[0];
+
+
+function InsertText() {
+	var istream = Components.classes["@mozilla.org/network/file-input-stream;1"]
+		.createInstance(Components.interfaces.nsIFileInputStream);
+	var cstream = Components.classes["@mozilla.org/intl/converter-input-stream;1"]
+		.createInstance(Components.interfaces.nsIConverterInputStream);
+	
+	var SampleList = document.getElementById('qpl_wizard_sample_list');
+
+	var SampleFile = GetContentPath("samples",  SampleList.selectedItem.value);
+
+	
+	istream.init(SampleFile, 0x01, 0x0124, 0);
+	cstream.init(istream, "UTF-8", 0, 0);
+	cstream.QueryInterface(Components.interfaces.nsIUnicharLineInputStream);
+	
+	var Phrase = "";
+	var line = {};
+	var hasmore;
+	
+	do {
+	    hasmore = cstream.readLine(line);
+	    
+	    Phrase += line.value + "\n";
+	    
+	} while (hasmore);
+	
+	if (document.getElementById('qpl_wizard_sample_list_ouput').checked) {
+		qplLog(Phrase, false);
+	} else {
+		ko.views.manager.currentView.setFocus();
+		ko.views.manager.currentView.scimoz.beginUndoAction();
+		ko.views.manager.currentView.selection = Phrase;
+		ko.views.manager.currentView.scimoz.endUndoAction();
+	}
+	
+}
+
+]]>
+</script>
+
+</dialog>
+

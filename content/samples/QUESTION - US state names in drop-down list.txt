@@ -1,0 +1,67 @@
+*! >>>>
+QUESTION - US state names in drop-down list.txt
+
+This question will be displayed as a drop-down list of
+U.S. state names. The current selection will be coded as
+an integer starting at "1" for Alabama.  It will be coded as
+"0" if no state has been selected.
+*! <<<<
+
+
+.QUESTION, TYPE = NLIST
+State:
+.INSTRUCTION = "(Select one)"
+.ANSWER = 0
+Alabama
+Alaska
+Arizona
+Arkansas
+California
+Colorado
+Connecticut
+Delaware
+District of Columbia
+Florida
+Georgia
+Hawaii
+Idaho
+Illinois 
+Indiana
+Iowa
+Kansas
+Kentucky
+Louisiana
+Maine
+Maryland
+Massachusetts
+Michigan 
+Minnesota
+Mississippi
+Missouri
+Montana
+Nebraska
+Nevada
+New Hampshire
+New Jersey
+New Mexico
+New York
+North Carolina
+North Dakota
+Ohio
+Oklahoma
+Oregon
+Pennsylvania
+Rhode Island
+South Carolina
+South Dakota
+Tennessee
+Texas
+Utah
+Vermont
+Virginia
+Washington
+West Virginia
+Wisconsin
+Wyoming
+.NEXT
+

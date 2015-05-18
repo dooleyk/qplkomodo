@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- preferences.htm -->
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8;" />
+	<link rel="stylesheet" type="text/css" href="qpl_help.css" />
+	<title>QPL 6 Preferences</title>
+</head>
+
+<body>
+	<p class="Printbar"><img alt="Print" src="../../skin/qpl_button_printer.png" onclick="window.print();" /></p>
+	<h1>QPL 6 Preferences</h2>
+
+	<p>These preferences tell the QPL development system about how the resources it
+	needs are set up on your computer. These should be set when you first install
+	the QPL Add-on in Komodo. The QPL development system will continue to use these
+	settings every time you start Komodo. And the settings will be retained when
+	you upgrade the QPL Add-on software.</p>
+	
+	<p>At a minimum, you must set the Operating System and Working Directory
+	preferences in order to be able to create, compile, and review QPL projects.</p>
+	
+	<p>You may optionally use the Subversion (version control) and JobTracker (project tracking)
+	settings if they are used by your questionnaire development team. (Note: JobTracker is local
+	only to GAO and has not been publicly released.)</p>
+	
+	<h2>Operating System</h2>
+	<p>This setting defaults to Windows 32, which should work for all versions of Windows
+	that have been released since Windows XP. If you have installed Komodo and this Add-on
+	on a computer using another OS, then select that option.</p>
+	
+	<p>Click the "Test QPL Software
+	Connection" button to confirm that the software is working. Open the "Command Output"
+	pane at the bottom Komodo window to see the results of the test (View &gt; Tabs &amp; Sidebars &gt;
+	Command Output). The test runs the QPL program compiler to show its command line options.
+	If successful, "OK," will be displayed near the top of the Command Output pane.</p>
+
+	<h2>Subversion Repository</h2>
+	<p>If you have are using the the Subversion version control system to back-up your
+	QPL projects, enter the location of your repository here. The location must be prefaced
+	with the transfer protocol (i.e., http://, https://, file://, or svn://). If you are
+	not using a Subversion repository, then leave this field blank. (Note: The "file://" pathway
+	should always start with a slash for the root directory in addition to the two slashes
+	that are used to indicate the protocol, even if you are using Windows. <br />
+	(Ex. <span style="font-family: monospace;">file:///C:\Users\dooleyk\svnrepo</span> )</p>
+	
+	<p>The "Test" button will run the Subversion command to list the projects that
+	are located in your repository. When you click the "Test" button, a dialog is displayed
+	that asks for your repository user name and password. Fill in this information as
+	required by your repository administrator. The user name and password you enter here
+	will be used for your later work when you get and send QPL projects to and from your
+	repository. If the test is successful, "OK," will be displayed near the top of the
+	Command Output window and the first few projects from the repository will be listed.</p>
+	
+	<p>The QPL Subversion functions expect that your computer's Subversion executable
+	file, svn, is included on your computer's path of executable files. If you are using
+	Komodo Edit, you will need to add the svn program to your computer's path. If you are
+	using Komodo IDE, then you may instead set the location in its Preferences dialog (i.e.,
+	Edit &gt; Preferences... &gt; Source Code Control &gt; Subversion &gt; SVN Executable used).</p>
+	
+	<h2>Working Directory</h2>
+	
+	<p>Your working directory is where the local copies of your QPL projects will be put when
+	you create a new project or get a copy of someone else's project from your Subversion
+	repository. You will edit and build your projects in this directory, and then use the
+	QPL "Send" command to copy everything back to the repository.</p>
+	
+	<p>Use the "Browse" button to start a file manager dialog that will let you locate your
+	working directory, or create one if necessary. Generally, you will want to locate your
+	working directory within your personal user space on your computer (ex. /home/users/larry/qpl in
+	Linux).</p>
+	
+	<h2>JobTracker</h2>
+	
+	<p>This is a project tracking system used within GAO to keep track of its many
+	QPL projects. GAO users should enter the JobTracker URL: https://surveys.gao.gov/jobtracker.
+	This is a location on GAO's internal network and so can only be used by GAO employees
+	while they are logged into the agency network. If you are not a GAO employee, then you
+	should leave this field blank.</p>
+	
+	<p>Click the "Test" button to check the connection to the JobTracker web site. A dialog
+	will pop-up that asks for your JobTracker user name and password. GAO employees who have
+	accounts on this system may enter their GAO network user name and SecurID token. If
+	successful, "OK," will be displayed near the top of the Command Output pane.</p>
+	
+	<p align="center"><img alt="QPL6 Logo" src="../../skin/qplwrapper.png" /></p>
+	
+</body>
+</html>

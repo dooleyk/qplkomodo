@@ -1,0 +1,132 @@
+/* build.css */
+
+#qpl_dialog {
+	margin: 1em;
+}
+
+#qpl_notes_box {
+	border-bottom: 4px groove black; 
+	padding-bottom: 1em;
+}
+
+#qpl_notes {
+	width: 30em;
+}
+
+.qpl_box_border {
+	border: 1px solid black;
+	margin: .5em;
+	padding: .5em;
+	border-radius: 10px;
+	background-color: white;
+}
+
+
+#tabbed-view tabs > tab[file_readonly] > hbox {
+  background-color: rgba(255,0,0,0.3) !important;
+  padding-left: 2px !important; 
+  padding-right: 2px !important;
+}
+
+
+#qpl_menu_wizard_global_font_header_h1, #qpl_menu_wizard_global_font_header_h2, #qpl_menu_wizard_global_font_header_h3  {
+	background-color: white;
+	border: solid thin black;
+	padding: 7px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 18pt;
+	text-align: center;
+	font-style:normal;
+	color:black;
+	text-decoration : none;
+	font-weight : bold;
+	width: 400px;
+}
+
+
+#qpl_menu_wizard_global_font_header_h2 {
+	font-size:14pt;
+}
+
+#qpl_menu_wizard_global_font_header_h3 {
+	font-size:12pt;
+	text-align:left;
+	font-style:normal;
+}
+
+
+#qpl_menu_wizard_global_font_body_p {
+	background-color: white;
+	border: solid thin black;
+	padding: 7px;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 11pt;
+	font-style: normal;
+	font-weight: normal;
+	color: Black;
+	line-height: normal;
+	text-align:left;
+	font-style:normal;
+	width: 400px;
+}
+
+
+/* Width Calculator */
+
+.Box {
+	width: 400px;
+	border: 1px solid Black;
+	text-align: left;
+	background-image: url(qpl_progress_bar_bkgrnd.png);
+	background-repeat: repeat-x;
+	margin-left: 9px;
+	margin-bottom: 10px;
+	margin-top : 5px;
+	height: 15px;
+	padding : 0;
+}
+
+.Menu, .Gutter, .Indent, .Question, .Matrix, .Column1, .Column2 {
+	width: 40px;
+	
+	background-repeat: repeat-x;
+	font-size : 12px;			/* hack for ie6 not using my height settings! */
+	line-height : 15px;
+	height: 15px;
+	padding : 0;
+	margin : 0;
+	float: left;
+}
+
+.Menu {
+	background-image: url(qpl_progress_bar_blue.png);
+}
+
+.Gutter {
+	background-image: url(qpl_progress_bar_magenta.png);
+}
+
+.Indent {
+	background-image: url(qpl_progress_bar_red.png);
+}
+
+.Question {
+	background-image: url(qpl_progress_bar_green.png);
+}
+
+
+.Matrix {
+	background-image: url(qpl_progress_bar_cyan.png);
+}
+
+
+.Column1 {
+	width: 0px;
+	background-image: url(qpl_progress_bar_green.png);
+}
+
+
+.Column2 {
+	width: 0px;
+	background-image: url(qpl_progress_bar_cyan.png);
+}

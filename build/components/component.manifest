@@ -1,0 +1,4 @@
+category komodo-language-info QPL %7B%22name%22%3A%20%22QPL%22%2C%20%22defaultExtension%22%3A%20%22.pg6%2A%22%7D
+category komodo-language QPL @activestate.com/koLanguage?language=QPL;1
+contract @activestate.com/koLanguage?language=QPL;1 {82fb3ba5-7479-4b2b-b3c3-7e1f7954dae0}
+component {82fb3ba5-7479-4b2b-b3c3-7e1f7954dae0} koQPL_UDL_Language.py

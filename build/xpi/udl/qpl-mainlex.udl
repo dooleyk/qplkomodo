@@ -1,0 +1,293 @@
+# UDL lexer for QPL.
+#
+# Note: UDL is a state machine and it uses regular expressions to move between
+#       the different language states.
+#
+
+language QPL
+
+################ Boilerplate ################
+
+# Boilerplate - need to start with family set to markup and IN_M_DEFAULT state,
+# we'll later perform a null-transition change to get into the SSL state.
+family markup
+initial IN_M_DEFAULT
+# Null-transition to get into SSL state
+state IN_M_DEFAULT:
+/./ : redo, => IN_SSL_DEFAULT
+
+################ Language Start ################
+
+family ssl # server side language
+
+# Specify the min and max styles we'll be referring to.
+start_style SSL_DEFAULT
+end_style SSL_VARIABLE
+
+# If the language has keywords, specify which style needs to be transformed
+keyword_style SSL_IDENTIFIER => SSL_WORD
+keywords [
+"ACCOUNT", "ALIGN", "AN", "ANSWER", "ANUMBERING", "ARCHIVEDATE", 
+"AUTHENTICATION", "AUTHOR", "BACKGROUND", "BOLD", "BY", "CARD", 
+"CASES", "CLASS", "CLOSEBUTTON", "COLORSCHEME", "COLUMNS", 
+"COLUMNSHEADINGS", "COLUMNSROWSHADING", "COMPUTE", "COMPUTEIF", 
+"CONTACT", "DIRECTION", "DISPLAY", "DISPLAYFADE", "EMAIL", "ENGINE", 
+"ESTIMATE", "EXPIRE", "EXPIREDATE", "FONT", "FORMAT", "FROM", 
+"FROMNAME", "GOTO", "GROUP", "HEIGHT", "HELLO", "HELP", "HFONT", 
+"HIDE", "HIGH", "HOVER", "HTMLSPECIALCHARS", "INCLUDE", "IF", 
+"INDENT", "INSTRUCTION", "ISSUEDATE", "JOBCODE", "LABEL", "LANGUAGE", 
+"LIVEUPDATE", "LOCK", "LOGINEMAIL", "LOGINJUMP", "LOGINPASSWORD", 
+"LOGINURL", "LOGO", "LOW", "MATRIX", "MATRIXDKSHADING", 
+"MATRIXROWSHADING", "MATRIXWIDTH", "MENU", "NAME", "NAVIGATION", 
+"NEWCARD", "NEWPAGE", "NE", "NEXT", "OPENENDCOLS", "OPENENDMAXCHARS", 
+"OPENENDROWS", "PAGE", "PAGEGUTTER", "PAGEWIDTH", "PASSWORD", 
+"PERCENT", "PHONE", "POPUP", "PRINTBUTTON", "PRODUCT", 
+"PRODUCTNUMBER", "PRODUCTTITLE", "PROGRESS", "QNUMBERING", "QPREFIX", 
+"QU", "QUERY", "QUESTION", "QUESTIONNAIREDB", "QUESTIONNAIRESTATUS", 
+"QUESTIONNAIREURL", "RANK", "REPLYTO", "REPORTNUMBER", "REPORTTITLE", 
+"REQUIRED", "RETURNPATH", "SCRIPT", "SELECTCASEALT", "SELECTCASEBY", 
+"SELECTCASEFORMAT", "SELECTCASELABEL", "SELECTCASEREQUIRED", "SET", 
+"SKIP", "SKIPIF", "STATUS", "STRINGCOLS", "STYLE", "SUBTITLE", "SUM", 
+"SUMMARY", "SYSTEM", "TITLE", "TYPE", "UPLOADMAX", "UPLOADOVERWRITE", 
+"USER", "VALIGN", "VERBOSE", "WEIGHT", "WIDTH", "YUI",
+"account", "align", "an", "answer", "anumbering", "archivedate", 
+"authentication", "author", "background", "bold", "by", "card", 
+"cases", "class", "closebutton", "colorscheme", "columns", 
+"columnsheadings", "columnsrowshading", "compute", "computeif", 
+"contact", "direction", "display", "displayfade", "email", "engine", 
+"estimate", "expire", "expiredate", "font", "format", "from", 
+"fromname", "goto", "group", "height", "hello", "help", "hfont", 
+"hide", "high", "hover", "htmlspecialchars", "include", "if", 
+"indent", "instruction", "issuedate", "jobcode", "label", "language", 
+"liveupdate", "lock", "loginemail", "loginjump", "loginpassword", 
+"loginurl", "logo", "low", "matrix", "matrixdkshading", 
+"matrixrowshading", "matrixwidth", "menu", "name", "navigation", 
+"newcard", "newpage", "ne", "next", "openendcols", "openendmaxchars", 
+"openendrows", "page", "pagegutter", "pagewidth", "password", 
+"percent", "phone", "popup", "printbutton", "product", 
+"productnumber", "producttitle", "progress", "qnumbering", "qprefix", 
+"qu", "query", "question", "questionnairedb", "questionnairestatus", 
+"questionnaireurl", "rank", "replyto", "reportnumber", "reporttitle", 
+"required", "returnpath", "script", "selectcasealt", "selectcaseby", 
+"selectcaseformat", "selectcaselabel", "selectcaserequired", "set", 
+"skip", "skipif", "status", "stringcols", "style", "subtitle", "sum", 
+"summary", "system", "title", "type", "uploadmax", "uploadoverwrite", 
+"user", "valign", "verbose", "weight", "width", "yui",
+
+"CHECK", "DATE", "LDATE", "MULT", "NLIST", "NUMBER", "OPENEND", 
+"QUESTIONNAIRE", "RANDOM", "SDATE", "SLIST", "STRING", "TIME", 
+"UPLOAD", "VERSION", "VOID", "XDATE",
+
+"check", "date", "ldate", "mult", "nlist", "number", "openend", 
+"questionnaire", "random", "sdate", "slist", "string", "time", 
+"upload", "version", "void", "xdate",
+
+"A", "ADMIN", "ALICEBLUE", 
+"ANONYMOUS", "ANTIQUEWHITE", "APPENDIX", "AQUA", "AQUAMARINE", 
+"AZURE", "BASELINE", "BEIGE", "BISQUE", "BLACK", "BLANCHEDALMOND", 
+"BLANK", "BLUE", "BLUEVIOLET", "BODY", "BOTTOM", "BREAK", "BROWN", 
+"BUG", "BURLYWOOD", "CADETBLUE", "CENTER", "CHARTREUSE", "CHOCOLATE", 
+"CLEAR", "CLOSED", "CORAL", "CORNFLOWERBLUE", "CORNSILK", "COUNT", 
+"CREATE", "CRIMSON", "CYAN", "DARKBLUE", "DARKCYAN", "DARKGOLDENROD", 
+"DARKGRAY", "DARKGREEN", "DARKGREY", "DARKKHAKI", "DARKMAGENTA", 
+"DARKOLIVEGREEN", "DARKORANGE", "DARKORCHID", "DARKRED", "DARKSALMON", 
+"DARKSEAGREEN", "DARKSLATEBLUE", "DARKSLATEGRAY", "DARKSLATEGREY", 
+"DARKTURQUOISE", "DARKVIOLET", "DATAADMIN", "DEEPPINK", "DEEPSKYBLUE", 
+"DIMGRAY", "DIMGREY", "DODGERBLUE", "EOL", "EOQ", "ESUPPLEMENT", 
+"EXIST", "FALSE", "FAST", "FIREBRICK", "FLORALWHITE", "FORESTGREEN", 
+"FORM", "FUCHSIA", "GAINSBORO", "GHOSTWHITE", "GOLD", "GOLDENROD", 
+"GRAY", "GREEN", "GREENYELLOW", "GREY", "HARD", "HONEYDEW", "HOTPINK", 
+"HOVER", "HOVERMAIN", "HOVERMENU", "HOVERMENUNAVBB", "HR", "IN", 
+"INDIANRED", "INDIGO", "INSUBSECTION", "IVORY", "KHAKI", "L", "LARGE", 
+"LARGER", "LAVENDER", "LAVENDERBLUSH", "LAWNGREEN", "LDAP", "LEFT", 
+"LEMONCHIFFON", "LIGHTBLUE", "LIGHTCORAL", "LIGHTCYAN", 
+"LIGHTGOLDENRODYELLOW", "LIGHTGRAY", "LIGHTGREEN", "LIGHTGREY", 
+"LIGHTPINK", "LIGHTSALMON", "LIGHTSEAGREEN", "LIGHTSKYBLUE", 
+"LIGHTSLATEGRAY", "LIGHTSLATEGREY", "LIGHTSTEELBLUE", "LIGHTYELLOW", 
+"LIME", "LIMEGREEN", "LINEN", "LONG", "LRGR", "M", "MAGENTA", 
+"MAJOROFF", "MAJORON", "MANAGER", "MANY", "MAROON", "MEDIUM", 
+"MEDIUMAQUAMARINE", "MEDIUMBLUE", "MEDIUMORCHID", "MEDIUMPURPLE", 
+"MEDIUMSEAGREEN", "MEDIUMSLATEBLUE", "MEDIUMSPRINGGREEN", 
+"MEDIUMTURQUOISE", "MEDIUMVIOLETRED", "MENUROW", "MENUROWON", 
+"MIDDLE", "MIDNIGHTBLUE", "MINTCREAM", "MISTYROSE", "MOCCASIN", "MOF", 
+"MON", "MONOSPACE", "NAVAJOWHITE", "NAVBB", "NAVY", "NEW", "NONE", 
+"NONPERCENT", "NORMAL", "OFF", "OLDLACE", "OLIVE", "OLIVEDRAB", "ON", 
+"ONE", "OPTION", "ORANGE", "ORANGERED", "ORCHID", "OUT", 
+"OUTSUBSECTION", "PALEGOLDENROD", "PALEGREEN", "PALETURQUOISE", 
+"PALEVIOLETRED", "PAPAYAWHIP", "PEACHPUFF", "PERU", "PINK", "PLUM", 
+"POPUPBANNER", "POWDERBLUE", "PREVIOUS", "PURPLE", "RECORD", "RED", 
+"RIGHT", "ROSYBROWN", "ROW", "ROW1", "ROW2", "ROWDK", "ROWHEADER", 
+"ROYALBLUE", "RSA", "S", "SADDLEBROWN", "SALMON", "SANDYBROWN", "SANSSERIF", 
+"SAS", "SEAGREEN", "SEASHELL", "SERIF", "SHORT", "SIENNA", "SILVER", 
+"SKYBLUE", "SLATEBLUE", "SLATEGRAY", "SLATEGREY", "SLOW", "SMALL", 
+"SMALLER", "SMLR", "SNOW", "SOFT", "SOL", "SOQ", "SPRINGGREEN", 
+"STEELBLUE", "SUDAAN", "SUPERUSER", "TAN", "TEAL", "THISTLE", 
+"TOMATO", "TOP", "TRUE", "TURQUOISE", "VERYFAST", "VERYSLOW", 
+"VIOLET", "WHEAT", "WHITE", "WHITESMOKE", "XL", "XLARGE", "XXL", 
+"XXLARGE", "XXS", "XXSMALL", "XS", "XSMALL", "YELLOW", "YELLOWGREEN",
+
+"a", "admin", "aliceblue", 
+"anonymous", "antiquewhite", "appendix", "aqua", "aquamarine", 
+"azure", "baseline", "beige", "bisque", "black", "blanchedalmond", 
+"blank", "blue", "blueviolet", "body", "bottom", "break", "brown", 
+"bug", "burlywood", "cadetblue", "center", "chartreuse", "chocolate", 
+"clear", "closed", "coral", "cornflowerblue", "cornsilk", "count", 
+"create", "crimson", "cyan", "darkblue", "darkcyan", "darkgoldenrod", 
+"darkgray", "darkgreen", "darkgrey", "darkkhaki", "darkmagenta", 
+"darkolivegreen", "darkorange", "darkorchid", "darkred", "darksalmon", 
+"darkseagreen", "darkslateblue", "darkslategray", "darkslategrey", 
+"darkturquoise", "darkviolet", "dataadmin", "deeppink", "deepskyblue", 
+"dimgray", "dimgrey", "dodgerblue", "eol", "eoq", "esupplement", 
+"exist", "false", "fast", "firebrick", "floralwhite", "forestgreen", 
+"form", "fuchsia", "gainsboro", "ghostwhite", "gold", "goldenrod", 
+"gray", "green", "greenyellow", "grey", "hard", "honeydew", "hotpink", 
+"hover", "hovermain", "hovermenu", "hovermenunavbb", "hr", "in", 
+"indianred", "indigo", "insubsection", "ivory", "khaki", "l", "large", 
+"larger", "lavender", "lavenderblush", "lawngreen", "ldap", "left", 
+"lemonchiffon", "lightblue", "lightcoral", "lightcyan", 
+"lightgoldenrodyellow", "lightgray", "lightgreen", "lightgrey", 
+"lightpink", "lightsalmon", "lightseagreen", "lightskyblue", 
+"lightslategray", "lightslategrey", "lightsteelblue", "lightyellow", 
+"lime", "limegreen", "linen", "long", "lrgr", "m", "magenta", 
+"majoroff", "majoron", "manager", "many", "maroon", "medium", 
+"mediumaquamarine", "mediumblue", "mediumorchid", "mediumpurple", 
+"mediumseagreen", "mediumslateblue", "mediumspringgreen", 
+"mediumturquoise", "mediumvioletred", "menurow", "menurowon", 
+"middle", "midnightblue", "mintcream", "mistyrose", "moccasin", "mof", 
+"mon", "monospace", "navajowhite", "navbb", "navy", "new", "none", 
+"nonpercent", "normal", "off", "oldlace", "olive", "olivedrab", "on", 
+"one", "option", "orange", "orangered", "orchid", "out", 
+"outsubsection", "palegoldenrod", "palegreen", "paleturquoise", 
+"palevioletred", "papayawhip", "peachpuff", "peru", "pink", "plum", 
+"popupbanner", "powderblue", "previous", "purple", "record", "red", 
+"right", "rosybrown", "row", "row1", "row2", "rowdk", "rowheader", 
+"royalblue", "rsa", "s", "saddlebrown", "salmon", "sandybrown", "sansserif", 
+"sas", "seagreen", "seashell", "serif", "short", "sienna", "silver", 
+"skyblue", "slateblue", "slategray", "slategrey", "slow", "small", 
+"smaller", "smlr", "snow", "soft", "sol", "soq", "springgreen", 
+"steelblue", "sudaan", "superuser", "tan", "teal", "thistle", 
+"tomato", "top", "true", "turquoise", "veryfast", "veryslow", 
+"violet", "wheat", "white", "whitesmoke", "xl", "xlarge", "xxl", 
+"xxlarge", "xxs", "xxsmall", "xs", "xsmall", "yellow", "yellowgreen"
+        ]
+
+# Set the basic patterns we'll be using for styling transitions.
+# For most programming languages, names cannot start with a number, but they
+# often allow a number after the first character - e.g. "bar21a"
+pattern FIRSTNAMECHAR = '_a-zA-Z\x80-\xff' # names (identifier, keyword, variable...) only can start with these chars
+pattern NAMECHAR = '$FIRSTNAMECHAR\d'      # rest of the name, after the first char
+pattern WS = '\s\t\r\n'                    # whitespace
+pattern OP = '!#%&\(\)\*\+,-\.\/:;<=>\?@\[\]\^\{\}~|'  # operator characters - escaping special regex values
+pattern SC = '\+`=~|' # QPL short-cut format characters
+
+################ Default Style ################
+
+# Define what happens when in default (initial) state. This is where we set up
+# the transitions to other states.
+state IN_SSL_DEFAULT:
+
+
+# QPL-style block comments
+/^\*!/ : paint(upto, SSL_DEFAULT), => IN_SSL_COMMENT_QPL_BLOCK
+
+# QPL-style one line comments
+/^\*/ : paint(upto, SSL_DEFAULT),  => IN_SSL_COMMENT_TO_EOL
+
+# QPL-style command line
+/^\./ : paint(upto, SSL_DEFAULT),  paint(include, SSL_OPERATOR) => IN_SSL_QPL_COMMAND_TO_EOL
+
+# QPL square bracket insert answer in normal text
+/\[[$FIRSTNAMECHAR][$NAMECHAR]*\]/ : paint(upto, SSL_DEFAULT), paint(include, SSL_REGEX)
+
+# QPL caret insert popup box in normal text
+/\^[$FIRSTNAMECHAR][$NAMECHAR]*\^/ : paint(upto, SSL_DEFAULT), paint(include, SSL_REGEX)
+
+# QPL curly brace insert SQL in normal text
+/\{[$FIRSTNAMECHAR][$NAMECHAR]*\}/ : paint(upto, SSL_DEFAULT), paint(include, SSL_REGEX)
+
+# QPL asterix insert ? in normal text
+/\*[$FIRSTNAMECHAR][$NAMECHAR]*\*/ : paint(upto, SSL_DEFAULT), paint(include, SSL_REGEX)
+
+# QPL short-cut formatting characters
+/\\./ : #stay, anything escaped means it's still a string
+/[$SC]/ : paint(upto, SSL_DEFAULT), paint(include, SSL_OPERATOR)
+
+
+# ----------- Entering Whitespace ---------- #
+
+# Just stay in whatever style we currently are using.
+/[$WS]+/  : #stay
+
+
+
+################ In QPL Command line - determines how we exit ################
+
+
+state IN_SSL_QPL_COMMAND_TO_EOL:
+/[\r\n]/ : paint(upto, SSL_OPERATOR), => IN_SSL_DEFAULT  # back to default state
+
+# QPL-style one line comments
+'*' : paint(upto, SSL_OPERATOR), paint(include, SSL_COMMENT) => IN_SSL_COMMENT_TO_EOL
+
+# ----------- Entering Strings ---------- #
+
+'"' : paint(upto, SSL_OPERATOR), => IN_SSL_DSTRING
+# '\'' : paint(upto, SSL_OPERATOR), => IN_SSL_SSTRING    not used in QPL...
+# '`' : paint(upto, SSL_OPERATOR), => IN_SSL_XSTRING
+
+# ----------- Entering Numbers ---------- #
+
+# Go process a number, try to do it in regexes octal and hex first.
+/#[0-9a-fA-F]+/ : paint(upto, SSL_OPERATOR), paint(include, SSL_NUMBER)  # Color numbers
+/0[Xx][0-9a-fA-F]+/ : paint(upto, SSL_OPERATOR), paint(include, SSL_NUMBER)  # Hex numbers
+/[-+]?0[0-7]*/ : paint(upto, SSL_OPERATOR), paint(include, SSL_NUMBER)       # Octal numbers
+/[-+]?[1-9]+/ : paint(upto, SSL_OPERATOR), paint(include, SSL_NUMBER)        # Regular numbers
+
+# ----------- Entering Identifiers ---------- #
+
+/[$FIRSTNAMECHAR][$NAMECHAR]*/ : paint(upto, SSL_OPERATOR), paint(include, SSL_IDENTIFIER)
+
+# ----------- Entering Operators ---------- #
+
+/[$OP]/ : paint(upto, SSL_OPERATOR), paint(include, SSL_OPERATOR)
+
+
+
+################ In Comments - determines how we exit a comment ################
+
+state IN_SSL_COMMENT_TO_EOL: 
+/[\r\n]/ : paint(upto, SSL_COMMENT), => IN_SSL_DEFAULT  # back to default state
+
+state IN_SSL_COMMENT_QPL_BLOCK: 
+/^\*!.*/ : paint(include, SSL_COMMENTBLOCK), => IN_SSL_DEFAULT  # back to default state
+
+
+################ In Strings - determines how we exit a string ################
+
+state IN_SSL_DSTRING:
+'"' : paint(include, SSL_STRING), => IN_SSL_QPL_COMMAND_TO_EOL  # back to QPL command line state
+/\\./ : #stay, anything escaped means it's still a string
+/[\r\n]/ : paint(upto, SSL_STRING), => IN_SSL_DEFAULT  # back to default state
+
+# state IN_SSL_SSTRING:
+# '\'' : paint(include, SSL_STRING), => IN_SSL_QPL_COMMAND_TO_EOL  # back to QPL command line state
+# /\\./ : #stay, anything escaped means it's still a string
+# /[\r\n]/ : paint(upto, SSL_STRING), => IN_SSL_DEFAULT  # back to default state
+
+# state IN_SSL_XSTRING:
+# '`' : paint(include, SSL_STRING), => IN_SSL_QPL_COMMAND_TO_EOL  # back to QPL command line state
+# /\\./ : #stay, anything escaped means it's still a string
+# /[\r\n]/ : paint(upto, SSL_STRING), => IN_SSL_DEFAULT  # back to default state
+
+
+################ End of State Handling ################
+
+
+################ Fold Handling ################
+
+# Uncomment to enable folding on "{" and "}"
+
+#fold "{" SSL_OPERATOR +
+#fold "}" SSL_OPERATOR -
+
+################ End of Fold Handling ################

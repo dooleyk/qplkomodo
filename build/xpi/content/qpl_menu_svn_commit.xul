@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://qplwrapper/skin/build.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://qplwrapper/locale/build.dtd">
+<!-- qpl_menu_svn_commit.xul
+	K. Dooley --> 
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	id="qpl_menu_checkout"
+	orient="vertical"
+	title="&qpl_menu_commit.title;"
+	style="width: 40em;"
+	screenX="24"
+	screenY="24"
+	buttons="accept,cancel,help"
+	defaultButton="accept"
+	buttonlabelaccept="&qpl_commit.label;"
+	buttonaccesskeyaccept="&qpl_commit.accesskey;"
+	buttonlabelcancel="&qpl_close.label;"
+	buttonaccesskeycancel="&qpl_close.accesskey;"
+	ondialogaccept="window.setCursor('wait'); svnCommitProject(ko, document.getElementById('qpl_commit_repo').checked ); window.setCursor('auto'); "
+	ondialogcancel="return true;"
+	onload="EnableSecondRepoOption();"
+	buttonaccesskeyhelp="&qpl_help.accesskey;"
+	buttonlabelhelp="&qpl_help.label;"
+	ondialoghelp="window.openDialog('chrome://qplwrapper/content/qpl_help.xul','qpl_help',
+                  'chrome','qpl_menu_svn_commit.htm');" >
+
+<stringbundleset id="stringbundleset">
+	<stringbundle id="qplwrapper-strings" src="chrome://qplwrapper/locale/qplwrapper.properties"/>
+</stringbundleset>
+
+
+<vbox id="qpl_dialog" flex="1" >
+
+	<hbox id="qpl_notes_box">
+		<hbox pack="start" class="test">
+			<description id="qpl_notes" >&qpl_menu_commit.notes;</description></hbox>
+	
+		<hbox pack="end" flex="3">
+			<image src="qplwrapper.png" width='75' height='75' maxHeight='75'/></hbox>
+	</hbox>
+	
+</vbox>
+
+<label control="qpl_commit_comment" value="&qpl_commit_comment.label;"/>
+<textbox id="qpl_commit_comment" value="" accesskey="&qpl_commit_comment.accesskey;"/>
+<checkbox id="qpl_commit_repo" label="&qpl_commit_repo.label;" />
+
+<script type="application/x-javascript" src="chrome://qplwrapper/content/qplwrapper.js"/>
+<script type="application/x-javascript" src="chrome://qplwrapper/content/qplwrapper-helper.js"/> 
+
+<script type="application/x-javascript">
+<![CDATA[
+var ko = window.arguments[0];
+
+
+function EnableSecondRepoOption()
+{
+	var prefManager = Components.classes["@mozilla.org/preferences-service;1"]
+	    .getService(Components.interfaces.nsIPrefBranch);
+	
+	var SvnPath = prefManager.getCharPref(MY_SVN_PREF);
+	var SvnPath2 = prefManager.getCharPref(MY_SVN2_PREF);
+	var SvnExecutable = GetSvnPath();
+	var ProjectDirectory = ko.views.manager.currentView.koDoc.file.dirName;
+
+    
+	if (qplRun(SvnExecutable + " info --non-interactive",
+		ProjectDirectory,
+		"",
+		"",
+		true)) {	// not a working directory, add to version control...
+
+		qplLog("Repository 1: " + SvnPath, false);
+		qplLog("Repository 2: " + SvnPath2, true);
+		
+		if(SvnPath2.length) {
+			document.getElementById("qpl_commit_repo").style.display="block";
+		} else {
+			document.getElementById("qpl_commit_repo").style.display="none";
+		}
+	} else {
+		document.getElementById("qpl_commit_repo").style.display="none";
+	}
+}
+
+
+]]>
+</script>
+
+</dialog>
+

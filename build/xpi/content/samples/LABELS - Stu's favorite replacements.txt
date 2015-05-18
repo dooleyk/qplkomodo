@@ -1,0 +1,16 @@
+*! >>>>
+LABELS - Stu's favorite replacements
+
+All the built-in text labels may be changed by using 
+the label number as shown below. These are Stu's favorites!
+*! <<<<
+
+.194 = " " 
+.195 = " " 
+.171 = "Click here to go to section: "
+.172 = "Click here to skip to question"
+.173 = "Click here to skip to question"
+.174 = "Click here to skip to section:"
+.175 = "Click here to go to section:"
+.442 = "Click here to open a new form."	
+.443 = "[Add]"

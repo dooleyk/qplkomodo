@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- qpl_menu_build_html.htm -->
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8;" />
+	<link rel="stylesheet" type="text/css" href="qpl_help.css" />
+	<title>Build Local Web Site Files</title>
+</head>
+
+<body>
+	<p class="Printbar"><img alt="Print" src="../../skin/qpl_button_printer.png" onclick="window.print();" /></p>
+
+	<h1>Build Local Web Site Files</h1>
+
+	<p>This dialog is used to build a version of your questionnaire web site that you
+	view on your computer with a browsers. This lets you quickly see how your project
+	will look to a respondent after it has been installed on a web server. Much of
+	the functionality, thought not all, will be available for testing such as links
+	that skip you to a section in the questionnaire from the menu, links that skip you
+	to a particular question, or display a question (or group of questions) according
+	to a particular response to a question. This lets you quickly cycle through the
+	edit, build, view steps when creating your questionnaire form.</p>
+	
+	<p>Some of the functionality is not available locally. If your questionnaire
+	has multiple pages, then all of the pages will be displayed 
+	in one browser window with the page breaks shown as thick, horizontal lines.
+	And since there is no database underpinning the local web page, you may enter
+	data on the page but it is not stored anywhere.</p>
+	
+	<p>The options on this dialog let create technical documentation of your
+	questionnaire by labeling the questions with the database field names and
+	other information that will be useful later when performing a statistical
+	analysis of your questionnaire results. It is often useful to print the
+	technical rendering of your questionnaire as an Adobe PDF file for your
+	own reference or to include in your documentation package for your data
+	analyst.</p>
+	
+	<p>If you are creating a mult-language project, each of the language-specific
+	QPL program (.pg6) files will be listed with selected check-boxes. The QPL
+	compiler will compile each the program files listed unless you uncheck
+	its checkbox. (Note: If you are using the INCLUDE command to merge one
+	or more questionnaire program files into one master file, then you should
+	un-check the included files. The QPL compiler will automatically use them
+	when it reads the INCLUDE command.)</p>
+	
+	<p>Click the Build button to compile your questionnaire program into a local
+	version of your web site. The Command Output pane will list any programming syntax
+	errors that occurred which prevented the QPL compiler from creating the web
+	site. (Note: To show the Komodo Command Output pane, use View &gt; Tabs &amp; Sidebars
+	&gt; Command Output.) You may need to scroll back through the information in this
+	pane to see all of the syntax error or warning information.</p>
+
+	<p>If your questionnaire program compiles without errors, then your project
+	home page will be displayed in a new browser tab in Komodo. (You should still
+	review the Command Output pane for any warning messages that you may want
+	to correct.) Click on the "Begin" button to open your questionnaire in a new
+	browser window. Here you may click on the various links to exercise the
+	web form. Click on the Print button at the bottom of the form to print it.
+	Click on the Exit or Submit button to close the browser window. You may go
+	back to your questionnaire program (.pg6) file to make more changes and
+	then repeat this process to view the results.</p>
+	
+	<h2>Include Variable Names on Web Form</h2>
+	<p>Checking this option will cause the local HTML version of your questionnaire
+	program to be created with each question's database field name being displayed
+	on the form in red italics. These are the names that are used in the MySQL "data'
+	table that is created to support the questionnaire when it is installed on
+	a web server, and the names that will be used when the data is exported for
+	analysis with a spreadsheet or with the SAS or SPSS statistical analysis
+	programs.</p>
+	
+	<h2>Show Any Hidden Questions</h2>
+	<p>QPL includes programming syntax that lets you conditionally link the answer
+	to a multiple choice question to the visual display of one or more other questions.
+	This is programmed using the DISPLAY command.
+	For example, if a respondent selected "Yes," as an answer to a multiple choice
+	question, then a follow-up question could be programmed to suddenly appear on the web
+	page. Clicking "No" could make it dissappear. While this helps direct respondents
+	to relevant lines of questions, it prevents you from printing a copy of your
+	web form that includes all of your questions. Checking this option overides
+	any DISPLAY command logic in your program to show all of the questions.</p>
+	
+	<h2>Show Any Hidden Questions With DISPLAY Information</h2>
+	<p>This option overides any DISPLAY command logic to show all of the questions,
+	just like the previous option. In addition to this, the
+	DISPLAY trigger names are labeled on answers to multiple choice questions, and the
+	target questions are labeled with the trigger name. A box is drawn around all
+	the questions that are included in each DISPLAY target.</p>
+	
+	
+	
+
+		
+	<p align="center"><img alt="QPL6 Logo" src="../../skin/qplwrapper.png" /></p>
+
+</body>
+</html>

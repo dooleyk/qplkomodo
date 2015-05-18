@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- qpl_menu_new.htm -->
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8;" />
+	<link rel="stylesheet" type="text/css" href="qpl_help.css" />
+	<title>Create New QPL Project</title>
+</head>
+
+<body>
+	<p class="Printbar"><img alt="Print" src="../../skin/qpl_button_printer.png" onclick="window.print();" /></p>
+
+	<h1>Create New QPL Project</h1>
+
+	<p>Use this dialog to create a new web questionnaire project.</p>
+	<p>It will create a new folder (i.e., file directory) inside the local working
+	directory that you set in the <a href="preferences.htm">QPL Preferences</a> dialog.
+	Then it will copy the standard QPL program files (which provide basic functionality
+	for the questionnaire and administrative parts of your web survey web site) to
+	this location, and create QPL script file which is the start of your questionnaire.
+	This file will have the project name you specify in this dialog and have a ".pg6"
+	file name extension. Use the QPL "Build" menu functions to convert this file
+	into a web questionnaire, or a statistical analysis program that you can use to
+	analyze your web survey data.</p>
+	
+	<p>If you have defined a Subversion version control repository in your
+	QPL Preferences, you may also use the option to import your project to that
+	repository.</p>
+	
+	<p>This same option will also create a new QPL JobTracker project documentation
+	record for you if this has been set in the QPL Preferences. The project will
+	have the same short title that you use here, and the survey file name and version
+	control names will filled in with your project name.</p>
+	
+	<h2>Short Project Title</h2>
+	
+	<p>This title will be used to label your QPL questionnaire script (.pg6 file) and
+	to name your project in JobTracker, GAO's web survey project tracking web site.
+	This title is not used to label your project's questionnaire or web site home
+	page.</p>
+	
+	<h2>Project File Name</h2>
+	
+	<p>This file file name is used for a number things. </p>
+	<ul>
+		<li>Name of your questionnaire program (.pg6) file,</li>
+		<li>Name of your project's folder (i.e., file directory) in your local
+		QPL working directory,</li>
+		<li>Name of your project's version control folder,</li>
+		<li>Name of the MySQL database that will store your respondent data on the web server, and</li>
+		<li>Name of your SAS or SPSS analysis programs.</li>
+	</ul>
+	<p>The file name must start with a letter and only contain letters and numbers,
+	and be no more than 16 characters long. It also can not be the same name as
+	another project that is already running on your web server (since MySQL does not
+	allow two different databases to have the same name.)</p>
+	
+	<h2>Languages</h2>
+	<p>If you will be providing your questionnaire in more than one language, you may
+	pick the languages that your questionnaire will be translated into. A QPL script file
+	will be created for each language you select. Here, the .pg6 file name extension will
+	be further extended with the standard 2-letter abbreviation for that language. The
+	name of the language will also be added to each QPL program file, as well as sample
+	HTML code to the home page that will let respondents toggle between the various
+	translations that you provide.</p>
+	
+	<p>Special care must be taken so that each translation maps to the same answer list.
+	That is, each project should create the same database record layout, with the same
+	field names and attributes. Each of the web questionnaire translation forms will
+	all use the same MySQL database to record the responses.</p>
+	
+	<p>If you will only be creating your questionnaire using <b>one</b> language (English or
+	something else), then you should not check any of the language boxes.</p>
+	
+	<p>See TODO for more information about creating a questionnaire with multiple translations</p>
+	
+	<h2>Version Control and JobTracker</h2>
+	<p>This option will be enabled if you have defined a Subversion repository in your QPL
+	Preferences. If this is checked, then your project will be added to the repository
+	after it creates it locally in your QPL working folder. If you are using version control,
+	then you should routinely use the QPL version control functions to "send" all your
+	changes to the repository when you are not working on it, and "get" any changes that
+	someone else may have made to your project before you resume working on it. The
+	QPL source program file (.pg6) will be "locked" when you have it checked out for editing.
+	This prevents someone else from checking it out and making changes at the same
+	time. You must send the files back to the repository before someone else can get
+	your updated files. See TODO for more information about checking files in and out
+	of version control.</p>
+	<p>JobTracker is GAO's web-based project tracking system, so its not available to
+	people outside GAO. If it is defined in your QPL Preferences, then you will be asked
+	to enter your GAO network user name and SecurID token to log in. Once you do, a
+	new JobTracker record will be created with your short project title and project
+	file name filled in. You will need to go to this web site later to enter more information
+	about your project including the target URL, log in options, and administrator accounts.</p>
+	
+		
+	<p align="center"><img alt="QPL6 Logo" src="../../skin/qplwrapper.png" /></p>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+*! >>>>
+PRODUCT - ESupplement.txt
+
+This PRODUCT block is an example of a how a GAO Esupplement product
+is created and the statements generally used on the background statement
+that will appear on the home page. The Esupplement product files may
+be created once a PRODUCT block has been added to your QPL program.
+In this case, the questionnaire and associated statistical results
+page will be created as a companion to the main audit report, GAO-12-885.
+*! <<<<
+
+
+**********************************************************************
+** 
+.PRODUCT = ESUPPLEMENT
+.REPORTTITLE = "Homeland Security: Agriculture Inspection Program Has Made Some Improvements, but Management Challenges Persist"
+.REPORTNUMBER = "GAO-12-885"
+.ISSUEDATE = "September 2012"
+.PRODUCTTITLE = "Survey of Agriculture Specialists and Supervisors at CBP"
+.PRODUCTNUMBER = "GAO-12-884SP"
+.JOBCODE = "361405"
+.CONTACT = "For more information, contact Lisa R. Xxxx at (202) 512-0000 or <a href='mailto:xxx@gao.gov' target='_blank'>xxx@gao.gov</a>."
+.SYSTEM = SAS
+.PERCENT = ON
+This e-supplement is a companion to our review of the Agriculture 
+Quarantine Inspection (AQI) program. The AQI program used to be 
+managed by the U.S. Department of Agriculture (USDA), but since 
+February 2003 the program has been jointly managed by USDA and the 
+Department of Homeland Security's (DHS) Customs and Border Protection 
+(CBP). The purpose of this e-supplement is to provide information from 
+a Web-based survey designed to obtain perspectives on the AQI program 
+from agriculture specialists and supervisors at CBP, including 
+agriculture canine handlers.
+
+This survey is similar to one we conducted in 2006. The survey was 
+administered to individuals engaged in agricultural inspection duties 
+as of October 2011 and still engaged in this duty as of February 2012. 
+We received an un-weighted response rate of 74 percent. A copy of the 
+survey is reproduced in this e-supplement, along with summary 
+statistics. We excluded responses to most open-ended narrative 
+questions. See the full report (GAO-12-885) for a more detailed 
+discussion of our scope and methodology.
+
+For key questions, this e-supplement presents the overall weighted 
+survey percentages for Agricultural Specialists, Canine Handlers, and 
+Supervisory Agricultural Specialists individually and combined. For 
+those key questions, this e-supplement also presents the weighted 
+survey percentages for respondents who had formerly worked for USDA 
+(known as Plant Protection and Quarantine (PPQ) Officers) and those 
+hired after 2003. In this e-supplement, those employees hired prior to 
+2003 are also referred to as "Former PPQ Officers." 
+
+We conducted our work from August 2011 to July 2012 in accordance with 
+generally accepted government auditing standards. Those standards 
+require that we plan and perform the audit to obtain sufficient, 
+appropriate evidence to provide a reasonable basis for our findings 
+and conclusions based on our audit objectives. We believe that the 
+evidence obtained provides a reasonable basis for our findings and 
+conclusions based on our audit objectives.
+.PRODUCT = OFF
+** 
+**********************************************************************
+

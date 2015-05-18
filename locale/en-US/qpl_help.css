@@ -1,0 +1,89 @@
+/* qpl_help.css */
+
+body {
+    background-color: lightyellow;
+}
+
+TABLE, DIV {
+	background : transparent; 
+	background-color : transparent; 
+	border : 0px none;
+}
+
+H1, H2, H3 {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 18pt;
+	text-align: center;
+	font-style:normal;
+	color:black;
+	background-color : transparent;
+	text-decoration : none;
+	font-weight : bold;
+	margin-bottom : 15px;
+}
+
+H2 {
+	font-size:14pt;
+        text-align: left;
+}
+
+H3 {
+	font-size:12pt;
+	text-align:left;
+	font-style:normal;
+	width : 470px;
+}
+
+
+P, TD, TH, LI, A, LEGEND {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 11pt;
+	font-style: normal;
+	font-weight: normal;
+	color: Black;
+	line-height: normal;
+}
+
+P, UL {
+	margin : 12pt 0pt 12pt 0pt;	
+}
+
+TH {
+	font-weight: bold;
+}
+
+
+STRONG, SPAN.Instruction {
+	font-size : 80%;
+	font-style : italic;
+	font-weight : normal;
+	line-height : 200%;
+}
+
+B, EM {
+	font-weight : bold;
+}
+
+INPUT, TEXTAREA, OPTION, OPTGROUP, SPAN.QSumDisplayText, DIV.QSumDisplayTextArea {
+	font-family : "Courier New", Courier, monospace;
+	font-size : 10pt;
+	font-style : normal;
+	font-weight : normal;
+	margin : 1px 2px 1px 2px;
+}
+
+INPUT[TYPE="text"], INPUT[TYPE="password"], INPUT[TYPE="file"], TEXTAREA, OPTION, SPAN.QSumDisplayText, DIV.QSumDisplayTextArea {
+	background-color : white;
+}
+
+OPTGROUP {
+	font-weight : bold;
+	font-style: italic;
+}
+
+P.Printbar {
+    margin: 0;
+    padding: 2px;
+    background-color: lightgrey;
+    text-align: right;
+}

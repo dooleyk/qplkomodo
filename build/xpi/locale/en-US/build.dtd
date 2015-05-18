@@ -1,0 +1,133 @@
+<!ENTITY qpl_menu_checkout.title "Get QPL Project Files From Version Control">
+<!ENTITY qpl_menu_checkout.notes "First select a project, then click the Get button to synchronize your working files with version control. (Projects that have not been checked out are shown in bold type.)">
+
+<!ENTITY qpl_menu_checkout_project.label "Project">
+<!ENTITY qpl_menu_checkout_committer.label "Committer">
+<!ENTITY qpl_menu_checkout_when.label "When">
+<!ENTITY qpl_menu_checkout_revision.label "Revision">
+
+<!ENTITY qpl_menu_commit.title "Send QPL Project Files to Version Control">
+<!ENTITY qpl_menu_commit.notes "Click the Send button to send your changes to the version control repository. You must use the 'Get project files from version control' command again to unlock your working QPL source program (.pg6) files in order to make more changes.">
+
+<!ENTITY qpl_commit_comment.label "Log entry for this version:">
+<!ENTITY qpl_commit_comment.accesskey "L">
+
+<!ENTITY qpl_commit_repo.label "Use secondary repository">
+<!ENTITY qpl_commit_repo.accesskey "S">
+
+<!ENTITY qpl_project_folder.label "Select project folder location:">
+<!ENTITY qpl_project_folder.value "">
+<!ENTITY qpl_project_folder.accesskey "F">
+
+<!ENTITY qpl_status.label "Results:">
+<!ENTITY qpl_status.accesskey "R">
+
+<!ENTITY qpl_browse.label "Browse">
+<!ENTITY qpl_browse.accesskey "B">
+
+<!ENTITY qpl_create.label "Create">
+<!ENTITY qpl_create.accesskey "C">
+
+<!ENTITY qpl_build.label "Build">
+<!ENTITY qpl_build.accesskey "B">
+
+<!ENTITY qpl_close.label "Close">
+<!ENTITY qpl_close.accesskey "L">
+
+<!ENTITY qpl_checkout.label "Get">
+<!ENTITY qpl_checkout.accesskey "G">
+
+<!ENTITY qpl_commit.label "Send">
+<!ENTITY qpl_commit.accesskey "S">
+
+<!ENTITY qpl_view.label "View">
+<!ENTITY qpl_view.accesskey "V">
+
+<!ENTITY qpl_option_di.label "Show any hidden questions">
+<!ENTITY qpl_option_di.accesskey "H">
+
+<!ENTITY qpl_option_dd.label "Show any hidden questions with DISPLAY information">
+<!ENTITY qpl_option_dd.accesskey "D">
+
+<!ENTITY qpl_status.value "Errors: ...">
+<!ENTITY qpl_error_log.label "Error log:">
+
+<!ENTITY qpl_menu_build_html.title "Build Local Web Site Files">
+<!ENTITY qpl_menu_build_html.notes "Select any options, and then click Build to compile your project as locally viewable HTML files.">
+
+<!ENTITY qpl_options "Options">
+
+<!ENTITY qpl_menu_build_php.title "Build Live Web Site Files">
+<!ENTITY qpl_menu_build_php.notes "Select any options, and then click Build to compile your project as PHP files that run on your web server.">
+
+<!ENTITY qpl_options_summary "Questionnaire Summary Report Options">
+<!ENTITY qpl_option_f.label "Include frequency statistics">
+<!ENTITY qpl_option_f.accesskey "F">
+<!ENTITY qpl_option_d.label "Include descriptive statistics">
+<!ENTITY qpl_option_d.accesskey "D">
+<!ENTITY qpl_option_l.label "Include text responses">
+<!ENTITY qpl_option_l.accesskey "T">
+<!ENTITY qpl_option_u.label "Exclude user names with text responses">
+<!ENTITY qpl_option_u.accesskey "U">
+<!ENTITY qpl_option_vt.label "Include VOID questions">
+<!ENTITY qpl_option_vt.accesskey "V">
+<!ENTITY qpl_option_hq.label "Exclude hidden questions">
+<!ENTITY qpl_option_hq.accesskey "H">
+<!ENTITY qpl_option_v.label "Include variable names">
+<!ENTITY qpl_option_v.accesskey "N">
+
+<!ENTITY qpl_menu_build_stat.title "Build Statistical Analysis Program">
+<!ENTITY qpl_menu_build_stat.notes "Select any options, and then click Build to compile your project as statistical program that you can use to analyze the data you export from your web site.">
+
+<!ENTITY qpl_option_sv.label "Exclude system variables in questionnaire summary">
+<!ENTITY qpl_option_sv.accesskey "S">
+
+<!ENTITY qpl_option_n.label "Add question numbers to variable labels">
+<!ENTITY qpl_option_n.accesskey "N">
+
+<!ENTITY qpl_option_eql.label "Include links from questions to summary tables">
+<!ENTITY qpl_option_eql.accesskey "L">
+
+<!ENTITY qpl_option_gao.label "Include GAO reviewer signature block">
+<!ENTITY qpl_option_gao.accesskey "G">
+
+<!ENTITY qpl_stat_sas.label "Build SAS statistical program">
+<!ENTITY qpl_stat_sas.accesskey "A">
+
+<!ENTITY qpl_stat_sps.label "Build SPSS statistical program">
+<!ENTITY qpl_stat_sps.accesskey "P">
+
+<!ENTITY qpl_menu_build_esup.title "Build GAO Product Files">
+<!ENTITY qpl_menu_build_esup.notes "Select any options, and then click Build to compile your project as either a statistical program to generate summary information or the e-supplement web product files.">
+
+<!ENTITY qpl_esup_sas.label "Build SAS statistical program for e-supplement or technical appendix">
+<!ENTITY qpl_esup_sas.accesskey "A">
+
+<!ENTITY qpl_esup_htm.label "Build web pages for e-supplement product">
+<!ENTITY qpl_esup_htm.accesskey "W">
+
+<!ENTITY qpl_menu_build_custom.title "Build Custom Files">
+<!ENTITY qpl_menu_build_custom.notes "Enter command line options, and then click Build to compile your custom project files.">
+
+<!ENTITY qpl_option_custom.label "Enter custom options:">
+<!ENTITY qpl_option_custom.accesskey "C">
+
+<!ENTITY qpl_menu_build_qlist.title "Question Information List">
+<!ENTITY qpl_menu_build_qlist.notes "Select the type of information list, and then click Build to compile your project and create the list.">
+
+<!ENTITY qpl_qlist_x1.label "Question name only">
+<!ENTITY qpl_qlist_x1.accesskey "N">
+
+<!ENTITY qpl_qlist_x2.label "Name, Alias, Sequence, Type, Length">
+<!ENTITY qpl_qlist_x2.accesskey "A">
+
+<!ENTITY qpl_qlist_x3.label "Name, Alias, Sequence, Type, Length, Hidden, Page, Layout, Text">
+<!ENTITY qpl_qlist_x3.accesskey "S">
+
+<!ENTITY qpl_project_versioning.label "Add to version control">
+<!ENTITY qpl_project_versioning.accesskey "V">
+
+<!ENTITY qpl_help.title "QPL Help">
+<!ENTITY qpl_help.label "Help">
+<!ENTITY qpl_help.accesskey "H">
+

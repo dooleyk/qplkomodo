@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- qpl_menu_build_stat.htm -->
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8;" />
+	<link rel="stylesheet" type="text/css" href="qpl_help.css" />
+	<title>Build Statistical Analysis Programs</title>
+</head>
+
+<body>
+	<p class="Printbar"><img alt="Print" src="../../skin/qpl_button_printer.png" onclick="window.print();" /></p>
+
+	<h1>Build Statistical Analysis Programs</h1>
+
+	<p>This dialog is used to build SAS or SPSS statistical analysis programs
+	that read the fixed-format data (.dat) file that a Data Administrator may
+	export from the project web site, and create a local system file with
+	fully labeled variables and values. The file handling statements in the
+	program default to your working project directory location and may need
+	to be modified to fit the location where you put this program and the exported
+	data file.</p>
+	
+	<p>First pick the SAS or SPSS option, and then check any of the other options
+	to customize how the program will be created. Then click the Build button to
+	create the file. This file will be created in the "analysis" folder within
+	your projects local working directory. It will have the same file name as your
+	main QPL questionnaire program, but will have an .sas or .spc file name extension
+	to indicate what type of file it is. The file will also be opened in Komodo.</p>
+
+	<h2>Include Frequency Statistics in Questionnaire Summary</h2>
+	<p>In addition to building a system file, you may check this option to also
+	include statements to create frequency analysis tables for multiple choice,
+	check-all-that-apply, and date answers.</p>
+
+
+	<h2>Include Descriptive Statistics in Questionnaire Summary</h2>
+	<p>This option adds descriptive statistical information for questions which have
+	numeric responses.</p>
+
+
+	<h2>Include Text Responses in Questionnaire Summary</h2>
+	<p>This option lists responses made to short answer questions. (Note: Answers
+	to open-ended questions are not included in the fixed-format export data (.dat)
+	file. Here, the data field here shows number of characters that a respondent
+	typed, and so the analysis of these questions is included with the descriptive
+	statistics. The open-ended responses may be exported as tab-delimited (.prn)
+	or askSam files.)</p>
+
+
+	<h2>Exclude Hidden Questions in Questionnaire Summary</h2>
+	<p>This option can be used to ignore data fields that were programmed as
+	hidden questions when the program creates a system file. These are usually
+	pre-loaded with respondent-specific information so generally you would
+	want to keep them in your system file.</p>
+
+
+	<h2>Exclude System Variables in Questionnaire Summary</h2>
+	<p>In addition to the data fields that hold responses to the question you wrote,
+	a number of QPL system variables may also be included when the statistical
+	program creates a system file. These include information that could be useful
+	in your analysis, such as the internal case identification number, the date
+	and time that responses were last made and, if you used a QUESTIONNAIRE question
+	to dynamically jump here from another questionnaire, data that details connection
+	between the two data records.</p>
+	
+	<h2>Add Question Numbers to Variable Labels</h2>
+	<p>The first 200 or so characters from each question is used in the statistical program
+	to label the database variable. Checking this option will also include the automatically
+	generated question number that is displayed on the form at the beginning of the
+	label.</p>
+	
+	<h2>Include GAO Review Signature Block</h2>
+	<p>This option includes comments at the top of the statistical program file
+	that are used to document the program as a GAO work paper, which is used to
+	support the agency findings in an audit or program evaluation report.</p>
+
+	
+	<p align="center"><img alt="QPL6 Logo" src="../../skin/qplwrapper.png" /></p>
+
+</body>
+</html>

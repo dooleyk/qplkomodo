@@ -1,0 +1,1231 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://qplwrapper/skin/build.css" type="text/css"?>
+
+<!DOCTYPE dialog SYSTEM "chrome://qplwrapper/locale/wizard.dtd">
+<!-- qpl_menu_wizard_global.xul
+	K. Dooley -->
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	id="qpl_wizard"
+	orient="vertical"
+	title="&qpl_wizard.title;"
+	style="width: 40em;"
+	screenX="24" screenY="24" 
+	buttons="accept,cancel,help"
+	defaultButton="accept"
+	buttonlabelaccept="&qpl_insert.label;"
+	buttonaccesskeyaccept="&qpl_insert.accesskey;"
+	buttonlabelcancel="&qpl_cancel.label;"
+	buttonaccesskeycancel="&qpl_cancel.accesskey;"
+	ondialogaccept="InsertText();"
+	ondialogcancel="return true;"
+	buttonaccesskeyhelp="&qpl_help.accesskey;"
+	buttonlabelhelp="&qpl_help.label;"
+	ondialoghelp="window.openDialog('chrome://qplwrapper/content/qpl_help.xul','qpl_help',
+                  'chrome','qpl_menu_wizard_global.htm');" >
+
+<stringbundleset id="stringbundleset">
+	<stringbundle id="qplwrapper-strings" src="chrome://qplwrapper/locale/qplwrapper.properties"/>
+</stringbundleset>
+
+<vbox id="qpl_dialog" flex="1" >
+	<dialogheader title="&qpl_menu_wizard_global.title;" description="&qpl_menu_wizard_global.notes;"/>
+	<separator/>
+	
+	<tabbox id="qpl_menu_wizard_global_tab" selectedIndex="0">
+	<tabs>
+		<tab label="&qpl_menu_wizard_global_project.label;"/>  
+		<tab label="&qpl_menu_wizard_global_access.label;"/>
+		<tab label="&qpl_menu_wizard_global_mail.label;"/>
+		<tab label="&qpl_menu_wizard_global_color.label;"/>
+		<tab label="&qpl_menu_wizard_global_font.label;"/>
+		<tab label="&qpl_menu_wizard_global_style.label;"/>
+		<tab label="&qpl_menu_wizard_global_script.label;"/>
+		
+	</tabs>
+	<tabpanels>
+
+		<tabpanel id="qpl_menu_wizard_global_project" orient="vertical" >
+			<groupbox>
+				<caption label="&qpl_menu_wizard_global_project.label;" />
+
+				<grid align="left">
+				<columns>
+					<column />
+					<column />
+				</columns>
+				<rows>
+				<row>
+					<label control="qpl_menu_wizard_global_project_title" value="&qpl_menu_wizard_global_project_title.label;"/>
+					<textbox id="qpl_menu_wizard_global_project_title" value="" accesskey="&qpl_menu_wizard_global_project_title.accesskey;" placeholder="&qpl_menu_wizard_global_project_title.placeholder;" spellcheck="true"  />
+				</row>
+				<row>
+					<label control="qpl_menu_wizard_global_project_subtitle" value="&qpl_menu_wizard_global_project_subtitle.label;"/>
+					<textbox id="qpl_menu_wizard_global_project_subtitle" value="" accesskey="&qpl_menu_wizard_global_project_subtitle.accesskey;" placeholder="&qpl_menu_wizard_global_project_subtitle.placeholder;" spellcheck="true"  />
+				</row>
+				<row>
+					<label control="qpl_menu_wizard_global_project_author" value="&qpl_menu_wizard_global_project_author.label;"/>
+					<textbox id="qpl_menu_wizard_global_project_author" value="" accesskey="&qpl_menu_wizard_global_project_author.accesskey;" placeholder="&qpl_menu_wizard_global_project_author.placeholder;" spellcheck="false" />
+				</row>
+				
+				
+				<row>
+					<label control="qpl_menu_wizard_global_project_logo" value="&qpl_menu_wizard_global_project_logo.label;"/>
+					<hbox>
+						<radiogroup id="qpl_menu_wizard_global_project_logo"  orient="horizontal"  disabled="false" >
+						    <radio id="qpl_menu_wizard_global_project_logo_on" value="ON" label="&qpl_menu_wizard_on.label;"  selected="true" onclick="DisableLogo(false);"  />
+						    <radio id="qpl_menu_wizard_global_project_logo_off" value="OFF" label="&qpl_menu_wizard_off.label;"  onclick="DisableLogo(true);"/>
+						</radiogroup>
+						
+						<vbox>
+							<hbox>
+								<!-- <label control="qpl_menu_wizard_global_project_logo_name" value="&qpl_menu_wizard_global_project_logo_name.label;"/> -->
+								<textbox id="qpl_menu_wizard_global_project_logo_name" value="qpl_logo.png"  accesskey="&qpl_menu_wizard_global_project_logo_name.accesskey;"  />
+									<button id="qpl_browse" label="&qpl_browse.label;" accesskey="&qpl_browse.accesskey;" onclick="pickFile('qpl_menu_wizard_global_project_logo_name');"  />
+							</hbox>
+							<hbox>
+								<textbox id="qpl_menu_wizard_global_project_logo_description" value="" accesskey="&qpl_menu_wizard_global_project_logo_description.accesskey;" placeholder="&qpl_menu_wizard_global_project_logo_description.placeholder;" spellcheck="true" />
+								<label control="qpl_menu_wizard_global_project_logo_description" value="&qpl_menu_wizard_global_project_logo_description.label;"/>
+							</hbox>
+						</vbox>
+					</hbox>
+				</row>
+				
+				<row>
+					<label control="qpl_menu_wizard_global_project_page_width" value="&qpl_menu_wizard_global_project_page_width.label;"/>
+					<hbox>
+						<textbox id="qpl_menu_wizard_global_project_page_width" type="number" increment="10"  maxlength="5" size="5" value="770" min="320" max="1660"  style="font-family: monospace; width: 5em;" spellcheck="false" />
+				 
+						<spacer flex="1" />
+						<label control="qpl_menu_wizard_global_project_page_gutter" value="&qpl_menu_wizard_global_project_page_gutter.label;"/>
+						<textbox id="qpl_menu_wizard_global_project_page_gutter" type="number" increment="5"  maxlength="5" size="5" value="35" min="10" max="70"  style="font-family: monospace; width: 5em;" spellcheck="false" />
+
+						<spacer flex="1" />
+						<label control="qpl_menu_wizard_global_project_page_question_width" value="&qpl_menu_wizard_global_project_page_question_width.label;"/>
+						<textbox id="qpl_menu_wizard_global_project_page_question_width" type="number" increment="10"  maxlength="5" size="5" value="490" min="1" max="1660"  style="font-family: monospace; width: 5em;" spellcheck="false" />
+				
+					</hbox>
+				</row>
+				<row>
+					<label control="qpl_menu_wizard_global_project_card" value="&qpl_menu_wizard_global_project_card.label;"/>
+					<hbox>
+						<textbox id="qpl_menu_wizard_global_project_card" type="number" increment="10"  maxlength="5" size="5" value="200" min="80" max="2440"  style="font-family: monospace; width: 5em;" spellcheck="false" />
+						<spacer flex="1" />
+						<label />
+					</hbox>
+				</row>
+				
+				<row>
+					<label control="qpl_menu_wizard_global_project_menu" value="&qpl_menu_wizard_global_project_menu.label;" />
+					<hbox>
+					<radiogroup id="qpl_menu_wizard_global_project_menu"  orient="horizontal"   >
+					    <radio id="qpl_menu_wizard_global_project_menu_on" value="ON" label="&qpl_menu_wizard_on.label;"  selected="true" onclick="DisableMenuItems(false);" />
+					    <radio id="qpl_menu_wizard_global_project_menu_off" value="OFF" label="&qpl_menu_wizard_off.label;"  onclick="DisableMenuItems(true);" />
+					</radiogroup>
+					
+					<grid align="left">
+					<columns>
+						<column />
+						<column />
+						<column />
+						<column />
+						<column />
+					</columns>
+					<rows>
+						<row>
+							<label control="qpl_menu_wizard_global_project_summary" value="&qpl_menu_wizard_global_project_summary.label;" />
+							<radiogroup id="qpl_menu_wizard_global_project_summary"  orient="horizontal"   >
+							    <radio id="qpl_menu_wizard_global_project_summary_on" value="ON" label="&qpl_menu_wizard_on.label;"  selected="true"/>
+							    <radio id="qpl_menu_wizard_global_project_summary_off" value="OFF" label="&qpl_menu_wizard_off.label;" />
+							</radiogroup>
+							
+							<label value="   " />
+
+							<label control="qpl_menu_wizard_global_project_progress" value="&qpl_menu_wizard_global_project_progress.label;" />
+							<radiogroup id="qpl_menu_wizard_global_project_progress"  orient="horizontal"   >
+							    <radio id="qpl_menu_wizard_global_project_progress_on" value="ON" label="&qpl_menu_wizard_on.label;"  selected="true"/>
+							    <radio id="qpl_menu_wizard_global_project_progress_off" value="OFF" label="&qpl_menu_wizard_off.label;" />
+							</radiogroup>
+						</row>
+						<row>
+							<label control="qpl_menu_wizard_global_project_navigation" value="&qpl_menu_wizard_global_project_navigation.label;" />
+							<radiogroup id="qpl_menu_wizard_global_project_navigation"  orient="horizontal"  >
+							    <radio id="qpl_menu_wizard_global_project_navigation_on" value="ON" label="&qpl_menu_wizard_on.label;"  selected="true"/>
+							    <radio id="qpl_menu_wizard_global_project_navigation_off" value="OFF" label="&qpl_menu_wizard_off.label;" />
+							</radiogroup>
+
+							<label value="   " />
+
+							<label control="qpl_menu_wizard_global_project_printbutton" value="&qpl_menu_wizard_global_project_printbutton.label;" />
+							<radiogroup id="qpl_menu_wizard_global_project_printbutton"  orient="horizontal"   >
+							    <radio id="qpl_menu_wizard_global_project_printbutton_on" value="ON" label="&qpl_menu_wizard_on.label;"  selected="true"/>
+							    <radio id="qpl_menu_wizard_global_project_printbutton_off" value="OFF" label="&qpl_menu_wizard_off.label;" />
+							</radiogroup>
+						</row>
+					</rows>
+					</grid>
+					</hbox>
+				</row>
+				
+				
+				<row>
+					<label control="qpl_menu_wizard_global_project_displayfade" value="&qpl_menu_wizard_global_project_displayfade.label;" />
+					<radiogroup id="qpl_menu_wizard_global_project_displayfade"  orient="horizontal"  >
+					    <radio id="qpl_menu_wizard_global_project_displayfade_vfast" value="VERYFAST" label="&qpl_menu_wizard_global_project_displayfade_vfast.label;" />
+					    <radio id="qpl_menu_wizard_global_project_displayfade_fast" value="FAST" label="&qpl_menu_wizard_global_project_displayfade_fast.label;" />
+					    <radio id="qpl_menu_wizard_global_project_displayfade_medium" value="MEDIUM" label="&qpl_menu_wizard_global_project_displayfade_medium.label;"  selected="true"/>
+					    <radio id="qpl_menu_wizard_global_project_displayfade_slow" value="SLOW" label="&qpl_menu_wizard_global_project_displayfade_slow.label;" />
+					    <radio id="qpl_menu_wizard_global_project_displayfade_vslow" value="VERYSLOW" label="&qpl_menu_wizard_global_project_displayfade_vslow.label;" />
+					    <radio id="qpl_menu_wizard_global_project_displayfade_off" value="OFF" label="&qpl_menu_wizard_off.label;" />
+					</radiogroup>
+				</row>
+
+				<row>
+					<label control="qpl_menu_wizard_global_project_help" value="&qpl_menu_wizard_global_project_help.label;"/>
+					<textbox id="qpl_menu_wizard_global_project_help" multiline="true" rows="2" cols="60" value="" style="font-family: monospace;" placeholder="&qpl_menu_wizard_global_project_help.placeholder;" spellcheck="true" />
+				</row>
+
+				<row>
+					<label control="qpl_menu_wizard_global_project_hello" value="&qpl_menu_wizard_global_project_hello.label;"/>
+					<vbox>
+					<textbox id="qpl_menu_wizard_global_project_hello" multiline="true" rows="6" cols="60" value="" style="font-family: monospace;" placeholder="&qpl_menu_wizard_global_project_hello.placeholder;" spellcheck="true" />
+					
+					<hbox>
+						<textbox id="qpl_menu_wizard_global_project_hello_button" value="" maxlength="32" accesskey="&qpl_menu_wizard_global_project_hello_button.accesskey;" placeholder="&qpl_menu_wizard_global_project_hello_button.placeholder;" spellcheck="true"  />
+						<label control="qpl_menu_wizard_global_project_hello_button" value="&qpl_menu_wizard_global_project_hello_button.label;"/>
+					</hbox>
+					
+					</vbox>
+				</row>
+				
+				
+				
+				
+				
+				</rows>
+				</grid>
+			</groupbox>
+			
+		</tabpanel>
+
+
+		<tabpanel id="qpl_menu_wizard_global_access" orient="vertical" >
+			<groupbox>
+				<caption label="&qpl_menu_wizard_global_access.label;" />
+				
+			<grid align="left">
+			<columns>
+				<column />
+				<column />
+			</columns>
+			<rows>
+				<row>
+				<label control="qpl_menu_wizard_global_access_account" value="&qpl_menu_wizard_global_access_account.label;"/>
+					<radiogroup id="qpl_menu_wizard_global_access_account"  orient="horizontal" >
+					    <radio id="qpl_menu_wizard_global_access_account_exist" value="EXIST" label="&qpl_menu_wizard_global_access_account_exist.label;"  selected="true"/>
+					    <radio id="qpl_menu_wizard_global_access_account_create" value="CREATE" label="&qpl_menu_wizard_global_access_account_create.label;" />
+					    <radio id="qpl_menu_wizard_global_access_account_anonymous" value="ANONYMOUS" label="&qpl_menu_wizard_global_access_account_anonymous.label;"  />
+					</radiogroup>
+				</row>
+				
+				<row>
+					<label control="qpl_menu_wizard_global_access_authentication" value="&qpl_menu_wizard_global_access_authentication.label;" />
+					<radiogroup id="qpl_menu_wizard_global_access_authentication"  orient="horizontal" >
+					    <radio id="qpl_menu_wizard_global_access_authentication_normal" value="NORMAL" label="&qpl_menu_wizard_global_access_authentication_normal.label;"  selected="true"/>
+					    <radio id="qpl_menu_wizard_global_access_authentication_ldap" value="LDAP" label="&qpl_menu_wizard_global_access_authentication_ldap.label;" />
+					    <radio id="qpl_menu_wizard_global_access_authentication_rsa" value="RSA" label="&qpl_menu_wizard_global_access_authentication_rsa.label;"  />
+					</radiogroup>
+				</row>
+				
+				
+				<row>
+					<label control="qpl_menu_wizard_global_access_login_url" value="&qpl_menu_wizard_global_access_login.label;" />
+					<vbox>
+						<checkbox id="qpl_menu_wizard_global_access_login_url" label="&qpl_menu_wizard_global_access_login_url.label;" accesskey="&qpl_menu_wizard_global_access_login_url.accesskey;" checked="false"  />
+						<checkbox id="qpl_menu_wizard_global_access_login_pswd" label="&qpl_menu_wizard_global_access_login_pswd.label;" accesskey="&qpl_menu_wizard_global_access_login_pswd.accesskey;" checked="false"  />
+						<checkbox id="qpl_menu_wizard_global_access_login_email" label="&qpl_menu_wizard_global_access_login_email.label;" accesskey="&qpl_menu_wizard_global_access_login_email.accesskey;" checked="true" />
+						<checkbox id="qpl_menu_wizard_global_access_login_jump" label="&qpl_menu_wizard_global_access_login_jump.label;" accesskey="&qpl_menu_wizard_global_access_login_jump.accesskey;" checked="false"  />
+					</vbox>
+				</row>
+				
+				<row>
+					<label control="qpl_menu_wizard_global_access_expire" value="&qpl_menu_wizard_global_access_expire.label;" />
+					<hbox>
+					<datepicker id="qpl_menu_wizard_global_access_expire" value="" type="popup" accesskey="&qpl_menu_wizard_global_access_expire.accesskey;" />
+					
+					<spacer flex="1" />
+					<label control="qpl_menu_wizard_global_access_archive" value="&qpl_menu_wizard_global_access_archive.label;" />
+					<datepicker id="qpl_menu_wizard_global_access_archive" value="" type="popup" accesskey="&qpl_menu_wizard_global_access_archive.accesskey;" />
+					</hbox>
+				</row>
+
+				<row>
+					<label control="qpl_menu_wizard_global_access_cases" value="&qpl_menu_wizard_global_access_cases.label;" />
+					<radiogroup id="qpl_menu_wizard_global_access_cases"  orient="horizontal" >
+					    <radio id="qpl_menu_wizard_global_access_cases_one" value="ONE" label="&qpl_menu_wizard_global_access_cases_one.label;"  selected="true"  onclick="ToggleSelectOptions(true);" />
+					    <radio id="qpl_menu_wizard_global_access_cases_many" value="MANY" label="&qpl_menu_wizard_global_access_cases_many.label;" onclick="ToggleSelectOptions(false);" />
+					    <radio id="qpl_menu_wizard_global_access_cases_create" value="CREATE" label="&qpl_menu_wizard_global_access_cases_create.label;"  onclick="ToggleSelectOptions(false);"  />
+					</radiogroup>
+				</row>
+			</rows>
+			</grid>
+			</groupbox>
+
+			<groupbox>
+				<caption label="&qpl_menu_wizard_global_access_select.label;" />
+			<grid align="left">
+				<columns>
+					<column />
+					<column />
+				</columns>
+				<rows>
+					<row>
+					<label control="qpl_menu_wizard_global_access_select_by" value="&qpl_menu_wizard_global_access_select_by.label;"/>
+					<hbox>
+						<textbox id="qpl_menu_wizard_global_access_select_by" value="" maxlength="16" accesskey="&qpl_menu_wizard_global_access_select_by.accesskey;" placeholder="&qpl_menu_wizard_global_access_select_by.placeholder;" spellcheck="false" disabled="true" />
+						
+						<spacer flex="1" />
+						<label control="qpl_menu_wizard_global_access_select_label" value="&qpl_menu_wizard_global_access_select_label.label;"/>
+						<textbox id="qpl_menu_wizard_global_access_select_label" value="" accesskey="&qpl_menu_wizard_global_access_select_label.accesskey;" placeholder="&qpl_menu_wizard_global_access_select_label.placeholder;" spellcheck="false" disabled="true" />
+					</hbox>
+					</row>
+					
+					<row>
+						<label control="qpl_menu_wizard_global_access_select_alt" value="&qpl_menu_wizard_global_access_select_alt.label;"/>
+						<textbox id="qpl_menu_wizard_global_access_select_alt" value="" accesskey="&qpl_menu_wizard_global_access_select_alt.accesskey;" placeholder="&qpl_menu_wizard_global_access_select_alt.placeholder;" spellcheck="false" disabled="true" />
+					</row>
+	
+					<row>
+						<label control="qpl_menu_wizard_global_access_select_instruction" value="&qpl_menu_wizard_global_access_select_instruction.label;"/>
+						<textbox id="qpl_menu_wizard_global_access_select_instruction" value="" accesskey="&qpl_menu_wizard_global_access_select_instruction.accesskey;" placeholder="&qpl_menu_wizard_global_access_select_instruction.placeholder;" spellcheck="true" disabled="true" />
+					</row>
+					
+					<row>
+						<label control="qpl_menu_wizard_global_access_select_format" value="&qpl_menu_wizard_global_access_select_format.label;" />
+						<radiogroup id="qpl_menu_wizard_global_access_select_format"  orient="horizontal"  disabled="true" >
+						    <radio id="qpl_menu_wizard_global_access_select_format_long" value="LONG" label="&qpl_menu_wizard_global_access_select_format_long.label;"  selected="true"/>
+						    <radio id="qpl_menu_wizard_global_access_select_format_short" value="SHORT" label="&qpl_menu_wizard_global_access_select_format_short.label;" />
+						</radiogroup>
+					</row>
+			
+					<row>
+						<label />
+						<checkbox id="qpl_menu_wizard_global_access_select_required" label="&qpl_menu_wizard_global_access_select_required.label;" accesskey="&qpl_menu_wizard_global_access_select_required.accesskey;" checked="false"  disabled="true" />
+					</row>
+				</rows>
+			</grid>	
+			</groupbox>
+		</tabpanel>
+
+		
+		<tabpanel id="qpl_menu_wizard_global_mail" orient="vertical" >
+			<groupbox>
+				<caption label="&qpl_menu_wizard_global_mail.label;" />
+
+			<grid align="left">
+			<columns>
+				<column />
+				<column />
+			</columns>
+			<rows>
+				<row>
+					<label control="qpl_menu_wizard_global_mail_name" value="&qpl_menu_wizard_global_mail_name.label;"/>
+					<textbox id="qpl_menu_wizard_global_mail_name" value="" accesskey="&qpl_menu_wizard_global_mail_name.accesskey;" placeholder="&qpl_menu_wizard_global_mail_name.placeholder;" spellcheck="false"  />
+				</row>
+				<row>
+					<label control="qpl_menu_wizard_global_mail_from" value="&qpl_menu_wizard_global_mail_from.label;"/>
+					<textbox id="qpl_menu_wizard_global_mail_from" value="" accesskey="&qpl_menu_wizard_global_mail_from.accesskey;" placeholder="&qpl_menu_wizard_global_mail_from.placeholder;" spellcheck="false"  />
+				</row>
+				<row>
+					<label control="qpl_menu_wizard_global_mail_replyto" value="&qpl_menu_wizard_global_mail_replyto.label;"/>
+					<textbox id="qpl_menu_wizard_global_mail_replyto" value="" accesskey="&qpl_menu_wizard_global_mail_replyto.accesskey;" placeholder="&qpl_menu_wizard_global_mail_replyto.placeholder;" spellcheck="false"  />
+				</row>
+				<row>
+					<label control="qpl_menu_wizard_global_mail_returnpath" value="&qpl_menu_wizard_global_mail_returnpath.label;"/>
+					<textbox id="qpl_menu_wizard_global_mail_returnpath" value="" accesskey="&qpl_menu_wizard_global_mail_returnpath.accesskey;" placeholder="&qpl_menu_wizard_global_mail_returnpath.placeholder;" spellcheck="false"  />
+				</row>
+			</rows>
+			</grid>	
+			</groupbox>
+		</tabpanel>
+		
+		
+		<tabpanel id="qpl_menu_wizard_global_color" orient="vertical" >
+			<groupbox>
+				<caption label="&qpl_menu_wizard_global_color_scheme.label;" />
+
+				<grid align="left">
+				<columns>
+					<column />
+					<column />
+				</columns>
+				<rows>
+					<row>
+						<label control="qpl_menu_wizard_global_color_scheme_color" value="&qpl_menu_wizard_global_color_scheme_color.label;"/>
+						<hbox>
+						<colorpicker id="qpl_menu_wizard_global_color_scheme_color"
+							     type="button"
+							     color="#9999cc"
+							     disabled="true"
+							     onclick="customColor('qpl_menu_wizard_global_color_scheme_color');" />
+						<spacer flex="1" />
+						
+						<label control="qpl_menu_wizard_global_color_scheme_offset" value="&qpl_menu_wizard_global_color_scheme_offset.label;"/>
+						<textbox id="qpl_menu_wizard_global_color_scheme_offset" type="number" maxlength="5" size="5" value="2" min="1" max="5"  style="font-family: monospace; width: 5em;" spellcheck="true" />
+						</hbox>
+					</row>
+				</rows>
+				</grid>	
+			</groupbox>
+
+			<groupbox>
+				<caption label="&qpl_menu_wizard_global_color_background.label;" />
+				<grid align="left">
+				<columns>
+					<column />
+					<column />
+				</columns>
+				<rows>
+					<row>
+						<colorpicker id="qpl_menu_wizard_global_color_background_BODY-color"
+							     type="button"
+							     color="#9999cc"
+							     disabled="true"
+							     onclick="customColor('qpl_menu_wizard_global_color_background_BODY-color');" />
+						<checkbox id="qpl_menu_wizard_global_color_background_BODY" label="&qpl_menu_wizard_global_color_background_BODY.label;" checked="false" accesskey="&qpl_menu_wizard_global_color_background_BODY.accesskey;" />
+					</row>
+					<row>
+						<colorpicker id="qpl_menu_wizard_global_color_background_FORM-color"
+							     type="button"
+							     color="#9999cc"
+							     disabled="true"
+							     onclick="customColor('qpl_menu_wizard_global_color_background_FORM-color');" />
+						<checkbox id="qpl_menu_wizard_global_color_background_FORM" label="&qpl_menu_wizard_global_color_background_FORM.label;" checked="false" accesskey="&qpl_menu_wizard_global_color_background_FORM.accesskey;" />
+					</row>
+					<row>
+						<colorpicker id="qpl_menu_wizard_global_color_background_ROWHEADER-color"
+							     type="button"
+							     color="#9999cc"
+							     disabled="true"
+							     onclick="customColor('qpl_menu_wizard_global_color_background_ROWHEADER-color');" />
+						<checkbox id="qpl_menu_wizard_global_color_background_ROWHEADER" label="&qpl_menu_wizard_global_color_background_ROWHEADER.label;" checked="false" accesskey="&qpl_menu_wizard_global_color_background_ROWHEADER.accesskey;" />
+					</row>
+					<row>
+						<colorpicker id="qpl_menu_wizard_global_color_background_ROW-color"
+							     type="button"
+							     color="#9999cc"
+							     disabled="true"
+							     onclick="customColor('qpl_menu_wizard_global_color_background_ROW-color');" />
+						<checkbox id="qpl_menu_wizard_global_color_background_ROW" label="&qpl_menu_wizard_global_color_background_ROW.label;" checked="false" accesskey="&qpl_menu_wizard_global_color_background_ROW.accesskey;" />
+					</row>
+					<row>
+						<colorpicker id="qpl_menu_wizard_global_color_background_ROW1-color"
+							     type="button"
+							     color="#9999cc"
+							     disabled="true"
+							     onclick="customColor('qpl_menu_wizard_global_color_background_ROW1-color');" />
+						<checkbox id="qpl_menu_wizard_global_color_background_ROW1" label="&qpl_menu_wizard_global_color_background_ROW1.label;" checked="false" accesskey="&qpl_menu_wizard_global_color_background_ROW1.accesskey;" />
+					</row>
+					<row>
+						<colorpicker id="qpl_menu_wizard_global_color_background_ROW2-color"
+							     type="button"
+							     color="#9999cc"
+							     disabled="true"
+							     onclick="customColor('qpl_menu_wizard_global_color_background_ROW2-color');" />
+						<checkbox id="qpl_menu_wizard_global_color_background_ROW2" label="&qpl_menu_wizard_global_color_background_ROW2.label;" checked="false" accesskey="&qpl_menu_wizard_global_color_background_ROW2.accesskey;" />
+					</row>
+					<row>
+						<colorpicker id="qpl_menu_wizard_global_color_background_ROWDK-color"
+							     type="button"
+							     color="#9999cc"
+							     disabled="true"
+							     onclick="customColor('qpl_menu_wizard_global_color_background_ROWDK-color');" />
+						<checkbox id="qpl_menu_wizard_global_color_background_ROWDK" label="&qpl_menu_wizard_global_color_background_ROWDK.label;" checked="false" accesskey="&qpl_menu_wizard_global_color_background_ROWDK.accesskey;" />
+					</row>
+					<row>
+						<colorpicker id="qpl_menu_wizard_global_color_background_MENUROW-color"
+							     type="button"
+							     color="#9999cc"
+							     disabled="true"
+							     onclick="customColor('qpl_menu_wizard_global_color_background_MENUROW-color');" />
+						<checkbox id="qpl_menu_wizard_global_color_background_MENUROW" label="&qpl_menu_wizard_global_color_background_MENUROW.label;" checked="false" accesskey="&qpl_menu_wizard_global_color_background_MENUROW.accesskey;" />
+					</row>
+					<row>
+						<colorpicker id="qpl_menu_wizard_global_color_background_MENUROWON-color"
+							     type="button"
+							     color="#9999cc"
+							     disabled="true"
+							     onclick="customColor('qpl_menu_wizard_global_color_background_MENUROWON-color');" />
+						<checkbox id="qpl_menu_wizard_global_color_background_MENUROWON" label="&qpl_menu_wizard_global_color_background_MENUROWON.label;" checked="false" accesskey="&qpl_menu_wizard_global_color_background_MENUROWON.accesskey;" />
+					</row>
+					<row>
+						<colorpicker id="qpl_menu_wizard_global_color_background_HR-color"
+							     type="button"
+							     color="#9999cc"
+							     disabled="true"
+							     onclick="customColor('qpl_menu_wizard_global_color_background_HR-color');" />
+						<checkbox id="qpl_menu_wizard_global_color_background_HR" label="&qpl_menu_wizard_global_color_background_HR.label;" checked="false" accesskey="&qpl_menu_wizard_global_color_background_HR.accesskey;" />
+					</row>
+					<row>
+						<colorpicker id="qpl_menu_wizard_global_color_background_BUG-color"
+							     type="button"
+							     color="#9999cc"
+							     disabled="true"
+							     onclick="customColor('qpl_menu_wizard_global_color_background_BUG-color');" />
+						<checkbox id="qpl_menu_wizard_global_color_background_BUG" label="&qpl_menu_wizard_global_color_background_BUG.label;" checked="false" accesskey="&qpl_menu_wizard_global_color_background_BUG.accesskey;" />
+					</row>
+					<row>
+						<colorpicker id="qpl_menu_wizard_global_color_background_NAVBB-color"
+							     type="button"
+							     color="#9999cc"
+							     disabled="true"
+							     onclick="customColor('qpl_menu_wizard_global_color_background_NAVBB-color');" />
+						<checkbox id="qpl_menu_wizard_global_color_background_NAVBB" label="&qpl_menu_wizard_global_color_background_NAVBB.label;" checked="false" accesskey="&qpl_menu_wizard_global_color_background_NAVBB.accesskey;" />
+					</row>
+					<row>
+						<colorpicker id="qpl_menu_wizard_global_color_background_HOVER-color"
+							     type="button"
+							     color="#9999cc"
+							     disabled="true"
+							     onclick="customColor('qpl_menu_wizard_global_color_background_HOVER-color');" />
+						<checkbox id="qpl_menu_wizard_global_color_background_HOVER" label="&qpl_menu_wizard_global_color_background_HOVER.label;" checked="false" accesskey="&qpl_menu_wizard_global_color_background_HOVER.accesskey;" />
+					</row>
+					<row>
+						<colorpicker id="qpl_menu_wizard_global_color_background_HOVERMAIN-color"
+							     type="button"
+							     color="#9999cc"
+							     disabled="true"
+							     onclick="customColor('qpl_menu_wizard_global_color_background_HOVERMAIN-color');" />
+						<checkbox id="qpl_menu_wizard_global_color_background_HOVERMAIN" label="&qpl_menu_wizard_global_color_background_HOVERMAIN.label;" checked="false" accesskey="&qpl_menu_wizard_global_color_background_HOVERMAIN.accesskey;" />
+					</row>
+					<row>
+						<colorpicker id="qpl_menu_wizard_global_color_background_HOVERMENU-color"
+							     type="button"
+							     color="#9999cc"
+							     disabled="true"
+							     onclick="customColor('qpl_menu_wizard_global_color_background_HOVERMENU-color');" />
+						<checkbox id="qpl_menu_wizard_global_color_background_HOVERMENU" label="&qpl_menu_wizard_global_color_background_HOVERMENU.label;" checked="false" accesskey="&qpl_menu_wizard_global_color_background_HOVERMENU.accesskey;" />
+					</row>
+					<row>
+						<colorpicker id="qpl_menu_wizard_global_color_background_HOVERMENUNAVBB-color"
+							     type="button"
+							     color="#9999cc"
+							     disabled="true"
+							     onclick="customColor('qpl_menu_wizard_global_color_background_HOVERMENUNAVBB-color');" />
+						<checkbox id="qpl_menu_wizard_global_color_background_HOVERMENUNAVBB" label="&qpl_menu_wizard_global_color_background_HOVERMENUNAVBB.label;" checked="false" accesskey="&qpl_menu_wizard_global_color_background_HOVERMENUNAVBB.accesskey;" />
+					</row>
+					<row>
+						<colorpicker id="qpl_menu_wizard_global_color_background_POPUP-color"
+							     type="button"
+							     color="#9999cc"
+							     disabled="true"
+							     onclick="customColor('qpl_menu_wizard_global_color_background_POPUP-color');" />
+						<checkbox id="qpl_menu_wizard_global_color_background_POPUP" label="&qpl_menu_wizard_global_color_background_POPUP.label;" checked="false" accesskey="&qpl_menu_wizard_global_color_background_POPUP.accesskey;" />
+					</row>
+					<row>
+						<colorpicker id="qpl_menu_wizard_global_color_background_POPUPBANNER-color"
+							     type="button"
+							     color="#9999cc"
+							     disabled="true"
+							     onclick="customColor('qpl_menu_wizard_global_color_background_POPUPBANNER-color');" />
+						<checkbox id="qpl_menu_wizard_global_color_background_POPUPBANNER" label="&qpl_menu_wizard_global_color_background_POPUPBANNER.label;" checked="false" accesskey="&qpl_menu_wizard_global_color_background_POPUPBANNER.accesskey;" />
+					</row>
+				</rows>
+				</grid>	
+			</groupbox>
+		</tabpanel>
+
+		
+		
+		<tabpanel id="qpl_menu_wizard_global_font" orient="vertical" >
+			<groupbox>
+				<caption label="&qpl_menu_wizard_global_font_header.label;" />
+
+				<grid align="left">
+				<columns>
+					<column flex="1" />
+					<column flex="6" />
+				</columns>
+				<rows>
+					<row>
+						<label control="qpl_menu_wizard_global_font_header_family" value="&qpl_menu_wizard_global_font_family.label;"/>
+						<hbox>
+							<radiogroup id="qpl_menu_wizard_global_font_header_family"  orient="horizontal"  onclick="UpdateSample('qpl_menu_wizard_global_font_header');">
+							    <radio id="qpl_menu_wizard_global_font_header_family_serif" value="SERIF" label="&qpl_menu_wizard_global_font_serif.label;"  />
+							    <radio id="qpl_menu_wizard_global_font_header_family_sansserif" value="SANSSERIF" label="&qpl_menu_wizard_global_font_sansserif.label;"  selected="true"  />
+							    <radio id="qpl_menu_wizard_global_font_header_family_monospace" value="MONOSPACE" label="&qpl_menu_wizard_global_font_monospace.label;"  />
+							</radiogroup>
+	
+							<spacer flex="1" />
+							<label control="qpl_menu_wizard_global_font_header_size" value="&qpl_menu_wizard_global_font_size.label;"/>
+							<scale id="qpl_menu_wizard_global_font_header_size" movetoclick="true" min="1" max="7" value="4" increment="1" onchange="UpdateSample('qpl_menu_wizard_global_font_header');"   />
+						</hbox>
+					</row>
+					<row>
+						<label control="qpl_menu_wizard_global_font_header_h1" value="&qpl_menu_wizard_global_font_header_h1.label;"/>
+						<description id="qpl_menu_wizard_global_font_header_h1" >Lorem Ipsum Dolor Sit Amet</description>
+					</row>
+					<row>
+						<label control="qpl_menu_wizard_global_font_header_h2" value="&qpl_menu_wizard_global_font_header_h2.label;"/>
+						<description id="qpl_menu_wizard_global_font_header_h2" >Lorem Ipsum Dolor Sit Amet</description>
+					</row>
+					<row>
+						<label control="qpl_menu_wizard_global_font_header_h3" value="&qpl_menu_wizard_global_font_header_h3.label;"/>
+						<description id="qpl_menu_wizard_global_font_header_h3" >Lorem Ipsum Dolor Sit Amet</description>
+					</row>
+				</rows>
+				</grid>	
+			</groupbox>
+
+
+
+			<groupbox>
+				<caption label="&qpl_menu_wizard_global_font_body.label;" />
+
+				<grid align="left">
+				<columns>
+					<column flex="1" />
+					<column flex="6" />
+				</columns>
+				<rows>
+					<row>
+						<label control="qpl_menu_wizard_global_font_body_family" value="&qpl_menu_wizard_global_font_family.label;"/>
+						<hbox>
+							<radiogroup id="qpl_menu_wizard_global_font_body_family"  orient="horizontal"  onclick="UpdateSample('qpl_menu_wizard_global_font_body');">
+							    <radio id="qpl_menu_wizard_global_font_body_family_serif" value="SERIF" label="&qpl_menu_wizard_global_font_serif.label;"  selected="true"  />
+							    <radio id="qpl_menu_wizard_global_font_body_family_sansserif" value="SANSSERIF" label="&qpl_menu_wizard_global_font_sansserif.label;"  />
+							    <radio id="qpl_menu_wizard_global_font_body_family_monospace" value="MONOSPACE" label="&qpl_menu_wizard_global_font_monospace.label;"  />
+							</radiogroup>
+	
+							<spacer flex="1" />
+							<label control="qpl_menu_wizard_global_font_body_size" value="&qpl_menu_wizard_global_font_size.label;"/>
+							<scale id="qpl_menu_wizard_global_font_body_size" movetoclick="true" min="1" max="7" value="4" increment="1" onchange="UpdateSample('qpl_menu_wizard_global_font_body');"   />
+						</hbox>
+					</row>
+					<row>
+						<label control="qpl_menu_wizard_global_font_body_p" value="&qpl_menu_wizard_global_font_body_p.label;"/>
+						<description id="qpl_menu_wizard_global_font_body_p" >Sed in vehicula arcu. Nunc porttitor accumsan aliquet. Sed maximus quam 
+							quis sapien gravida placerat. Nulla imperdiet venenatis condimentum. In 
+							vitae tincidunt neque. Cras scelerisque hendrerit eros id placerat. 
+							Praesent vel molestie nunc, ut faucibus nibh. Vivamus erat sem, pulvinar 
+							sed justo non, suscipit iaculis nisi. </description>
+					</row>
+				</rows>
+				</grid>	
+			</groupbox>
+
+		</tabpanel>
+				
+				
+		
+		<tabpanel id="qpl_menu_wizard_global_style" orient="vertical" >
+			<groupbox>
+				<caption label="&qpl_menu_wizard_global_style.label;" />
+
+				<grid align="left">
+				<columns>
+					<column flex="1" />
+					<column flex="6" />
+				</columns>
+				<rows>
+					<row>
+						<label control="qpl_menu_wizard_global_style_content" value="&qpl_menu_wizard_global_style_content.label;" accesskey="&qpl_menu_wizard_global_style_content.accesskey;" />
+						<textbox id="qpl_menu_wizard_global_style_content" multiline="true" rows="6" cols="60" value="" style="font-family: monospace;" placeholder="&qpl_menu_wizard_global_style_content.placeholder;" spellcheck="true" />
+					</row>
+				</rows>
+				</grid>	
+			</groupbox>
+
+		</tabpanel>
+
+		
+		<tabpanel id="qpl_menu_wizard_global_script" orient="vertical" >
+			<groupbox>
+				<caption label="&qpl_menu_wizard_global_script.label;" />
+
+				<grid align="left">
+				<columns>
+					<column flex="1" />
+					<column flex="6" />
+				</columns>
+				<rows>
+				
+				<!-- .SCRIPT [= ON | OFF | "name.js" [= TOP* | BOTTOM] ] -->
+
+					<row>
+						<label control="qpl_menu_wizard_global_script_embeded" value="&qpl_menu_wizard_global_script_embeded.label;" accesskey="&qpl_menu_wizard_global_script_embeded.accesskey;" />
+						
+						<hbox>
+							<radiogroup id="qpl_menu_wizard_global_script_embeded"  orient="horizontal" >
+							    <radio id="qpl_menu_wizard_global_script_embeded_yes" value="YES" label="&qpl_menu_wizard_global_script_embeded_yes.label;"  selected="true"  onclick="ToggleScriptOptions(false);" />
+							    <radio id="qpl_menu_wizard_global_script_embeded_no" value="NO" label="&qpl_menu_wizard_global_script_embeded_no.label;" onclick="ToggleScriptOptions(true);" />
+							</radiogroup>
+							
+						</hbox>    
+					</row>
+				
+					<row>
+						<label control="qpl_menu_wizard_global_script_content" value="&qpl_menu_wizard_global_script_content.label;" accesskey="&qpl_menu_wizard_global_script_content.accesskey;" />
+						<textbox id="qpl_menu_wizard_global_script_content" multiline="true" rows="6" cols="60" value="" style="font-family: monospace;" placeholder="&qpl_menu_wizard_global_script_content.placeholder;" spellcheck="false" />
+					</row>
+
+					<row>
+						<label control="qpl_menu_wizard_global_script_file" value="&qpl_menu_wizard_global_script_file.label;" accesskey="&qpl_menu_wizard_global_script_file.accesskey;" />
+						<textbox id="qpl_menu_wizard_global_script_file" value="" placeholder="&qpl_menu_wizard_global_script_file.placeholder;" disabled="true" />
+							<button id="qpl_script_browse" label="&qpl_browse.label;" accesskey="&qpl_browse.accesskey;" onclick="pickFile('qpl_menu_wizard_global_script_file');"  disabled="true" />	
+					</row>
+					
+					<row>
+						<label control="qpl_menu_wizard_global_script_location" value="&qpl_menu_wizard_global_script_location.label;" />
+						
+						<radiogroup id="qpl_menu_wizard_global_script_location"  orient="horizontal" >
+						    <radio id="qpl_menu_wizard_global_script_location_top" value="TOP" label="&qpl_menu_wizard_global_script_location_top.label;"  selected="true" />
+						    <radio id="qpl_menu_wizard_global_script_location_bottom" value="BOTTOM" label="&qpl_menu_wizard_global_script_location_bottom.label;"  />
+						</radiogroup>
+					</row>
+				</rows>
+				</grid>	
+			</groupbox>
+
+		</tabpanel>
+
+		<!-- more tabpanels here... -->
+		
+		
+	</tabpanels>
+	</tabbox>
+</vbox>
+
+
+<script type="application/x-javascript" src="chrome://qplwrapper/content/qplwrapper-helper.js"/>
+
+
+<script type="application/x-javascript" >
+<![CDATA[
+var ko = window.arguments[0];
+
+function UpdateSample(Id) {
+	var ListFamily = {SERIF: "\"Times New Roman\", Times, serif",
+			  SANSSERIF:  "Arial, Helvetica, sans-serif",
+			  MONOSPACE : "\"Courier New\", Courier, monospace" }
+
+	var ListSize = [1.0,
+			0.55,
+			0.70,
+			0.85,
+			1.00,
+			1.15,
+			1.30,
+			1.45,
+			0.8,
+			1.2 ];
+	
+/*
+1 XXSMALL | 2 XSMALL | 3 SMALL | 4 MEDIUM | 5 LARGE | 6 XLARGE | 7 XXLARGE
+#define FONT_P	11	pt default
+#define FONT_H1 18
+#define FONT_H2 14
+#define FONT_H3 12
+*/
+
+	var Family = ListFamily[document.getElementById(Id + '_family').value];
+	var Size = ListSize[document.getElementById(Id + '_size').value];
+	
+	if (/header$/.test(Id)) {
+		document.getElementById(Id + '_h1').style.fontFamily = Family;
+		document.getElementById(Id + '_h1').style.fontSize = (Size * 18) + "pt";
+		
+		document.getElementById(Id + '_h2').style.fontFamily = Family;
+		document.getElementById(Id + '_h2').style.fontSize = (Size * 14) + "pt";
+	
+		document.getElementById(Id + '_h3').style.fontFamily = Family;
+		document.getElementById(Id + '_h3').style.fontSize = (Size * 12) + "pt";
+	} else {
+		document.getElementById(Id + '_p').style.fontFamily = Family;
+		document.getElementById(Id + '_p').style.fontSize = (Size * 11) + "pt";
+	}
+	
+}
+
+
+function DisableMenuItems(Status) {
+	document.getElementById('qpl_menu_wizard_global_project_summary').disabled = Status;
+	document.getElementById('qpl_menu_wizard_global_project_progress').disabled = Status;
+	document.getElementById('qpl_menu_wizard_global_project_navigation').disabled = Status;
+	document.getElementById('qpl_menu_wizard_global_project_printbutton').disabled = Status;
+}
+
+function  DisableLogo(Status) {
+	document.getElementById('qpl_menu_wizard_global_project_logo_name').disabled = Status;
+	document.getElementById('qpl_browse').disabled = Status;
+	document.getElementById('qpl_menu_wizard_global_project_logo_description').disabled = Status;
+}
+
+// modified function of the same name from chrome://komodo/content/pref/pref-alllangfonts.js
+function customColor(colorpickerid) {
+	var colorpicker = document.getElementById(colorpickerid);
+	
+	if (/-color$/.test(colorpickerid)) {
+		var colorcheckbox = document.getElementById(colorpickerid.replace(/-color/, ""));
+	}
+	var color = "#" + colorpicker.color.replace(/^#/, "");
+	var picker = Components.classes['@activestate.com/koSysUtils;1']
+                           .getService(Components.interfaces.koIColorPickerAsync);
+	
+	picker.pickColorAsync(function(newcolor) {
+		if (newcolor) {
+		    colorpicker.color = newcolor;
+		    if (colorcheckbox) {
+			colorcheckbox.checked = true;
+		    }
+		}
+	}, color, 1.0, colorpicker.boxObject.screenX, colorpicker.boxObject.screenY);
+}
+
+
+
+function ToggleScriptOptions(Status) {
+	document.getElementById('qpl_menu_wizard_global_script_file').disabled = !Status;
+	document.getElementById('qpl_script_browse').disabled = !Status;
+	document.getElementById('qpl_menu_wizard_global_script_location').disabled = !Status;
+
+	document.getElementById('qpl_menu_wizard_global_script_content').disabled = Status;
+}
+
+
+function ToggleSelectOptions(Status) {
+	document.getElementById('qpl_menu_wizard_global_access_select_by').disabled = Status;
+	document.getElementById('qpl_menu_wizard_global_access_select_label').disabled = Status;
+	document.getElementById('qpl_menu_wizard_global_access_select_alt').disabled = Status;
+	document.getElementById('qpl_menu_wizard_global_access_select_instruction').disabled = Status;
+	document.getElementById('qpl_menu_wizard_global_access_select_format').disabled = Status;
+	document.getElementById('qpl_menu_wizard_global_access_select_required').disabled = Status;
+}
+
+
+function InsertText()
+{
+	var SB = document.getElementById('qplwrapper-strings');
+	var GlobalProjectSettings = SB.getString('GlobalProjectSettings'); // Global Project Settings
+	var GlobalContactInformation = SB.getString('GlobalContactInformation'); // Contact Information
+	var GlobalHomePage = SB.getString('GlobalHomePage'); // Home Page
+	var GlobalEnterContact = SB.getString('GlobalEnterContact'); // Enter contact information here.
+	var GlobalEnterHomePage = SB.getString('GlobalEnterHomePage'); // Enter home page information here.
+	var GlobalAccessControls = SB.getString('GlobalAccessControls'); // Access Controls
+	var GlobalMailSettings = SB.getString('GlobalMailSettings'); // Mail Settings
+	var GlobalColorSettings = SB.getString('GlobalColorSettings'); // Color Settings
+	var GlobalFontSettings = SB.getString('GlobalFontSettings'); // Font Settings
+	var GlobalStyleSettings = SB.getString('GlobalStyleSettings'); // Style Settings
+	var GlobalScriptSettings = SB.getString('GlobalScriptSettings'); // Script Settings
+	var GlobalScriptSettingsContent = SB.getString('GlobalScriptSettingsContent'); // Enter your Javascript here.
+	
+	var qpl_menu_wizard_global_project_title= document.getElementById('qpl_menu_wizard_global_project_title').value.trim();
+	if (qpl_menu_wizard_global_project_title.length == 0 ) {
+		qpl_menu_wizard_global_project_title = "My Title";
+	}
+	
+	var qpl_menu_wizard_global_project_subtitle= document.getElementById('qpl_menu_wizard_global_project_subtitle').value.trim();
+	if (qpl_menu_wizard_global_project_subtitle.length == 0 ) {
+		qpl_menu_wizard_global_project_subtitle = "My Subtitle";
+	}
+
+	var qpl_menu_wizard_global_project_author= document.getElementById('qpl_menu_wizard_global_project_author').value.trim();
+	if (qpl_menu_wizard_global_project_author.length == 0 ) {
+		qpl_menu_wizard_global_project_author = "My Name";
+	}
+	
+	var qpl_menu_wizard_global_project_logo= document.getElementById('qpl_menu_wizard_global_project_logo').value;
+	var qpl_menu_wizard_global_project_logo_name= document.getElementById('qpl_menu_wizard_global_project_logo_name').value.toLowerCase().trim();
+	var qpl_menu_wizard_global_project_logo_description= document.getElementById('qpl_menu_wizard_global_project_logo_description').value.trim();
+	
+	var qpl_menu_wizard_global_project_page_width= document.getElementById('qpl_menu_wizard_global_project_page_width').value;
+	var qpl_menu_wizard_global_project_page_gutter= document.getElementById('qpl_menu_wizard_global_project_page_gutter').value;
+	var qpl_menu_wizard_global_project_page_question_width= document.getElementById('qpl_menu_wizard_global_project_page_question_width').value;
+	
+	var qpl_menu_wizard_global_project_card= document.getElementById('qpl_menu_wizard_global_project_card').value;
+	
+	var qpl_menu_wizard_global_project_menu= document.getElementById('qpl_menu_wizard_global_project_menu').value;
+	var qpl_menu_wizard_global_project_summary= document.getElementById('qpl_menu_wizard_global_project_summary').value;
+	var qpl_menu_wizard_global_project_progress= document.getElementById('qpl_menu_wizard_global_project_progress').value;
+	var qpl_menu_wizard_global_project_navigation= document.getElementById('qpl_menu_wizard_global_project_navigation').value;
+	var qpl_menu_wizard_global_project_printbutton= document.getElementById('qpl_menu_wizard_global_project_printbutton').value;
+	var qpl_menu_wizard_global_project_displayfade= document.getElementById('qpl_menu_wizard_global_project_displayfade').value;
+	
+	var qpl_menu_wizard_global_project_help= document.getElementById('qpl_menu_wizard_global_project_help').value.trim();
+	var qpl_menu_wizard_global_project_hello= document.getElementById('qpl_menu_wizard_global_project_hello').value.trim();
+	var qpl_menu_wizard_global_project_hello_button= document.getElementById('qpl_menu_wizard_global_project_hello_button').value.trim();
+	
+	var qpl_menu_wizard_global_access_account= document.getElementById('qpl_menu_wizard_global_access_account').value;
+	var qpl_menu_wizard_global_access_authentication= document.getElementById('qpl_menu_wizard_global_access_authentication').value;
+	
+	var qpl_menu_wizard_global_access_login_url = (document.getElementById('qpl_menu_wizard_global_access_login_url').checked ? 'ON' : 'OFF');
+	var qpl_menu_wizard_global_access_login_pswd = (document.getElementById('qpl_menu_wizard_global_access_login_pswd').checked ? 'ON' : 'OFF');
+	var qpl_menu_wizard_global_access_login_email = (document.getElementById('qpl_menu_wizard_global_access_login_email').checked ? 'ON' : 'OFF');
+	var qpl_menu_wizard_global_access_login_jump = (document.getElementById('qpl_menu_wizard_global_access_login_jump').checked ? 'ON' : 'OFF');
+	
+	var qpl_menu_wizard_global_access_expire= document.getElementById('qpl_menu_wizard_global_access_expire').value;
+	var qpl_menu_wizard_global_access_archive= document.getElementById('qpl_menu_wizard_global_access_archive').value;	
+	var qpl_menu_wizard_global_access_cases= document.getElementById('qpl_menu_wizard_global_access_cases').value;
+	
+	var qpl_menu_wizard_global_access_select_by= document.getElementById('qpl_menu_wizard_global_access_select_by').value.toUpperCase().replace(/\s/g, "");
+	var qpl_menu_wizard_global_access_select_label= document.getElementById('qpl_menu_wizard_global_access_select_label').value.trim();
+	var qpl_menu_wizard_global_access_select_alt= document.getElementById('qpl_menu_wizard_global_access_select_alt').value.trim();
+	var qpl_menu_wizard_global_access_select_instruction= document.getElementById('qpl_menu_wizard_global_access_select_instruction').value.trim();
+	var qpl_menu_wizard_global_access_select_format= document.getElementById('qpl_menu_wizard_global_access_select_format').value;
+	
+	var qpl_menu_wizard_global_access_select_required = (document.getElementById('qpl_menu_wizard_global_access_select_required').checked ? 'ON' : 'OFF');
+	
+	var qpl_menu_wizard_global_mail_name= document.getElementById('qpl_menu_wizard_global_mail_name').value.trim();
+	var qpl_menu_wizard_global_mail_from= document.getElementById('qpl_menu_wizard_global_mail_from').value.trim();
+	var qpl_menu_wizard_global_mail_replyto= document.getElementById('qpl_menu_wizard_global_mail_replyto').value.trim();
+	var qpl_menu_wizard_global_mail_returnpath= document.getElementById('qpl_menu_wizard_global_mail_returnpath').value.trim();
+	
+	var qpl_menu_wizard_global_style_content= document.getElementById('qpl_menu_wizard_global_style_content').value.trim();
+	
+	var qpl_menu_wizard_global_script_embeded= document.getElementById('qpl_menu_wizard_global_script_embeded').value;
+	var qpl_menu_wizard_global_script_file= document.getElementById('qpl_menu_wizard_global_script_file').value.trim();
+	var qpl_menu_wizard_global_script_location= document.getElementById('qpl_menu_wizard_global_script_location').value;
+	var qpl_menu_wizard_global_script_content= document.getElementById('qpl_menu_wizard_global_script_content').value.trim();
+	
+	var Tab = document.getElementById('qpl_menu_wizard_global_tab').selectedIndex;
+	
+	
+	var BlockStart = "\n**********************************************************************\n** ";
+	var BlockEnd   = "** \n**********************************************************************\n\n";
+	var Phrase = "";
+
+	// Build insert text
+	
+
+/*
+.ACCOUNT = EXIST* | CREATE | ANONYMOUS
+.AUTHENTICATION = NORMAL* | LDAP | RSA
+
+
+.LOGINURL [= ON | OFF] <- allow URL login, default is OFF - using command w/out argument toggles default
+.LOGINPASSWORD [= ON | OFF] <- ON=require password change on first login, OFF is default - using command w/out argument toggles default
+.LOGINEMAIL [= ON | OFF] <- ON=require valid email when user updates account information, ON is default - using command w/out argument toggles default
+.LOGINJUMP [= ON | OFF ] <- allow a remote log in to this questionnaire from another questionnaire using the new QUESTIONNAIRE question
+
+
+.EXPIREDATE = yyyy-mm-dd
+.CASES = ONE* | MANY | CREATE
+.SELECTCASEBY = question name 
+.SELECTCASELABEL = "My Column label.." 
+.SELECTCASEALT = "CONCAT(..."
+.SELECTCASEFORMAT = LONG* | SHORT
+.SELECTCASEREQUIRED = ON | OFF*
+.388 = "Please select a case to edit."
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.FROMNAME = "friendly name" <-friendly version of the the FROM address, used on public create account function AND email system
+.FROM = "name@gao.gov"   <- used on public create account function AND email system
+.REPLYTO = "name@gao.gov" <- used in email system - - email address is copied from FROM if not used (syntax is not checked)
+.RETURNPATH = "name@gao.gov" < used in email system - - email address is copied from FROM if not used (syntax is not checked)
+
+.TITLE = "title goes here"
+.SUBTITLE = "subtitle goes here"
+.AUTHOR = "friendly name"
+.LOGO = ON* | OFF | "file name"  [ = "alt tag phrase..." ]
+* .LIVEUPDATE = ON* | OFF
+.PAGEWIDTH = #      (320 to 1660 pixels)
+.PAGEGUTTER = #     (10 to 70 pixels)
+.WIDTH
+.CARD = 200*
+
+.MENU [= ON* | OFF ]
+.SUMMARY [= ON* | OFF ]
+.PROGRESS [= ON* | OFF ]
+.NAVIGATION [= ON* | OFF ]
+.PRINTBUTTON [= ON | OFF ]
+.HELP [= ON]
+	Your help text goes here...
+.HELP [= OFF]
+
+.HELLO [= ON | "Begin"]
+	...
+	...
+.HELLO [= OFF]
+
+TODO...
+.FONT = SERIF* | SANSSERIF | MONOSPACE [= NONE* | XXSMALL | XSMALL | SMALL | MEDIUM | LARGE | XLARGE | XXLARGE | SMALLER | LARGER]
+
+			or XXS, XS, S, M, L, XL, XXL, SMLR, LRGR
+
+Questionnaire headings...
+.HFONT = SERIF | SANSSERIF* | MONOSPACE [= NONE* | XXSMALL | XSMALL | SMALL | MEDIUM | LARGE | XLARGE | XXLARGE | SMALLER | LARGER]
+
+.DISPLAYFADE [[=] OFF | ON | VERYFAST | FAST | MEDIUM | SLOW | VERYSLOW ]
+
+
+.SCRIPT [= ON | OFF | "name.js" [= TOP* | BOTTOM] ] 
+
+where 'name' is a .js file. If name is used, then this will be inserted in the HEAD
+section of the form HTML file after all of the other scripts. The BOTTOM option may
+be used to put it at the botom of the form HTML file immediately before the /HEAD
+tag.
+
+Ex.
+
+.SCRIPT = "larry.js" = BOTTOM
+
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript" SRC="larry.js"></SCRIPT>
+
+*/
+	// Access tab...
+	if (Tab == 0) {
+		Phrase += BlockStart + GlobalProjectSettings + "\n";
+		
+		Phrase += ".TITLE = \"" + qpl_menu_wizard_global_project_title + "\"\n";
+		Phrase += ".SUBTITLE = \"" + qpl_menu_wizard_global_project_subtitle + "\"\n";
+		Phrase += ".AUTHOR = \"" + qpl_menu_wizard_global_project_author + "\"\n";
+	
+		Phrase += ".LOGO = ";
+		if (qpl_menu_wizard_global_project_logo == 'ON') {
+			if (qpl_menu_wizard_global_project_logo_name.length) {
+				Phrase += "\"" + qpl_menu_wizard_global_project_logo_name + "\"";
+			} else {
+				Phrase += "ON";
+			}
+			if (qpl_menu_wizard_global_project_logo_description.length) {
+				Phrase += " = \"" + qpl_menu_wizard_global_project_logo_description + "\"";
+			}
+		} else {
+			Phrase += "OFF";
+		}
+		Phrase += "\n";
+		
+		Phrase += ".PAGEWIDTH = " + qpl_menu_wizard_global_project_page_width + '\n';
+		Phrase += ".PAGEGUTTER = " + qpl_menu_wizard_global_project_page_gutter + '\n';
+		Phrase += ".WIDTH = " + qpl_menu_wizard_global_project_page_question_width + '\n';
+		Phrase += ".CARD = " + qpl_menu_wizard_global_project_card + '\n';
+		
+		Phrase += ".MENU = " + qpl_menu_wizard_global_project_menu + '\n';
+		if (qpl_menu_wizard_global_project_menu == 'ON') {
+			Phrase += ".SUMMARY = " + qpl_menu_wizard_global_project_summary + '\n';
+			Phrase += ".PROGRESS = " + qpl_menu_wizard_global_project_progress + '\n';
+			Phrase += ".NAVIGATION = " + qpl_menu_wizard_global_project_navigation + '\n';
+			Phrase += ".PRINTBUTTON = " + qpl_menu_wizard_global_project_printbutton + '\n';
+		}
+		
+		Phrase += ".DISPLAYFADE = " + qpl_menu_wizard_global_project_displayfade + '\n';
+	
+		Phrase += BlockEnd;
+	
+		Phrase += BlockStart + GlobalContactInformation + "\n";
+		Phrase += ".HELP = ON\n";
+		if (qpl_menu_wizard_global_project_help.length) {
+			Phrase += WordWrap(qpl_menu_wizard_global_project_help) + "\n";
+		} else {
+			Phrase += GlobalEnterContact + "\n";
+		}
+		Phrase += ".HELP = OFF\n";
+		Phrase += BlockEnd;
+		
+
+
+		Phrase += BlockStart + GlobalHomePage + "\n";
+		Phrase += ".HELLO";
+		if (qpl_menu_wizard_global_project_hello_button.length) {
+			Phrase += " = \"" + qpl_menu_wizard_global_project_hello_button + "\"\n";
+		} else {
+			Phrase += " = ON\n";
+		}
+		
+		if (qpl_menu_wizard_global_project_hello.length) {
+			Phrase += WordWrap(qpl_menu_wizard_global_project_hello) + "\n";
+		} else {
+			Phrase += GlobalEnterHomePage + "\n";
+		}
+		Phrase += ".HELLO = OFF\n";
+	
+	} else if (Tab == 1) {
+		
+		Phrase += BlockStart + GlobalAccessControls + "\n";
+		Phrase += ".ACCOUNT = " + qpl_menu_wizard_global_access_account + '\n';
+		Phrase += ".AUTHENTICATION = " + qpl_menu_wizard_global_access_authentication + '\n';
+		Phrase += ".LOGINURL = " + qpl_menu_wizard_global_access_login_url + '\n';
+		Phrase += ".LOGINPASSWORD = " + qpl_menu_wizard_global_access_login_pswd + '\n';
+		Phrase += ".LOGINEMAIL = " + qpl_menu_wizard_global_access_login_email + '\n';
+		Phrase += ".LOGINJUMP = " + qpl_menu_wizard_global_access_login_jump + '\n';
+		Phrase += ".EXPIREDATE = \"" + qpl_menu_wizard_global_access_expire + "\"\n";
+		Phrase += ".ARCHIVEDATE = \"" + qpl_menu_wizard_global_access_archive + "\"\n";
+		Phrase += ".CASES = " + qpl_menu_wizard_global_access_cases + '\n';
+		
+		if (qpl_menu_wizard_global_access_cases != 'ONE') {
+			
+			if (qpl_menu_wizard_global_access_select_by.length) {
+				Phrase += ".SELECTCASEBY = " + qpl_menu_wizard_global_access_select_by + '\n';
+			}
+
+			if (qpl_menu_wizard_global_access_select_label.length) {
+				Phrase += ".SELECTCASELABEL = \"" + qpl_menu_wizard_global_access_select_label + "\"\n";
+			}
+
+			if (qpl_menu_wizard_global_access_select_alt.length) {
+				Phrase += ".SELECTCASEALT = \"" + qpl_menu_wizard_global_access_select_alt + "\"\n";
+			}
+
+			if (qpl_menu_wizard_global_access_select_instruction.length) {
+				Phrase += ".388 = \"" + qpl_menu_wizard_global_access_select_instruction + "\"\n";
+			}
+			
+			Phrase += ".SELECTCASEFORMAT = " + qpl_menu_wizard_global_access_select_format + '\n';
+			Phrase += ".SELECTCASEREQUIRED = " + qpl_menu_wizard_global_access_select_required + '\n';
+		}
+
+	} else 	if (Tab == 2) {
+		
+		Phrase += BlockStart + GlobalMailSettings + "\n";
+		Phrase += ".FROMNAME = \"" + qpl_menu_wizard_global_mail_name + "\"\n";
+		Phrase += ".FROM = \"" + qpl_menu_wizard_global_mail_from + "\"\n";
+		Phrase += ".REPLYTO = \"" + qpl_menu_wizard_global_mail_replyto + "\"\n";
+		Phrase += ".RETURNPATH = \"" + qpl_menu_wizard_global_mail_returnpath + "\"\n";
+		
+	} else if (Tab == 3) {
+		
+		Phrase += BlockStart + GlobalColorSettings + "\n";
+		Phrase += ".COLORSCHEME = " + document.getElementById('qpl_menu_wizard_global_color_scheme_color').color + " = " + document.getElementById('qpl_menu_wizard_global_color_scheme_offset').value + '\n';
+		
+		if (document.getElementById('qpl_menu_wizard_global_color_background_BODY').checked) {
+			Phrase += ".BACKGROUND = BODY = " + document.getElementById('qpl_menu_wizard_global_color_background_BODY-color').color + '\n';
+		}
+
+		if (document.getElementById('qpl_menu_wizard_global_color_background_FORM').checked) {
+			Phrase += ".BACKGROUND = FORM = " + document.getElementById('qpl_menu_wizard_global_color_background_FORM-color').color + '\n';
+		}
+
+		if (document.getElementById('qpl_menu_wizard_global_color_background_ROWHEADER').checked) {
+			Phrase += ".BACKGROUND = ROWHEADER = " + document.getElementById('qpl_menu_wizard_global_color_background_ROWHEADER-color').color + '\n';
+		}
+
+		if (document.getElementById('qpl_menu_wizard_global_color_background_ROW').checked) {
+			Phrase += ".BACKGROUND = ROW = " + document.getElementById('qpl_menu_wizard_global_color_background_ROW-color').color + '\n';
+		}
+
+		if (document.getElementById('qpl_menu_wizard_global_color_background_ROW1').checked) {
+			Phrase += ".BACKGROUND = ROW1 = " + document.getElementById('qpl_menu_wizard_global_color_background_ROW1-color').color + '\n';
+		}
+
+		if (document.getElementById('qpl_menu_wizard_global_color_background_ROW2').checked) {
+			Phrase += ".BACKGROUND = ROW2 = " + document.getElementById('qpl_menu_wizard_global_color_background_ROW2-color').color + '\n';
+		}
+
+		if (document.getElementById('qpl_menu_wizard_global_color_background_ROWDK').checked) {
+			Phrase += ".BACKGROUND = ROWDK = " + document.getElementById('qpl_menu_wizard_global_color_background_ROWDK-color').color + '\n';
+		}
+
+		if (document.getElementById('qpl_menu_wizard_global_color_background_MENUROW').checked) {
+			Phrase += ".BACKGROUND = MENUROW = " + document.getElementById('qpl_menu_wizard_global_color_background_MENUROW-color').color + '\n';
+		}
+
+		if (document.getElementById('qpl_menu_wizard_global_color_background_MENUROWON').checked) {
+			Phrase += ".BACKGROUND = MENUROWON = " + document.getElementById('qpl_menu_wizard_global_color_background_MENUROWON-color').color + '\n';
+		}
+
+		if (document.getElementById('qpl_menu_wizard_global_color_background_HR').checked) {
+			Phrase += ".BACKGROUND = HR = " + document.getElementById('qpl_menu_wizard_global_color_background_HR-color').color + '\n';
+		}
+
+		if (document.getElementById('qpl_menu_wizard_global_color_background_BUG').checked) {
+			Phrase += ".BACKGROUND = BUG = " + document.getElementById('qpl_menu_wizard_global_color_background_BUG-color').color + '\n';
+		}
+
+		if (document.getElementById('qpl_menu_wizard_global_color_background_NAVBB').checked) {
+			Phrase += ".BACKGROUND = NAVBB = " + document.getElementById('qpl_menu_wizard_global_color_background_NAVBB-color').color + '\n';
+		}
+
+		if (document.getElementById('qpl_menu_wizard_global_color_background_HOVER').checked) {
+			Phrase += ".BACKGROUND = HOVER = " + document.getElementById('qpl_menu_wizard_global_color_background_HOVER-color').color + '\n';
+		}
+
+		if (document.getElementById('qpl_menu_wizard_global_color_background_HOVERMAIN').checked) {
+			Phrase += ".BACKGROUND = HOVERMAIN = " + document.getElementById('qpl_menu_wizard_global_color_background_HOVERMAIN-color').color + '\n';
+		}
+
+		if (document.getElementById('qpl_menu_wizard_global_color_background_HOVERMENU').checked) {
+			Phrase += ".BACKGROUND = HOVERMENU = " + document.getElementById('qpl_menu_wizard_global_color_background_HOVERMENU-color').color + '\n';
+		}
+
+		if (document.getElementById('qpl_menu_wizard_global_color_background_HOVERMENUNAVBB').checked) {
+			Phrase += ".BACKGROUND = HOVERMENUNAVBB = " + document.getElementById('qpl_menu_wizard_global_color_background_HOVERMENUNAVBB-color').color + '\n';
+		}
+
+		if (document.getElementById('qpl_menu_wizard_global_color_background_POPUP').checked) {
+			Phrase += ".BACKGROUND = POPUP = " + document.getElementById('qpl_menu_wizard_global_color_background_POPUP-color').color + '\n';
+		}
+
+		if (document.getElementById('qpl_menu_wizard_global_color_background_POPUPBANNER').checked) {
+			Phrase += ".BACKGROUND = POPUPBANNER = " + document.getElementById('qpl_menu_wizard_global_color_background_POPUPBANNER-color').color + '\n';
+		}
+		// colors!
+		
+		
+	} else if (Tab == 4) {
+		
+		/*
+		 *.FONT = SERIF* | SANSSERIF | MONOSPACE [= NONE* | XXSMALL | XSMALL | SMALL | MEDIUM | LARGE | XLARGE | XXLARGE | SMALLER | LARGER]
+
+			or XXS, XS, S, M, L, XL, XXL, SMLR, LRGR
+
+		Questionnaire headings...
+		.HFONT = SERIF | SANSSERIF* | MONOSPACE [= NONE* | XXSMALL | XSMALL | SMALL | MEDIUM | LARGE | XLARGE | XXLARGE | SMALLER | LARGER]
+		
+		*/
+		
+		var FontSize = ["NONE", "XXSMALL", "XSMALL", "SMALL", "MEDIUM", "LARGE", "XLARGE", "XXLARGE", "SMALLER", "LARGER" ];
+
+		
+		Phrase += BlockStart + GlobalFontSettings + "\n";
+		Phrase += ".HFONT = " + document.getElementById('qpl_menu_wizard_global_font_header_family').value + " = " + FontSize[document.getElementById('qpl_menu_wizard_global_font_header_size').value] + '\n';
+		Phrase += ".FONT = " + document.getElementById('qpl_menu_wizard_global_font_body_family').value + " = " + FontSize[document.getElementById('qpl_menu_wizard_global_font_body_size').value] + '\n';
+
+	} else if (Tab == 5) {
+		
+		// .STYLE = "ON | OFF
+
+		var Temp = WordWrap(qpl_menu_wizard_global_style_content);
+		Temp = Temp.replace(/^\./, "\n  .");	// prevent any lines from starting with a QPL command line '.' marker!
+		Temp = Temp.replace(/\n\./g, "\n  .");	// prevent any lines from starting with a QPL command line '.' marker!
+		
+		Phrase += BlockStart + GlobalStyleSettings + "\n";
+		Phrase += ".STYLE = ON\n";
+		Phrase += Temp + '\n';
+		Phrase += ".STYLE = OFF\n";
+
+	} else if (Tab == 6) {
+		
+		//  .SCRIPT [= ON | OFF | "name.js" [= TOP* | BOTTOM] ]
+
+		Phrase += BlockStart + GlobalScriptSettings + "\n";
+		Phrase += ".SCRIPT = ";
+		
+		if(qpl_menu_wizard_global_script_embeded == 'YES') {
+			Phrase += "ON\n";
+			if (qpl_menu_wizard_global_script_content.length) {
+				Phrase += qpl_menu_wizard_global_script_content + "\n";
+			} else {
+				Phrase += GlobalScriptSettingsContent + "\n";
+			}
+			Phrase += ".SCRIPT = OFF\n";
+
+		} else {
+			Phrase += "\"" + (qpl_menu_wizard_global_script_file.length ? qpl_menu_wizard_global_script_file : 'myfile.js') + "\"";
+			Phrase += " = " + qpl_menu_wizard_global_script_location + "\n";
+		}
+	}
+
+	Phrase += BlockEnd;
+	
+	ko.views.manager.currentView.setFocus();
+	ko.views.manager.currentView.scimoz.beginUndoAction();
+        ko.views.manager.currentView.selection = Phrase;
+	ko.views.manager.currentView.scimoz.endUndoAction();
+	
+	return true;
+}
+]]>
+</script>
+
+</dialog>
+

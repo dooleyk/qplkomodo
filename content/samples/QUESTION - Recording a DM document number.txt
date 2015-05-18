@@ -1,0 +1,65 @@
+*! >>>>
+QUESTION - Recording a DM document number.txt
+
+The following three questions are put into one row of a COLUMNS layout
+and are used to capture information about one document that has been
+stored in a GAO DM library.
+
+This information may be used in a question on a later page to create
+a working link to the document. The respondent may click on the link to
+open the document in an appropriate application.
+
+Ex.
+
+\<A HREF\=\"http://dm.gao.gov/?library\=[P3DMLIB]\&doc\=[P3DMNUM], TARGET\=\"\_blank\"\>[P3DMNAME]\</A\>
+
+Note: Blackslashes have been added to preserve QPL special characters. The names
+of the questions are used in square brackets. These will be replaced the the
+actual data when this is displayed to a respondent, so that the finale link
+could look like...
+
+<A HREF="http://dm.gao.gov/?library=GAOHQ&doc=1234567, TARGET="_blank">My Great Document</A>
+*! <<<<
+
+.COLUMNS = 3
+.QNUMBERING = OFF
+.BOLD = ON
+.VALIGN = TOP
+
+
+.QUESTION = P3DMNAME, TYPE = STRING, VALIGN = BOTTOM
+.WIDTH = 298
+Enter DM document or folder name:
+.ANSWER = 25
+.NEXT
+
+.QUESTION = P3DMLIB, TYPE = SLIST, VALIGN = BOTTOM, INSTRUCTION = OFF, INDENT=-34
+.WIDTH = 160
+Select DM library:
+.ANSWER = 1
+GAOHQ
+ARCHIVE
+ATLANTA
+BOSTON
+CHICAGO
+DALLAS
+DAYTON
+DENVER
+HUNTSVILLE
+LOS\_ANGELES
+NORFOLK
+SAN\_FRANCISCO
+SEATTLE
+.NEXT
+
+.QUESTION = P3DMNUM, TYPE = NUMBER, VALIGN = BOTTOM, INDENT=-34
+.WIDTH = 160
+Enter DM document or folder number:
+.ANSWER = 9
+.NEXT
+
+.BOLD = OFF
+.QNUMBERING = ON
+.COLUMNS = OFF
+
+

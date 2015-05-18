@@ -1,0 +1,53 @@
+*! >>>>
+QUESTION - Identify primary survey contact.txt
+
+This sample shows how you could ask a series of STRING questions
+to get information about who completed the questionnaire.
+*! <<<<
+
+
+.NEWPAGE
+.SUBTITLE= "Primary Respondent Contact Information"
+.QNUMBERING = 1
+
+.QUESTION=Q1, TYPE=VOID
+Please provide the following information for the person primarily responsible for completing 
+this survey in case we need to contact that individual to clarify a response.
+.ANSWER
+.NEXT
+
+.MATRIX = ON, MATRIXWIDTH = 450, MATRIXROWSHADING = ON
+.QNUMBERING = OFF
+.ALIGN = LEFT
+.WIDTH = 120
+.BOLD = ON
+
+.QUESTION = Q1_N, TYPE=STRING
+Name:
+.ANSWER=60
+.NEXT
+
+.QUESTION = Q1_TITL, TYPE=STRING
+Title:
+.ANSWER=120
+.NEXT
+
+.QUESTION = Q1_AGC, TYPE=STRING
+Agency/Office:
+.ANSWER=120
+.NEXT
+
+.QUESTION = Q1_TEL, TYPE=STRING
+Telephone:
+.ANSWER=60
+.NEXT
+
+.QUESTION = Q1_EM,TYPE=STRING
+E-mail:
+.ANSWER=100
+.NEXT
+
+.QNUMBERING = ON
+.BOLD = OFF
+.MATRIX = OFF
+

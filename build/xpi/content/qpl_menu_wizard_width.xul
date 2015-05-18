@@ -1,0 +1,446 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://qplwrapper/skin/build.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://qplwrapper/locale/wizard.dtd">
+<!-- qpl_menu_wizard_width.xul
+	K. Dooley -->
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	id="qpl_wizard"
+	orient="vertical"
+	title="&qpl_wizard.title;"
+	style="width: 40em;"
+	screenX="24" screenY="24" 
+	buttons="accept,cancel,help"
+	defaultButton="accept"
+	buttonlabelaccept="&qpl_insert.label;"
+	buttonaccesskeyaccept="&qpl_insert.accesskey;"
+	buttonlabelcancel="&qpl_cancel.label;"
+	buttonaccesskeycancel="&qpl_cancel.accesskey;"
+	ondialogaccept="InsertText();"
+	ondialogcancel="return true;"
+	buttonaccesskeyhelp="&qpl_help.accesskey;"
+	buttonlabelhelp="&qpl_help.label;"
+	onload="GetCurrentValues(); UpdateWidth();"
+	ondialoghelp="window.openDialog('chrome://qplwrapper/content/qpl_help.xul','qpl_help',
+                  'chrome','qpl_menu_wizard_width.htm');" >
+
+    
+<vbox id="qpl_dialog" flex="1" >
+	<dialogheader title="&qpl_menu_wizard_width.title;" description="&qpl_menu_wizard_width.notes;"/>
+	<separator/>
+
+	<grid align="left">
+	<columns>
+		<column />
+		<column />
+	</columns>
+	<rows>
+		<row>
+			<label control="qpl_menu_wizard_width_page_width" value="&qpl_menu_wizard_global_project_page_width.label;"/>
+			<hbox>
+				<textbox id="qpl_menu_wizard_width_page_width" type="number" increment="10" maxlength="5" size="5" value="770" min="320" max="1660" style="font-family: monospace; width: 5em;" spellcheck="false"  onchange="UpdateWidth();" />	
+				
+				<separator />
+				<label control="qpl_menu_wizard_width_gutter" value="&qpl_menu_wizard_global_project_page_gutter.label;" style="color: magenta;" />
+				<textbox id="qpl_menu_wizard_width_gutter" type="number" increment="5" maxlength="5" size="5" value="35" min="10" max="75" style="font-family: monospace; width: 5em;" spellcheck="false"  onchange="UpdateWidth();" />	
+			</hbox>
+		</row>
+
+		<row>
+			<label control="qpl_menu_wizard_width_menu" value="&qpl_menu_wizard_global_project_menu.label;" style="color: blue;" />
+			
+			<radiogroup id="qpl_menu_wizard_width_menu" orient="horizontal"  onclick="UpdateWidth();" >
+			    <radio value="150" label="&qpl_menu_wizard_on.label;" selected="true" />
+			    <radio value="0" label="&qpl_menu_wizard_off.label;"  />
+			</radiogroup>
+		</row>
+	</rows>
+	</grid>
+	
+	<separator />
+		
+	<tabbox id="qpl_wizard_layout_tabs" selectedIndex="0">
+	<tabs>
+		<tab label="&qpl_wizard_layout_normal.label;"/>
+		<tab label="&qpl_wizard_layout_matrix.label;"/>
+		<tab label="&qpl_wizard_layout_columns.label;"/>
+	</tabs>
+	<tabpanels>
+		<tabpanel id="qpl_wizard_layout_normal_tab" orient="vertical" >
+			<grid align="right" flex="1">
+			<columns>
+				<column />
+				<column />
+			</columns>
+	
+			<rows>
+				<row>
+					<label control="qpl_menu_wizard_width_width" value="&qpl_wizard_layout_width.label;" style="color: green;"/>
+					<hbox>
+						<textbox id="qpl_menu_wizard_width_width" type="number" increment="10" maxlength="5" size="5" value="490" min="1" max="1660" style="font-family: monospace; width: 5em;" spellcheck="false"  onchange="UpdateWidth();" />
+						
+						<spacer flex="1" />
+						<label value="&qpl_menu_wizard_width_max.label;"/>
+						<description id="qpl_menu_wizard_width_max" ></description>
+					</hbox>
+				</row>
+
+				<row>
+					<label control="qpl_menu_wizard_width_indent" value="&qpl_menu_wizard_width_indent.label;" style="color: red;" />
+					<hbox>
+						<textbox id="qpl_menu_wizard_width_indent" type="number" increment="35" maxlength="5" size="5" value="0" min="0" style="font-family: monospace; width: 5em;" spellcheck="false"  onchange="UpdateWidth();" />
+						
+						<label />
+					</hbox>
+				</row>
+
+			</rows>
+			</grid>
+
+			<separator />
+			
+			<html:div>
+				<html:div id="WidthBox" class="Box" >
+					<html:div id="WidthMenu" class="Menu"></html:div>
+					<html:div id="WidthIndent" class="Indent"></html:div>
+					<html:div id="WidthGutter" class="Gutter"></html:div>
+					<html:div id="WidthQuestion" class="Question"></html:div>
+				</html:div>
+			</html:div> 
+		
+			
+		</tabpanel>
+
+		<tabpanel id="qpl_wizard_layout_matrix_tab" orient="vertical" >
+			<grid align="right" flex="1">
+			<columns>
+				<column />
+				<column />
+			</columns>
+	
+			<rows>
+				<row>
+					<label control="qpl_menu_wizard_width_matrixwidth" value="&qpl_menu_wizard_width_matrixwidth.label;" style="color: cyan;"/>
+					<hbox>
+						<textbox id="qpl_menu_wizard_width_matrixwidth" type="number" increment="10" maxlength="5" size="5" value="585" min="320" max="1660" style="font-family: monospace; width: 5em;" spellcheck="false"  onchange="UpdateWidth();" />
+						
+						<spacer flex="1" />
+						<label value="&qpl_menu_wizard_width_max.label;"/>
+						<description id="qpl_menu_wizard_width_matrixwidth_max" ></description>
+					</hbox>
+				</row>
+
+				<row>
+					<label control="qpl_menu_wizard_width_m_width" value="&qpl_wizard_layout_width.label;" style="color: green;"/>
+					<hbox>
+						<textbox id="qpl_menu_wizard_width_m_width" type="number" increment="10" maxlength="5" size="5" value="292" min="1" max="1660" style="font-family: monospace; width: 5em;" spellcheck="false"  onchange="UpdateWidth();" />
+						
+						<spacer flex="1" />
+						<label value="&qpl_menu_wizard_width_max.label;"/>
+						<description id="qpl_menu_wizard_width_m_max" ></description>
+					</hbox>
+				</row>
+
+				<row>
+					<label control="qpl_menu_wizard_width_m_indent" value="&qpl_menu_wizard_width_indent.label;" style="color: red;" />
+					<hbox>
+					<textbox id="qpl_menu_wizard_width_m_indent" type="number" increment="35" maxlength="5" size="5" value="0" min="0" style="font-family: monospace; width: 5em;" spellcheck="false"  onchange="UpdateWidth();" />
+					
+					<spacer />
+					<label />
+					</hbox>
+				</row>
+
+			</rows>
+
+			</grid>
+
+			<separator />
+			<html:div>
+				<html:div id="m_WidthBox" class="Box" >
+					<html:div id="m_WidthMenu" class="Menu"></html:div>
+					<html:div id="m_WidthGutter" class="Gutter"></html:div>
+					<html:div id="m_WidthIndent" class="Indent"></html:div>
+					<html:div id="m_WidthQuestion" class="Question"></html:div>
+					<html:div id="m_WidthMatrix" class="Matrix"></html:div>
+				</html:div>
+			</html:div> 
+		</tabpanel>
+
+
+		<tabpanel id="qpl_wizard_layout_columns_tab" orient="vertical" >
+			<grid align="right" flex="1">
+			<columns>
+				<column />
+				<column />
+			</columns>
+	
+			<rows>
+				<row>
+					<label control="qpl_menu_wizard_width_column_count" value="&qpl_wizard_layout_columns.label;" style="color: cyan;"/>
+					<hbox>
+						<textbox id="qpl_menu_wizard_width_column_count" type="number" increment="1" maxlength="5" size="5" value="2" min="2" max="25" style="font-family: monospace; width: 5em;" spellcheck="false"  onchange="UpdateWidth();" />
+						
+						<spacer flex="1" />
+						<label />
+					</hbox>
+				</row>
+
+				<row>
+					<label control="qpl_menu_wizard_width_c_width" value="&qpl_wizard_layout_width.label;" style="color: green;"/>
+					<hbox>
+						<textbox id="qpl_menu_wizard_width_c_width" type="number" increment="10" maxlength="5" size="5" value="310" min="1" max="1660" style="font-family: monospace; width: 5em;" spellcheck="false"  onchange="UpdateWidth();" />
+						
+						<spacer flex="1" />
+						<label value="&qpl_menu_wizard_width_max.label;"/>
+						<description id="qpl_menu_wizard_width_c_max" ></description>
+					</hbox>
+				</row>
+
+				<row>
+					<label control="qpl_menu_wizard_width_c_indent" value="&qpl_menu_wizard_width_indent.label;" style="color: red;" />
+					<hbox>
+					<textbox id="qpl_menu_wizard_width_c_indent" type="number" increment="35" maxlength="5" size="5" value="0" min="0" style="font-family: monospace; width: 5em;" spellcheck="false"  onchange="UpdateWidth();" />
+					
+					<spacer />
+					<label />
+					</hbox>
+				</row>
+
+			</rows>
+
+			</grid>
+
+			<separator />
+			<html:div>
+				<html:div id="c_WidthBox" class="Box" >
+					<html:div id="c_WidthMenu" class="Menu"></html:div>
+					<!-- <html:div id="c_WidthGutter" class="Gutter"></html:div> -->
+					<html:div id="c_WidthIndent" class="Indent"></html:div>
+					<html:div class="Column1" ></html:div>
+					<html:div class="Column2" ></html:div>
+					<html:div class="Column1" ></html:div>
+					<html:div class="Column2" ></html:div>
+					<html:div class="Column1" ></html:div>
+					<html:div class="Column2" ></html:div>
+					<html:div class="Column1" ></html:div>
+					<html:div class="Column2" ></html:div>
+					<html:div class="Column1" ></html:div>
+					<html:div class="Column2" ></html:div>
+					<html:div class="Column1" ></html:div>
+					<html:div class="Column2" ></html:div>
+					<html:div class="Column1" ></html:div>
+					<html:div class="Column2" ></html:div>
+					<html:div class="Column1" ></html:div>
+					<html:div class="Column2" ></html:div>
+					<html:div class="Column1" ></html:div>
+					<html:div class="Column2" ></html:div>
+					<html:div class="Column1" ></html:div>
+					<html:div class="Column2" ></html:div>
+					<html:div class="Column1" ></html:div>
+					<html:div class="Column2" ></html:div>
+					<html:div class="Column1" ></html:div>
+					<html:div class="Column2" ></html:div>
+					<html:div class="Column1" ></html:div>
+				</html:div>
+			</html:div> 
+		</tabpanel>
+	</tabpanels>
+	</tabbox>
+	
+</vbox>
+
+<script type="application/x-javascript" src="chrome://qplwrapper/content/qplwrapper-helper.js"/>
+
+<script type="application/x-javascript" >
+<![CDATA[
+var ko = window.arguments[0];
+
+
+
+function GetCurrentValues() {
+	ko.views.manager.currentView.setFocus();
+	
+	var p1 = ko.views.manager.currentView.scimoz.text.match(/PAGEWIDTH *= *[0-9]+/i);
+	if (p1 !== null) {
+		var p2 = p1[0].match(/[0-9]+/);
+		if (p2.length) {
+			document.getElementById('qpl_menu_wizard_width_page_width').value = p2[0];
+		}
+	}
+
+	var p1 = ko.views.manager.currentView.scimoz.text.match(/PAGEGUTTER *= *[0-9]+/i);
+	if (p1 !== null) {
+		var p2 = p1[0].match(/[0-9]+/);
+		if (p2.length) {
+			document.getElementById('qpl_menu_wizard_width_gutter').value = p2[0];
+		}
+	}
+	
+	var p1 = ko.views.manager.currentView.scimoz.text.match(/MENU *= *O[FN]+/i);
+	if (p1 !== null) {
+		if (/ON/i.test(p1[0])) {
+			document.getElementById('qpl_menu_wizard_width_menu').selectedIndex = 0;
+		} else {
+			document.getElementById('qpl_menu_wizard_width_menu').selectedIndex = 1;
+		}
+	}
+}
+
+function UpdateWidth() {
+	var PageWidth = document.getElementById('qpl_menu_wizard_width_page_width');
+	var Gutter = document.getElementById('qpl_menu_wizard_width_gutter');
+	var Menu = document.getElementById('qpl_menu_wizard_width_menu');
+	
+	// Normal tab
+	var Question = document.getElementById('qpl_menu_wizard_width_width');
+	var Max = document.getElementById('qpl_menu_wizard_width_max');
+
+	var Indent = document.getElementById('qpl_menu_wizard_width_indent');
+
+	Question.max = PageWidth.value - Menu.value + 0;
+	Indent.max = Question.value - Gutter.value + 0;
+	Indent.increment = Gutter.value + 0;
+	
+	document.getElementById('WidthBox').style.width = (PageWidth.value / 4) + "px";
+	document.getElementById('WidthMenu').style.width = (Menu.value / 4) + "px";
+	document.getElementById('WidthGutter').style.width = (Gutter.value / 4) + "px";
+	document.getElementById('WidthIndent').style.width = (Indent.value / 4) + "px";
+	document.getElementById('WidthQuestion').style.width = ( (Question.value - Gutter.value - Indent.value ) / 4) + "px";
+	
+	Max.innerHTML = (0 + PageWidth.value - Menu.value);
+	
+	// Matrix tab
+	var MMatrix = document.getElementById('qpl_menu_wizard_width_matrixwidth');
+	var MMatrixMax = document.getElementById('qpl_menu_wizard_width_matrixwidth_max');
+
+	var MQuestion = document.getElementById('qpl_menu_wizard_width_m_width');
+	var MMax = document.getElementById('qpl_menu_wizard_width_m_max');
+
+	var MIndent = document.getElementById('qpl_menu_wizard_width_m_indent');
+	
+	MMatrix.max = PageWidth.value - Menu.value - Gutter.value  + 0;
+	if (MMatrix.value > MMatrix.max) {
+		MMatrix.value = MMatrix.max;
+	}
+	
+	MQuestion.max = (PageWidth.value - Menu.value)/ 2;
+	if (MQuestion.value > MQuestion.max) {
+		MQuestion.value = MQuestion.max;
+	}
+	
+	MIndent.max = MQuestion.value - Gutter.value + 0;
+	MIndent.increment = Gutter.value + 0;
+	
+	document.getElementById('m_WidthBox').style.width = (PageWidth.value / 4) + "px";
+	document.getElementById('m_WidthMenu').style.width = (Menu.value / 4) + "px";
+	document.getElementById('m_WidthGutter').style.width = (Gutter.value / 4) + "px";
+	document.getElementById('m_WidthIndent').style.width = (MIndent.value / 4) + "px";
+	document.getElementById('m_WidthQuestion').style.width = ( (MQuestion.value - MIndent.value ) / 4) + "px";
+	document.getElementById('m_WidthMatrix').style.width = ( (MMatrix.value -  MQuestion.value ) / 4) + "px";
+
+	MMatrixMax.innerHTML = MMatrix.max;
+	MMax.innerHTML = MQuestion.max;
+	
+	
+	// Columns tab
+	
+	var Divs = document.getElementsByTagName('html:div');
+	var Columns = [];
+
+	for (var i = 0; i < Divs.length; i++) {
+
+		if (/Column[1-2]/.test(Divs[i].className) ) {
+			Columns.push(Divs[i]);
+		}
+	}
+
+	var ColumnCount = document.getElementById('qpl_menu_wizard_width_column_count');
+	var CQuestion = document.getElementById('qpl_menu_wizard_width_c_width');
+	var CMax = document.getElementById('qpl_menu_wizard_width_c_max');
+	var CIndent = document.getElementById('qpl_menu_wizard_width_c_indent');
+	
+	CQuestion.max = Math.floor((PageWidth.value - Menu.value - CIndent.value)/ ColumnCount.value);
+	
+	if (CQuestion.value > CQuestion.max) {
+		CQuestion.value = CQuestion.max;
+	}
+	
+	document.getElementById('c_WidthBox').style.width = (PageWidth.value / 4) + "px";
+	document.getElementById('c_WidthMenu').style.width = (Menu.value / 4) + "px";
+	// document.getElementById('c_WidthGutter').style.width = (Gutter.value / 4) + "px";
+	document.getElementById('c_WidthIndent').style.width = (CIndent.value / 4) + "px";
+	
+	for (var i = 0; i < ColumnCount.value; i++) {
+		Columns[i].style.width = (CQuestion.value / 4) + "px";
+	}
+	
+	for (var i = ColumnCount.value; i < 25; i++) {
+		Columns[i].style.width = "0px";
+	}
+	
+	CMax.innerHTML = CQuestion.max;
+
+}
+
+function InsertText()
+{
+	var Question = document.getElementById('qpl_menu_wizard_width_width');
+	var Indent = document.getElementById('qpl_menu_wizard_width_indent');
+
+	var MMatrix = document.getElementById('qpl_menu_wizard_width_matrixwidth');
+	var MQuestion = document.getElementById('qpl_menu_wizard_width_m_width');
+	var MIndent = document.getElementById('qpl_menu_wizard_width_m_indent');
+	
+	var ColumnCount = document.getElementById('qpl_menu_wizard_width_column_count');
+	var CQuestion = document.getElementById('qpl_menu_wizard_width_c_width');
+	var CIndent = document.getElementById('qpl_menu_wizard_width_c_indent');
+	
+	
+	var Tab = document.getElementById('qpl_wizard_layout_tabs').selectedIndex;
+	var Phrase = "";
+	
+	if (Tab == 0) {
+		Phrase += ".WIDTH = " + Question.value + "\n";
+		
+		if (Indent.value > 0) {
+			Phrase += ".INDENT = " + Indent.value + "\n";
+		}
+
+	} else if (Tab == 1) {
+		
+		Phrase += ".MATRIXWIDTH = " + MMatrix.value + "\n";
+		Phrase += ".WIDTH = " + MQuestion.value + "\n";
+		
+		if (MIndent.value > 0) {
+			Phrase += ".INDENT = " + MIndent.value + "\n";
+		}
+		
+	} else if (Tab == 2) {
+		
+		Phrase += ".COLUMNS = " + ColumnCount.value + "\n";
+		
+		if (CIndent.value > 0) {
+			Phrase += ".INDENT = " + CIndent.value + "\n";
+		}
+		
+		// Note: qpl_compile resets the default COLUMNS width based on page size
+		// after an INDENT, so this needs to happen before we set the width
+		// to default with the WIDTH command here!
+		
+		Phrase += ".WIDTH = " + CQuestion.value + "\n";
+
+	}
+	
+	ko.views.manager.currentView.setFocus();
+	ko.views.manager.currentView.scimoz.beginUndoAction();
+        ko.views.manager.currentView.selection = Phrase;
+	ko.views.manager.currentView.scimoz.endUndoAction();
+	
+}
+]]>
+</script>
+
+</dialog>
+

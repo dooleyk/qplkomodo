@@ -1,0 +1,220 @@
+<!ENTITY qpl_menu_new.title "Create New QPL Project">
+<!ENTITY qpl_menu_new.notes "Select a name for your main project file and a location for this and the other project files, then click Create to start your new project.">
+
+<!ENTITY qpl_project_name.label "Select project file name:">
+<!ENTITY qpl_project_name.value "myproject.pg6">
+<!ENTITY qpl_project_name.accesskey "P">
+
+<!ENTITY qpl_project_folder.label "Select project folder location:">
+<!ENTITY qpl_project_folder.value "">
+<!ENTITY qpl_project_folder.accesskey "F">
+
+<!ENTITY qpl_project_versioning.label "Add to version control">
+<!ENTITY qpl_project_versioning.accesskey "V">
+
+<!ENTITY qpl_status.label "Results:">
+<!ENTITY qpl_status.accesskey "R">
+
+<!ENTITY qpl_create.label "Create">
+<!ENTITY qpl_create.accesskey "C">
+
+<!ENTITY qpl_close.label "Close">
+<!ENTITY qpl_close.accesskey "L">
+
+<!ENTITY qpl_browse.label "Browse">
+<!ENTITY qpl_browse.accesskey "B">
+
+<!ENTITY qpl_language.label "langue">
+<!ENTITY qpl_none.label "[aucun]">
+<!ENTITY qpl_ab.label "abkhaze">
+<!ENTITY qpl_aa.label "afar">
+<!ENTITY qpl_af.label "afrikaans">
+<!ENTITY qpl_ak.label "akan">
+<!ENTITY qpl_sq.label "albanais">
+<!ENTITY qpl_am.label "amharique">
+<!ENTITY qpl_ar.label "arabe">
+<!ENTITY qpl_an.label "aragonais">
+<!ENTITY qpl_hy.label "arménien">
+<!ENTITY qpl_as.label "assamais">
+<!ENTITY qpl_av.label "avar">
+<!ENTITY qpl_ae.label "avestique">
+<!ENTITY qpl_ay.label "aymara">
+<!ENTITY qpl_az.label "azéri">
+<!ENTITY qpl_bm.label "bambara">
+<!ENTITY qpl_ba.label "bachkir">
+<!ENTITY qpl_eu.label "basque">
+<!ENTITY qpl_be.label "biélorusse">
+<!ENTITY qpl_bn.label "bengali">
+<!ENTITY qpl_bh.label "langues biharis">
+<!ENTITY qpl_bi.label "bichlamar">
+<!ENTITY qpl_nb.label "norvégien bokmål">
+<!ENTITY qpl_bs.label "bosniaque">
+<!ENTITY qpl_br.label "breton">
+<!ENTITY qpl_bg.label "bulgare">
+<!ENTITY qpl_my.label "birman">
+<!ENTITY qpl_ca.label "catalan; valencien">
+<!ENTITY qpl_km.label "khmer central">
+<!ENTITY qpl_ch.label "chamorro">
+<!ENTITY qpl_ce.label "tchétchène">
+<!ENTITY qpl_ny.label "chichewa; chewa; nyanja">
+<!ENTITY qpl_zh.label "chinois">
+<!ENTITY qpl_cu.label "slavon d'église; vieux slave; slavon liturgique; vieux bulgare">
+<!ENTITY qpl_cv.label "tchouvache">
+<!ENTITY qpl_kw.label "cornique">
+<!ENTITY qpl_co.label "corse">
+<!ENTITY qpl_cr.label "cree">
+<!ENTITY qpl_hr.label "croate">
+<!ENTITY qpl_cs.label "tchèque">
+<!ENTITY qpl_da.label "danois">
+<!ENTITY qpl_dv.label "maldivien">
+<!ENTITY qpl_nl.label "néerlandais; flamand">
+<!ENTITY qpl_nl.label "néerlandais; flamand">
+<!ENTITY qpl_dz.label "dzongkha">
+<!ENTITY qpl_en.label "anglais">
+<!ENTITY qpl_eo.label "espéranto">
+<!ENTITY qpl_et.label "estonien">
+<!ENTITY qpl_ee.label "éwé">
+<!ENTITY qpl_fo.label "féroïen">
+<!ENTITY qpl_fj.label "fidjien">
+<!ENTITY qpl_fi.label "finnois">
+<!ENTITY qpl_fr.label "français">
+<!ENTITY qpl_ff.label "peul">
+<!ENTITY qpl_gd.label "gaélique; gaélique écossais">
+<!ENTITY qpl_gl.label "galicien">
+<!ENTITY qpl_lg.label "ganda">
+<!ENTITY qpl_ka.label "géorgien">
+<!ENTITY qpl_ka.label "géorgien">
+<!ENTITY qpl_de.label "allemand">
+<!ENTITY qpl_el.label "grec moderne (après 1453)">
+<!ENTITY qpl_gn.label "guarani">
+<!ENTITY qpl_gu.label "goudjrati">
+<!ENTITY qpl_ht.label "haïtien; créole haïtien">
+<!ENTITY qpl_ha.label "haoussa">
+<!ENTITY qpl_he.label "hébreu">
+<!ENTITY qpl_hz.label "herero">
+<!ENTITY qpl_hi.label "hindi">
+<!ENTITY qpl_ho.label "hiri motu">
+<!ENTITY qpl_hu.label "hongrois">
+<!ENTITY qpl_is.label "islandais">
+<!ENTITY qpl_is.label "islandais">
+<!ENTITY qpl_io.label "ido">
+<!ENTITY qpl_ig.label "igbo">
+<!ENTITY qpl_id.label "indonésien">
+<!ENTITY qpl_ia.label "interlingua (langue auxiliaire internationale)">
+<!ENTITY qpl_ie.label "interlingue">
+<!ENTITY qpl_iu.label "inuktitut">
+<!ENTITY qpl_ik.label "inupiaq">
+<!ENTITY qpl_ga.label "irlandais">
+<!ENTITY qpl_it.label "italien">
+<!ENTITY qpl_ja.label "japonais">
+<!ENTITY qpl_jv.label "javanais">
+<!ENTITY qpl_kl.label "groenlandais">
+<!ENTITY qpl_kn.label "kannada">
+<!ENTITY qpl_kr.label "kanouri">
+<!ENTITY qpl_ks.label "kashmiri">
+<!ENTITY qpl_kk.label "kazakh">
+<!ENTITY qpl_ki.label "kikuyu">
+<!ENTITY qpl_rw.label "rwanda">
+<!ENTITY qpl_ky.label "kirghiz">
+<!ENTITY qpl_kv.label "kom">
+<!ENTITY qpl_kg.label "kongo">
+<!ENTITY qpl_ko.label "coréen">
+<!ENTITY qpl_kj.label "kuanyama; kwanyama">
+<!ENTITY qpl_ku.label "kurde">
+<!ENTITY qpl_lo.label "lao">
+<!ENTITY qpl_la.label "latin">
+<!ENTITY qpl_lv.label "letton">
+<!ENTITY qpl_li.label "limbourgeois">
+<!ENTITY qpl_ln.label "lingala">
+<!ENTITY qpl_lt.label "lituanien">
+<!ENTITY qpl_lu.label "luba-katanga">
+<!ENTITY qpl_lb.label "luxembourgeois">
+<!ENTITY qpl_mk.label "macédonien">
+<!ENTITY qpl_mk.label "macédonien">
+<!ENTITY qpl_mg.label "malgache">
+<!ENTITY qpl_ms.label "malais">
+<!ENTITY qpl_ml.label "malayalam">
+<!ENTITY qpl_mt.label "maltais">
+<!ENTITY qpl_gv.label "manx; mannois">
+<!ENTITY qpl_mi.label "maori">
+<!ENTITY qpl_mr.label "marathe">
+<!ENTITY qpl_mh.label "marshall">
+<!ENTITY qpl_mn.label "mongol">
+<!ENTITY qpl_na.label "nauruan">
+<!ENTITY qpl_nv.label "navaho">
+<!ENTITY qpl_nd.label "ndébélé du Nord">
+<!ENTITY qpl_nr.label "ndébélé du Sud">
+<!ENTITY qpl_ng.label "ndonga">
+<!ENTITY qpl_ne.label "népalais">
+<!ENTITY qpl_se.label "sami du Nord">
+<!ENTITY qpl_no.label "norvégien">
+<!ENTITY qpl_nn.label "norvégien nynorsk; nynorsk, norvégien">
+<!ENTITY qpl_oc.label "occitan (après 1500)">
+<!ENTITY qpl_oj.label "ojibwa">
+<!ENTITY qpl_or.label "oriya">
+<!ENTITY qpl_om.label "galla">
+<!ENTITY qpl_os.label "ossète">
+<!ENTITY qpl_pi.label "pali">
+<!ENTITY qpl_pa.label "pendjabi">
+<!ENTITY qpl_fa.label "persan">
+<!ENTITY qpl_fa.label "persan">
+<!ENTITY qpl_pl.label "polonais">
+<!ENTITY qpl_pt.label "portugais">
+<!ENTITY qpl_ps.label "pachto">
+<!ENTITY qpl_qu.label "quechua">
+<!ENTITY qpl_ro.label "roumain; moldave">
+<!ENTITY qpl_rm.label "romanche">
+<!ENTITY qpl_rn.label "rundi">
+<!ENTITY qpl_ru.label "russe">
+<!ENTITY qpl_sm.label "samoan">
+<!ENTITY qpl_sg.label "sango">
+<!ENTITY qpl_sa.label "sanskrit">
+<!ENTITY qpl_sc.label "sarde">
+<!ENTITY qpl_sr.label "serbe">
+<!ENTITY qpl_sn.label "shona">
+<!ENTITY qpl_ii.label "yi de Sichuan">
+<!ENTITY qpl_sd.label "sindhi">
+<!ENTITY qpl_si.label "singhalais">
+<!ENTITY qpl_sk.label "slovaque">
+<!ENTITY qpl_sk.label "slovaque">
+<!ENTITY qpl_sl.label "slovène">
+<!ENTITY qpl_so.label "somali">
+<!ENTITY qpl_st.label "sotho du Sud">
+<!ENTITY qpl_es.label "espagnol; castillan">
+<!ENTITY qpl_su.label "soundanais">
+<!ENTITY qpl_sw.label "swahili">
+<!ENTITY qpl_ss.label "swati">
+<!ENTITY qpl_sv.label "suédois">
+<!ENTITY qpl_tl.label "tagalog">
+<!ENTITY qpl_ty.label "tahitien">
+<!ENTITY qpl_tg.label "tadjik">
+<!ENTITY qpl_ta.label "tamoul">
+<!ENTITY qpl_tt.label "tatar">
+<!ENTITY qpl_te.label "télougou">
+<!ENTITY qpl_th.label "thaï">
+<!ENTITY qpl_bo.label "tibétain">
+<!ENTITY qpl_bo.label "tibétain">
+<!ENTITY qpl_ti.label "tigrigna">
+<!ENTITY qpl_to.label "tongan (Îles Tonga)">
+<!ENTITY qpl_ts.label "tsonga">
+<!ENTITY qpl_tn.label "tswana">
+<!ENTITY qpl_tr.label "turc">
+<!ENTITY qpl_tk.label "turkmène">
+<!ENTITY qpl_tw.label "twi">
+<!ENTITY qpl_ug.label "ouïgour">
+<!ENTITY qpl_uk.label "ukrainien">
+<!ENTITY qpl_ur.label "ourdou">
+<!ENTITY qpl_uz.label "ouszbek">
+<!ENTITY qpl_ve.label "venda">
+<!ENTITY qpl_vi.label "vietnamien">
+<!ENTITY qpl_vo.label "volapük">
+<!ENTITY qpl_wa.label "wallon">
+<!ENTITY qpl_cy.label "gallois">
+<!ENTITY qpl_fy.label "frison occidental">
+<!ENTITY qpl_wo.label "wolof">
+<!ENTITY qpl_xh.label "xhosa">
+<!ENTITY qpl_yi.label "yiddish">
+<!ENTITY qpl_yo.label "yoruba">
+<!ENTITY qpl_za.label "zhuang; chuang">
+<!ENTITY qpl_zu.label "zoulou">
+

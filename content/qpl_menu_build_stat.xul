@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://qplwrapper/skin/build.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://qplwrapper/locale/build.dtd">
+<!-- qpl_menu_build_stat.xul
+	K. Dooley -->
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	id="qpl_menu_build"
+	orient="vertical"
+	title="&qpl_menu_build_stat.title;"
+	style="width: 40em;"
+	screenX="24"
+	screenY="24"
+	buttons="accept,cancel,help"
+	defaultButton="accept"
+	buttonlabelaccept="&qpl_build.label;"
+	buttonaccesskeyaccept="&qpl_build.accesskey;"
+	buttonlabelcancel="&qpl_close.label;"
+	buttonaccesskeycancel="&qpl_close.accesskey;"
+	ondialogaccept="window.setCursor('wait'); BuildProject2(ko, GetFileList(), GetOptionList(),  '', StatFile.path); window.setCursor('auto'); "
+	ondialogcancel="return true;"
+	onload="GetPg6();"
+	buttonaccesskeyhelp="&qpl_help.accesskey;"
+	buttonlabelhelp="&qpl_help.label;"
+	ondialoghelp="window.openDialog('chrome://qplwrapper/content/qpl_help.xul','qpl_help',
+                  'chrome','qpl_menu_build_stat.htm');" >
+
+<stringbundleset id="stringbundleset">
+	<stringbundle id="qplwrapper-strings" src="chrome://qplwrapper/locale/qplwrapper.properties"/>
+</stringbundleset>
+
+<vbox id="qpl_dialog" flex="1">
+	<hbox id="qpl_notes_box">
+		<hbox pack="start" class="test">
+			<description id="qpl_notes">&qpl_menu_build_stat.notes;</description>
+		</hbox>
+		<hbox pack="end" flex="3">
+			<image src="qplwrapper.png" width='75' height='75' />
+		</hbox>
+	</hbox>
+	<separator />
+	<label id="qpl_project_name" value="..." />
+	<vbox id="qpl_pg6_list"></vbox>
+	<separator />
+	<groupbox flex="1">
+		<caption>
+			<label value="&qpl_options;" />
+		</caption>
+	<radiogroup id="qpl_stat">
+	    <radio id="qpl_stat_sas" value="sas" label="&qpl_stat_sas.label;" accesskey="&qpl_stat_sas.accesskey;" checked="true" onclick="document.getElementById('qpl_view').disabled=true;" />
+	    <radio id="qpl_stat_sps" value="sps" label="&qpl_stat_sps.label;" accesskey="&qpl_stat_sps.accesskey;" checked="true" onclick="document.getElementById('qpl_view').disabled=true;" />
+	</radiogroup>
+	
+	<separator class="thin" />
+
+	<checkbox id="qpl_option_f" label="&qpl_option_f.label;" accesskey="&qpl_option_f.accesskey;" checked="true"/>
+	<checkbox id="qpl_option_d" label="&qpl_option_d.label;" accesskey="&qpl_option_d.accesskey;" checked="true" />
+	<checkbox id="qpl_option_l" label="&qpl_option_l.label;" accesskey="&qpl_option_l.accesskey;" checked="true" />
+	<checkbox id="qpl_option_hq" label="&qpl_option_hq.label;" accesskey="&qpl_option_hq.accesskey;" />
+	<checkbox id="qpl_option_sv" label="&qpl_option_sv.label;" accesskey="&qpl_option_sv.accesskey;" />
+	<checkbox id="qpl_option_n" label="&qpl_option_n.label;" accesskey="&qpl_option_n.accesskey;" />
+	<checkbox id="qpl_option_gao" label="&qpl_option_gao.label;" accesskey="&qpl_option_gao.accesskey;" />
+	</groupbox>
+</vbox>
+
+
+<script type="application/x-javascript" src="chrome://qplwrapper/content/qplwrapper.js"/>
+<script type="application/x-javascript" src="chrome://qplwrapper/content/qplwrapper-helper.js"/> 
+
+
+<script type="application/x-javascript">
+<![CDATA[
+var Pg6 = "";
+var StatFile = Components.classes["@mozilla.org/file/local;1"]
+	.createInstance(Ci.nsILocalFile);
+var LangExt = "";
+var ko = window.arguments[0];
+
+function GetPg6() {
+	var koDoc = ko.views.manager.currentView.koDoc;
+	ko.views.manager.currentView.setFocus();
+	var Pg6Project = Components.classes["@mozilla.org/file/local;1"].
+	    createInstance(Ci.nsILocalFile);
+	var Count = 0;
+	
+	Pg6 = koDoc.displayPath; // build function is only available on menu if the current doc has a .pg6 extension
+	if (/\.pg6\.[a-z]+$/.test(Pg6)) {
+		LangExt = Pg6.match('\.[a-z]+$');
+	}
+	
+	document.getElementById('qpl_project_name').value = Pg6;
+
+	return;
+}
+
+
+function GetFileList() {
+	var Options = [];
+	return Options;
+}
+
+
+function GetOptionList() {
+
+	var Options = [];
+	var Count = 0;
+	
+	Options[Count++] = Pg6;	// default to currently opened .pg6 file
+	
+	if (document.getElementById('qpl_option_d').checked) Options[Count++] ="-d";
+	if (document.getElementById('qpl_option_f').checked) Options[Count++] ="-f";
+	if (document.getElementById('qpl_option_l').checked) Options[Count++] ="-l";
+	if (document.getElementById('qpl_option_hq').checked) Options[Count++] ="-hq";
+	if (document.getElementById('qpl_option_sv').checked) Options[Count++] ="-sv";
+	if (document.getElementById('qpl_option_n').checked) Options[Count++] ="-n";
+	if (document.getElementById('qpl_option_gao').checked) Options[Count++] ="-gao";
+
+	Options[Count++] =  "-" + document.getElementById("qpl_stat").value;
+	
+	StatFile.initWithPath(Pg6);
+	var Pg6BaseName = StatFile.leafName;
+	StatFile.leafName = "analysis";
+	StatFile.append(Pg6BaseName.replace(/\.pg6(\.[a-z]+)?$/, "." + document.getElementById("qpl_stat").value));
+
+	return Options;
+}
+
+
+]]>
+</script>
+
+</dialog>

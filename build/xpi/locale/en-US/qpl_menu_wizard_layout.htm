@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- qpl_menu_wizard_layout.htm -->
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8;" />
+	<link rel="stylesheet" type="text/css" href="qpl_help.css" />
+	<title>Layout Options</title>
+</head>
+
+<body>
+	<p class="Printbar"><img alt="Print" src="../../skin/qpl_button_printer.png" onclick="window.print();" /></p>
+
+	<h1>Layout Options</h1>
+
+<p>This dialog box may be used to control how questions are displayed on the page. The
+layout commands you select will be inserted in your program at the current cursor
+position. You should position the cursor before the first question in your layout when
+turning a layout option on, and then after the last question in your layout when
+turning a layout option off. Any number of questions may be included inside a 
+layout block.</p>
+
+<p>The Normal tab has options that are used to insert page breaks and subtitles, as well
+as hide questions. These options may only be used for questions that are not inside a matrix
+or columns layout block (that is, questions that are in a Normal layout).</p>
+
+<p>The Matrix tab has options that are used to put one or more questions into a 
+horizontal layout. This layout puts the question text on the left and the
+answer field(s) on the right, and stacks one or more questions tightly together
+to give the appearance of a group of questions.</p>
+
+<p>The Columns tab has options that are used to put two or more questions into
+two or columns on the page. Each question still has a vertical layout (the
+question text is above the answer field).</p>
+
+<p>The Display tab may be used to control <b>when</b> questions are displayed on the page.
+You can use this dialog box to define a group of questions that will be displayed
+when a respondent clicks on a MULT or CHECK question answer that is linked to this
+group of questions using the DISPLAY command.</p>
+
+<p>The Format options may be used to set the default for questions that are inside
+one of these layouts. You may have different defaults for questions in each type
+of layout. The defaults will also continue to the next layout block of the same
+type. For example, if you set the bold option to on in your first matrix block,
+it will still be on when you start another layout block. Thus, you only need to
+repeat a format command when you wish to change a default format in a later block.</p>
+
+<table cellspacing="2" cellpadding="2" border="0">
+<tr>
+	<th colspan=2>Normal tab</th>
+</tr>
+<tr>
+	<th width="10%" valign="top" align="left">Insert page break</th>
+	<td width="90%" valign="top">Check this option to make the following question start at the top of a new
+	page when the questionnaire is deployed on a web server. When viewing the local HTML version of the
+	questionnaire form, the page break will be indicated by a thick horizontal line.</td>
+</tr>
+<tr>
+	<th width="10%" valign="top" align="left">Menu label</th>
+	<td valign="top" align="left">If you have selected the &quot;Insert page break&quot; option, you may
+	also enter a label for the page that will be put into the questionnaire menu as a hypertext link to this page. 
+	If no label is entered, then the Subtitle label will be used in the menu.
+	</td>
+</tr>
+<tr>
+	<th width="10%" valign="top" align="left">Subtitle</th>
+	<td valign="top" align="left">Enter a subtitle that will be displayed on the form above the next question
+	and appear in the questionnaire menu as a hypertext link to the next question.
+	</td>
+</tr>
+<tr>
+	<th width="10%" valign="top" align="left">Hide questions</th>
+	<td valign="top" align="left">Hide one or more questions so that they are not visible on the questionnaire
+	form. Data may still be loaded into these fields and used to customize questions for particular respondents,
+	or used later in analysis to identify respondents or attributes.<br /><br />
+	
+	On - start hiding questions<br />
+	Off - stop hiding questions
+	</td>
+</tr>
+
+
+<tr>
+	<th colspan=2>Matrix tab</th>
+</tr>
+<tr>
+	<th width="10%" valign="top" align="left">Matrix</th>
+	<td width="90%" valign="top">Start, stop, or restart a group of one or
+	more questions into horizontal layout.<br /><br /> 
+
+	On - Start putting the following questions into a matrix block<br /><br />
+	Off - End the current matrix block<br /><br />
+	Break - End the current matrix block and immediately restart a
+	new matrix block (This has the effect of re-displaying column headings
+	if they are used, and putting a blank row-space between the two matrix
+	blocks.)
+	</td>
+</tr>
+<tr>
+	<th width="10%" valign="top" align="left">Width</th>
+	<td width="90%" valign="top">Set the width of the matrix in pixels. The default
+	is all of the available space on the questionnaire page. The allowed range 320 to 1660
+	pixels.</td>
+</tr>
+<tr>
+	<th width="10%" valign="top" align="left">Column shading</th>
+	<td width="90%" valign="top">Sets shading of right-most answer field columns in a matrix layout. This
+	is generally used to differentiate a &quot;Don't know&quot; answer choice in a multiple-choice question
+	from the other answers.<br /><br />
+
+	On - Shade the right-most column (default)<br />
+	# of columns - Enter the number of right-most columns to shade<br />
+	Off - Do not shade any columns
+	Inherit - Use the last defined setting </td>
+</tr>
+<tr>
+	<th width="10%" valign="top" align="left">Row shading</th>
+	<td width="90%" valign="top">Set alternating background color shading for question rows in the columns block.<br /><br />
+
+	On - Use alternating background row shading (default)<br />
+	Off - Do not use alternating background row shading</td>
+</tr>
+
+<tr>
+	<th colspan=2>Columns tab</th>
+</tr>
+
+<tr>
+	<th width="10%" valign="top" align="left">Columns</th>
+	<td width="90%" valign="top">Start, stop, or restart a group of one or
+	more questions into a column layout. The questions following the start of
+	a columns block will be put into rows according to the number of columns
+	that have been requested. You must have enough questions to fill out
+	the column block completely. For example, if you have 2 columns, you must
+	have 2, 4, 6, etc. number of questions in the block. The third, fifth, seventh,
+	etc. questions in the list will automatically start a new row.<br /><br /> 
+
+	On - Start putting the following questions into a column block<br /><br />
+	
+	Off - End the current column block<br /><br />
+	
+	Break - End the current column block and immediately restart a
+	new column block (This has the effect of re-displaying column headings
+	if they are used, and putting a blank row-space between the two columns
+	blocks.)<br /><br />
+	
+	# of columns - Set the number of columns that will be used in this block 
+	(default is 2 columns, minimum is 2 columns, and maximum is 25 columns).<br /><br />
+	
+	The width of each column is automatically set by evenly dividing the available
+	space among the number of columns used. You may override this behaviour by
+	explicitly setting the width inside each question in the first row of questions
+	in the block. The total width may not exceed the available space on the 
+	the questionnaire form page.
+	</td>
+</tr>
+
+<tr>
+	<th width="10%" valign="top" align="left">Headings</th>
+	<td width="90%" valign="top">The Headings option is used to set whether the
+	question text for each question is displayed with its answer list or as
+	a heading row at the top of the columns block. <br /><br />
+	
+	When displayed as an heading
+	row, only the text from the first row of questions is displayed. The text from later
+	rows of questions is not displayed. This is useful when the question text for a 
+	column of questions does not change (ex. each question asks for a value a the same fiscal
+	year). You may use a VOID question in the first column to label the row. Unlike the
+	other question types, the text of a VOID question is always put in the row and the answer
+	label for the first VOID question is used for the column heading.
+	 <br /><br /> 
+
+	On - Use the question text from the first row of questions as a header row for
+	the column block<br /><br />
+	
+	Off - Do not use a header row. Each question is displayed normally in its column.<br /><br />
+	
+	Break - End the current column block and immediately restart a
+	new column block (This has the effect of re-displaying column headings
+	if they are used, and putting a blank row-space between the two matrix
+	blocks.)<br /><br />
+	
+	# of columns - Set the number of columns that will be used in this block 
+	(default is 2 columns
+	</td>
+</tr>
+<tr>
+	<th width="10%" valign="top" align="left">Row shading</th>
+	<td width="90%" valign="top">Set alternating background color shading for question rows in the columns block.<br /><br />
+
+	On - Use alternating background row shading (default)<br />
+	Off - Do not use alternating background row shading</td>
+</tr>
+<tr>
+	<th width="10%" valign="top" align="left">Align question</th>
+	<td valign="top" align="left">
+Define how the question should be aligned vertically when
+used inside a COLUMNS layout. This setting has no effect on questions
+in normal or MATRIX layout.<br /><br />
+
+Top - Top-align question<br />
+Middle - Center-align question<br />
+Bottom - Bottom-align question<br />
+Baseline - The baseline is the "imaginary line" which most letters "sit" on, in a line of text. 
+The baseline value sets the row so that all the table data share the same baseline. Often this 
+has the same effect as the bottom value. However, if the fonts are in different sizes, baseline 
+looks better.<br />
+Inherit - Inherit setting from the previous question
+	</td>
+</tr>
+
+
+<tr>
+	<th colspan=2>Display tab</th>
+</tr>
+
+
+<tr>
+<th>&nbsp;</th>
+
+<td>
+	Select the questions you want included in a DISPLAY target group.<br /><br />
+	
+	<b>Next</b>, start this wizard and enter a Name for this group, and then click the OK button.<br /><br />
+	
+	The DISPLAY command with the target group name will be inserted before the first question
+	you selected, and an ending DISPLAY command with the OFF option will be inserted after the
+	last question to mark the beginning and end of your target group.<br /><br />
+	
+	You may also define a CSS class style name to apply special formatting to this group
+	of questions. You must separately define this class style and its attributes
+	in a STYLE block.<br /><br />
+</td></tr>
+
+<tr>
+<th valign="top" align="left">Rules</th>
+<td>
+	A DISPLAY group may contain any number of questions, including questions that are inside
+	a COLUMNS or MATRIX layouts, but one group may not cross
+	page boundaries (i.e., NEWPAGE), and can not be used within COLUMNS or MATRIX layouts.<br /><br />
+	
+	The triggers and target questions must be used on the same page of your questionnaire form.<br /><br />
+	
+	DISPLAY groups may be included (i.e., nested) inside of other DISPLAY groups. There is 
+	no limit on how deeply groups of questions may be nested. Each DISPLAY group must end with its
+	own DISPLAY=OFF command.<br /><br />
+	
+	Each DISPLAY group must have a unique name, but more than one trigger in a MULT or CHECK 
+	may use the same target name. If a target name name is used as a trigger more than once in a MULT
+	or CHECK question, then the target will be displayed if <b>any</b> of the duplicate triggers are
+	selected by the respondent. The target will be hidden only if <b>none</b> of the duplicate triggers
+	are checked. (You should avoid putting triggers to the same target in different MULT or CHECK
+	questions as this can lead to ambiguous situations.)<br /><br />
+</td>
+</tr>
+
+<tr>
+<th valign="top" align="left">Testing</th>
+
+<td>
+	The action of the triggers on the target blocks can be tested using the local HTML version
+	of the form since all of this action occurs in the respondent's browser and not on the server
+	where you ultimately will host your survey.<br /><br />
+	
+	Several Options can be used to document and debug DISPLAY triggers and targets
+	when you build the local test version of your questionnaire:<br /><br />
+	
+	<ul>
+		<li>Display all target questions (this disables the trigger action)</li>
+		<li>Display all target questions and triggers with debugging information</li>
+		<li>Display question names</li>
+	</ul>
+</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+	<th colspan=2>Format options</th>
+</tr>
+
+<tr>
+	<th width="10%" valign="top" align="left">Number questions</th>
+	<td valign="top" align="left">
+Define how questions should be numbered.<br /><br />
+
+On - Start automatic question numbering (default is 1, 2, 3...)<br /><br />
+
+Off - Stop automatic question numbering. The following questions will be un-numbered
+until numbering is turned back on. The number will pick up where it left off when
+turned back on.<br /><br />
+
+Increment - If the major number is being used, then increment the major number by one 
+and reset the minor number to one. Otherwise, just increment the minor number by one.<br /><br />
+
+Start subsection - Turn on automatic major and minor numbering counter. This will
+make the current question number the major number and then automatically incrememnt
+minor number.<br /><br />
+
+End subsection - Turn off automatic major and minor numbering counter. This will return
+numbering to normal question numbering.<br /><br />
+
+Show major # - Display the major number on the questionnaire page with the minor number
+(when a major number is used).<br /><br />
+
+Hide major # - Do not display the major number on the questionnaire page with the minor 
+number. The major number is still displayed with the minor number in GOTO links, and in
+variable labels in SAS and SPSS programs.<br /><br />
+
+Starting #... - Set starting number for the next question. (May be any number or letter.
+May also be a number with a major and minor component, such as &quot;1a.&quot; Here,
+the questions will be automatically numbered as 1a, 1b, 1c, etc. The major part of the
+number does not change until the increment option is used to increase the major
+number by one, or when ending a subsection. May use major/minor numbers in the following 
+combinations: 1a, 1A, a1, and A1.)<br /><br />
+
+Inherit - Do not change current setting.
+	</td>
+</tr>
+
+<tr>
+	<th width="10%" valign="top" align="left">Number answers</th>
+	<td valign="top" align="left">
+Define how answer labels should be numbered for MULT and CHECK questions.<br /><br />
+
+1, 2, 3... - Use numbers.<br />
+a, b, c... - Use lower-case letters<br />
+A, B, C... - Use upper-case letters<br />
+Off - Do not display numbers or letters<br />
+Inherit - Inherit setting from the previous question
+	</td>
+</tr>
+
+<tr>
+	<th width="10%" valign="top" align="left">Align text</th>
+	<td valign="top" align="left">
+Define how the question text should be aligned.<br /><br />
+
+Left - Left justify question text<br />
+Center - Center question text<br />
+Right - Right justify question text<br />
+Inherit - Inherit setting from the previous question
+	</td>
+</tr>
+
+<tr>
+	<th width="10%" valign="top" align="left">Bold text</th>
+	<td valign="top" align="left">
+Set question text to be displayed using a bold font.<br /><br />
+
+On - Use bold font.<br />
+Off - Do not use bold font<br />
+Inherit - Inherit setting from the previous question
+	</td>
+</tr>
+
+
+
+<tr>
+	<th width="10%" valign="top" align="left">Indent question</th>
+	<td valign="top" align="left">
+Move the question to the right by one gutter-width. May optionally set the Index width to the number
+of pixels to indent. If this number is negative, then the question will be outdented to the left. The outdent
+must be less than the current gutter width.<br /><br />
+
+On - Indent question to the right one gutter-width<br />
+Off - Do not indent question<br />
+Inherit - Inherit setting from the previous question<br />
+# Indent width - If On, then indent by this number of pixels (may be negative to outdent)
+	</td>
+</tr>
+
+
+<tr>
+	<th width="10%" valign="top" align="left">Width</th>
+	<td valign="top" align="left">
+Set the width of the question text area as the number of pixels. 
+Leave field blank to inherit this setting from the previous question. Enter &quot;D&quot; to reset the width 
+to the current system default. This value will vary according to whether the question is in a normal, matrix, 
+or columns layout.<br /><br />
+
+For questions inside a matrix layout, this sets the size of the question
+text column of the matrix.
+	</td>
+</tr>
+
+</table>
+
+
+	<p>See also <a href="qpl_menu_wizard_text_formatting.htm">Text Line Formatting.</a></p>
+
+		
+	<p align="center"><img alt="QPL6 Logo" src="../../skin/qplwrapper.png" /></p>
+
+</body>
+</html>

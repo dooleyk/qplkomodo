@@ -1,0 +1,120 @@
+Video Training
+K. Dooley
+2015-02-18
+
+
+2015-02-18
+00 Welcome to QPL
+-----------------
+
+Text Blurb - 
+
+Kevin Dooley, Assistant Director in GAO's ARM Web Survey Support group introduces the latest version of the Questionnaire Programming Language (QPL) 6.3 software. This version adds support for operating web surveys in more than one language at the same time. It also moves the QPL software to the Komodo editor integrated development environment and Subversion version control system.
+
+Teleprompter (3:17)
+
+Hi, I'm Kevin Dooley, and welcome to the QPL6 video training web site.
+
+-- In these videos, I'll be focusing on the QPL version 6.3 upgrade, which brings improvements both to the questionnaire programming langauge itself, as well as to the new development system that you will use to write and compile your QPL programs.
+-- The QPL language improvements add support for conducting web surveys in languages other than English. Many other languages use written characters that are not included the ASCII character set that you may be familiar with. In order to accomodate other languages, QPL program files now use the UTF8 international character encoding standard.
+-- This means that you can now write questions using the native characters for almost any language. Your respondents also may type their responses using characters from their languages. The responses are stored and exported as the respondents wrote them.
+-- But since the ASCII coding standard is a subset of the UTF8 coding standard, you can still use your existing QPL programs with out changes.
+-- QPL 6.3 also lets you field multiple translations of the same questionnaire. For example, in a recent project at GAO, we fielded the same survey instrument in English, Spanish, French, German, Arabic, Portuguese, and Russian. When a respondent clicked on a link in our activation email message to our web site, the respondent was automatically directed to a translation according to their personal browser settings. So, a Spanish speaker was directed to the Spanish translation of the home page. Once at the home page, a respondent could still select one of the other languages, and then proceed to log in and answer the questions in that language.
+-- All of the translated versions of the questionnaire still sit atop the same project database, which means administrators still log into one location to see all of the respondent activity, and export all of the responses for more detailed analysis off-line.
+
+-- The QPL development system is also seeing some major changes. After relying on the Adobe HomeSite editor and Microsoft SourceSafe version control sytem for over ten years, we are moving the QPL software to a new editor, called "Komodo," and a new version control system called "Subversion."
+-- This will provide an number of benefits. Komodo has a more modern under-the-hood architecture that will work better in GAO's new VDI environment. It lets me create many more "helper" tools to make it easier to write QPL programs, and it lets me provide you with automatic QPL software updates whenever I make improvements.
+-- And Subversion is seemlessly integrated inside of the Komodo QPL add-on so that most version control activities will happen automatically. I'll be demonstrating how all of this works in later videos.
+
+-- So, please follow along with me as I demonstrate all of the new features so that, I hope, will get you off to an easy start with the new QPL 6.3 software!
+
+
+Screen-Capture Demos
+====================
+
+2015-02-19
+
+01 Checking for QPL Updates and Setting Preferences
+---------------------------------------------------
+- - File > Add-ons
+- - Check for updates
+- - Release notes
+- - Options
+    - - OS
+    - - Subversion
+    - - Working folder
+    - - JobTracker
+    - - Help
+
+Kevin demonstrates how to check for QPL software updates and set your QPL Preferences in Komodo. Once installed, Komodo should automatically update the QPL add-on when a new version is released, but you also check for updates at any time. Your QPL preferences generally will only need to be set the first time you use the QPL add-on.
+
+02 Starting a New QPL Project
+
+The red "Q" button launches the dialog box that will create a new QPL project. This process can also including adding the project to version control, and creating (for GAO users) JobTracker project information record with key project information.
+
+03 JobTracker QPL Project Tracking System
+
+The QPL Create New Project dialog also can start a new JobTracker project tracking entry and automatically enter some key bits of information. GAO usually fields over 100 QPL projects per year, and uses this system to track the development, deployment, and archiving of its projects. JobTracker is actually just a QPL application itself.
+
+04 Building a Local Website Preview
+
+The QPL system lets you build a replica of your web questionnaire that you can view locally on your computer, including trying out the dynamic functionality. The basic development cycle includes first checking the project out from version control, editing the questionnaire program, building the local web site files, and testing them on your computer. And then repeat. Before quitting for the day, be sure to check the project back into version control!
+
+
+2015-02-20
+
+05 More About Version Control
+- - .pg6 file is key!
+- - Creating an email template, then use .pg6 to add to version control
+- - .pg6 file is locked oh no!
+- - removing a project from version control
+
+06 Adding an Existing project to version control
+- - open old pg6 file
+- - upgrade standard QPL files to version 6.3
+- - push to version control
+- - you need to update Jobtracker separately
+
+06.1 Komodo Source Control Functions
+- - Diff
+- - History
+- - Remove
+- - Revert
+
+07 More About the Komodo Interface
+- - Save file
+- - Places window
+- - Minimap
+- - Full screen
+- - Split screen
+- - Browser preview
+- - Macros
+- - Komodo Source Control
+
+
+08 QPL Language Syntax
+- - Comment lines
+- - Command lines
+- - Text lines
+- - Command blocks
+
+09 Programming Wizards - Overview
+- - Questions
+- - Layout
+...
+
+10 Text Formatting
+- - Bold, underline, italics
+- - Arrows
+- - Escaping special characters
+- - Colors
+- - Block comments
+- - HTML entities
+
+Detailed demos
+
+> Each type of question
+> Layout options
+> Authentication options
+etc...
+

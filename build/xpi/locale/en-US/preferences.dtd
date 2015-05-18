@@ -1,0 +1,50 @@
+<!ENTITY prefwindow.title "QPL6 Preferences">
+<!ENTITY pane1.title "QPL6 Preferences">
+
+<!ENTITY qpl_os.label "Select your operating system:">
+<!ENTITY qpl_os.accesskey "S">
+<!ENTITY qpl_os.test "Test QPL Software Connection">
+
+<!ENTITY qpl_os_win32.label "Windows (x32)">
+<!ENTITY qpl_os_win32.accesskey "W">
+
+<!ENTITY qpl_os_mac.label "Mac OSX">
+<!ENTITY qpl_os_mac.accesskey "M">
+
+<!ENTITY qpl_os_linux32.label "Linux (x32)">
+<!ENTITY qpl_os_linux32.accesskey "L">
+
+<!ENTITY qpl_os_linux64.label "Linux (x64)">
+<!ENTITY qpl_os_linux64.accesskey "I">
+
+
+<!ENTITY qpl_subversion_repository_note.label "Enter Subversion repository locations:">
+
+<!ENTITY qpl_subversion_repository.label "Primary repository">
+<!ENTITY qpl_subversion_repository.accesskey "P">
+<!ENTITY qpl_subversion_repository.test "Test Primary Connection">
+
+<!ENTITY qpl_subversion_repository2.label "Secondary repository">
+<!ENTITY qpl_subversion_repository2.accesskey "S">
+<!ENTITY qpl_subversion_repository2.test "Test Secondary Connection">
+
+<!ENTITY qpl_subversion_repository_user.label "User name:">
+<!ENTITY qpl_subversion_repository_user.accesskey "U">
+
+<!ENTITY qpl_subversion_repository_password.label "Password:">
+<!ENTITY qpl_subversion_repository_password.accesskey "P">
+
+<!ENTITY qpl_working_directory.label "Enter root project working directory:">
+<!ENTITY qpl_working_directory.accesskey "W">
+
+<!ENTITY qpl_jobtracker_url.label "Enter JobTracker URL:">
+<!ENTITY qpl_jobtracker_url.accesskey "J">
+<!ENTITY qpl_jobtracker_url.test "Test JobTracker Connection">
+
+<!ENTITY qpl_browse.label "Browse">
+<!ENTITY qpl_browse.accesskey "B">
+
+<!ENTITY qpl_help.title "QPL Help">
+<!ENTITY qpl_help.label "Help">
+<!ENTITY qpl_help.accesskey "H">
+

@@ -1,0 +1,363 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://qplwrapper/skin/build.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://qplwrapper/locale/new.dtd">
+<!-- qpl_menu_new.xul
+	K. Dooley --> 
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	id="qpl_menu_new"
+	orient="vertical"
+	title="&qpl_menu_new.title;"
+	style="width: 40em;"
+	screenX="24"
+	screenY="24"
+	buttons="help,accept,cancel"
+	defaultButton="accept"
+	buttonlabelaccept="&qpl_create.label;"
+	buttonaccesskeyaccept="&qpl_create.accesskey;"
+	buttonlabelcancel="&qpl_close.label;"
+	buttonaccesskeycancel="&qpl_close.accesskey;"
+	ondialogaccept="window.setCursor('wait'); CreateNewProject2(ko, 'qpl_project_title', 'qpl_project_name', 'qpl_project_versioning', 'qpl_project_versioning2', MyLanguageCodes, MyLanguageNames); window.setCursor('auto'); "
+	ondialogcancel="return true;"
+	onload="SetSvnStatus(document.getElementById('qpl_project_versioning'), document.getElementById('qpl_project_versioning2')); ShowLanguages(false);"
+	buttonaccesskeyhelp="&qpl_help.accesskey;"
+	buttonlabelhelp="&qpl_help.label;"
+	ondialoghelp="window.openDialog('chrome://qplwrapper/content/qpl_help.xul','qpl_help',
+                  'chrome','qpl_menu_new.htm');" >
+
+
+
+<vbox id="qpl_dialog" flex="1" >
+
+<hbox id="qpl_notes_box">
+	<hbox pack="start" class="test">
+		<description id="qpl_notes" >&qpl_menu_new.notes;</description></hbox>
+
+	<hbox pack="end" flex="3">
+		<image src="qplwrapper.png" width='75' height='75'/></hbox>
+</hbox>
+
+<separator/>
+
+<label control="qpl_project_title" value="&qpl_project_title.label;"/>
+<textbox id="qpl_project_title" value="" placeholder="&qpl_project_title.value;" accesskey="&qpl_project_title.accesskey;"/>
+
+<separator/>
+
+<label control="qpl_project_name" value="&qpl_project_name.label;"/>
+<textbox id="qpl_project_name" value="" placeholder="&qpl_project_name.value;" accesskey="&qpl_project_name.accesskey;"/>
+
+<separator/>
+<checkbox id="qpl_project_multi_language" label="&qpl_project_multi_language.label;" accesskey="&qpl_project_multi_language.accesskey;" onclick="ShowLanguages(!this.checked); " />
+
+<groupbox id="qpl_language_list_groupbox"  orient="vertical" >
+	<caption label="&qpl_language_list.label;" />
+
+    <vbox id="qpl_language_list" flex="1" class="qpl_box_border" style="overflow:auto; height: 8em;" onclick="GetLanguages();" >
+	
+	<checkbox id="qpl_lang_ab" label="&qpl_ab.label;"/>
+	<checkbox id="qpl_lang_aa" label="&qpl_aa.label;"/>
+	<checkbox id="qpl_lang_af" label="&qpl_af.label;"/>
+	<checkbox id="qpl_lang_ak" label="&qpl_ak.label;"/>
+	<checkbox id="qpl_lang_sq" label="&qpl_sq.label;"/>
+	<checkbox id="qpl_lang_am" label="&qpl_am.label;"/>
+	<checkbox id="qpl_lang_ar" label="&qpl_ar.label;"/>
+	<checkbox id="qpl_lang_an" label="&qpl_an.label;"/>
+	<checkbox id="qpl_lang_hy" label="&qpl_hy.label;"/>
+	<checkbox id="qpl_lang_as" label="&qpl_as.label;"/>
+	<checkbox id="qpl_lang_av" label="&qpl_av.label;"/>
+	<checkbox id="qpl_lang_ae" label="&qpl_ae.label;"/>
+	<checkbox id="qpl_lang_ay" label="&qpl_ay.label;"/>
+	<checkbox id="qpl_lang_az" label="&qpl_az.label;"/>
+	<checkbox id="qpl_lang_bm" label="&qpl_bm.label;"/>
+	<checkbox id="qpl_lang_ba" label="&qpl_ba.label;"/>
+	<checkbox id="qpl_lang_eu" label="&qpl_eu.label;"/>
+	<checkbox id="qpl_lang_be" label="&qpl_be.label;"/>
+	<checkbox id="qpl_lang_bn" label="&qpl_bn.label;"/>
+	<checkbox id="qpl_lang_bh" label="&qpl_bh.label;"/>
+	<checkbox id="qpl_lang_bi" label="&qpl_bi.label;"/>
+	<checkbox id="qpl_lang_nb" label="&qpl_nb.label;"/>
+	<checkbox id="qpl_lang_bs" label="&qpl_bs.label;"/>
+	<checkbox id="qpl_lang_br" label="&qpl_br.label;"/>
+	<checkbox id="qpl_lang_bg" label="&qpl_bg.label;"/>
+	<checkbox id="qpl_lang_my" label="&qpl_my.label;"/>
+	<checkbox id="qpl_lang_ca" label="&qpl_ca.label;"/>
+	<checkbox id="qpl_lang_km" label="&qpl_km.label;"/>
+	<checkbox id="qpl_lang_ch" label="&qpl_ch.label;"/>
+	<checkbox id="qpl_lang_ce" label="&qpl_ce.label;"/>
+	<checkbox id="qpl_lang_ny" label="&qpl_ny.label;"/>
+	<checkbox id="qpl_lang_zh" label="&qpl_zh.label;"/>
+	<checkbox id="qpl_lang_cu" label="&qpl_cu.label;"/>
+	<checkbox id="qpl_lang_cv" label="&qpl_cv.label;"/>
+	<checkbox id="qpl_lang_kw" label="&qpl_kw.label;"/>
+	<checkbox id="qpl_lang_co" label="&qpl_co.label;"/>
+	<checkbox id="qpl_lang_cr" label="&qpl_cr.label;"/>
+	<checkbox id="qpl_lang_hr" label="&qpl_hr.label;"/>
+	<checkbox id="qpl_lang_cs" label="&qpl_cs.label;"/>
+	<checkbox id="qpl_lang_da" label="&qpl_da.label;"/>
+	<checkbox id="qpl_lang_dv" label="&qpl_dv.label;"/>
+	<checkbox id="qpl_lang_nl" label="&qpl_nl.label;"/>
+	<checkbox id="qpl_lang_nl" label="&qpl_nl.label;"/>
+	<checkbox id="qpl_lang_dz" label="&qpl_dz.label;"/>
+	<checkbox id="qpl_lang_en" label="&qpl_en.label;"/>
+	<checkbox id="qpl_lang_eo" label="&qpl_eo.label;"/>
+	<checkbox id="qpl_lang_et" label="&qpl_et.label;"/>
+	<checkbox id="qpl_lang_ee" label="&qpl_ee.label;"/>
+	<checkbox id="qpl_lang_fo" label="&qpl_fo.label;"/>
+	<checkbox id="qpl_lang_fj" label="&qpl_fj.label;"/>
+	<checkbox id="qpl_lang_fi" label="&qpl_fi.label;"/>
+	<checkbox id="qpl_lang_fr" label="&qpl_fr.label;"/>
+	<checkbox id="qpl_lang_ff" label="&qpl_ff.label;"/>
+	<checkbox id="qpl_lang_gd" label="&qpl_gd.label;"/>
+	<checkbox id="qpl_lang_gl" label="&qpl_gl.label;"/>
+	<checkbox id="qpl_lang_lg" label="&qpl_lg.label;"/>
+	<checkbox id="qpl_lang_ka" label="&qpl_ka.label;"/>
+	<checkbox id="qpl_lang_ka" label="&qpl_ka.label;"/>
+	<checkbox id="qpl_lang_de" label="&qpl_de.label;"/>
+	<checkbox id="qpl_lang_el" label="&qpl_el.label;"/>
+	<checkbox id="qpl_lang_gn" label="&qpl_gn.label;"/>
+	<checkbox id="qpl_lang_gu" label="&qpl_gu.label;"/>
+	<checkbox id="qpl_lang_ht" label="&qpl_ht.label;"/>
+	<checkbox id="qpl_lang_ha" label="&qpl_ha.label;"/>
+	<checkbox id="qpl_lang_he" label="&qpl_he.label;"/>
+	<checkbox id="qpl_lang_hz" label="&qpl_hz.label;"/>
+	<checkbox id="qpl_lang_hi" label="&qpl_hi.label;"/>
+	<checkbox id="qpl_lang_ho" label="&qpl_ho.label;"/>
+	<checkbox id="qpl_lang_hu" label="&qpl_hu.label;"/>
+	<checkbox id="qpl_lang_is" label="&qpl_is.label;"/>
+	<checkbox id="qpl_lang_is" label="&qpl_is.label;"/>
+	<checkbox id="qpl_lang_io" label="&qpl_io.label;"/>
+	<checkbox id="qpl_lang_ig" label="&qpl_ig.label;"/>
+	<checkbox id="qpl_lang_id" label="&qpl_id.label;"/>
+	<checkbox id="qpl_lang_ia" label="&qpl_ia.label;"/>
+	<checkbox id="qpl_lang_ie" label="&qpl_ie.label;"/>
+	<checkbox id="qpl_lang_iu" label="&qpl_iu.label;"/>
+	<checkbox id="qpl_lang_ik" label="&qpl_ik.label;"/>
+	<checkbox id="qpl_lang_ga" label="&qpl_ga.label;"/>
+	<checkbox id="qpl_lang_it" label="&qpl_it.label;"/>
+	<checkbox id="qpl_lang_ja" label="&qpl_ja.label;"/>
+	<checkbox id="qpl_lang_jv" label="&qpl_jv.label;"/>
+	<checkbox id="qpl_lang_kl" label="&qpl_kl.label;"/>
+	<checkbox id="qpl_lang_kn" label="&qpl_kn.label;"/>
+	<checkbox id="qpl_lang_kr" label="&qpl_kr.label;"/>
+	<checkbox id="qpl_lang_ks" label="&qpl_ks.label;"/>
+	<checkbox id="qpl_lang_kk" label="&qpl_kk.label;"/>
+	<checkbox id="qpl_lang_ki" label="&qpl_ki.label;"/>
+	<checkbox id="qpl_lang_rw" label="&qpl_rw.label;"/>
+	<checkbox id="qpl_lang_ky" label="&qpl_ky.label;"/>
+	<checkbox id="qpl_lang_kv" label="&qpl_kv.label;"/>
+	<checkbox id="qpl_lang_kg" label="&qpl_kg.label;"/>
+	<checkbox id="qpl_lang_ko" label="&qpl_ko.label;"/>
+	<checkbox id="qpl_lang_kj" label="&qpl_kj.label;"/>
+	<checkbox id="qpl_lang_ku" label="&qpl_ku.label;"/>
+	<checkbox id="qpl_lang_lo" label="&qpl_lo.label;"/>
+	<checkbox id="qpl_lang_la" label="&qpl_la.label;"/>
+	<checkbox id="qpl_lang_lv" label="&qpl_lv.label;"/>
+	<checkbox id="qpl_lang_li" label="&qpl_li.label;"/>
+	<checkbox id="qpl_lang_ln" label="&qpl_ln.label;"/>
+	<checkbox id="qpl_lang_lt" label="&qpl_lt.label;"/>
+	<checkbox id="qpl_lang_lu" label="&qpl_lu.label;"/>
+	<checkbox id="qpl_lang_lb" label="&qpl_lb.label;"/>
+	<checkbox id="qpl_lang_mk" label="&qpl_mk.label;"/>
+	<checkbox id="qpl_lang_mk" label="&qpl_mk.label;"/>
+	<checkbox id="qpl_lang_mg" label="&qpl_mg.label;"/>
+	<checkbox id="qpl_lang_ms" label="&qpl_ms.label;"/>
+	<checkbox id="qpl_lang_ml" label="&qpl_ml.label;"/>
+	<checkbox id="qpl_lang_mt" label="&qpl_mt.label;"/>
+	<checkbox id="qpl_lang_gv" label="&qpl_gv.label;"/>
+	<checkbox id="qpl_lang_mi" label="&qpl_mi.label;"/>
+	<checkbox id="qpl_lang_mr" label="&qpl_mr.label;"/>
+	<checkbox id="qpl_lang_mh" label="&qpl_mh.label;"/>
+	<checkbox id="qpl_lang_mn" label="&qpl_mn.label;"/>
+	<checkbox id="qpl_lang_na" label="&qpl_na.label;"/>
+	<checkbox id="qpl_lang_nv" label="&qpl_nv.label;"/>
+	<checkbox id="qpl_lang_nd" label="&qpl_nd.label;"/>
+	<checkbox id="qpl_lang_nr" label="&qpl_nr.label;"/>
+	<checkbox id="qpl_lang_ng" label="&qpl_ng.label;"/>
+	<checkbox id="qpl_lang_ne" label="&qpl_ne.label;"/>
+	<checkbox id="qpl_lang_se" label="&qpl_se.label;"/>
+	<checkbox id="qpl_lang_no" label="&qpl_no.label;"/>
+	<checkbox id="qpl_lang_nn" label="&qpl_nn.label;"/>
+	<checkbox id="qpl_lang_oc" label="&qpl_oc.label;"/>
+	<checkbox id="qpl_lang_oj" label="&qpl_oj.label;"/>
+	<checkbox id="qpl_lang_or" label="&qpl_or.label;"/>
+	<checkbox id="qpl_lang_om" label="&qpl_om.label;"/>
+	<checkbox id="qpl_lang_os" label="&qpl_os.label;"/>
+	<checkbox id="qpl_lang_pi" label="&qpl_pi.label;"/>
+	<checkbox id="qpl_lang_pa" label="&qpl_pa.label;"/>
+	<checkbox id="qpl_lang_fa" label="&qpl_fa.label;"/>
+	<checkbox id="qpl_lang_fa" label="&qpl_fa.label;"/>
+	<checkbox id="qpl_lang_pl" label="&qpl_pl.label;"/>
+	<checkbox id="qpl_lang_pt" label="&qpl_pt.label;"/>
+	<checkbox id="qpl_lang_ps" label="&qpl_ps.label;"/>
+	<checkbox id="qpl_lang_qu" label="&qpl_qu.label;"/>
+	<checkbox id="qpl_lang_ro" label="&qpl_ro.label;"/>
+	<checkbox id="qpl_lang_rm" label="&qpl_rm.label;"/>
+	<checkbox id="qpl_lang_rn" label="&qpl_rn.label;"/>
+	<checkbox id="qpl_lang_ru" label="&qpl_ru.label;"/>
+	<checkbox id="qpl_lang_sm" label="&qpl_sm.label;"/>
+	<checkbox id="qpl_lang_sg" label="&qpl_sg.label;"/>
+	<checkbox id="qpl_lang_sa" label="&qpl_sa.label;"/>
+	<checkbox id="qpl_lang_sc" label="&qpl_sc.label;"/>
+	<checkbox id="qpl_lang_sr" label="&qpl_sr.label;"/>
+	<checkbox id="qpl_lang_sn" label="&qpl_sn.label;"/>
+	<checkbox id="qpl_lang_ii" label="&qpl_ii.label;"/>
+	<checkbox id="qpl_lang_sd" label="&qpl_sd.label;"/>
+	<checkbox id="qpl_lang_si" label="&qpl_si.label;"/>
+	<checkbox id="qpl_lang_sk" label="&qpl_sk.label;"/>
+	<checkbox id="qpl_lang_sk" label="&qpl_sk.label;"/>
+	<checkbox id="qpl_lang_sl" label="&qpl_sl.label;"/>
+	<checkbox id="qpl_lang_so" label="&qpl_so.label;"/>
+	<checkbox id="qpl_lang_st" label="&qpl_st.label;"/>
+	<checkbox id="qpl_lang_es" label="&qpl_es.label;"/>
+	<checkbox id="qpl_lang_su" label="&qpl_su.label;"/>
+	<checkbox id="qpl_lang_sw" label="&qpl_sw.label;"/>
+	<checkbox id="qpl_lang_ss" label="&qpl_ss.label;"/>
+	<checkbox id="qpl_lang_sv" label="&qpl_sv.label;"/>
+	<checkbox id="qpl_lang_tl" label="&qpl_tl.label;"/>
+	<checkbox id="qpl_lang_ty" label="&qpl_ty.label;"/>
+	<checkbox id="qpl_lang_tg" label="&qpl_tg.label;"/>
+	<checkbox id="qpl_lang_ta" label="&qpl_ta.label;"/>
+	<checkbox id="qpl_lang_tt" label="&qpl_tt.label;"/>
+	<checkbox id="qpl_lang_te" label="&qpl_te.label;"/>
+	<checkbox id="qpl_lang_th" label="&qpl_th.label;"/>
+	<checkbox id="qpl_lang_bo" label="&qpl_bo.label;"/>
+	<checkbox id="qpl_lang_bo" label="&qpl_bo.label;"/>
+	<checkbox id="qpl_lang_ti" label="&qpl_ti.label;"/>
+	<checkbox id="qpl_lang_to" label="&qpl_to.label;"/>
+	<checkbox id="qpl_lang_ts" label="&qpl_ts.label;"/>
+	<checkbox id="qpl_lang_tn" label="&qpl_tn.label;"/>
+	<checkbox id="qpl_lang_tr" label="&qpl_tr.label;"/>
+	<checkbox id="qpl_lang_tk" label="&qpl_tk.label;"/>
+	<checkbox id="qpl_lang_tw" label="&qpl_tw.label;"/>
+	<checkbox id="qpl_lang_ug" label="&qpl_ug.label;"/>
+	<checkbox id="qpl_lang_uk" label="&qpl_uk.label;"/>
+	<checkbox id="qpl_lang_ur" label="&qpl_ur.label;"/>
+	<checkbox id="qpl_lang_uz" label="&qpl_uz.label;"/>
+	<checkbox id="qpl_lang_ve" label="&qpl_ve.label;"/>
+	<checkbox id="qpl_lang_vi" label="&qpl_vi.label;"/>
+	<checkbox id="qpl_lang_vo" label="&qpl_vo.label;"/>
+	<checkbox id="qpl_lang_wa" label="&qpl_wa.label;"/>
+	<checkbox id="qpl_lang_cy" label="&qpl_cy.label;"/>
+	<checkbox id="qpl_lang_fy" label="&qpl_fy.label;"/>
+	<checkbox id="qpl_lang_wo" label="&qpl_wo.label;"/>
+	<checkbox id="qpl_lang_xh" label="&qpl_xh.label;"/>
+	<checkbox id="qpl_lang_yi" label="&qpl_yi.label;"/>
+	<checkbox id="qpl_lang_yo" label="&qpl_yo.label;"/>
+	<checkbox id="qpl_lang_za" label="&qpl_za.label;"/>
+	<checkbox id="qpl_lang_zu" label="&qpl_zu.label;"/>
+    </vbox>
+    
+<label id="qpl_languages_selected" value="..."/>
+</groupbox>
+
+<checkbox id="qpl_project_versioning" label="&qpl_project_versioning.label;" accesskey="&qpl_project_versioning.accesskey;" onclick="UpdateSecondRepository(!this.checked);"  />
+
+<checkbox id="qpl_project_versioning2" label="&qpl_project_versioning2.label;" accesskey="&qpl_project_versioning2.accesskey;" disabled="true" />
+
+<separator/>
+<progressmeter id="qpl_progress" mode="determined" value="0" style="display: none;" />
+
+</vbox>
+
+<stringbundleset id="stringbundleset">
+	<stringbundle id="qplwrapper-strings" src="chrome://qplwrapper/locale/qplwrapper.properties"/>
+</stringbundleset>
+
+<script type="application/x-javascript" src="chrome://qplwrapper/content/qplwrapper.js"/>
+<script type="application/x-javascript" src="chrome://qplwrapper/content/qplwrapper-helper.js"/> 
+
+<script type="application/x-javascript" >
+<![CDATA[
+var ko = window.arguments[0];
+var MyLanguageCodes = [];
+var MyLanguageNames = [];
+
+
+function ShowLanguages(Show) {
+
+	var Lang = document.getElementsByTagName('checkbox');
+	for (var i in Lang) {
+		
+		if ( /^qpl_lang/.test(Lang[i].id) ) {
+			if (Show) {
+				Lang[i].removeAttribute("disabled");
+		
+			} else {
+				Lang[i].setAttribute("disabled", "true");
+				Lang[i].setAttribute("checked", "false");
+			}
+			
+		}
+	}
+	
+	document.getElementById('qpl_languages_selected').value = "...";
+
+}
+
+function GetLanguages() {
+	var Count = 0;
+	MyLanguageCodes.length=0;
+	MyLanguageNames.length=0;
+	var Selected = document.getElementById('qpl_languages_selected');
+	Selected.value = "";
+	
+	var LangList = document.getElementsByTagName('checkbox');
+	for (var i = 0; i < LangList.length; i++) {
+		
+		if (/^qpl_lang_/.test(LangList[i].id) &&  LangList[i].checked) {
+			
+			Selected.value += LangList[i].id.substring("qpl_lang_".length) + " ";
+			MyLanguageCodes[Count]=LangList[i].id.substring("qpl_lang_".length);
+			MyLanguageNames[Count++]=LangList[i].label;
+		}
+	}
+	
+	return;
+}	
+
+function UpdateSecondRepository(Show) {
+	var prefManager = Components.classes["@mozilla.org/preferences-service;1"]
+		.getService(Components.interfaces.nsIPrefBranch);
+
+	var SvnPath2 = prefManager.getCharPref(MY_SVN2_PREF);
+	var qpl_project_versioning2 = document.getElementById('qpl_project_versioning2');
+	
+	if (SvnPath2.length) {
+	
+		if (Show) {
+			// qpl_project_versioning2.removeAttribute("disabled");
+		} else {
+			qpl_project_versioning2.checked = false;
+			// qpl_project_versioning2.setAttribute("disabled", "true");
+		}
+	
+	}
+}
+
+function SetSvnStatus(qpl_project_versioning, qpl_project_versioning2) {
+    var prefManager = Components.classes["@mozilla.org/preferences-service;1"]
+	.getService(Components.interfaces.nsIPrefBranch);
+
+    var SvnPath = prefManager.getCharPref(MY_SVN_PREF);
+    var SvnPath2 = prefManager.getCharPref(MY_SVN2_PREF);
+
+    if (SvnPath.length) {
+	qpl_project_versioning.checked = true;
+	
+	if (SvnPath2.length) {
+		qpl_project_versioning2.removeAttribute("disabled");
+	}
+    
+    } else {
+	qpl_project_versioning.checked = false;
+	qpl_project_versioning.setAttribute("disabled", "true");
+    }
+    return;
+}
+
+
+]]>
+</script>
+</dialog>
+

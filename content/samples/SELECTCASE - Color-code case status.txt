@@ -1,0 +1,63 @@
+*! >>>>
+SELECTCASE - Color-code case status.txt
+
+This sample demonstrates color-coding the list of cases on the Case
+Selection page using the contents of a STRING question called GNAME
+as a case identifier and the value of a MULT question called FINISH
+to indicate the status (complete or not complete) by mapping its
+value to a background color style in an SQL CONCAT function.
+
+The value of FINISH is concatenated to "sc" which then maps to one
+of the two CSS class styles which then set the background color when
+the case selection page is displayed to a user.
+*! <<<<
+
+
+.SELECTCASEFORMAT = LONG
+.SELECTCASEREQUIRED = OFF
+.SELECTCASELABEL = "Name"
+.SELECTCASEALT = "CONCAT('<DIV CLASS=sc', FINISH, '>', GNAME, '</DIV>')"
+
+** Case selection legend at top and bottom of case selection page.
+.448 = "<TABLE><TR CLASS=lgnd><TD CLASS=sc1>Not completed</TD><TD CLASS=sc2>Completed</TD></TR></TABLE>"
+.449 = "<TABLE><TR CLASS=lgnd><TD CLASS=sc1>Not completed</TD><TD CLASS=sc2>Completed</TD></TR></TABLE>"
+
+
+**********************************************************************
+** Style Settings
+.STYLE = ON
+
+TR.lgnd TD {
+ 	width: 50%;
+	text-align: center;
+	font-size: smaller;
+}
+
+  .sc1 {
+
+	background-color:#A7DB87; /* green */
+
+}
+
+ .sc2 {
+
+	background-color: #D8868B; /* red */
+
+}
+.STYLE = OFF
+** 
+**********************************************************************
+
+
+.QUESTION = GNAME, TYPE = STRING
+Name
+.ANSWER = 120
+.NEXT
+
+
+.QUESTION = FINISH, TYPE = MULT
+Have you completed this case?
+.ANSWER = 1
+Not complete
+Complete
+.NEXT

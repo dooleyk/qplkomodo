@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://qplwrapper/skin/build.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://qplwrapper/locale/build.dtd">
+<!-- qpl_menu_build_custom.xul
+	K. Dooley -->
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	id="qpl_menu_build"
+	orient="vertical"
+	title="&qpl_menu_build_custom.title;"
+	style="width: 40em;"
+	screenX="24"
+	screenY="24"
+	buttons="accept,cancel,help"
+	defaultButton="accept"
+	buttonlabelaccept="&qpl_build.label;"
+	buttonaccesskeyaccept="&qpl_build.accesskey;"
+	buttonlabelcancel="&qpl_close.label;"
+	buttonaccesskeycancel="&qpl_close.accesskey;"
+	ondialogaccept="window.setCursor('wait'); BuildProject2(ko, GetFileList(), GetOptionList(),  ''); window.setCursor('auto'); "
+	ondialogcancel="return true;"
+	onload="GetPg6();"
+	buttonaccesskeyhelp="&qpl_help.accesskey;"
+	buttonlabelhelp="&qpl_help.label;"
+	ondialoghelp="window.openDialog('chrome://qplwrapper/content/qpl_help.xul','qpl_help',
+                  'chrome','qpl_menu_build_custom.htm');" >
+
+<stringbundleset id="stringbundleset">
+	<stringbundle id="qplwrapper-strings" src="chrome://qplwrapper/locale/qplwrapper.properties"/>
+</stringbundleset>
+
+<vbox id="qpl_dialog" flex="1">
+	<hbox id="qpl_notes_box">
+		<hbox pack="start" class="test">
+			<description id="qpl_notes">&qpl_menu_build_custom.notes;</description>
+		</hbox>
+		<hbox pack="end" flex="3">
+			<image src="qplwrapper.png" width='75' height='75' />
+		</hbox>
+	</hbox>
+	<separator />
+	<label id="qpl_project_name" value="..." />
+	<vbox id="qpl_pg6_list"></vbox>
+	<separator />
+	<groupbox flex="1">
+		<caption>
+			<label value="&qpl_options;" />
+		</caption>
+		<label control="qpl_option_custom" value="&qpl_option_custom.label;"/>
+		<textbox id="qpl_option_custom" value="" accesskey="&qpl_option_custom.accesskey;"/>
+	</groupbox>
+</vbox>
+
+
+<script type="application/x-javascript" src="chrome://qplwrapper/content/qplwrapper.js"/>
+<script type="application/x-javascript" src="chrome://qplwrapper/content/qplwrapper-helper.js"/> 
+
+<script type="application/x-javascript">
+<![CDATA[
+var Pg6 = "";
+var LangExt = "";
+var ko = window.arguments[0];
+
+function GetPg6() {
+	var koDoc = ko.views.manager.currentView.koDoc;
+	ko.views.manager.currentView.setFocus();
+	var Pg6Project = Components.classes["@mozilla.org/file/local;1"].
+	    createInstance(Ci.nsILocalFile);
+	var Count = 0;
+	
+	Pg6 = koDoc.displayPath; // build function is only available on menu if the current doc has a .pg6 extension
+	if (/\.pg6\.[a-z]+$/.test(Pg6)) {
+		LangExt = Pg6.match('\.[a-z]+$');
+	}
+	
+	document.getElementById('qpl_project_name').value = Pg6;
+	
+	return;
+}
+
+
+function GetFileList() {
+	var Options = [];
+	return Options;
+}
+
+
+function GetOptionList() {
+
+	var Options = [];
+	var Count = 0;
+	
+	document.getElementById('qpl_option_custom').value = document.getElementById('qpl_option_custom').value.replace(/^ +/g, "");
+	document.getElementById('qpl_option_custom').value = document.getElementById('qpl_option_custom').value.replace(/ +$/g, "");
+	document.getElementById('qpl_option_custom').value = document.getElementById('qpl_option_custom').value.replace(/ +/g, " ");
+	
+	if (document.getElementById('qpl_option_custom').value.length)
+	{
+		var Temp = Pg6 + " " + document.getElementById('qpl_option_custom').value
+			
+		Options = Temp.split(' ')
+	}
+
+	
+	return Options;
+}
+
+]]>
+</script>
+
+</dialog>

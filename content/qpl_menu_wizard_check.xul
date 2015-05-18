@@ -1,0 +1,555 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://qplwrapper/skin/build.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://qplwrapper/locale/wizard.dtd">
+<!-- qpl_menu_wizard_check.xul
+	K. Dooley -->
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	id="qpl_wizard"
+	orient="vertical"
+	title="&qpl_wizard.title;"
+	style="width: 40em;"
+	screenX="24" screenY="24" 
+	buttons="accept,cancel,help"
+	defaultButton="accept"
+	buttonlabelaccept="&qpl_insert.label;"
+	buttonaccesskeyaccept="&qpl_insert.accesskey;"
+	buttonlabelcancel="&qpl_cancel.label;"
+	buttonaccesskeycancel="&qpl_cancel.accesskey;"
+	ondialogaccept="InsertText();"
+	ondialogcancel="return true;"
+	buttonaccesskeyhelp="&qpl_help.accesskey;"
+	buttonlabelhelp="&qpl_help.label;"
+	onload="GetQuestionText(window.arguments[0], 'qpl_wizard_questiontext');"
+	ondialoghelp="window.openDialog('chrome://qplwrapper/content/qpl_help.xul','qpl_help',
+                  'chrome','qpl_menu_wizard_check.htm');" >
+    
+<vbox id="qpl_dialog" flex="1" >
+	<dialogheader title="&qpl_wizard_check.title;" description="&qpl_wizard_check.notes;"/>
+	<separator/>
+
+	<grid align="left">
+	<columns>
+		<column />
+		<column />
+	</columns>
+	<rows>
+		<row>
+		<label control="qpl_wizard_name" value="&qpl_wizard_name.label;"/>
+		<hbox>
+			<textbox id="qpl_wizard_name" value="" maxlength="16" accesskey="&qpl_wizard_name.accesskey;" spellcheck="false"/>
+			<separator/>
+			<label control="qpl_wizard_displaytarget" value="&qpl_wizard_displaytarget.label;"/>
+			<textbox id="qpl_wizard_displaytarget" value="" maxlength="16" accesskey="&qpl_wizard_displaytarget.accesskey;"  style="font-family: monospace; width: 16em;" spellcheck="false"/>
+
+		</hbox>
+		</row>
+	
+		<row>
+		<label control="qpl_wizard_format" value="&qpl_wizard_format.label;"/>
+		<hbox>
+		<groupbox  flex="1">
+			<caption control="qpl_wizard_numberanswers" label="&qpl_wizard_numberanswers.label;" accesskey="&qpl_wizard_numberanswers.accesskey;"/>
+			<radiogroup id="qpl_wizard_numberanswers" >
+			    <radio id="qpl_wizard_numberanswers_1" value="1" label="&qpl_wizard_numberanswers_1.label;" />
+			    <radio id="qpl_wizard_numberanswers_a" value="a" label="&qpl_wizard_numberanswers_a.label;"  />
+			    <radio id="qpl_wizard_numberanswers_A" value="A" label="&qpl_wizard_numberanswers_A.label;"  />
+			    <radio id="qpl_wizard_numberanswers_off" value="OFF" label="&qpl_wizard_numberanswers_off.label;"  />
+			    <radio id="qpl_wizard_numberanswers_inherit" value="" label="&qpl_wizard_inherit.label;" selected="true"/>
+			</radiogroup>
+		</groupbox>	
+			
+		<groupbox  flex="1">
+			<caption control="qpl_wizard_aligntext" label="&qpl_wizard_aligntext.label;" accesskey="&qpl_wizard_aligntext.accesskey;"/>
+			<radiogroup id="qpl_wizard_aligntext" >
+			    <radio id="qpl_wizard_aligntext_left" value="LEFT" label="&qpl_wizard_aligntext_left.label;" />
+			    <radio id="qpl_wizard_aligntext_center" value="CENTER" label="&qpl_wizard_aligntext_center.label;"  />
+			    <radio id="qpl_wizard_aligntext_right" value="RIGHT" label="&qpl_wizard_aligntext_right.label;"  />
+			    <radio id="qpl_wizard_aligntext_inherit" value="" label="&qpl_wizard_inherit.label;" selected="true"/>
+			</radiogroup>
+		</groupbox>	
+	
+		<groupbox  flex="1">
+			<caption control="qpl_wizard_alignquestion" label="&qpl_wizard_alignquestion.label;" accesskey="&qpl_wizard_alignquestion.accesskey;"/>
+			<radiogroup id="qpl_wizard_alignquestion" >
+			    <radio id="qpl_wizard_alignquestion_top" value="TOP" label="&qpl_wizard_alignquestion_top.label;" />
+			    <radio id="qpl_wizard_alignquestion_middle" value="MIDDLE" label="&qpl_wizard_alignquestion_middle.label;"  />
+			    <radio id="qpl_wizard_alignquestion_bottom" value="BOTTOM" label="&qpl_wizard_alignquestion_bottom.label;"  />
+			    <radio id="qpl_wizard_alignquestion_baseline" value="BASELINE" label="&qpl_wizard_alignquestion_baseline.label;"  />
+			    <radio id="qpl_wizard_alignquestion_inherit" value="" label="&qpl_wizard_inherit.label;" selected="true"/>
+			</radiogroup>
+		</groupbox>	
+	
+		<groupbox  flex="1">
+			<caption control="qpl_wizard_bold" label="&qpl_wizard_bold.label;" accesskey="&qpl_wizard_bold.accesskey;"/>
+			<radiogroup id="qpl_wizard_bold" >
+			    <radio id="qpl_wizard_bold_on" value="ON" label="&qpl_wizard_bold_on.label;" />
+			    <radio id="qpl_wizard_bold_off" value="OFF" label="&qpl_wizard_bold_off.label;"  />
+			    <radio id="qpl_wizard_bold_inherit" value="" label="&qpl_wizard_inherit.label;" selected="true"/>
+			</radiogroup>
+		</groupbox>	
+		</hbox>
+		</row>
+		
+		<row>
+		<label control="qpl_wizard_questiontext" value="&qpl_wizard_questiontext.label;"/>
+		<textbox id="qpl_wizard_questiontext" multiline="true" rows="3" cols="60" value="" style="font-family: monospace;" spellcheck="true" />
+		</row>
+		
+		<row>
+		<label control="qpl_wizard_stat" value="&qpl_wizard_stat.label;"/>
+		<textbox id="qpl_wizard_stat" value="" size="40" accesskey="&qpl_wizard_stat.accesskey;" spellcheck="true"/>
+		</row>
+
+                <row>
+                        <label control="qpl_wizard_instruction" value="&qpl_wizard_instruction.label;" accesskey="&qpl_wizard_instruction.accesskey;"/>
+                        <hbox>
+                        <groupbox  flex="1">
+                                <radiogroup id="qpl_wizard_instruction"  orient="horizontal" >
+                                    <radio id="qpl_wizard_instruction_on" value="ON" label="&qpl_wizard_instruction_on.label;" onclick="document.getElementById('qpl_wizard_instruction_name').disabled = false;" selected="true"  />
+                                    <radio id="qpl_wizard_instruction_off" value="OFF" label="&qpl_wizard_instruction_off.label;" onclick="document.getElementById('qpl_wizard_instruction_name').disabled = true;"  />
+                                </radiogroup>
+                        </groupbox>	
+                        <separator />
+                        <label control="qpl_wizard_instruction_name" value="&qpl_wizard_instruction_name.label;"/>
+                        <textbox id="qpl_wizard_instruction_name" value="" size="120" placeholder="&qpl_wizard_instruction_name_check.placeholder;" accesskey="&qpl_wizard_instruction_name.accesskey;" style="font-family: monospace; width: 16em;" spellcheck="false" />
+                        
+                        </hbox>
+                </row>
+
+		<row>
+		<label control="qpl_wizard_textwidth" value="&qpl_wizard_textwidth.label;"/>
+		
+		<hbox>
+			<textbox id="qpl_wizard_textwidth" type="number" hidespinbuttons="true" maxlength="5" size="5" value="" style="font-family: monospace; width: 5em;" spellcheck="true" />
+			<separator />
+			<label control="qpl_wizard_answeroption" value="&qpl_wizard_answeroption.label;"/>
+			<textbox id="qpl_wizard_answeroption" value="" maxlength="16" accesskey="&qpl_wizard_answeroption.accesskey;"   style="font-family: monospace; width: 16em;" spellcheck="false"/>
+			<separator />
+			<!-- <label control="qpl_wizard_required" value="&qpl_wizard_required.label;"/> -->
+			<checkbox id="qpl_wizard_required" label="&qpl_wizard_required_yes.label;" checked="false" accesskey="&qpl_wizard_required.accesskey;" />
+		</hbox>
+		</row>
+		
+		<row>
+		<label control="qpl_wizard_next" value="&qpl_wizard_next.label;"/>
+		<hbox>
+		<textbox id="qpl_wizard_next" value="" maxlength="16" accesskey="&qpl_wizard_next.accesskey;"  style="font-family: monospace; width: 16em;" spellcheck="false"/>
+		<spacer flex="1"/>
+		</hbox>
+		</row>
+	</rows>
+	</grid>
+	<separator/>
+	
+	
+	<tabbox id="qpl_wizard_answertab" selectedIndex="0">
+	<tabs>
+		<tab label="&qpl_wizard_answertab1.label;"/>
+		<tab label="&qpl_wizard_answertab2.label;"/>
+		<tab label="&qpl_wizard_answertab3.label;"/>
+		<tab label="&qpl_wizard_answertab4.label;"/>
+		<tab label="&qpl_wizard_answertab5.label;"/>
+		<tab label="&qpl_wizard_answertab6.label;"/>
+	</tabs>
+	<tabpanels>
+		<tabpanel id="qpl_wizard_answertab1" orient="vertical" >
+			<grid align="right" flex="1">
+			<columns>
+				<column />
+				<column />
+			</columns>
+			<rows>
+				
+			<row>
+				<label control="qpl_wizard_grouplabel1" value="&qpl_wizard_grouplabel.label;"/>
+				<textbox id="qpl_wizard_grouplabel1" value="" accesskey="&qpl_wizard_grouplabel.accesskey;" spellcheck="true"/>
+			</row>
+			<row>
+				<label control="qpl_wizard_answerlabel1" value="&qpl_wizard_answerlabel.label;"/>
+				<textbox id="qpl_wizard_answerlabel1" value="" accesskey="&qpl_wizard_answerlabel.accesskey;" spellcheck="true"/>
+			</row>
+			<row>
+				<label control="qpl_wizard_goto1" value="&qpl_wizard_goto.label;"/>
+				<hbox>
+					<textbox id="qpl_wizard_goto1" value="" maxlength="16" accesskey="&qpl_wizard_goto.accesskey;"  style="font-family: monospace; width: 16em;" spellcheck="false"/>
+					<separator />
+					<label control="qpl_wizard_displaytrigger1" value="&qpl_wizard_displaytrigger.label;"/>
+					<textbox id="qpl_wizard_displaytrigger1" value="" maxlength="16" accesskey="&qpl_wizard_displaytrigger.accesskey;"  style="font-family: monospace; width: 16em;" spellcheck="false" />
+				</hbox>
+			</row>
+			<row>
+				<label control="qpl_wizard_shading1" value="&qpl_wizard_shading.label;"/>
+				<checkbox id="qpl_wizard_shading1" label="&qpl_wizard_shading_yes.label;" checked="false" accesskey="&qpl_wizard_shading_yes.accesskey;" />
+			</row>
+			
+			</rows>
+			</grid>
+
+			<!-- tabpanel First elements go here -->
+		</tabpanel>
+		<tabpanel id="qpl_wizard_answertab2" orient="vertical" >
+			<grid align="right" flex="1">
+			<columns>
+				<column />
+				<column />
+			</columns>
+			<rows>
+				
+			<row>
+				<label control="qpl_wizard_grouplabel2" value="&qpl_wizard_grouplabel.label;"/>
+				<textbox id="qpl_wizard_grouplabel2" value="" accesskey="&qpl_wizard_grouplabel.accesskey;" spellcheck="true"/>
+			</row>
+			<row>
+				<label control="qpl_wizard_answerlabel2" value="&qpl_wizard_answerlabel.label;"/>
+				<textbox id="qpl_wizard_answerlabel2" value="" accesskey="&qpl_wizard_answerlabel.accesskey;" spellcheck="true"/>
+			</row>
+			<row>
+				<label control="qpl_wizard_goto2" value="&qpl_wizard_goto.label;"/>
+				<hbox>
+					<textbox id="qpl_wizard_goto2" value="" maxlength="16" accesskey="&qpl_wizard_goto.accesskey;"  style="font-family: monospace; width: 16em;" spellcheck="false"/>
+					<separator />
+					<label control="qpl_wizard_displaytrigger2" value="&qpl_wizard_displaytrigger.label;"/>
+					<textbox id="qpl_wizard_displaytrigger2" value="" maxlength="16" accesskey="&qpl_wizard_displaytrigger.accesskey;"  style="font-family: monospace; width: 16em;" spellcheck="false" />
+				</hbox>
+			</row>
+			<row>
+				<label control="qpl_wizard_shading2" value="&qpl_wizard_shading.label;"/>
+				<checkbox id="qpl_wizard_shading2" label="&qpl_wizard_shading_yes.label;" checked="false" accesskey="&qpl_wizard_shading_yes.accesskey;" />
+			</row>
+			
+			</rows>
+			</grid>
+		</tabpanel>
+		<tabpanel id="qpl_wizard_answertab3" orient="vertical" >
+			<grid align="right" flex="1">
+			<columns>
+				<column />
+				<column />
+			</columns>
+			<rows>
+				
+			<row>
+				<label control="qpl_wizard_grouplabel3" value="&qpl_wizard_grouplabel.label;"/>
+				<textbox id="qpl_wizard_grouplabel3" value="" accesskey="&qpl_wizard_grouplabel.accesskey;" spellcheck="true"/>
+			</row>
+			<row>
+				<label control="qpl_wizard_answerlabel3" value="&qpl_wizard_answerlabel.label;"/>
+				<textbox id="qpl_wizard_answerlabel3" value="" accesskey="&qpl_wizard_answerlabel.accesskey;" spellcheck="true"/>
+			</row>
+			<row>
+				<label control="qpl_wizard_goto3" value="&qpl_wizard_goto.label;"/>
+				<hbox>
+					<textbox id="qpl_wizard_goto3" value="" maxlength="16" accesskey="&qpl_wizard_goto.accesskey;"  style="font-family: monospace; width: 16em;" spellcheck="false"/>
+					<separator />
+					<label control="qpl_wizard_displaytrigger3" value="&qpl_wizard_displaytrigger.label;"/>
+					<textbox id="qpl_wizard_displaytrigger3" value="" maxlength="16" accesskey="&qpl_wizard_displaytrigger.accesskey;"  style="font-family: monospace; width: 16em;" spellcheck="false" />
+				</hbox>
+			</row>
+			<row>
+				<label control="qpl_wizard_shading3" value="&qpl_wizard_shading.label;"/>
+				<checkbox id="qpl_wizard_shading3" label="&qpl_wizard_shading_yes.label;" checked="false" accesskey="&qpl_wizard_shading_yes.accesskey;" />
+			</row>
+			
+			</rows>
+			</grid>
+		</tabpanel>
+		<tabpanel id="qpl_wizard_answertab4" orient="vertical" >
+			<grid align="right" flex="1">
+			<columns>
+				<column />
+				<column />
+			</columns>
+			<rows>
+				
+			<row>
+				<label control="qpl_wizard_grouplabel4" value="&qpl_wizard_grouplabel.label;"/>
+				<textbox id="qpl_wizard_grouplabel4" value="" accesskey="&qpl_wizard_grouplabel.accesskey;" spellcheck="true"/>
+			</row>
+			<row>
+				<label control="qpl_wizard_answerlabel4" value="&qpl_wizard_answerlabel.label;"/>
+				<textbox id="qpl_wizard_answerlabel4" value="" accesskey="&qpl_wizard_answerlabel.accesskey;" spellcheck="true"/>
+			</row>
+			<row>
+				<label control="qpl_wizard_goto4" value="&qpl_wizard_goto.label;"/>
+				<hbox>
+					<textbox id="qpl_wizard_goto4" value="" maxlength="16" accesskey="&qpl_wizard_goto.accesskey;"  style="font-family: monospace; width: 16em;" spellcheck="false"/>
+					<separator />
+					<label control="qpl_wizard_displaytrigger4" value="&qpl_wizard_displaytrigger.label;"/>
+					<textbox id="qpl_wizard_displaytrigger4" value="" maxlength="16" accesskey="&qpl_wizard_displaytrigger.accesskey;"  style="font-family: monospace; width: 16em;" spellcheck="false" />
+				</hbox>
+			</row>
+			<row>
+				<label control="qpl_wizard_shading4" value="&qpl_wizard_shading.label;"/>
+				<checkbox id="qpl_wizard_shading4" label="&qpl_wizard_shading_yes.label;" checked="false" accesskey="&qpl_wizard_shading_yes.accesskey;" />
+			</row>
+			
+			</rows>
+			</grid>
+		</tabpanel>
+		<tabpanel id="qpl_wizard_answertab5" orient="vertical" >
+			<grid align="right" flex="1">
+			<columns>
+				<column />
+				<column />
+			</columns>
+			<rows>
+				
+			<row>
+				<label control="qpl_wizard_grouplabel5" value="&qpl_wizard_grouplabel.label;"/>
+				<textbox id="qpl_wizard_grouplabel5" value="" accesskey="&qpl_wizard_grouplabel.accesskey;" spellcheck="true"/>
+			</row>
+			<row>
+				<label control="qpl_wizard_answerlabel5" value="&qpl_wizard_answerlabel.label;"/>
+				<textbox id="qpl_wizard_answerlabel5" value="" accesskey="&qpl_wizard_answerlabel.accesskey;" spellcheck="true"/>
+			</row>
+			<row>
+				<label control="qpl_wizard_goto5" value="&qpl_wizard_goto.label;"/>
+				<hbox>
+					<textbox id="qpl_wizard_goto5" value="" maxlength="16" accesskey="&qpl_wizard_goto.accesskey;"  style="font-family: monospace; width: 16em;" spellcheck="false"/>
+					<separator />
+					<label control="qpl_wizard_displaytrigger5" value="&qpl_wizard_displaytrigger.label;"/>
+					<textbox id="qpl_wizard_displaytrigger5" value="" maxlength="16" accesskey="&qpl_wizard_displaytrigger.accesskey;"  style="font-family: monospace; width: 16em;" spellcheck="false" />
+				</hbox>
+			</row>
+			<row>
+				<label control="qpl_wizard_shading5" value="&qpl_wizard_shading.label;"/>
+				<checkbox id="qpl_wizard_shading5" label="&qpl_wizard_shading_yes.label;" checked="false" accesskey="&qpl_wizard_shading_yes.accesskey;" />
+			</row>
+			
+			</rows>
+			</grid>
+		</tabpanel>
+		<tabpanel id="qpl_wizard_answertab6" orient="vertical" >
+			<grid align="right" flex="1">
+			<columns>
+				<column />
+				<column />
+			</columns>
+			<rows>
+				
+			<row>
+				<label control="qpl_wizard_grouplabel6" value="&qpl_wizard_grouplabel.label;"/>
+				<textbox id="qpl_wizard_grouplabel6" value="" accesskey="&qpl_wizard_grouplabel.accesskey;" spellcheck="true"/>
+			</row>
+			<row>
+				<label control="qpl_wizard_answerlabel6" value="&qpl_wizard_answerlabel.label;"/>
+				<textbox id="qpl_wizard_answerlabel6" value="" accesskey="&qpl_wizard_answerlabel.accesskey;" spellcheck="true"/>
+			</row>
+			<row>
+				<label control="qpl_wizard_goto6" value="&qpl_wizard_goto.label;"/>
+				<hbox>
+					<textbox id="qpl_wizard_goto6" value="" maxlength="16" accesskey="&qpl_wizard_goto.accesskey;"  style="font-family: monospace; width: 16em;" spellcheck="false"/>
+					<separator />
+					<label control="qpl_wizard_displaytrigger6" value="&qpl_wizard_displaytrigger.label;"/>
+					<textbox id="qpl_wizard_displaytrigger6" value="" maxlength="16" accesskey="&qpl_wizard_displaytrigger.accesskey;"  style="font-family: monospace; width: 16em;" spellcheck="false" />
+				</hbox>
+			</row>
+			<row>
+				<label control="qpl_wizard_shading6" value="&qpl_wizard_shading.label;"/>
+				<checkbox id="qpl_wizard_shading6" label="&qpl_wizard_shading_yes.label;" checked="false" accesskey="&qpl_wizard_shading_yes.accesskey;" />
+			</row>
+			
+			</rows>
+			</grid>
+		</tabpanel>
+	</tabpanels>
+	</tabbox>
+</vbox>
+
+<script type="application/x-javascript" src="chrome://qplwrapper/content/qplwrapper-helper.js"/>
+
+<script type="application/x-javascript" >
+<![CDATA[
+var ko = window.arguments[0];
+
+function InsertText()
+{
+	var qpl_wizard_name= document.getElementById('qpl_wizard_name').value.toUpperCase().replace(/\s/g, "");
+	var qpl_wizard_displaytarget= document.getElementById('qpl_wizard_displaytarget').value.toUpperCase().replace(/\s/g, "");
+	var qpl_wizard_questiontext= document.getElementById('qpl_wizard_questiontext').value.trim();
+	qpl_wizard_questiontext = WordWrap(qpl_wizard_questiontext);
+	
+	var qpl_wizard_stat= document.getElementById('qpl_wizard_stat').value;
+	var qpl_wizard_textwidth= document.getElementById('qpl_wizard_textwidth').value;
+	var qpl_wizard_answeroption= document.getElementById('qpl_wizard_answeroption').value.toUpperCase().replace(/\s/g, "");
+	var qpl_wizard_next= document.getElementById('qpl_wizard_next').value.toUpperCase().replace(/\s/g, "");
+	
+	var qpl_wizard_numberanswers= document.getElementById('qpl_wizard_numberanswers').value;
+	var qpl_wizard_aligntext= document.getElementById('qpl_wizard_aligntext').value;
+	var qpl_wizard_alignquestion= document.getElementById('qpl_wizard_alignquestion').value;
+	var qpl_wizard_bold= document.getElementById('qpl_wizard_bold').value;
+
+	var qpl_wizard_instruction= document.getElementById('qpl_wizard_instruction').value;
+        var qpl_wizard_instruction_name= document.getElementById('qpl_wizard_instruction_name').value.trim();
+	
+	var qpl_wizard_required= document.getElementById('qpl_wizard_required').checked;
+	
+	var qpl_wizard_grouplabel = [];
+	var qpl_wizard_answerlabel = [];
+	var qpl_wizard_goto = [];
+	var qpl_wizard_displaytrigger = [];
+	var qpl_wizard_shading = [];
+
+	var tab = 0;
+	qpl_wizard_grouplabel[tab]= document.getElementById('qpl_wizard_grouplabel1').value;
+	qpl_wizard_answerlabel[tab]= document.getElementById('qpl_wizard_answerlabel1').value;
+	qpl_wizard_goto[tab]= document.getElementById('qpl_wizard_goto1').value;
+	qpl_wizard_displaytrigger[tab]= document.getElementById('qpl_wizard_displaytrigger1').value;
+	qpl_wizard_shading[tab]= document.getElementById('qpl_wizard_shading1').checked;
+
+	tab++;	
+	qpl_wizard_grouplabel[tab]= document.getElementById('qpl_wizard_grouplabel2').value;
+	qpl_wizard_answerlabel[tab]= document.getElementById('qpl_wizard_answerlabel2').value;
+	qpl_wizard_goto[tab]= document.getElementById('qpl_wizard_goto2').value;
+	qpl_wizard_displaytrigger[tab]= document.getElementById('qpl_wizard_displaytrigger2').value;
+	qpl_wizard_shading[tab]= document.getElementById('qpl_wizard_shading2').checked;
+
+	tab++;
+	qpl_wizard_grouplabel[tab]= document.getElementById('qpl_wizard_grouplabel3').value;
+	qpl_wizard_answerlabel[tab]= document.getElementById('qpl_wizard_answerlabel3').value;
+	qpl_wizard_goto[tab]= document.getElementById('qpl_wizard_goto3').value;
+	qpl_wizard_displaytrigger[tab]= document.getElementById('qpl_wizard_displaytrigger3').value;
+	qpl_wizard_shading[tab]= document.getElementById('qpl_wizard_shading3').checked;
+
+	tab++;
+	qpl_wizard_grouplabel[tab]= document.getElementById('qpl_wizard_grouplabel4').value;
+	qpl_wizard_answerlabel[tab]= document.getElementById('qpl_wizard_answerlabel4').value;
+	qpl_wizard_goto[tab]= document.getElementById('qpl_wizard_goto4').value;
+	qpl_wizard_displaytrigger[tab]= document.getElementById('qpl_wizard_displaytrigger4').value;
+	qpl_wizard_shading[tab]= document.getElementById('qpl_wizard_shading4').checked;
+
+	tab++;
+	qpl_wizard_grouplabel[tab]= document.getElementById('qpl_wizard_grouplabel5').value;
+	qpl_wizard_answerlabel[tab]= document.getElementById('qpl_wizard_answerlabel5').value;
+	qpl_wizard_goto[tab]= document.getElementById('qpl_wizard_goto5').value;
+	qpl_wizard_displaytrigger[tab]= document.getElementById('qpl_wizard_displaytrigger5').value;
+	qpl_wizard_shading[tab]= document.getElementById('qpl_wizard_shading5').checked;
+	tab++;
+	
+	qpl_wizard_grouplabel[tab]= document.getElementById('qpl_wizard_grouplabel6').value;
+	qpl_wizard_answerlabel[tab]= document.getElementById('qpl_wizard_answerlabel6').value;
+	qpl_wizard_goto[tab]= document.getElementById('qpl_wizard_goto6').value;
+	qpl_wizard_displaytrigger[tab]= document.getElementById('qpl_wizard_displaytrigger6').value;
+	qpl_wizard_shading[tab]= document.getElementById('qpl_wizard_shading6').checked;
+
+	tab++;
+
+	var Phrase = "";
+
+	// Build insert text
+	
+	if (qpl_wizard_name.length) {
+		Phrase += ".QUESTION = " + qpl_wizard_name + ", TYPE = CHECK\n";
+	} else {
+		Phrase += ".QUESTION, TYPE = CHECK\n";
+	}
+
+        if (qpl_wizard_instruction == 'ON') {
+            if (qpl_wizard_instruction_name.length) {
+                Phrase += ".INSTRUCTION = \"" + qpl_wizard_instruction_name + "\"\n";
+                
+            } 
+        } else {
+            Phrase += ".INSTRUCTION = OFF\n";
+        }
+	
+	if (qpl_wizard_displaytarget.length) {
+		Phrase += ".DISPLAY = " + qpl_wizard_displaytarget + "\n";
+	}
+
+	if (qpl_wizard_stat.length) {
+		Phrase += ".LABEL = \"" + qpl_wizard_stat.replace(/"/g, "_") + "\"\n";
+	}
+
+	if (qpl_wizard_numberanswers.length) {
+		Phrase += ".ANUMBERING = \"" + qpl_wizard_numberanswers + "\"\n";
+	}
+
+	if (qpl_wizard_aligntext.length) {
+		Phrase += ".ALIGN = " + qpl_wizard_aligntext + "\n";
+	}
+
+	if (qpl_wizard_alignquestion.length) {
+		Phrase += ".VALIGN = " + qpl_wizard_alignquestion + "\n";
+	}
+
+	if (qpl_wizard_bold.length) {
+		Phrase += ".BOLD = " + qpl_wizard_bold + "\n";
+	}
+
+	if (qpl_wizard_textwidth > 0) {
+		Phrase += ".WIDTH = " + qpl_wizard_textwidth + "\n";
+	}
+
+	if (qpl_wizard_required) {
+		Phrase += ".REQUIRED\n";
+	}
+
+	
+	if (qpl_wizard_questiontext.length) {
+		Phrase += qpl_wizard_questiontext + "\n";
+	} else {
+		Phrase += "Enter question text here.\n";
+	}
+
+	var UseAnswerList = false;
+	if (qpl_wizard_answeroption.length) {
+		
+		Phrase += ".ANSWER = " + qpl_wizard_answeroption + "\n";
+		
+		if (parseInt(qpl_wizard_answeroption) >= 0) {
+			UseAnswerList = true;
+		}
+	} else {
+		Phrase += ".ANSWER\n";
+		UseAnswerList = true;
+	}
+	
+	if (UseAnswerList)
+	{
+		for (var a = 0; a < tab; a++) {
+			qpl_wizard_answerlabel[a] = qpl_wizard_answerlabel[a].replace(/^\s+/, "");
+			qpl_wizard_answerlabel[a] = qpl_wizard_answerlabel[a].replace(/\s+$/, "");
+			qpl_wizard_grouplabel[a] = qpl_wizard_grouplabel[a].replace(/^\s+/, "");
+			qpl_wizard_grouplabel[a] = qpl_wizard_grouplabel[a].replace(/\s+$/, "");
+			qpl_wizard_grouplabel[a] = qpl_wizard_grouplabel[a].replace(/"/g, "'");
+			qpl_wizard_goto[a] = qpl_wizard_goto[a].toUpperCase().replace(/\s/g, "");
+			qpl_wizard_displaytrigger[a] = qpl_wizard_displaytrigger[a].toUpperCase().replace(/\s/g, "");
+			
+			if (qpl_wizard_answerlabel[a].length) {
+				if (qpl_wizard_grouplabel[a].length) {
+					Phrase += ".GROUP = \"" + qpl_wizard_grouplabel[a] + "\"\n";
+				}
+				Phrase += (qpl_wizard_shading[a] ? "!" : "") + qpl_wizard_answerlabel[a] + "\n";
+
+				if (qpl_wizard_goto[a].length) {
+					Phrase += ".GOTO = " + qpl_wizard_goto[a] + "\n";
+				}
+
+				if (qpl_wizard_displaytrigger[a].length) {
+					Phrase += ".DISPLAY = " + qpl_wizard_displaytrigger[a] + "\n";
+				}
+			}
+		}
+		
+	}
+	
+	if (qpl_wizard_next.length){
+		Phrase += ".NEXT = " + qpl_wizard_next + "\n\n";
+	} else {
+		Phrase += ".NEXT\n\n";
+	}
+	
+	ko.views.manager.currentView.setFocus();
+	ko.views.manager.currentView.scimoz.beginUndoAction();
+        ko.views.manager.currentView.selection = Phrase;
+	ko.views.manager.currentView.scimoz.endUndoAction();
+	
+	return true;
+}
+]]>
+</script>
+
+</dialog>
+

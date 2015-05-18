@@ -1,0 +1,106 @@
+*! >>>>
+
+HIDE - Verifying data that was preloaded into hidden questions.
+
+In this sample, hidden questions are defined using a HIDE block.
+The values that are preloaded in to a case are next displayed
+to the respondent in the text of a QUESTION. The respondent is asked
+to enter any corrections into new questions. The data in the
+hidden questions is not changed.
+
+*! <<<<
+
+
+**********************************************************************
+** Hidden questions - Data will be preloaded
+.HIDE = ON
+
+.QUESTION = UNIT, TYPE=STRING
+Name of district
+.ANSWER=30
+.NEXT
+
+.QUESTION = LEVEL, TYPE=STRING
+District of person e-mailed
+.ANSWER=20
+.NEXT
+
+.QUESTION = NME, TYPE=STRING
+Name of person e-mailed
+.ANSWER=40
+.NEXT
+
+.QUESTION = PHN, TYPE=STRING
+Telephone number of person e-mailed
+.ANSWER=20
+.NEXT
+
+.QUESTION = EML, TYPE=STRING
+E-mail of person e-mailed
+.ANSWER=40
+.NEXT
+
+.HIDE = OFF
+**
+**********************************************************************
+
+
+
+.SUBTITLE = "Demographic Information"
+.NEWPAGE
+.QNUMBERING = OFF
+
+.QUESTION = Q1_RESPONDENT, TYPE=VOID
+This information request form was e-mailed to the following individual:
+
+Name: +[NME]+
+District: +[UNIT]+
+Telephone: +[PHN]+
+E-mail: +[EML]+
+.ANSWER
+.NEXT
+
+
+.QUESTION, TYPE=VOID, BOLD=ON
+If a different individual will be completing this information request form, please enter 
+their contact information below:||
+.ANSWER
+.NEXT
+
+**********************************************************************
+**
+.MATRIX = ON, MATRIXWIDTH = 480, MATRIXROWSHADING = ON
+.QNUMBERING = OFF
+.ALIGN = LEFT
+.WIDTH = 110
+.BOLD = ON
+
+.QUESTION, TYPE=STRING
+Name:
+.ANSWER = 40
+.NEXT
+
+.QUESTION, TYPE=STRING
+Title:
+.ANSWER = 40
+.NEXT
+
+.QUESTION, TYPE=STRING
+District or Other Unit Name:
+.ANSWER = 80
+.NEXT
+
+.QUESTION, TYPE=STRING
+Telephone:
+.ANSWER = 20
+.NEXT
+
+.QUESTION, TYPE=STRING
+E-mail:
+.ANSWER = 40
+.NEXT
+
+.BOLD = OFF
+.MATRIX = OFF
+.QNUMBERING = ON
+

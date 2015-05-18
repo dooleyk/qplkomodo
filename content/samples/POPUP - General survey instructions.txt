@@ -1,0 +1,71 @@
+*! >>>>
+POPUP - General survey instructions.txt
+
+This POPUP text box contains general instructions for operating the
+web survey form. In this example, the ^INSTRUCTIONS^ link was used
+in the HELP block text, which will appear on the menu bar of the
+questinnaire form and on the page that is displayed when a respondent
+exits a survey. POPUP links can also be put on the home (HELLO) page
+and in the text of a question. 
+
+*! <<<<
+
+**********************************************************************
+**
+.POPUP = INSTRUCTIONS   * Insert in question text as ^INSTRUCTIONS^
+.TITLE = "click here for help"
++How to Move Around:+
+
+= If all the questions on a page don't fit on your screen, slider bars will
+be visible on the bottom and side of your screen. Reposition the page as necessary.
+
+= Use the +"Next"+ and +"Previous"+ buttons at the 
+bottom of each page to move forwards and backwards through the questionnaire at any time. 
+
+= The +menu window+ on the left side of the screen can also be used to jump to any section.
+
++How to Save Your Answers and Come Back Later:+
+
+= To save and temporarily exit this questionnaire at 
+any time, press the +"Save and Exit Questionnaire"+ button at the bottom of a page.
+
+= Always use the +"Exite"+ button to close the questionnaire. If you do 
+not, you may lose information you entered on your current page.
+
+= To re-open your questionnaire and enter more 
+responses or change previous responses, come back to the web 
+address we gave you and re-enter your user name and password.
+
+= The questionnaire will restart at the last question you answered.
+
++How to Print Your Answers:+
+
+Click on the "View and print summary of your responses" link in the menu
+on the left.
+
++How to Tell Us You're Done:+
+  
+The last question asks you to tell us when you have completed the questionnaire 
+and that GAO can use your answers. We won't use your answers 
+until you have done this.
+
++How to Get Help:+
+     
+If you have any +questions about this GAO study or the questions in this questionnaire+, please 
+send an email to \<a href\=\"mailto:XXXX\@gao.gov\"\>XXXX@gao.gov\</a\> or call 
+Jack Armstrong at 000-000-0000. 
+.POPUP = OFF
+**
+**********************************************************************
+
+
+**********************************************************************
+** Help statement
+
+.HELP = ON
+To learn more about completing this questionnaire, printing your responses, 
+and who to contact if you have technical questions, ^INSTRUCTIONS^.
+.HELP = OFF
+**
+**********************************************************************
+

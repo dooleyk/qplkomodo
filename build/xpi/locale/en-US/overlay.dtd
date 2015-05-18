@@ -1,0 +1,242 @@
+<!ENTITY qpl_menu.label "QPL6">
+<!ENTITY qpl_menu.accesskey "Q">
+
+<!ENTITY qpl_menu_new.label "Create new QPL project...">
+<!ENTITY qpl_menu_new.accesskey "N">
+<!ENTITY qpl_menu_new.desc "QPL: Create new QPL project...">
+
+<!ENTITY qpl_menu_refresh.label "Upgrade standard QPL project files">
+<!ENTITY qpl_menu_refresh.accesskey "R">
+<!ENTITY qpl_menu_refresh.desc "QPL: Upgrade standard QPL project files">
+
+<!ENTITY qpl_menu_svn.label "Version control...">
+<!ENTITY qpl_menu_svn.accesskey "V">
+
+<!ENTITY qpl_menu_svn_checkout.label "Get project files from primary repository...">
+<!ENTITY qpl_menu_svn_checkout.accesskey "G">
+<!ENTITY qpl_menu_svn_checkout.desc "QPL: Get project files from primary repository...">
+
+<!ENTITY qpl_menu_svn_checkout2.label "Get project files from secondary repository...">
+<!ENTITY qpl_menu_svn_checkout2.accesskey "P">
+<!ENTITY qpl_menu_svn_checkout2.desc "QPL: Get project files from secondary repository...">
+
+<!ENTITY qpl_menu_svn_commit.label "Send project files to version control...">
+<!ENTITY qpl_menu_svn_commit.accesskey "S">
+<!ENTITY qpl_menu_svn_commit.desc "QPL: Send project files to version control...">
+
+<!ENTITY qpl_menu_svn_info.label "Show version control status">
+<!ENTITY qpl_menu_svn_info.accesskey "V">
+<!ENTITY qpl_menu_svn_info.desc "QPL: Show version control status">
+
+<!ENTITY qpl_menu_svn_export.label "Export project from version contol">
+<!ENTITY qpl_menu_svn_export.accesskey "E">
+<!ENTITY qpl_menu_svn_export.desc "QPL: Export project from version contol">
+
+<!ENTITY qpl_menu_svn_steal_lock.label "Steal lock from other user">
+<!ENTITY qpl_menu_svn_steal_lock.accesskey "S">
+<!ENTITY qpl_menu_svn_steal_lock.desc "QPL: Steal lock from other user">
+
+<!ENTITY qpl_menu_build.label  "Build...">
+<!ENTITY qpl_menu_build.accesskey "B">
+
+<!ENTITY qpl_menu_build_html.label "Local web site files...">
+<!ENTITY qpl_menu_build_html.accesskey "L">
+<!ENTITY qpl_menu_build_html.desc "QPL: Build local web site files...">
+
+<!ENTITY qpl_menu_build_php.label "Live web site files...">
+<!ENTITY qpl_menu_build_php.accesskey "V">
+<!ENTITY qpl_menu_build_php.desc "QPL: Build live web site files ...">
+
+<!ENTITY qpl_menu_build_stat.label "Statistical analysis programs...">
+<!ENTITY qpl_menu_build_stat.accesskey "A">
+<!ENTITY qpl_menu_build_stat.desc "QPL: Build statistical analysis programs...">
+
+<!ENTITY qpl_menu_build_qlist.label "Question information list...">
+<!ENTITY qpl_menu_build_qlist.accesskey "Q">
+<!ENTITY qpl_menu_build_qlist.desc "QPL: Build question information list...">
+
+<!ENTITY qpl_menu_build_esup.label "GAO E-Supplement product...">
+<!ENTITY qpl_menu_build_esup.accesskey "E">
+<!ENTITY qpl_menu_build_esup.desc "QPL: Build E-Supplement product...">
+
+<!ENTITY qpl_menu_build_custom.label "Custom...">
+<!ENTITY qpl_menu_build_custom.accesskey "C">
+<!ENTITY qpl_menu_build_custom.desc "QPL: Build custom file...">
+
+<!ENTITY qpl_menu_char.label "Format characters...">
+<!ENTITY qpl_menu_char.accesskey "F">
+
+<!ENTITY qpl_menu_char_bold.label "Bold">
+<!ENTITY qpl_menu_char_bold.accesskey "B">
+<!ENTITY qpl_menu_char_bold.desc "QPL: Format - Bold">
+
+<!ENTITY qpl_menu_char_italic.label "Italic">
+<!ENTITY qpl_menu_char_italic.accesskey "I">
+<!ENTITY qpl_menu_char_italic.desc "QPL: Format - Italic">
+
+<!ENTITY qpl_menu_char_underline.label "Underline">
+<!ENTITY qpl_menu_char_underline.accesskey "U">
+<!ENTITY qpl_menu_char_underline.desc "QPL: Format - Underline">
+
+<!ENTITY qpl_menu_char_break.label "Line break">
+<!ENTITY qpl_menu_char_break.accesskey "L">
+<!ENTITY qpl_menu_char_break.desc "QPL: Format - Line break">
+
+<!ENTITY qpl_menu_char_bullet.label "Bullet">
+<!ENTITY qpl_menu_char_bullet.accesskey "U">
+<!ENTITY qpl_menu_char_bullet.desc "QPL: Format - Bullet">
+
+<!ENTITY qpl_menu_char_nbsp.label "Non-breaking space">
+<!ENTITY qpl_menu_char_nbsp.accesskey "N">
+<!ENTITY qpl_menu_char_nbsp.desc "QPL: Format - Non-breaking space">
+
+<!ENTITY qpl_menu_char_sect.label "Section Symbol">
+<!ENTITY qpl_menu_char_sect.accesskey "S">
+<!ENTITY qpl_menu_char_sect.desc "QPL: Format - Section Symbol">
+
+<!ENTITY qpl_menu_char_arr_r.label "Right arrow">
+<!ENTITY qpl_menu_char_arr_r.accesskey "R">
+<!ENTITY qpl_menu_char_arr_r.desc "QPL: Format - Right arrow">
+
+<!ENTITY qpl_menu_char_arr_l.label "Left arrow">
+<!ENTITY qpl_menu_char_arr_l.accesskey "L">
+<!ENTITY qpl_menu_char_arr_l.desc "QPL: Format - Left arrow">
+
+<!ENTITY qpl_menu_char_arr_u.label "Up arrow">
+<!ENTITY qpl_menu_char_arr_u.accesskey "U">
+<!ENTITY qpl_menu_char_arr_u.desc "QPL: Format - Up arrow">
+
+<!ENTITY qpl_menu_char_arr_d.label "Down arrow">
+<!ENTITY qpl_menu_char_arr_d.accesskey "D">
+<!ENTITY qpl_menu_char_arr_d.desc "QPL: Format - Down arrow">
+
+<!ENTITY qpl_menu_char_ref.label "HTML 4 Entity Reference">
+<!ENTITY qpl_menu_char_ref.accesskey "E">
+<!ENTITY qpl_menu_char_ref.desc "QPL: Format - HTML 4 Entity Reference">
+
+<!ENTITY qpl_menu_char_escape.label "Escape special characters">
+<!ENTITY qpl_menu_char_escape.accesskey "E">
+<!ENTITY qpl_menu_char_escape.desc "QPL: Format - Escape special characters">
+
+<!ENTITY qpl_menu_char_color.label "Color code">
+<!ENTITY qpl_menu_char_color.accesskey "C">
+<!ENTITY qpl_menu_char_color.desc "QPL: Format - Color code">
+
+<!ENTITY qpl_menu_char_wordwrap.label "Word-wrap selection">
+<!ENTITY qpl_menu_char_wordwrap.accesskey "W">
+<!ENTITY qpl_menu_char_wordwrap.desc "QPL: Format - Word-wrap selection">
+
+<!ENTITY qpl_menu_char_comment.label "Block comment selection">
+<!ENTITY qpl_menu_char_comment.accesskey "B">
+<!ENTITY qpl_menu_char_comment.desc "QPL: Format - Block comment selection">
+
+<!ENTITY qpl_menu_char_word_cleanup.label "Clean-up text pasted from Word">
+<!ENTITY qpl_menu_char_word_cleanup.accesskey "C">
+<!ENTITY qpl_menu_char_word_cleanup.desc "QPL: Format - Clean-up text pasted from Word">
+
+<!ENTITY qpl_menu_qpl6ref.label "Manual">
+<!ENTITY qpl_menu_qpl6ref.accesskey "M">
+
+<!ENTITY qpl_menu_help.label "Help">
+<!ENTITY qpl_menu_help.accesskey "H">
+
+<!ENTITY qpl_menu_about.label "About">
+<!ENTITY qpl_menu_about.accesskey "A">
+
+<!ENTITY qplwrapperContext.label "QPL6 Web Questionnaire Development System">
+<!ENTITY qplwrapperContext.accesskey "Q">
+
+<!ENTITY qplwrapperToolbar.label "QPL6 Compiler">
+<!ENTITY qplwrapperToolbar.tooltip "QPL6 Web Questionnaire Development System">
+
+<!ENTITY qpl_menu_wizard.label "Syntax wizards...">
+<!ENTITY qpl_menu_wizard.accesskey "W">
+
+<!ENTITY qpl_menu_wizard_questions.label "Questions...">
+<!ENTITY qpl_menu_wizard_questions.accesskey "Q">
+
+<!ENTITY qpl_menu_wizard_mult.label "Multiple-choice...">
+<!ENTITY qpl_menu_wizard_mult.accesskey "M">
+<!ENTITY qpl_menu_wizard_mult.desc "QPL: Question - Mulitple-choice">
+
+<!ENTITY qpl_menu_wizard_check.label "Check-all-that-apply...">
+<!ENTITY qpl_menu_wizard_check.accesskey "C">
+<!ENTITY qpl_menu_wizard_check.desc "QPL: Question - Check-all-that-apply">
+
+<!ENTITY qpl_menu_wizard_list.label "Drop-down list...">
+<!ENTITY qpl_menu_wizard_list.accesskey "L">
+<!ENTITY qpl_menu_wizard_list.desc "QPL: Question - Drop-down list">
+
+<!ENTITY qpl_menu_wizard_string.label "Short-answer...">
+<!ENTITY qpl_menu_wizard_string.accesskey "S">
+<!ENTITY qpl_menu_wizard_string.desc "QPL: Question - Short-answer">
+
+<!ENTITY qpl_menu_wizard_openend.label "Open-ended answer...">
+<!ENTITY qpl_menu_wizard_openend.accesskey "O">
+<!ENTITY qpl_menu_wizard_openend.desc "QPL: Question - Open-ended">
+
+<!ENTITY qpl_menu_wizard_number.label "Number...">
+<!ENTITY qpl_menu_wizard_number.accesskey "N">
+<!ENTITY qpl_menu_wizard_number.desc "QPL: Question - Number">
+
+<!ENTITY qpl_menu_wizard_date.label "Date...">
+<!ENTITY qpl_menu_wizard_date.accesskey "D">
+<!ENTITY qpl_menu_wizard_date.desc "QPL: Question - Date">
+
+<!ENTITY qpl_menu_wizard_time.label "Time...">
+<!ENTITY qpl_menu_wizard_time.accesskey "T">
+<!ENTITY qpl_menu_wizard_time.desc "QPL: Question - Time">
+
+<!ENTITY qpl_menu_wizard_questionnaire.label "Questionnaire...">
+<!ENTITY qpl_menu_wizard_questionnaire.accesskey "Q">
+<!ENTITY qpl_menu_wizard_questionnaire.desc "QPL: Question - Questionnaire">
+
+<!ENTITY qpl_menu_wizard_upload.label "File-upload...">
+<!ENTITY qpl_menu_wizard_upload.accesskey "U">
+<!ENTITY qpl_menu_wizard_upload.desc "QPL: Question - File-upload">
+
+<!ENTITY qpl_menu_wizard_void.label "Void...">
+<!ENTITY qpl_menu_wizard_void.accesskey "V">
+<!ENTITY qpl_menu_wizard_void.desc "QPL: Question - Void (no answer)">
+
+<!ENTITY qpl_menu_wizard_layout.label "Layout...">
+<!ENTITY qpl_menu_wizard_layout.accesskey "O">
+<!ENTITY qpl_menu_wizard_layout.desc "QPL: Wizard - Layout">
+
+<!ENTITY qpl_menu_wizard_popup.label "Popup block...">
+<!ENTITY qpl_menu_wizard_popup.accesskey "P">
+<!ENTITY qpl_menu_wizard_popup.desc "QPL: Wizard - Popup block">
+
+<!ENTITY qpl_menu_wizard_query.label "Query block...">
+<!ENTITY qpl_menu_wizard_query.accesskey "Q">
+<!ENTITY qpl_menu_wizard_query.desc "QPL: Wizard - Query block">
+
+<!ENTITY qpl_menu_wizard_product.label "Product block...">
+<!ENTITY qpl_menu_wizard_product.accesskey "D">
+<!ENTITY qpl_menu_wizard_product.desc "QPL: Wizard - Product block">
+
+<!ENTITY qpl_menu_wizard_user.label "User account block...">
+<!ENTITY qpl_menu_wizard_user.accesskey "U">
+<!ENTITY qpl_menu_wizard_user.desc "QPL: Wizard - User account block">
+
+<!ENTITY qpl_menu_wizard_default_phrases.label "Change default phrase...">
+<!ENTITY qpl_menu_wizard_default_phrases.accesskey "P">
+<!ENTITY qpl_menu_wizard_default_phrases.desc "QPL: Wizard - Change default phrase">
+
+<!ENTITY qpl_menu_wizard_global.label "Global settings...">
+<!ENTITY qpl_menu_wizard_global.accesskey "G">
+<!ENTITY qpl_menu_wizard_global.desc "QPL: Wizard - Global settings">
+
+<!ENTITY qpl_menu_wizard_samples.label "Insert sample code...">
+<!ENTITY qpl_menu_wizard_samples.accesskey "C">
+<!ENTITY qpl_menu_wizard_samples.desc "QPL: Wizard - Insert sample code">
+
+<!ENTITY qpl_menu_wizard_width.label "Width calculator...">
+<!ENTITY qpl_menu_wizard_width.accesskey "W">
+<!ENTITY qpl_menu_wizard_width.desc "QPL: Wizard - Width calculator">
+
+<!ENTITY qpl_menu_keyword_info.label "Keyword information">
+<!ENTITY qpl_menu_keyword_info.accesskey "I">
+<!ENTITY qpl_menu_keyword_info.desc "QPL: Keyword information">
+
+

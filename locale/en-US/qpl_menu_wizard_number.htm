@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- qpl_menu_wizard_number.htm -->
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8;" />
+	<link rel="stylesheet" type="text/css" href="qpl_help.css" />
+	<title>Number Question</title>
+</head>
+
+<body>
+	<p class="Printbar"><img alt="Print" src="../../skin/qpl_button_printer.png" onclick="window.print();" /></p>
+
+	<h1>Number Question</h1>
+
+<p>This dialog box may be used to create the QPL code for
+one number question. This code will be inserted into your
+program at the current cursor position.</p>
+
+<table cellspacing="2" cellpadding="2" border="0">
+<tr>
+	<th width="10%" valign="top" align="left">Name</th>
+	<td width="90%" valign="top">The name of a question must start with a letter, contain only letters and numbers, and be from one to sixteen characters long.<br><br>
+	If a name is not specified, then a name will be created automatically. (Name will be Q# if visible, U# if visible but not numbered, or H#if not visible.)</td>
+</tr>
+<tr>
+	<th width="10%" valign="top" align="left">Stat label</th>
+	<td valign="top" align="left">
+If a label is entered here, then this will be used as a variable label for this question when the SAS or SPSS program 
+is generated instead of the question text.
+	</td>
+</tr>
+<tr>
+	<th width="10%" valign="top" align="left">Align text</th>
+	<td valign="top" align="left">
+Define how the question text should be aligned.<br><br>
+
+Left - Left justify question text<br>
+Center - Center question text<br>
+Right - Right justify question text<br>
+Inherit - Inherit setting from the previous question
+	</td>
+</tr>
+<tr>
+	<th width="10%" valign="top" align="left">Align question</th>
+	<td valign="top" align="left">
+Define how the question should be aligned vertically when
+used inside a COLUMNS layout. This setting has no effect on questions
+in normal or MATRIX layout.<br><br>
+
+Top - Top-align question<br>
+Middle - Center-align question<br>
+Bottom - Bottom-align question<br>
+Baseline - The baseline is the "imaginary line" which most letters "sit" on, in a line of text. 
+The baseline value sets the row so that all the table data share the same baseline. Often this 
+has the same effect as the bottom value. However, if the fonts are in different sizes, baseline 
+looks better.<br>
+Inherit - Inherit setting from the previous question
+	</td>
+</tr>
+<tr>
+	<th width="10%" valign="top" align="left">Bold text</th>
+	<td valign="top" align="left">
+Set question text to be displayed using a bold font.<br><br>
+
+On - Use bold font.<br>
+Off - Do not use bold font<br>
+Inherit - Inherit setting from the previous question
+	</td>
+</tr>
+
+<tr>
+	<th width="10%" valign="top" align="left">Bold text</th>
+	<td valign="top" align="left">
+Set question text to be displayed using a bold font.<br><br>
+
+On - Use bold font.<br>
+Off - Do not use bold font<br>
+Inherit - Inherit setting from the previous question
+	</td>
+</tr>
+<tr>
+	<th width="10%" valign="top" align="left">Width</th>
+	<td valign="top" align="left">
+Set the width of the question text area as the number of pixels. 
+Leave field blank to inherit this setting from the previous question. Enter &quot;D&quot; to reset the width to the current system default. This value will vary according to whether the question is in a normal, matrix, or columns layout.
+	</td>
+</tr>
+<tr>
+	<th width="10%" valign="top" align="left">Question</th>
+	<td valign="top" align="left">Enter the text of your question here. Each line must be less than 500 characters long. You do not need to be careful where you break your lines; the text will be re-wrapped when it is displayed in the web questionnaire form. You can create a paragraph break by entering a blank line. (See the "Text Line Formatting" section below, and the QPL Help page, "QPL Language Syntax," for additional ways to format your question.)</td>
+</tr>
+<tr>
+	<th width="10%" valign="top" align="left">Answer option</th>
+	<td valign="top" align="left">Use this option to specify the maximum number of characters that may be typed by the respondent into the number field on the web questionnaire form. For example, if you want to limit the respondent's answer to ten digits, you should enter "10" here.<br><br>
+
+You may instead use this option to copy your field size or format setting (see below) from another number question that you have already written in your questionnaire program. To do this, enter the name of the other number question here. (If you enter the name of another question here, you should not enter a format or default answer below.)</td>
+</tr>
+<tr>
+	<th width="10%" valign="top" align="left">Next</th>
+	<td valign="top" align="left">Entering the name of a question here will insert a hypertext link to that question at the bottom of this question. The respondent may click on this link to jump to the question, whether or not it happens to be on the same page. No link is created if this left blank.</td>
+</tr>
+<tr>
+	<th width="10%" valign="top" align="left">Display (Define Target)</th>
+	<td valign="top" align="left">Enter a DISPLAY name for this question. You can trigger the display of this question by linking it to an answer in a MULT or CHECK question by entering the DISPLAY command with this name after the answer text in that question. This question will be hidden until the respondent selects that answer on that question.</td>
+</tr>
+<tr>
+	<th width="10%" valign="top" align="left">Required</th>
+	<td valign="top" align="left">Check this option to make the answer to this question required. The input field will be displayed on the form with a light pink background if the respondent has not entered an answer. Once the respondent has entered an answer and moved to another question, the light pink background will change to the normal white background.</td>
+</tr>
+<tr>
+	<th width="10%" valign="top" align="left">Format</th>
+	<td valign="top" align="left">The format option lets you put a label on the left or right side, or both sides, of the input field on the web questionnaire form and specify the number of decimal places. Enter "#" characters to indicate the number of digits that may be entered and any other characters will be your label. (Ex. "$##.##", will create a four-digit input field with two decimal places and with the "$" displayed on the left-side of the input field.) If you use a format to set your field size, you should not enter a number at the Answer option above to set the field size.<br><br>
+
+You may instead use the format to just enter the number of decimal places. By default, if no format is used, the number of decimal places is set to zero for integers. The total field size set at the Answer option must be greater than the number of decimal places you set at the Format option.
+</td>
+</tr>
+
+<tr>
+	<th width="10%" valign="top" align="left">Default</th>
+	<td valign="top" align="left">Normally, the number input field defaults to a blank answer. You may enter a different default answer here. All respondents will see the same default answer. (See the QPL Help page, "Preloading User Accounts and Data," if you want each respondent to see a personalized default answer.)</td>
+</tr>
+<tr>
+	<th width="10%" valign="top" align="left">Rank group</th>
+	<td valign="top" align="left">A RANK group may be used to turn on automatic ranking rules for two or more NUMBER questions. This is useful when you want a respondent to put a list into a rank order. Here, the question text for a NUMBER question is the item to be ranked, and the value entered is the order number (which may be 1 through the to the total number items (i.e., questions) in your list). The automatic rules will warn the respondent if they use a number out of this range, or if the use the same number more than once. Blank responses are not considered to be errors. These error messages are updated when the respondent moves the cursor out of a NUMBER question input field. Enter the name of the group using the RANK command inside each question that you wish to include within the ranking group. (You may instead use the RANK command with a name before the first question in your series and then a RANK = OFF command after the last question to mark a block questions in your ranking group.) All the NUMBER questions in a RANK group must be on the same page of the questionnaire. You may also display an general error message to the respondent by putting the name of the RANK group in the text of question, delimited by asterisk characters.</td>
+</tr>
+<tr>
+	<th width="10%" valign="top" align="left">Sum group</th>
+	<td valign="top" align="left">A SUM group may be used to give the respondent a running tally for two or more NUMBER questions. This is useful, for example, when you want the respondent's answers to total to a certain value, such as 100%. The total information is automatically updated when the respondent moves the cursor of a NUMBER question input field.  Enter the name of the group using the SUM command inside each question that you wish to include within the tally group. (You may instead use the SUM command with a name before the first question in your series and then a SUM = OFF command after the last question to mark a block questions in your tally group.) All the NUMBER questions in a SUM group must be on the same page of the questionnaire. Display the total value to the respondent by putting the name of the SUM group in the text of question, delimited by asterisk characters.</td>
+</tr>
+</table>
+
+	
+	<p>See also <a href="qpl_menu_wizard_text_formatting.htm">Text Line Formatting.</a></p>
+
+		
+	<p align="center"><img alt="QPL6 Logo" src="../../skin/qplwrapper.png" /></p>
+
+</body>
+</html>

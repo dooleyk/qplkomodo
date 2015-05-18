@@ -1,0 +1,18 @@
+*! >>>>
+LABELS - Jill's favorite replacements
+
+All the built-in text labels may be changed by using 
+the label number as shown below. These are Jill's favorites!
+*! <<<<
+
+.171 = "click here to go to"
+.172 = "click here to skip to question"
+.173 = "click here to skip to question"
+.175 = "Click here to skip to"
+.194 = "(check all that apply)"
+.195 = " "
+.201 = "(enter date using YYYY-MM-DD format)"
+.203 = "Save and continue >"
+.204 = "Print screen"
+.209 = "Exit and save"
+.211 = "Close window"

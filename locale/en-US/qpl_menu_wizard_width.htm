@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- qpl_menu_wizard_width.htm -->
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8;" />
+	<link rel="stylesheet" type="text/css" href="qpl_help.css" />
+	<title>Width Calculator</title>
+	<style>
+		p, pre { margin-left: 5em;
+		margin-right: 5em; }
+		
+	</style>
+</head>
+<body>
+	<p class="Printbar"><img alt="Print" src="../../skin/qpl_button_printer.png" onclick="window.print();" /></p>
+
+	<h1>Width Calculator</h1>
+
+
+<p>This dialog box may be used to compute the WIDTH setting for questions
+when used in a Normal, MATRIX, or COLUMNS layout.</p>
+
+
+<p>The WIDTH settings are limited by the PAGEWIDTH, GUTTTER, and MENU settings.
+The wizard displays your current settings for these at the top of the calculater.
+You may change these settings, but to use them you will also update them in your
+questionnaire program. If these values are not explicitly set in your program, the
+wizard will display the default values.</p>
+
+<p>Please note that these settings are only suggestions to the respondent's browser.
+If the text or input widget will not fit within the space you have set, then the
+browser will silently stretch or distort the layout to make things fit. You can tell
+that this is occurring if questions with the same settings seem to have different
+widths when displayed in a browser window. In this case, you should adjust these
+settings so that they are big enough to accomodate your largest items. You should
+also provide a little extra space since the elements in your document may have
+slightly different measurements when displayed by different browsers.</p>
+
+
+<h2>Normal Tab</h2>
+
+<p>The Normal tab lets you change the values for the WIDTH and INDENT values. WIDTH
+refers to the total horizontal space used to display the question (not including
+the question number which is displayed in the GUTTER space). You may use the spin
+control to increase the WIDTH to the maxium available with the current PAGEWIDTH,
+GUTTER, and MENU settings, or decrease to 1px (though this is not generally very
+useful value.)</p>
+
+<p>The INDENT value may be set from 0 to a value less than the current WIDTH setting.
+Increasing the value using the spinner control increases the INDENT by one GUTTER
+size. Note that the INDENT reduces the space available for the question text and that
+the right margin remains at the same location.</p>
+
+<p>The graphic at the bottom shows how all these various measurements interact. The
+colored bars will change as you change the various measurements. The blue bar indicates
+the width of the MENU (which is always 150 if it is ON), red shows the INDENT,
+magenta shos the the GUTTER, and green shows the space available to display your
+question text. (This graphic is drawn to 1/4 scale.)</p>
+
+<p>Click the Insert button to insert the WIDTH and INDENT commands into your document
+at the current cursor location.</p>
+
+<h2>Matrix Tab</h2>
+
+<p>The MATRIX layout lets you display questions horizontally with the question text
+on the left (green) and the answer widgets on the right (cyan). By default, the
+available space on the page is divided equally for the text and answers.</p>
+
+<p>The MATRIXWIDTH value defaults to the available width, and may be set to a smaller
+value which visually creates a margin on the right side of the page.</p>
+
+<p>The WIDTH setting for the question text may be increased to one-half of the available
+question width, or reduced to 1px.</p>
+
+<p>The INDENT setting may be set from 0 to a value less than the current WIDTH setting.
+Note here that the INDENT is applied differently than it is in the Normal layout.
+Here it is applied <b>after</b> the GUTTER (which holds the question number)
+instead of <b>before</b> the question nujmber.</p>
+
+<p>The graphic at the bottom of the tab shows how these various measurements interact.</p>
+
+<p>Clicking the Insert button will insert the MATRIXWIDTH, WIDTH, and INDENT settings
+you selected into your questionnaire program at the curren cursor location.</p>
+
+
+<h2>Columns Tab</h2>
+
+<p>The COLUMNS layout lets you arrange Normal layout questions in individual cells within
+rows and columns on the page. By default, the COLUMNS layou will span the available
+page space, but not include the GUTTER. (Each Normal question in each cell has its
+own GUTTER setting.) So the maximum space available is the PAGEWIDTH minus the MENU
+if its used. The WIDTH for each question is divided evenly by the number of COLUMNS.</p>
+
+<p>The COLUMNS setting lets you change the number of columns from 2 to 25 columns.</p>
+
+<p>The WIDTH setting lets you change the width setting for each column. The wizard will
+automatically decrease the value as you increase the number of columns. If you decrease
+the number columns, the WIDTH is not automatically increased.</p>
+
+<p>The INDENT setting is applied after the MENU (if used). The WIDTH setting is automatically
+reduced, if needed, to keep the columns sized to fit within the available space.</p>
+
+<p>Clicking the Insert button will insert the COLUMNS, WIDTH, and INDENT commands with your
+values at the current cursor location in your document.</p>
+
+<p>The INDENT setting will be applied to the whole COLUMNS group, and the WIDTH will be used
+as the default WIDTH setting for all of the questions in the the group.</p>
+
+<p>Please note that you may further adjust the INDENT and WIDTH settings of each question
+in the first row of the COLUMNS layout. The combined values of the WIDTH settings of
+the questions in the first must total the available space (i.e., PAGEWIDTH - MENU - INDENT,
+or the number of COLUMNS * WIDTH), so you can make some columns wider and some smaller
+by taking some amount from one question and giving it to another.</p>
+
+<p>You may also increase the space available for a question if you (1) turn off the question
+numbering, and (2) use a negative INDENT for the question. This will widen the space
+available to the question text by reducing the amount used for the question number.
+Generally, you would only apply these settings after the first column so that its GUTTER
+can be used to number the row.</p>
+
+<pre>
+.COLUMNS = 3
+.INDENT = 35
+.WIDTH = 195
+
+
+--- question 1 ---, WIDTH = 295
+
+.QNUMBERING = OFF
+
+--- question 2 ---, WIDTH = 145, INDENT = -34
+--- question 3 ---, WIDTH = 145, INDENT = -34
+
+.QNUMBERING = ON
+
+--- repeat for additional rows
+
+.COLUMNS = OFF
+</pre>
+
+<p>In this example, the total available space is 595px (195 * 3). WIDTH settings
+have been used inside the first row of questions to change the default WIDTH of 195px.
+The first column is widened by adding 100px, and the second and third columns are
+narrowed by subtracting 50px, which still results in a total
+COLUMNS width of 595px. Negative INDENTs have been used inside the last two questions
+to reclaim the space used by the GUTTER to display the question numbers since question
+numbering has been turned off.</p>
+
+<p>These WIDTH and INDENT settings do not need to be specified in later rows of questions;
+the first row is used so set the column widths and any later settings used within the
+COLUMNS block will be ignored. You must, however, use the QNUMBERING command to turn
+the question numbering OFF and ON for the questions in the last two columns for each row
+as noted above.</p>
+
+<p>The negative INDENT value must be less than the GUTTER size (35 by default).</p>
+
+
+
+
+
+	
+
+	
+	<p>See also <a href="qpl_menu_wizard_text_formatting.htm">Text Line Formatting.</a></p>
+
+		
+	<p align="center"><img alt="QPL6 Logo" src="../../skin/qplwrapper.png" /></p>
+
+</body>
+</html>
